@@ -2,18 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/vi/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/"
-                />
-  </url><url>
     <loc>/vi/1-introduce-aws/1.1-computeservices/</loc>
     <xhtml:link
                 rel="alternate"
@@ -26,6 +14,18 @@
                 href="/vi/1-introduce-aws/1.1-computeservices/"
                 />
   </url><url>
+    <loc>/vi/1-introduce-aws/1.2-storageservices/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/1-introduce-aws/1.2-storageservices/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/1-introduce-aws/1.2-storageservices/"
+                />
+  </url><url>
     <loc>/vi/1-introduce-aws/</loc>
     <xhtml:link
                 rel="alternate"
@@ -36,6 +36,18 @@
                 rel="alternate"
                 hreflang="vi"
                 href="/vi/1-introduce-aws/"
+                />
+  </url><url>
+    <loc>/vi/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/"
                 />
   </url><url>
     <loc>/vi/categories/</loc>

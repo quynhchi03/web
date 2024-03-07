@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi" class="js csstransforms3d">
+<html lang="en" class="js csstransforms3d">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Tags :: Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
+    <title>Storage Services :: Start with Amazon VPC and AWS VPN Site-to-Site.</title>
 
     
     <link href="/css/nucleus.css?1709804082" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/vi/tags/">
+  <body class="" data-url="/1-introduce-aws/1.2-storageservices/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -61,7 +61,7 @@
 <script type="text/javascript" src="/js/auto-complete.js?1709804082"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "";
     
 </script>
 <script type="text/javascript" src="/js/search.js?1709804082"></script>
@@ -82,13 +82,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce-aws/" title="Giới thiệu" class="dd-item 
-        
+    <li data-nav-id="/1-introduce-aws/" title="Introduction" class="dd-item 
+        parent
         
         
         ">
-      <a href="/vi/1-introduce-aws/">
-           <b> 1. </b> Giới thiệu
+      <a href="/1-introduce-aws/">
+           <b> 1. </b> Introduction
           
             <i class="fas fa-check read-icon"></i>
           
@@ -113,13 +113,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce-aws/1.1-computeservices/" title="Dịch vụ điện toán" class="dd-item 
+    <li data-nav-id="/1-introduce-aws/1.1-computeservices/" title="Compute Services" class="dd-item 
         
         
         
         ">
-      <a href="/vi/1-introduce-aws/1.1-computeservices/">
-           <b> 1.1 </b> Dịch vụ điện toán
+      <a href="/1-introduce-aws/1.1-computeservices/">
+           <b> 1.1 </b> Compute Services
           
             <i class="fas fa-check read-icon"></i>
           
@@ -141,13 +141,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce-aws/1.2-storageservices/" title="Dịch vụ điện toán" class="dd-item 
-        
-        
+    <li data-nav-id="/1-introduce-aws/1.2-storageservices/" title="Storage Services" class="dd-item 
+        parent
+        active
         
         ">
-      <a href="/vi/1-introduce-aws/1.2-storageservices/">
-           <b> 1.1 </b> Dịch vụ điện toán
+      <a href="/1-introduce-aws/1.2-storageservices/">
+           <b> 1.1 </b> Storage Services
           
             <i class="fas fa-check read-icon"></i>
           
@@ -178,11 +178,11 @@
         <ul>
           
               <li> 
-                  <a class="padding" href="http://awsstudygroup.com"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+                  <a class="padding" href="https://aws.amazon.com/blogs"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
               </li>
           
               <li> 
-                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - Nhóm FB</a>
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
               </li>
           
         </ul>
@@ -207,7 +207,7 @@
                   
                     
                     
-                      <option id="en" value="/tags/">English</option>
+                      <option id="en" value="/1-introduce-aws/1.2-storageservices/" selected>English</option>
                     
                   
               
@@ -221,7 +221,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/tags/" selected>Tiếng Việt</option>
+                      <option id="vi" value="/vi/1-introduce-aws/1.2-storageservices/">Tiếng Việt</option>
                     
                   
               
@@ -305,7 +305,13 @@
             
           
           
-            <a href='/vi/'>Giới thiệu về Amazon Web Service</a> > Tags
+            
+            
+          
+          
+            <a href='/'>Introduce about Amazon Web Service</a> > <a href='/1-introduce-aws/'>Introduction</a> > Storage Services
+          
+        
           
         
           
@@ -316,7 +322,19 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-aws-storage-services">Introduction AWS Storage Services</a></li>
+    <li><a href="#content">Content</a>
+      <ul>
+        <li><a href="#1-amazon-s3-simple-storage-service">1. Amazon S3 (Simple Storage Service):</a></li>
+        <li><a href="#2-aws-lambda">2. AWS Lambda:</a></li>
+        <li><a href="#3-amazon-ecs-elastic-container-service">3. Amazon ECS (Elastic Container Service):</a></li>
+        <li><a href="#4-amazon-eks-elastic-kubernetes-service">4. Amazon EKS (Elastic Kubernetes Service):</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -332,9 +350,7 @@
           
             <h1>
               
-                taxonomy ::
-              
-              Tags
+              Storage Services
             </h1>
           
 
@@ -342,11 +358,72 @@
 
 
 
-
-
+	<h2 id="introduction-aws-storage-services">Introduction AWS Storage Services</h2>
+<p>AWS offers a comprehensive suite of storage services designed to meet the diverse needs of businesses and developers, ranging from simple object storage to high-performance block storage.</p>
+<h2 id="content">Content</h2>
+<h3 id="1-amazon-s3-simple-storage-service">1. Amazon S3 (Simple Storage Service):</h3>
+<p>Amazon S3 is a scalable object storage service designed to store and retrieve any amount of data from anywhere on the web. It is highly durable, secure, and cost-effective.
+S3 provides features such as versioning, encryption, access control, and lifecycle management to manage data effectively.</p>
+<p>It is commonly used for a wide range of use cases, including backup and restore, data archiving, content distribution, and hosting static websites.</p>
+<p><img src="../../images/1.2-StorageService/s3.png" alt="S3"></p>
+<h4 id="object-storage-classes">Object Storage Classes:</h4>
+<p><strong>Amazon S3 Standard (S3 Standard):</strong> S3 Standard offers high durability, availability, and performance object storage for frequently accessed data. Because it delivers low latency and high throughput, S3 Standard is appropriate for a wide variety of use cases, including cloud applications, dynamic websites, content distribution, mobile and gaming applications, and big data analytics.</p>
+<p>Key features:</p>
 <ul>
-	
+<li>General purpose storage for frequently accessed data</li>
+<li>Low latency and high throughput performance</li>
+<li>Designed to deliver 99.99% availability with an availability SLA of 99.9%</li>
 </ul>
+<h4 id="use-in-which-situation">Use in which situation?</h4>
+<p><strong>Applications Web Servers</strong>: The web servers can be hosted in General-purpose instances.EC2 instances provide a flexible and scalable platform for web applications.
+Development and Test Environment: The developers can use these General-purpose instances to build, test and deploy the applications. It is a cost-effective solution for running this environment.</p>
+<p><strong>Content delivery</strong>: The hosting of content delivery networks (CDNs) that distribute content to users all over the world is possible using general-purpose instances. EC2 instances can be set up to provide content with low latency and great performance.
+A popular option for many businesses, AWS EC2 general-purpose instances offer a versatile and scalable platform for a variety ###of applications.</p>
+<h3 id="2-aws-lambda">2. AWS Lambda:</h3>
+<p>AWS Lambda is a serverless computing service provided by Amazon Web Services (AWS) that enables users to run code without provisioning or managing servers. It allows developers to focus on writing code for their applications without worrying about the underlying infrastructure. Here&rsquo;s a detailed overview of AWS Lambda:
+<img src="../../images/1.1-ComputeServices/lambda.png" alt="Lambda"></p>
+<h4 id="serverless-computing">Serverless Computing:</h4>
+<p>With Lambda, users can upload their code and AWS takes care of provisioning, scaling, and managing the infrastructure needed to run that code.
+Users are charged only for the compute time consumed by their code, measured in milliseconds, making Lambda a cost-effective solution for various workloads.</p>
+<h4 id="event-driven-architecture">Event-Driven Architecture:</h4>
+<p>Lambda functions are invoked in response to events such as HTTP requests, changes to data in Amazon S3 buckets, updates to Amazon DynamoDB tables, messages from Amazon SNS (Simple Notification Service), and many others.
+This event-driven architecture allows developers to build reactive and scalable applications that respond to changes or triggers in real-time.</p>
+<h4 id="supported-runtimes-and-languages">Supported Runtimes and Languages:</h4>
+<p>Lambda supports multiple programming languages including Node.js, Python, Java, Go, .NET Core, and Ruby, allowing developers to use their preferred language for writing Lambda functions.
+Each Lambda function runs in an isolated environment called a &ldquo;runtime&rdquo;, which provides the necessary dependencies and libraries for the chosen language.</p>
+<h4 id="automatic-scaling">Automatic Scaling:</h4>
+<p>Lambda automatically scales the execution environment to handle incoming requests or events. It can handle a few requests per day to thousands of requests per second without any manual intervention. Scaling is handled by AWS based on the number of incoming events and the configured concurrency settings.</p>
+<h4 id="stateless-execution">Stateless Execution:</h4>
+<p>Lambda functions are stateless, meaning they do not maintain any persistent state between invocations. Each invocation of a Lambda function is independent of previous invocations.If state persistence is required, developers can use external storage services like Amazon DynamoDB or Amazon S3 to store and retrieve state information.</p>
+<h4 id="integration-with-aws-services">Integration with AWS Services:</h4>
+<p>Lambda integrates seamlessly with other AWS services, allowing developers to build complex workflows and applications. For example, Lambda functions can be used to process data from Amazon S3, trigger notifications via Amazon SNS, or interact with Amazon RDS databases.</p>
+<p>AWS provides built-in integration with various services through AWS SDKs and event sources, making it easy to connect Lambda functions with other AWS resources.
+<strong>Security and Access Control:</strong></p>
+<p>Lambda functions can be secured using AWS IAM (Identity and Access Management) policies, which control who can invoke the function and what resources it can access.
+Developers can also use AWS Key Management Service (KMS) to encrypt sensitive data within Lambda functions or use environment variables to store configuration settings securely.</p>
+<h4 id="use-lamdba-in-which-situation">Use lamdba in which situation?</h4>
+<p><strong>Microservices Architecture:</strong></p>
+<p>Lambda functions can be used to implement microservices in a serverless architecture, where each function represents a specific component or functionality of the application.
+By breaking down your application into smaller, independent functions, you can achieve better scalability, flexibility, and maintainability, while reducing the operational overhead of managing infrastructure.</p>
+<p><strong>Real-time Data Processing:</strong></p>
+<p>Lambda is well-suited for real-time data processing tasks such as stream processing, data enrichment, and analytics. It can be used to process streaming data from services like Amazon Kinesis and Amazon Managed Streaming for Apache Kafka (Amazon MSK). By processing data in real-time with Lambda, you can derive insights, trigger actions, and make decisions based on up-to-date information, enabling reactive and data-driven applications.</p>
+<p><strong>Scheduled Tasks and Cron Jobs:</strong></p>
+<p>Lambda functions can be scheduled to run at specified intervals using CloudWatch Events or EventBridge (formerly CloudWatch Events). This makes Lambda a convenient solution for running scheduled tasks, cron jobs, and batch processing jobs without the need for dedicated servers or infrastructure.
+You can use Lambda to perform periodic data backups, generate reports, clean up resources, or execute any other recurring tasks.</p>
+<p><strong>Web Application Backends:</strong></p>
+<p>Lambda can serve as the backend for web applications, handling HTTP requests and executing application logic in response. When combined with API Gateway, Lambda enables developers to build serverless RESTful APIs quickly and easily.
+Lambda functions can handle user authentication, data validation, business logic, and database interactions, providing a scalable and cost-effective solution for web application development.</p>
+<h3 id="3-amazon-ecs-elastic-container-service">3. Amazon ECS (Elastic Container Service):</h3>
+<p>Amazon ECS is a fully managed container orchestration service that allows users to run, stop, and manage Docker containers on a cluster of EC2 instances.
+Users can easily deploy, manage, and scale containerized applications using ECS. It integrates with other AWS services like Elastic Load Balancing, IAM, and CloudWatch for enhanced functionality.
+ECS enables users to build microservices architectures and modernize their applications by leveraging containers.</p>
+<h3 id="4-amazon-eks-elastic-kubernetes-service">4. Amazon EKS (Elastic Kubernetes Service):</h3>
+<p>Amazon EKS is a fully managed Kubernetes service that makes it easy to deploy, manage, and scale containerized applications using Kubernetes on AWS.
+It provides a highly available and secure Kubernetes control plane without the overhead of managing the infrastructure.
+With Amazon EKS, users can run Kubernetes applications with the same tools and APIs they use on-premises, while benefiting from the scalability and reliability of AWS.Real-time Data Processing:.</p>
+
+
+
 
 
 <footer class=" footline" >
@@ -384,8 +461,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -401,6 +476,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -417,6 +495,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -441,8 +520,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/1-introduce-aws/1.1-computeservices/" title="Compute Services"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/vi/1-introduce-aws/" title="Giới thiệu" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/1-introduce-aws/1.1-computeservices/" title="Compute Services" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
