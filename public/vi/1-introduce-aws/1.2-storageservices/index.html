@@ -12,21 +12,21 @@
     <title>Dịch vụ lưu trữ :: Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
 
     
-    <link href="/css/nucleus.css?1709867092" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1709867092" rel="stylesheet">
-    <link href="/css/hybrid.css?1709867092" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1709867092" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1709867092" rel="stylesheet">
-    <link href="/css/auto-complete.css?1709867092" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1709867092" rel="stylesheet">
-    <link href="/css/theme.css?1709867092" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1709867092" rel="stylesheet">
+    <link href="/css/nucleus.css?1709873023" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1709873023" rel="stylesheet">
+    <link href="/css/hybrid.css?1709873023" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1709873023" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1709873023" rel="stylesheet">
+    <link href="/css/auto-complete.css?1709873023" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1709873023" rel="stylesheet">
+    <link href="/css/theme.css?1709873023" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1709873023" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1709867092" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1709873023" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1709867092"></script>
+    <script src="/js/jquery-3.3.1.min.js?1709873023"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1709867092"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1709867092"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1709873023"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1709873023"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1709867092"></script>
+<script type="text/javascript" src="/js/search.js?1709873023"></script>
 
     
   </div>
@@ -113,13 +113,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce-aws/1.2-storageservices/" title="Dịch vụ lưu trữ" class="dd-item 
-        parent
-        active
+    <li data-nav-id="/vi/1-introduce-aws/1.1-computeservices/" title="Dịch vụ điện toán" class="dd-item 
+        
+        
         
         ">
-      <a href="/vi/1-introduce-aws/1.2-storageservices/">
-           <b> 1.1 </b> Dịch vụ lưu trữ
+      <a href="/vi/1-introduce-aws/1.1-computeservices/">
+           <b> 1.1 </b> Dịch vụ điện toán
           
             <i class="fas fa-check read-icon"></i>
           
@@ -141,13 +141,41 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce-aws/1.1-computeservices/" title="Dịch vụ điện toán" class="dd-item 
+    <li data-nav-id="/vi/1-introduce-aws/1.3-databaseservice/" title="Giới thiệu" class="dd-item 
         
         
         
         ">
-      <a href="/vi/1-introduce-aws/1.1-computeservices/">
-           <b> 1.1 </b> Dịch vụ điện toán
+      <a href="/vi/1-introduce-aws/1.3-databaseservice/">
+           <b> 1. </b> Giới thiệu
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-introduce-aws/1.2-storageservices/" title="Dịch vụ lưu trữ" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/vi/1-introduce-aws/1.2-storageservices/">
+           <b> 1.2 </b> Dịch vụ lưu trữ
           
             <i class="fas fa-check read-icon"></i>
           
@@ -329,7 +357,7 @@
         <li></li>
         <li><a href="#2-amazon-ebs-elastic-block-store">2. Amazon EBS (Elastic Block Store):</a></li>
         <li><a href="#3-amazon-efs-elastic-file-system">3. Amazon EFS (Elastic File System)</a></li>
-        <li><a href="#4-amazon-fsx-file-storage">4. Amazon FSx (File Storage)</a></li>
+        <li><a href="#4-amazon-fsx-lưu-trữ-tệp">4. Amazon FSx (Lưu trữ tệp)</a></li>
       </ul>
     </li>
   </ul>
@@ -380,96 +408,96 @@ S3 cung cấp các tính năng như lập phiên bản, mã hóa, kiểm soát t
 <p>Tối ưu hóa chi phí(Cost Optimization): Bằng cách tự động di chuyển dữ liệu giữa các tầng truy cập, S3 Phân bậc thông minh giúp tối ưu hóa chi phí lưu trữ. Bạn không cần quản lý thủ công việc di chuyển dữ liệu giữa các tầng, giảm chi phí vận hành.</p>
 </li>
 <li>
-<p>No Retrieval Fees: Unlike some other storage classes in S3, S3 Intelligent-Tiering does not incur retrieval fees when accessing data from the infrequent access tier. This makes it particularly cost-effective for data with unpredictable access patterns.</p>
+<p>Không có phí truy xuất ( No Retrieval Fees): Không giống như một số lớp lưu trữ khác trong S3, Phân bậc thông minh S3 không phát sinh phí truy xuất khi truy cập dữ liệu từ bậc truy cập không thường xuyên. Điều này làm cho nó đặc biệt hiệu quả về mặt chi phí đối với dữ liệu có kiểu truy cập không thể đoán trước..</p>
 </li>
 <li>
-<p>Durability and Availability: S3 Intelligent-Tiering provides the same high durability and availability as other S3 storage classes, ensuring that your data is protected against hardware failures and is accessible when needed.</p>
+<p>Độ bền vững và tính khả dụng(Durability and Availability): S3 Phân bậc thông minh cung cấp độ bền và tính khả dụng cao tương tự như các lớp lưu trữ S3 khác, đảm bảo rằng dữ liệu của bạn được bảo vệ trước các lỗi phần cứng và có thể truy cập được khi cần.</p>
 </li>
 <li>
-<p>Monitoring and Analytics: AWS provides tools for monitoring and analyzing the access patterns of your data stored in S3 Intelligent-Tiering. This allows you to gain insights into your data usage and make informed decisions about storage optimization.</p>
+<p>Giám sát và phân tích(Monitoring and Analytics): AWS cung cấp các công cụ để giám sát và phân tích các mẫu truy cập dữ liệu của bạn được lưu trữ trong Phân bậc thông minh S3. Điều này cho phép bạn hiểu rõ hơn về việc sử dụng dữ liệu của mình và đưa ra quyết định sáng suốt về tối ưu hóa bộ nhớ.</p>
 </li>
 </ul>
 <h4 id="use-s3-in-which-situation">Use S3 in which situation?</h4>
 <ul>
 <li>
-<p>Data Backup and Archiving: S3 provides a reliable and cost-effective solution for storing backups and archives of data. Its high durability ensures that data remains safe over extended periods, making it ideal for long-term storage requirements.</p>
+<p>Sao lưu và lưu trữ dữ liệu: S3 cung cấp giải pháp đáng tin cậy và tiết kiệm chi phí để lưu trữ các bản sao lưu và lưu trữ dữ liệu. Độ bền cao của nó đảm bảo dữ liệu được an toàn trong thời gian dài, khiến nó trở nên lý tưởng cho các yêu cầu lưu trữ lâu dài.</p>
 </li>
 <li>
-<p>Static Website Hosting: S3 can host static websites by storing HTML, CSS, JavaScript, and other web assets. It integrates seamlessly with other AWS services like Amazon Route 53 for DNS routing and Amazon CloudFront for content delivery, enabling fast and scalable website hosting.</p>
+<p>Lưu trữ trang web tĩnh: S3 có thể lưu trữ các trang web tĩnh bằng cách lưu trữ HTML, CSS, JavaScript và các nội dung web khác. Nó tích hợp hoàn hảo với các dịch vụ AWS khác như Amazon Route 53 để định tuyến DNS và Amazon CloudFront để phân phối nội dung, cho phép lưu trữ trang web nhanh chóng và có thể mở rộng quy mô.</p>
 </li>
 <li>
-<p>Content Distribution: S3 combined with Amazon CloudFront allows you to distribute content globally with low latency and high transfer speeds. This is useful for delivering large files, streaming media, or website assets to users worldwide.</p>
+<p>Phân phối nội dung: S3 kết hợp với Amazon CloudFront cho phép bạn phân phối nội dung trên toàn cầu với độ trễ thấp và tốc độ truyền cao. Điều này hữu ích khi phân phối các tệp lớn, phương tiện truyền phát trực tuyến hoặc nội dung trang web cho người dùng trên toàn thế giới.</p>
 </li>
 <li>
-<p>Application Data Storage: Many applications use S3 as a central storage repository for various types of data, such as user-generated content, media files, application logs, and configuration files. S3&rsquo;s scalability and reliability make it suitable for storing large volumes of diverse data types.</p>
+<p>Lưu trữ dữ liệu ứng dụng: Nhiều ứng dụng sử dụng S3 làm kho lưu trữ trung tâm cho nhiều loại dữ liệu khác nhau, chẳng hạn như nội dung do người dùng tạo, tệp phương tiện, nhật ký ứng dụng và tệp cấu hình. Khả năng mở rộng và độ tin cậy của S3 giúp nó phù hợp để lưu trữ khối lượng lớn các loại dữ liệu đa dạng.</p>
 </li>
 <li>
-<p>Big Data Analytics: S3 serves as a data lake for storing vast amounts of structured and unstructured data that can be analyzed using AWS analytics services like Amazon Athena, Amazon Redshift Spectrum, or AWS Glue. Data stored in S3 can be queried directly without the need for data movement.</p>
+<p>Phân tích dữ liệu lớn: S3 đóng vai trò là hồ dữ liệu để lưu trữ lượng lớn dữ liệu có cấu trúc và phi cấu trúc có thể được phân tích bằng các dịch vụ phân tích AWS như Amazon Athena, Amazon Redshift Spectrum hoặc AWS Glue. Dữ liệu được lưu trữ trong S3 có thể được truy vấn trực tiếp mà không cần di chuyển dữ liệu.</p>
 </li>
 <li>
-<p>Disaster Recovery: S3 can be part of a disaster recovery strategy, where critical data backups are stored in S3 buckets across different AWS regions. In the event of a disaster, data can be quickly restored from S3 to maintain business continuity.</p>
+<p>Khôi phục sau thảm họa: S3 có thể là một phần của chiến lược khắc phục thảm họa, trong đó các bản sao lưu dữ liệu quan trọng được lưu trữ trong các nhóm S3 trên các khu vực AWS khác nhau. Trong trường hợp xảy ra thảm họa, dữ liệu có thể được khôi phục nhanh chóng từ S3 để duy trì hoạt động kinh doanh liên tục.</p>
 </li>
 <li>
-<p>Data Warehousing: S3 can act as a staging area for data ingested into data warehouses like Amazon Redshift or Amazon Athena. Data is first loaded into S3 and then processed by the analytics services, allowing for scalable and cost-effective data storage.</p>
+<p>Kho dữ liệu: S3 có thể hoạt động như một khu vực tổ chức cho dữ liệu được đưa vào kho dữ liệu như Amazon Redshift hoặc Amazon Athena. Dữ liệu trước tiên được tải vào S3, sau đó được xử lý bởi các dịch vụ phân tích, cho phép lưu trữ dữ liệu có thể mở rộng và tiết kiệm chi phí.</p>
 </li>
 <li>
-<p>Mobile and IoT Applications: S3 is often used as a storage backend for mobile and IoT applications to store user-generated content, sensor data, and application logs. Its scalability and compatibility with AWS SDKs make it easy to integrate with various application platforms.</p>
+<p>Ứng dụng di động và IoT: S3 thường được sử dụng làm phụ trợ lưu trữ cho các ứng dụng di động và IoT để lưu trữ nội dung, dữ liệu cảm biến và nhật ký ứng dụng do người dùng tạo. Khả năng mở rộng và khả năng tương thích với AWS SDK giúp dễ dàng tích hợp với nhiều nền tảng ứng dụng khác nhau.</p>
 </li>
 </ul>
 <h3 id="2-amazon-ebs-elastic-block-store">2. Amazon EBS (Elastic Block Store):</h3>
-<p>Amazon Elastic Block Store (EBS) is a block-level storage service provided by Amazon Web Services (AWS) that is designed for use with Amazon EC2 (Elastic Compute Cloud) instances.</p>
+<p>Amazon Elastic Block Store (EBS) là dịch vụ lưu trữ cấp khối do Amazon Web Services (AWS) cung cấp, được thiết kế để sử dụng với các phiên bản Amazon EC2 (Elastic Computing Cloud).</p>
 <p><strong>Block-Level Storage:</strong></p>
 <ul>
-<li>Amazon EBS provides block-level storage volumes that are similar to physical hard drives or SSDs, allowing users to create and attach storage volumes to EC2 instances.</li>
-<li>These volumes appear as raw block devices to the EC2 instances and can be formatted and mounted like any other block storage device.</li>
+<li>Amazon EBS cung cấp các ổ lưu trữ cấp khối tương tự như ổ cứng vật lý hoặc SSD, cho phép người dùng tạo và đính kèm các ổ lưu trữ vào phiên bản EC2.</li>
+<li>Các ổ đĩa này xuất hiện dưới dạng thiết bị khối thô đối với phiên bản EC2 và có thể được định dạng và gắn kết giống như bất kỳ thiết bị lưu trữ khối nào khác.</li>
 </ul>
 <p><strong>Persistence and Durability:</strong></p>
 <ul>
-<li>EBS volumes are designed for durability and reliability. Data stored on EBS volumes is replicated within the same Availability Zone to ensure data durability.</li>
-<li>EBS volumes are persistent, meaning that data persists even after the associated EC2 instance is terminated. Users can detach EBS volumes from one EC2 instance and attach them to another without losing data.</li>
+<li>EBS volumes được thiết kế cho độ bền và độ tin cậy. Dữ liệu được lưu trữ trên các ổ đĩa EBS được sao chép trong cùng Vùng sẵn sàng để đảm bảo độ bền của dữ liệu.</li>
+<li>EBS volumes được giữ lâu dài, nghĩa là dữ liệu vẫn tồn tại ngay cả sau khi phiên bản EC2 liên kết bị chấm dứt. Người dùng có thể tách các ổ đĩa EBS khỏi một phiên bản EC2 và gắn chúng vào một phiên bản EC2 khác mà không làm mất dữ liệu.</li>
 </ul>
 <p><strong>High Performance:</strong></p>
 <ul>
-<li>EBS volumes offer high-performance storage options, including SSD-backed volumes (EBS-SSD) and magnetic volumes (EBS-HDD), to meet the performance requirements of different workloads.</li>
-<li>SSD-backed volumes provide low-latency and high IOPS (Input/Output Operations Per Second) for performance-sensitive applications, while magnetic volumes offer cost-effective storage for less demanding workloads.</li>
+<li>EBS volumes cung cấp các tùy chọn lưu trữ hiệu suất cao, bao gồm ổ đĩa hỗ trợ SSD (EBS-SSD) và ổ đĩa từ tính (EBS-HDD), để đáp ứng yêu cầu hiệu suất của các khối lượng công việc khác nhau.</li>
+<li>SSD-backed volumes cung cấp độ trễ thấp và IOPS (Hoạt động đầu vào/đầu ra mỗi giây) cao cho các ứng dụng đòi hỏi hiệu suất cao, trong khi ổ đĩa từ tính cung cấp khả năng lưu trữ tiết kiệm chi phí cho khối lượng công việc ít đòi hỏi hơn.</li>
 </ul>
 <p><strong>Snapshot and Backup:</strong></p>
 <ul>
-<li>EBS volumes support snapshots, which are point-in-time backups of the volume data stored in Amazon S3. Users can create snapshots of EBS volumes manually or automatically using scheduled snapshots.</li>
-<li>Snapshots are incremental, meaning that only the changed blocks since the last snapshot are stored, which helps reduce storage costs and backup times.</li>
+<li>EBS volumes hỗ trợ Snapshot, là bản sao lưu tại thời điểm của dữ liệu ổ đĩa được lưu trữ trong Amazon S3. Người dùng có thể tạo ảnh chụp nhanh của khối EBS theo cách thủ công hoặc tự động bằng cách sử dụng ảnh chụp nhanh theo lịch trình.</li>
+<li>Snapshot tăng dần, nghĩa là chỉ các khối đã thay đổi kể từ ảnh chụp nhanh cuối cùng mới được lưu trữ, giúp giảm chi phí lưu trữ và thời gian sao lưu.</li>
 </ul>
 <p><strong>Encryption and Security:</strong></p>
 <ul>
-<li>EBS volumes support encryption using AWS Key Management Service (KMS), allowing users to encrypt data at rest to meet compliance and security requirements.</li>
-<li>Users can also specify encryption settings when creating new EBS volumes or encrypt existing volumes using snapshots.</li>
+<li>EBS volumes hỗ trợ mã hóa bằng AWS Key Management Service (KMS), cho phép người dùng mã hóa dữ liệu ở trạng thái lưu trữ để đáp ứng các yêu cầu về tuân thủ và bảo mật.</li>
+<li>Người dùng cũng có thể chỉ định cài đặt mã hóa khi tạo khối EBS mới hoặc mã hóa các khối hiện có bằng ảnh chụp nhanh.</li>
 </ul>
 <p><strong>Scalability and Flexibility:</strong></p>
 <ul>
-<li>EBS volumes can be resized dynamically without any downtime, allowing users to scale storage capacity based on changing workload requirements.</li>
-<li>Users can choose from a range of volume types and sizes to meet the performance and capacity needs of their applications.</li>
+<li>EBS volumes có thể được thay đổi kích thước một cách linh hoạt mà không có bất kỳ thời gian ngừng hoạt động nào, cho phép người dùng mở rộng quy mô dung lượng lưu trữ dựa trên việc thay đổi yêu cầu khối lượng công việc.</li>
+<li>Người dùng có thể chọn từ nhiều loại và kích thước ổ đĩa khác nhau để đáp ứng nhu cầu về hiệu suất và dung lượng cho ứng dụng của mình.</li>
 </ul>
 <p><strong>Integration with AWS Services</strong></p>
 <ul>
-<li>EBS volumes can be integrated with other AWS services such as Amazon EC2, Amazon RDS (Relational Database Service), and AWS Lambda to provide storage for various types of applications and workloads.</li>
+<li>EBS volumes có thể được tích hợp với các dịch vụ AWS khác như Amazon EC2, Amazon RDS (Dịch vụ cơ sở dữ liệu quan hệ) và AWS Lambda để cung cấp dung lượng lưu trữ cho nhiều loại ứng dụng và khối lượng công việc khác nhau.</li>
 </ul>
-<h4 id="use-ebs-in-which-situation">Use EBS in which situation?</h4>
+<h4 id="sử-dụng-ebs-trong-trường-hợp-nào">Sử dụng EBS trong trường hợp nào?</h4>
 <ul>
-<li>Amazon Elastic Block Store (EBS) is used in various situations where persistent and scalable block storage is required for applications running on single Amazon EC2 instance</li>
+<li>Amazon Elastic Block Store (EBS) được sử dụng trong nhiều trường hợp cần lưu trữ bền vững và có thể mở rộng cho các ứng dụng chạy trên một phiên bản Amazon EC2 duy nhất</li>
 </ul>
 <h3 id="3-amazon-efs-elastic-file-system">3. Amazon EFS (Elastic File System)</h3>
-<p>Amazon EFS is a scalable and fully managed file storage service designed to provide scalable and shared access to files from multiple EC2 instances.
-It supports NFS (Network File System) protocol and can be seamlessly integrated with existing applications and workflows.</p>
-<p>EFS is suitable for use cases such as content management, media processing, software development, and data analytics that require shared file storage.</p>
-<h4 id="use-efs-in-which-situation">Use EFS in which situation?</h4>
-<p>Amazon EFS is commonly used in situations where multiple EC2 instances need shared access to a common file system. It provides a centralized and scalable storage solution for applications that require shared file storage</p>
-<h3 id="4-amazon-fsx-file-storage">4. Amazon FSx (File Storage)</h3>
-<p>Amazon FSx offers fully managed file storage services optimized for specific use cases, including Amazon FSx for Windows File Server and Amazon FSx for Lustre.
-FSx for Windows File Server provides fully managed, highly available Windows file shares, while FSx for Lustre delivers high-performance file systems for compute-intensive workloads.</p>
-<p>FSx is suitable for applications that require Windows-compatible file storage or high-performance file systems for compute-intensive workloads such as machine learning and simulation.</p>
-<h4 id="use-fsx-in-which-situation">Use FSx in which situation?</h4>
+<p>Amazon EFS là dịch vụ lưu trữ tệp được quản lý hoàn toàn và có thể mở rộng, được thiết kế để cung cấp quyền truy cập chia sẻ và có thể mở rộng vào các tệp từ nhiều phiên bản EC2.
+Nó hỗ trợ giao thức NFS (Hệ thống tệp mạng) và có thể được tích hợp liền mạch với các ứng dụng và quy trình công việc hiện có.</p>
+<p>EFS phù hợp với các trường hợp sử dụng như quản lý nội dung, xử lý phương tiện, phát triển phần mềm và phân tích dữ liệu yêu cầu lưu trữ tệp dùng chung.</p>
+<h4 id="sử-dụng-efs-trong-trường-hợp-nào">Sử dụng EFS trong trường hợp nào?</h4>
+<p>Amazon EFS thường được sử dụng trong các trường hợp nhiều phiên bản EC2 cần quyền truy cập chung vào một hệ thống tệp chung. Nó cung cấp giải pháp lưu trữ tập trung và có thể mở rộng cho các ứng dụng yêu cầu lưu trữ tệp chia sẻ</p>
+<h3 id="4-amazon-fsx-lưu-trữ-tệp">4. Amazon FSx (Lưu trữ tệp)</h3>
+<p>Amazon FSx cung cấp các dịch vụ lưu trữ tệp được quản lý toàn phần, được tối ưu hóa cho các trường hợp sử dụng cụ thể, bao gồm Amazon FSx dành cho Windows File Server và Amazon FSx dành cho Lustre.
+FSx dành cho Máy chủ tệp Windows cung cấp tính năng chia sẻ tệp Windows có tính sẵn sàng cao, được quản lý đầy đủ, trong khi FSx dành cho Lustre cung cấp hệ thống tệp hiệu suất cao cho khối lượng công việc tính toán chuyên sâu.</p>
+<p>FSx phù hợp với các ứng dụng yêu cầu hệ thống tệp hiệu suất cao hoặc lưu trữ tệp tương thích với Windows cho các khối lượng công việc tính toán chuyên sâu như học máy và mô phỏng.</p>
+<h4 id="sử-dụng-fsx-trong-trường-hợp-nào">Sử dụng FSx trong trường hợp nào?</h4>
 <ul>
-<li>Amazon FSx for Windows File Server is used in situations where users need a fully managed Windows-compatible file system with support for SMB (Server Message Block) protocol.</li>
-<li>It provides a scalable and fully managed Windows file system that is accessible from Windows, Linux, and macOS clients, making it suitable for file sharing and collaboration across different platforms.</li>
+<li>Amazon FSx for Windows File Server được sử dụng trong các trường hợp người dùng cần một hệ thống tệp tương thích với Windows được quản lý hoàn toàn có hỗ trợ giao thức SMB (Server Message Block).</li>
+<li>Nó cung cấp một hệ thống tệp Windows được quản lý đầy đủ và có thể mở rộng, có thể truy cập được từ các máy khách Windows, Linux và macOS, giúp nó phù hợp để chia sẻ và cộng tác tệp trên các nền tảng khác nhau.</li>
 </ul>
 
 
@@ -527,6 +555,8 @@ FSx for Windows File Server provides fully managed, highly available Windows fil
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -544,8 +574,22 @@ FSx for Windows File Server provides fully managed, highly available Windows fil
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
+                    
                     
                 
                 
@@ -570,7 +614,7 @@ FSx for Windows File Server provides fully managed, highly available Windows fil
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/1-introduce-aws/" title="Giới thiệu"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/1-introduce-aws/1.3-databaseservice/" title="Giới thiệu"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/vi/1-introduce-aws/1.1-computeservices/" title="Dịch vụ điện toán" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -583,19 +627,19 @@ FSx for Windows File Server provides fully managed, highly available Windows fil
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1709867092"></script>
-    <script src="/js/perfect-scrollbar.min.js?1709867092"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1709867092"></script>
-    <script src="/js/jquery.sticky.js?1709867092"></script>
-    <script src="/js/featherlight.min.js?1709867092"></script>
-    <script src="/js/highlight.pack.js?1709867092"></script>
+    <script src="/js/clipboard.min.js?1709873023"></script>
+    <script src="/js/perfect-scrollbar.min.js?1709873023"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1709873023"></script>
+    <script src="/js/jquery.sticky.js?1709873023"></script>
+    <script src="/js/featherlight.min.js?1709873023"></script>
+    <script src="/js/highlight.pack.js?1709873023"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1709867092"></script>
-    <script src="/js/learn.js?1709867092"></script>
-    <script src="/js/hugo-learn.js?1709867092"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1709873023"></script>
+    <script src="/js/learn.js?1709873023"></script>
+    <script src="/js/hugo-learn.js?1709873023"></script>
 
-    <link href="/mermaid/mermaid.css?1709867092" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1709867092"></script>
+    <link href="/mermaid/mermaid.css?1709873023" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1709873023"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
