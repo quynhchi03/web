@@ -2,100 +2,172 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/1-introduce-aws/1.1-computeservices/</loc>
+    <loc>//localhost:38235/1-introduce-aws/1.1-computeservices/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-introduce-aws/1.1-computeservices/"
+                href="//localhost:38235/vi/1-introduce-aws/1.1-computeservices/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-introduce-aws/1.1-computeservices/"
+                href="//localhost:38235/1-introduce-aws/1.1-computeservices/"
                 />
   </url><url>
-    <loc>/</loc>
+    <loc>//localhost:38235/1-introduce-aws/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/"
+                href="//localhost:38235/vi/1-introduce-aws/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="//localhost:38235/1-introduce-aws/"
                 />
   </url><url>
-    <loc>/1-introduce-aws/</loc>
+    <loc>//localhost:38235/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-introduce-aws/"
+                href="//localhost:38235/vi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-introduce-aws/"
+                href="//localhost:38235/"
                 />
   </url><url>
-    <loc>/1-introduce-aws/1.2-storageservices/</loc>
+    <loc>//localhost:38235/2-hands-on/2.1-build-serverless-application/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-introduce-aws/1.2-storageservices/"
+                href="//localhost:38235/vi/2-hands-on/2.1-build-serverless-application/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-introduce-aws/1.2-storageservices/"
+                href="//localhost:38235/2-hands-on/2.1-build-serverless-application/"
                 />
   </url><url>
-    <loc>/1-introduce-aws/1.3-databaseservice/</loc>
+    <loc>//localhost:38235/2-hands-on/2.1-build-serverless-application/2.1.1.-create-vpc-subnet-route-table/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-introduce-aws/1.3-databaseservice/"
+                href="//localhost:38235/vi/2-hands-on/2.1-build-serverless-application/2.1.1.-create-vpc-subnet-route-table/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-introduce-aws/1.3-databaseservice/"
+                href="//localhost:38235/2-hands-on/2.1-build-serverless-application/2.1.1.-create-vpc-subnet-route-table/"
                 />
   </url><url>
-    <loc>/1-introduce-aws/1.4-networkingservices/</loc>
+    <loc>//localhost:38235/2-hands-on/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-introduce-aws/1.4-networkingservices/"
+                href="//localhost:38235/vi/2-hands-on/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-introduce-aws/1.4-networkingservices/"
+                href="//localhost:38235/2-hands-on/"
                 />
   </url><url>
-    <loc>/categories/</loc>
+    <loc>//localhost:38235/1-introduce-aws/1.2-storageservices/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/categories/"
+                href="//localhost:38235/vi/1-introduce-aws/1.2-storageservices/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/"
+                href="//localhost:38235/1-introduce-aws/1.2-storageservices/"
                 />
   </url><url>
-    <loc>/tags/</loc>
+    <loc>//localhost:38235/2-hands-on/2.1-build-serverless-application/2.1.2.-create-vpc-endpoint/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/tags/"
+                href="//localhost:38235/vi/2-hands-on/2.1-build-serverless-application/2.1.2.-create-vpc-endpoint/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/"
+                href="//localhost:38235/2-hands-on/2.1-build-serverless-application/2.1.2.-create-vpc-endpoint/"
+                />
+  </url><url>
+    <loc>//localhost:38235/1-introduce-aws/1.3-databaseservice/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:38235/vi/1-introduce-aws/1.3-databaseservice/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:38235/1-introduce-aws/1.3-databaseservice/"
+                />
+  </url><url>
+    <loc>//localhost:38235/2-hands-on/2.1-build-serverless-application/2.1.4.-create-lambda-function-and-deploy/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:38235/vi/2-hands-on/2.1-build-serverless-application/2.1.4.-create-lambda-function-and-deploy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:38235/2-hands-on/2.1-build-serverless-application/2.1.4.-create-lambda-function-and-deploy/"
+                />
+  </url><url>
+    <loc>//localhost:38235/2-hands-on/2.1-build-serverless-application/2.1.3.-develop-lambda-function-with-java-language/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:38235/vi/2-hands-on/2.1-build-serverless-application/2.1.3.-develop-lambda-function-with-java-language/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:38235/2-hands-on/2.1-build-serverless-application/2.1.3.-develop-lambda-function-with-java-language/"
+                />
+  </url><url>
+    <loc>//localhost:38235/1-introduce-aws/1.4-networkingservices/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:38235/vi/1-introduce-aws/1.4-networkingservices/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:38235/1-introduce-aws/1.4-networkingservices/"
+                />
+  </url><url>
+    <loc>//localhost:38235/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:38235/vi/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:38235/categories/"
+                />
+  </url><url>
+    <loc>//localhost:38235/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:38235/vi/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:38235/tags/"
                 />
   </url>
 </urlset>

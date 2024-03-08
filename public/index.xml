@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Introduce about Amazon Web Service on Start with Amazon VPC and AWS VPN Site-to-Site.</title>
-    <link>/</link>
-    <description>Recent content in Introduce about Amazon Web Service on Start with Amazon VPC and AWS VPN Site-to-Site.</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <title>Introduce Series 100 Days Cloud on Start with Amazon VPC and AWS VPN Site-to-Site.</title>
+    <link>//localhost:38235/</link>
+    <description>Recent content in Introduce Series 100 Days Cloud on Start with Amazon VPC and AWS VPN Site-to-Site.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <atom:link href="//localhost:38235/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

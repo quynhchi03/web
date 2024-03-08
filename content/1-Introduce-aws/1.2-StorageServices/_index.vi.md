@@ -7,12 +7,15 @@ pre : " <b> 1.2 </b> "
 ---
 
 ## Giới thiệu dịch vụ lưu trữ AWS
+AWS cung cấp một bộ dịch vụ lưu trữ toàn diện được thiết kế để đáp ứng nhu cầu đa dạng của các doanh nghiệp và nhà phát triển, từ lưu trữ đối tượng đơn giản đến lưu trữ khối hiệu suất cao.
+## Nội dung
+### 1. Amazon S3 Storage(Dịch vụ lưu trữ đơn giản):
 Amazon S3 là dịch vụ lưu trữ đối tượng có khả năng mở rộng được thiết kế để lưu trữ và truy xuất mọi lượng dữ liệu từ mọi nơi trên web. Nó có độ bền cao, an toàn và tiết kiệm chi phí.
 S3 cung cấp các tính năng như lập phiên bản, mã hóa, kiểm soát truy cập và quản lý vòng đời để quản lý dữ liệu một cách hiệu quả.
 
 Nó thường được sử dụng cho nhiều trường hợp sử dụng, bao gồm sao lưu và khôi phục, lưu trữ dữ liệu, phân phối nội dung và lưu trữ các trang web tĩnh.
 
-![S3](../../images/1/1.2-StorageService/s3.png)
+![S3](/images/1/s3.png?featherlight=false&width=50pc)
 #### Lớp lưu trữ đối tượng(Object Storage Classes):
 
 **Amazon S3 Standard (S3 Standard):** S3 Standard cung cấp khả năng lưu trữ đối tượng có độ bền cao, tính khả dụng và hiệu suất cao cho dữ liệu được truy cập thường xuyên. Vì mang lại độ trễ thấp và thông lượng cao nên S3 Standard phù hợp với nhiều trường hợp sử dụng khác nhau, bao gồm ứng dụng đám mây, trang web động, phân phối nội dung, ứng dụng di động và trò chơi cũng như phân tích dữ liệu lớn. 
@@ -36,7 +39,7 @@ Cách thức hoạt động của Phân bậc thông minh S3 (S3 Intelligent-Tie
 
 + Giám sát và phân tích(Monitoring and Analytics): AWS cung cấp các công cụ để giám sát và phân tích các mẫu truy cập dữ liệu của bạn được lưu trữ trong Phân bậc thông minh S3. Điều này cho phép bạn hiểu rõ hơn về việc sử dụng dữ liệu của mình và đưa ra quyết định sáng suốt về tối ưu hóa bộ nhớ.
 
-####  Use S3 in which situation?
+####  Sử dụng S3 trong tình huống nào?
 + Sao lưu và lưu trữ dữ liệu: S3 cung cấp giải pháp đáng tin cậy và tiết kiệm chi phí để lưu trữ các bản sao lưu và lưu trữ dữ liệu. Độ bền cao của nó đảm bảo dữ liệu được an toàn trong thời gian dài, khiến nó trở nên lý tưởng cho các yêu cầu lưu trữ lâu dài.
 
 + Lưu trữ trang web tĩnh: S3 có thể lưu trữ các trang web tĩnh bằng cách lưu trữ HTML, CSS, JavaScript và các nội dung web khác. Nó tích hợp hoàn hảo với các dịch vụ AWS khác như Amazon Route 53 để định tuyến DNS và Amazon CloudFront để phân phối nội dung, cho phép lưu trữ trang web nhanh chóng và có thể mở rộng quy mô.

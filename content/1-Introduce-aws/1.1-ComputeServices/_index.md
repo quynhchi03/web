@@ -15,7 +15,8 @@ Compute services offered by AWS provide scalable computing power for various wor
 Amazon EC2 is a web service that provides resizable compute capacity in the cloud. It allows users to quickly scale up or down based on demand, paying only for the resources they use.
 Users can choose from a variety of instance types optimized for different workloads, such as general-purpose, compute-optimized, memory-optimized, and storage-optimized instances.
 EC2 instances can be used for a wide range of applications including web hosting, application development, data processing, and machine learning.
-![Ec2](../../images/1/1.1-ComputeServices/ec2.png)
+
+![EC2](/images/1/ec2.png?featherlight=false&width=50pc)
 **EC2 General-Purpose Instance Types** \
 Here are several general-purpose examples from which we can pick:
 
@@ -34,7 +35,7 @@ A popular option for many businesses, AWS EC2 general-purpose instances offer a 
 
 ### 2. AWS Lambda:
 AWS Lambda is a serverless computing service provided by Amazon Web Services (AWS) that enables users to run code without provisioning or managing servers. It allows developers to focus on writing code for their applications without worrying about the underlying infrastructure. Here's a detailed overview of AWS Lambda:
-![Lambda](../../images/1/1.1-ComputeServices/lambda.png)
+![Lambda](../../images/1/lambda.png?featherlight=false&width=50pc)
 #### Serverless Computing:
 
 With Lambda, users can upload their code and AWS takes care of provisioning, scaling, and managing the infrastructure needed to run that code.

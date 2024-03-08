@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38235&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.123.8">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Develop Lambda Function with Java Language :: Start with Amazon VPC and AWS VPN Site-to-Site.</title>
+
+    
+    <link href="/css/nucleus.css?1709924572" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1709924572" rel="stylesheet">
+    <link href="/css/hybrid.css?1709924572" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1709924572" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1709924572" rel="stylesheet">
+    <link href="/css/auto-complete.css?1709924572" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1709924572" rel="stylesheet">
+    <link href="/css/theme.css?1709924572" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1709924572" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1709924572" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1709924572"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/2-hands-on/2.1-build-serverless-application/2.1.3.-develop-lambda-function-with-java-language/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1709924572"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1709924572"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/localhost:38235\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1709924572"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce-aws/" title="Introduce AWS" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce-aws/">
+           <b> 1. </b> Introduce AWS
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce-aws/1.1-computeservices/" title="Compute Services" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce-aws/1.1-computeservices/">
+           <b> 1.1 </b> Compute Services
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce-aws/1.2-storageservices/" title="Storage Services" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce-aws/1.2-storageservices/">
+           <b> 1.2 </b> Storage Services
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce-aws/1.3-databaseservice/" title="Database Service" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce-aws/1.3-databaseservice/">
+           <b> 1.3 </b> Database Service
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce-aws/1.4-networkingservices/" title="Networking Service" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce-aws/1.4-networkingservices/">
+           <b> 1.4 </b> Networking Service
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-hands-on/" title="Hands-on Lab" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/2-hands-on/">
+           <b> 2 </b> Hands-on Lab
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-hands-on/2.1-build-serverless-application/" title="Build Serverless Application" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/2-hands-on/2.1-build-serverless-application/">
+           <b> 2.1 </b> Build Serverless Application
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-hands-on/2.1-build-serverless-application/2.1.1.-create-vpc-subnet-route-table/" title="Create VPC, Subnet, Route Table" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-hands-on/2.1-build-serverless-application/2.1.1.-create-vpc-subnet-route-table/">
+           <b> 2.1.1 </b> Create VPC, Subnet, Route Table
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-hands-on/2.1-build-serverless-application/2.1.2.-create-vpc-endpoint/" title="Create VPC endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-hands-on/2.1-build-serverless-application/2.1.2.-create-vpc-endpoint/">
+           <b> 2.1.2 </b> Create VPC endpoint
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-hands-on/2.1-build-serverless-application/2.1.3.-develop-lambda-function-with-java-language/" title="Develop Lambda Function with Java Language" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/2-hands-on/2.1-build-serverless-application/2.1.3.-develop-lambda-function-with-java-language/">
+           <b> 2.1.3 </b> Develop Lambda Function with Java Language
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-hands-on/2.1-build-serverless-application/2.1.4.-create-lambda-function-and-deploy/" title="Create Lambda function and deploy" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-hands-on/2.1-build-serverless-application/2.1.4.-create-lambda-function-and-deploy/">
+           <b> 2.1.2 </b> Create Lambda function and deploy
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-hands-on/2.1-build-serverless-application/2.1.5.-create-dynamodb/" title="Create DynamoDB" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-hands-on/2.1-build-serverless-application/2.1.5.-create-dynamodb/">
+           <b> 2.1.5 </b> Create DynamoDB
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-hands-on/2.1-build-serverless-application/2.1.6.-create-api-gateway/" title="Create API Gateway" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-hands-on/2.1-build-serverless-application/2.1.6.-create-api-gateway/">
+           <b> 2.1.6 </b> Create API Gateway
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://aws.amazon.com/blogs"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="//localhost:38235/2-hands-on/2.1-build-serverless-application/2.1.3.-develop-lambda-function-with-java-language/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="//localhost:38235/vi/2-hands-on/2.1-build-serverless-application/2.1.3.-develop-lambda-function-with-java-language/">Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>26-11-2023</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+            <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Introduce Series 100 Days Cloud</a> > <a href='/2-hands-on/'>Hands-on Lab</a> > <a href='/2-hands-on/2.1-build-serverless-application/'>Build Serverless Application</a> > Develop Lambda Function with Java Language
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Develop Lambda Function with Java Language
+            </h1>
+          
+
+        
+
+
+
+	<h4 id="project-structure">Project Structure</h4>
+<pre><code>    ├── note-app-serverless
+    │   ├── aws-resource
+    │   │   ├── api-gw
+    │   │   │   ├── api-config.json
+    │   │   │   ├── api-output.json
+    │   │   │   ├── api-resouce-out-put.json
+    │   │   │   ├── instructions.md
+    │   │   │   ├── Note Resources APP API-dev-oas30 (1).json
+    │   │   │   └── Note Resources APP API-dev-oas30-postman (1).json
+    │   │   ├── code-deploy
+    │   │   │   └── pipeline.yaml
+    │   │   └── lambda
+    │   │       ├── LambdaAddDataFunction.yaml
+    │   │       ├── LambdaDeleteNote.yaml
+    │   │       └── LambdaFetchDataFunction.yaml
+    │   └── aws-serverless-note-app
+    │       ├── mvnw
+    │       ├── mvnw.cmd
+    │       ├── pom.xml
+    │       ├── res.txt
+    │       ├── src
+    │       │   ├── main
+    │       │   │   ├── java
+    │       │   │   │   └── org
+    │       │   │   │       └── example
+    │       │   │   │           └── awsserverlessnoteapp
+    │       │   │   │               ├── ApplicationMain.java
+    │       │   │   │               ├── enviromentVariable.sh
+    │       │   │   │               ├── LambdaAddDataFunction.java
+    │       │   │   │               ├── LambdaDeleteDataFunction.java
+    │       │   │   │               ├── LambdaFetchDataFunction.java
+    │       │   │   │               └── LambdaUpdateDataFunction.java
+    │       │   │   └── resources
+    │       │   │       └── application.properties
+    │       │   └── test
+    │       │       └── java
+    │       │           └── org
+    │       │               └── example
+    │       │                   └── awsserverlessnoteapp
+    │       │                       └── AwsServerlessNoteAppApplicationTests.java
+    │       └── target
+    │           ├── aws-serverless-note-app-0.0.1-SNAPSHOT.jar
+    │           ├── classes
+    │           │   ├── application.properties
+    │           │   └── org
+    │           │       └── example
+    │           │           └── awsserverlessnoteapp
+    │           │               ├── ApplicationMain.class
+    │           │               ├── LambdaAddDataFunction.class
+    │           │               ├── LambdaDeleteDataFunction.class
+    │           │               ├── LambdaFetchDataFunction.class
+    │           │               └── LambdaUpdateDataFunction.class
+    │           ├── generated-sources
+    │           │   └── annotations
+    │           ├── generated-test-sources
+    │           │   └── test-annotations
+    │           ├── maven-archiver
+    │           │   └── pom.properties
+    │           ├── maven-status
+    │           │   └── maven-compiler-plugin
+    │           │       ├── compile
+    │           │       │   └── default-compile
+    │           │       │       ├── createdFiles.lst
+    │           │       │       └── inputFiles.lst
+    │           │       └── testCompile
+    │           │           └── default-testCompile
+    │           │               ├── createdFiles.lst
+    │           │               └── inputFiles.lst
+    │           ├── original-aws-serverless-note-app-0.0.1-SNAPSHOT.jar
+    │           └── test-classes
+    └── README.md
+</code></pre>
+<p>Refer My Gihub Repository and Let’s inspect the source code to understand how to create Lambda functions with Java.</p>
+<p><strong>Git Url: <a href="https://github.com/daotq2000/aws-handson">https://github.com/daotq2000/aws-handson</a></strong></p>
+<p>Here’s a breakdown of the relevant directories and files:</p>
+<p><strong>note-app-serverless:</strong></p>
+<ul>
+<li>This appears to be the root directory of your project.Inside this directory, there are two main subdirectories: aws-resource and aws-serverless-note-app.</li>
+</ul>
+<p><strong>aws-resource:</strong></p>
+<ul>
+<li>This directory contains resources related to your AWS infrastructure setup. Inside aws-resource, there are subdirectories like api-gw, code-deploy, and lambda.api-gw likely contains configurations and definitions related to API Gateway.code-deploy appears to contain a pipeline definition file for AWS CodeDeploy.lambda likely contains configurations or definitions for your Lambda functions.</li>
+</ul>
+<p><strong>aws-serverless-note-app:</strong></p>
+<ul>
+<li>This directory seems to contain the source code for your serverless note-taking app.Inside aws-serverless-note-app, there are directories like src and target, typical of a Maven project structure.The src directory contains your Java source code organized into main and test directories.</li>
+</ul>
+<p>The main directory contains the application’s main Java code, including classes like ApplicationMain.java, LambdaAddDataFunction.java, LambdaDeleteDataFunction.java, etc. The resources directory likely contains application configuration files, such as application.properties.</p>
+<h4 id="hands-on">Hands-on</h4>
+<p>Let start with <strong>pom.xml</strong>
+We needs 2 dependencies to develop core for lambda with Java Spring Boot Project <strong>Pom.xml</strong></p>
+<pre><code>&lt;dependency&gt;
+       &lt;groupId&gt;com.amazonaws&lt;/groupId&gt;
+       &lt;artifactId&gt;aws-java-sdk-dynamodb&lt;/artifactId&gt;
+       &lt;version&gt;1.12.670&lt;/version&gt;
+&lt;/dependency&gt;
+   &lt;!-- https://mvnrepository.com/artifact/com.amazonaws/aws-lambda-java-core --&gt;
+&lt;dependency&gt;
+       &lt;groupId&gt;com.amazonaws&lt;/groupId&gt;
+       &lt;artifactId&gt;aws-lambda-java-core&lt;/artifactId&gt;
+       &lt;version&gt;1.2.3&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>Next, we have to add plugin compile lambda function to <strong>Pom.xml</strong> file</p>
+<pre><code>&lt;plugins&gt;
+&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;
+    &lt;version&gt;3.5.2&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;createDependencyReducedPom&gt;false&lt;/createDependencyReducedPom&gt;
+    &lt;/configuration&gt;
+    &lt;executions&gt;
+        &lt;execution&gt;
+        &lt;phase&gt;package&lt;/phase&gt;
+        &lt;goals&gt;
+            &lt;goal&gt;shade&lt;/goal&gt;
+        &lt;/goals&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+    &lt;/plugin&gt;
+&lt;/plugins&gt;
+</code></pre>
+<p>Here is full version file  <strong><a href="https://github.com/daotq2000/aws-handson/blob/main/note-app-serverless/aws-serverless-note-app/pom.xml">https://github.com/daotq2000/aws-handson/blob/main/note-app-serverless/aws-serverless-note-app/pom.xml</a></strong></p>
+<p><strong>Note:</strong> We need create 3 function: Add,Update Data and Fetch data and delete data. We must writing code under forder: note-app-serverless/aws-serverless-note-app/src/main/java/org/example/awsserverlessnoteapp</p>
+<h5 id="first-let-create-function-lambdaadddatafunction-on-file-lambdaadddatafunctionjava">First, let create Function <strong>LambdaAddDataFunction</strong> on file <strong>LambdaAddDataFunction.java</strong></h5>
+<p>Path: note-app-serverless/aws-serverless-note-app/src/main/java/org/example/awsserverlessnoteapp/LambdaAddDataFunction.java</p>
+<pre><code>package org.example.awsserverlessnoteapp;
+
+
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.amazonaws.services.dynamodbv2.model.PutItemRequest;
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+
+public class LambdaAddDataFunction implements RequestHandler&lt;Map&lt;String,String&gt;,String&gt; {
+private static final String TABLE_NAME = System.getenv(&quot;AWS_DYNAMO_TABLE_NAME_VALUE&quot;);
+private AmazonDynamoDBClient ddb;
+
+
+public LambdaAddDataFunction() {
+    ddb = (AmazonDynamoDBClient) AmazonDynamoDBClient.builder().withRegion(System.getenv(&quot;AWS_REGION_VALUE&quot;)).build();
+}
+@Override
+public String handleRequest(Map&lt;String, String&gt; itemValues, Context context) {
+    Map&lt;String, AttributeValue&gt; item = new HashMap&lt;&gt;();
+    itemValues.forEach((k, v) -&gt; item.put(k, new AttributeValue().withS(v.toString())));
+    PutItemRequest request = new PutItemRequest();
+    request.setTableName(TABLE_NAME);
+    request.setItem(item);
+    ddb.putItem(request);
+    return item.toString();
+}
+}
+</code></pre>
+<p><strong>Explain:</strong> Because of Information of DynamoDB Table, Regions can change on Run Time, so we need expose it to environment by using <strong>System.getenv(“AWS_REGION_VALUE”)</strong> and <strong>System.getenv(“AWS_DYNAMO_TABLE_NAME_VALUE”)</strong> to get environment variables at runtime.</p>
+<pre><code>private static final String TABLE_NAME = System.getenv(&quot;AWS_DYNAMO_TABLE_NAME_VALUE&quot;);
+public LambdaAddDataFunction() {
+    ddb = (AmazonDynamoDBClient) AmazonDynamoDBClient.builder().withRegion(System.getenv(&quot;AWS_REGION_VALUE&quot;)).build();
+}
+</code></pre>
+<h5 id="second-let-create-function-lambdadeletedatafunction-on-file-lambdadeletedatafunctionjava">Second, let create Function <strong>LambdaDeleteDataFunction</strong> on file <strong>LambdaDeleteDataFunction.java</strong></h5>
+<p>Path: note-app-serverless/aws-serverless-note-app/src/main/java/org/example/awsserverlessnoteapp/LambdaDeleteDataFunction.java</p>
+<pre><code>package org.example.awsserverlessnoteapp;
+
+
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.amazonaws.services.dynamodbv2.model.DeleteItemRequest;
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+
+public class LambdaDeleteDataFunction implements RequestHandler&lt;Map&lt;String,String&gt;,String&gt; {
+private static final String TABLE_NAME = System.getenv(&quot;AWS_DYNAMO_TABLE_NAME_VALUE&quot;);
+private AmazonDynamoDBClient ddb;
+
+
+public LambdaDeleteDataFunction() {
+    ddb = (AmazonDynamoDBClient) AmazonDynamoDBClient.builder().withRegion(System.getenv(&quot;AWS_REGION_VALUE&quot;)).build();
+}
+@Override
+public String handleRequest(Map&lt;String, String&gt; itemValues, Context context) {
+    Map&lt;String, AttributeValue&gt; key = new HashMap&lt;&gt;();
+    key.put(&quot;id&quot;, new AttributeValue().withS(itemValues.get(&quot;id&quot;)));
+    DeleteItemRequest request = new DeleteItemRequest()
+            .withTableName(TABLE_NAME)
+            .withKey(key);
+    ddb.deleteItem(request);
+    return &quot;Delete successfully&quot;;
+}
+}
+</code></pre>
+<h5 id="second-let-create-function-lambdafetchdatafunction-on-file-lambdafetchdatafunctionjava">Second, let create Function <strong>LambdaFetchDataFunction</strong> on file <strong>LambdaFetchDataFunction.java</strong></h5>
+<p>Path: note-app-serverless/aws-serverless-note-app/src/main/java/org/example/awsserverlessnoteapp/LambdaFetchDataFunction.java</p>
+<pre><code>package org.example.awsserverlessnoteapp;
+
+
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+import com.amazonaws.services.dynamodbv2.model.*;
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
+
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
+public class LambdaFetchDataFunction implements RequestHandler&lt;Map&lt;String,String&gt;, List&lt;Map&lt;String, String&gt;&gt;&gt; {
+private static final String TABLE_NAME = System.getenv(&quot;AWS_DYNAMO_TABLE_NAME_VALUE&quot;);
+private AmazonDynamoDBClient ddb;
+
+
+public LambdaFetchDataFunction() {
+    ddb = (AmazonDynamoDBClient) AmazonDynamoDBClient.builder().withRegion(System.getenv(&quot;AWS_REGION_VALUE&quot;)).build();
+}
+@Override
+public List&lt;Map&lt;String,String&gt;&gt; handleRequest(Map&lt;String, String&gt; itemValues, Context context) {
+    ScanRequest request = new ScanRequest()
+            .withTableName(TABLE_NAME);
+
+
+    ScanResult response = ddb.scan(request);
+
+
+    List&lt;Map&lt;String, String&gt;&gt; result = new ArrayList&lt;&gt;();
+    for (Map&lt;String, AttributeValue&gt; item : response.getItems()) {
+        Map&lt;String, String&gt; newItem = new HashMap&lt;&gt;();
+        for (Map.Entry&lt;String, AttributeValue&gt; entry : item.entrySet()) {
+            newItem.put(entry.getKey(), entry.getValue().getS());
+        }
+        result.add(newItem);
+    }
+    return result;
+}
+}
+</code></pre>
+<p>After done, we can build project with <strong>Maven</strong> command</p>
+<pre><code>cd note-app-serverless/aws-serverless-note-app &amp;&amp; mvn clean package
+</code></pre>
+<p>If you don&rsquo;t have <strong>Maven</strong>,</p>
+<ul>
+<li>you can download at Home Page <a href="https://maven.apache.org/install.html">https://maven.apache.org/install.html</a></li>
+<li>Install maven with ubuntu: <strong>sudo apt install maven</strong></li>
+</ul>
+<p>If you received response below, you are successfully compile these function</p>
+<pre><code>    INFO] Replacing original artifact with shaded artifact.
+    [INFO] Replacing /home/ubuntu-server/Documents/git/github/aws-handson/note-app-serverless/aws-serverless-note-app/target/aws-serverless-note-app-0.0.1-SNAPSHOT.jar with /home/ubuntu-server/Documents/git/github/aws-handson/note-app-serverless/aws-serverless-note-app/target/aws-serverless-note-app-0.0.1-SNAPSHOT-shaded.jar
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time:  4.656 s
+    [INFO] Finished at: 2024-03-05T00:46:40+07:00
+    [INFO] ------------------------------------------------------------------------</code></pre>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/2-hands-on/2.1-build-serverless-application/2.1.2.-create-vpc-endpoint/" title="Create VPC endpoint"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/2-hands-on/2.1-build-serverless-application/2.1.4.-create-lambda-function-and-deploy/" title="Create Lambda function and deploy" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1709924572"></script>
+    <script src="/js/perfect-scrollbar.min.js?1709924572"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1709924572"></script>
+    <script src="/js/jquery.sticky.js?1709924572"></script>
+    <script src="/js/featherlight.min.js?1709924572"></script>
+    <script src="/js/highlight.pack.js?1709924572"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1709924572"></script>
+    <script src="/js/learn.js?1709924572"></script>
+    <script src="/js/hugo-learn.js?1709924572"></script>
+
+    <link href="/mermaid/mermaid.css?1709924572" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1709924572"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
