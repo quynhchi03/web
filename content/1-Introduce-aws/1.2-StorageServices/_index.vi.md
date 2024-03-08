@@ -1,9 +1,9 @@
 ---
 title : "Dịch vụ lưu trữ"
 date :  "`r Sys.Date()`" 
-weight : 1
+weight : 2
 chapter : false
-pre : " <b> 1.1 </b> "
+pre : " <b> 1.2 </b> "
 ---
 
 ## Giới thiệu dịch vụ lưu trữ AWS
@@ -30,76 +30,76 @@ Cách thức hoạt động của Phân bậc thông minh S3 (S3 Intelligent-Tie
 
 + Tối ưu hóa chi phí(Cost Optimization): Bằng cách tự động di chuyển dữ liệu giữa các tầng truy cập, S3 Phân bậc thông minh giúp tối ưu hóa chi phí lưu trữ. Bạn không cần quản lý thủ công việc di chuyển dữ liệu giữa các tầng, giảm chi phí vận hành.
 
-+ No Retrieval Fees: Unlike some other storage classes in S3, S3 Intelligent-Tiering does not incur retrieval fees when accessing data from the infrequent access tier. This makes it particularly cost-effective for data with unpredictable access patterns.
++ Không có phí truy xuất ( No Retrieval Fees): Không giống như một số lớp lưu trữ khác trong S3, Phân bậc thông minh S3 không phát sinh phí truy xuất khi truy cập dữ liệu từ bậc truy cập không thường xuyên. Điều này làm cho nó đặc biệt hiệu quả về mặt chi phí đối với dữ liệu có kiểu truy cập không thể đoán trước..
 
-+ Durability and Availability: S3 Intelligent-Tiering provides the same high durability and availability as other S3 storage classes, ensuring that your data is protected against hardware failures and is accessible when needed.
++ Độ bền vững và tính khả dụng(Durability and Availability): S3 Phân bậc thông minh cung cấp độ bền và tính khả dụng cao tương tự như các lớp lưu trữ S3 khác, đảm bảo rằng dữ liệu của bạn được bảo vệ trước các lỗi phần cứng và có thể truy cập được khi cần.
 
-+ Monitoring and Analytics: AWS provides tools for monitoring and analyzing the access patterns of your data stored in S3 Intelligent-Tiering. This allows you to gain insights into your data usage and make informed decisions about storage optimization.
++ Giám sát và phân tích(Monitoring and Analytics): AWS cung cấp các công cụ để giám sát và phân tích các mẫu truy cập dữ liệu của bạn được lưu trữ trong Phân bậc thông minh S3. Điều này cho phép bạn hiểu rõ hơn về việc sử dụng dữ liệu của mình và đưa ra quyết định sáng suốt về tối ưu hóa bộ nhớ.
 
-#### Use S3 in which situation?
-+ Data Backup and Archiving: S3 provides a reliable and cost-effective solution for storing backups and archives of data. Its high durability ensures that data remains safe over extended periods, making it ideal for long-term storage requirements.
+####  Use S3 in which situation?
++ Sao lưu và lưu trữ dữ liệu: S3 cung cấp giải pháp đáng tin cậy và tiết kiệm chi phí để lưu trữ các bản sao lưu và lưu trữ dữ liệu. Độ bền cao của nó đảm bảo dữ liệu được an toàn trong thời gian dài, khiến nó trở nên lý tưởng cho các yêu cầu lưu trữ lâu dài.
 
-+ Static Website Hosting: S3 can host static websites by storing HTML, CSS, JavaScript, and other web assets. It integrates seamlessly with other AWS services like Amazon Route 53 for DNS routing and Amazon CloudFront for content delivery, enabling fast and scalable website hosting.
++ Lưu trữ trang web tĩnh: S3 có thể lưu trữ các trang web tĩnh bằng cách lưu trữ HTML, CSS, JavaScript và các nội dung web khác. Nó tích hợp hoàn hảo với các dịch vụ AWS khác như Amazon Route 53 để định tuyến DNS và Amazon CloudFront để phân phối nội dung, cho phép lưu trữ trang web nhanh chóng và có thể mở rộng quy mô.
 
-+ Content Distribution: S3 combined with Amazon CloudFront allows you to distribute content globally with low latency and high transfer speeds. This is useful for delivering large files, streaming media, or website assets to users worldwide.
++ Phân phối nội dung: S3 kết hợp với Amazon CloudFront cho phép bạn phân phối nội dung trên toàn cầu với độ trễ thấp và tốc độ truyền cao. Điều này hữu ích khi phân phối các tệp lớn, phương tiện truyền phát trực tuyến hoặc nội dung trang web cho người dùng trên toàn thế giới.
 
-+ Application Data Storage: Many applications use S3 as a central storage repository for various types of data, such as user-generated content, media files, application logs, and configuration files. S3's scalability and reliability make it suitable for storing large volumes of diverse data types.
++ Lưu trữ dữ liệu ứng dụng: Nhiều ứng dụng sử dụng S3 làm kho lưu trữ trung tâm cho nhiều loại dữ liệu khác nhau, chẳng hạn như nội dung do người dùng tạo, tệp phương tiện, nhật ký ứng dụng và tệp cấu hình. Khả năng mở rộng và độ tin cậy của S3 giúp nó phù hợp để lưu trữ khối lượng lớn các loại dữ liệu đa dạng.
 
-+ Big Data Analytics: S3 serves as a data lake for storing vast amounts of structured and unstructured data that can be analyzed using AWS analytics services like Amazon Athena, Amazon Redshift Spectrum, or AWS Glue. Data stored in S3 can be queried directly without the need for data movement.
++ Phân tích dữ liệu lớn: S3 đóng vai trò là hồ dữ liệu để lưu trữ lượng lớn dữ liệu có cấu trúc và phi cấu trúc có thể được phân tích bằng các dịch vụ phân tích AWS như Amazon Athena, Amazon Redshift Spectrum hoặc AWS Glue. Dữ liệu được lưu trữ trong S3 có thể được truy vấn trực tiếp mà không cần di chuyển dữ liệu.
 
-+ Disaster Recovery: S3 can be part of a disaster recovery strategy, where critical data backups are stored in S3 buckets across different AWS regions. In the event of a disaster, data can be quickly restored from S3 to maintain business continuity.
++ Khôi phục sau thảm họa: S3 có thể là một phần của chiến lược khắc phục thảm họa, trong đó các bản sao lưu dữ liệu quan trọng được lưu trữ trong các nhóm S3 trên các khu vực AWS khác nhau. Trong trường hợp xảy ra thảm họa, dữ liệu có thể được khôi phục nhanh chóng từ S3 để duy trì hoạt động kinh doanh liên tục.
 
-+ Data Warehousing: S3 can act as a staging area for data ingested into data warehouses like Amazon Redshift or Amazon Athena. Data is first loaded into S3 and then processed by the analytics services, allowing for scalable and cost-effective data storage.
++ Kho dữ liệu: S3 có thể hoạt động như một khu vực tổ chức cho dữ liệu được đưa vào kho dữ liệu như Amazon Redshift hoặc Amazon Athena. Dữ liệu trước tiên được tải vào S3, sau đó được xử lý bởi các dịch vụ phân tích, cho phép lưu trữ dữ liệu có thể mở rộng và tiết kiệm chi phí.
 
-+ Mobile and IoT Applications: S3 is often used as a storage backend for mobile and IoT applications to store user-generated content, sensor data, and application logs. Its scalability and compatibility with AWS SDKs make it easy to integrate with various application platforms.
++ Ứng dụng di động và IoT: S3 thường được sử dụng làm phụ trợ lưu trữ cho các ứng dụng di động và IoT để lưu trữ nội dung, dữ liệu cảm biến và nhật ký ứng dụng do người dùng tạo. Khả năng mở rộng và khả năng tương thích với AWS SDK giúp dễ dàng tích hợp với nhiều nền tảng ứng dụng khác nhau.
 
 ### 2. Amazon EBS (Elastic Block Store):
-Amazon Elastic Block Store (EBS) is a block-level storage service provided by Amazon Web Services (AWS) that is designed for use with Amazon EC2 (Elastic Compute Cloud) instances. 
+Amazon Elastic Block Store (EBS) là dịch vụ lưu trữ cấp khối do Amazon Web Services (AWS) cung cấp, được thiết kế để sử dụng với các phiên bản Amazon EC2 (Elastic Computing Cloud). 
 
 **Block-Level Storage:**
-+ Amazon EBS provides block-level storage volumes that are similar to physical hard drives or SSDs, allowing users to create and attach storage volumes to EC2 instances.
-+ These volumes appear as raw block devices to the EC2 instances and can be formatted and mounted like any other block storage device.
++ Amazon EBS cung cấp các ổ lưu trữ cấp khối tương tự như ổ cứng vật lý hoặc SSD, cho phép người dùng tạo và đính kèm các ổ lưu trữ vào phiên bản EC2.
++ Các ổ đĩa này xuất hiện dưới dạng thiết bị khối thô đối với phiên bản EC2 và có thể được định dạng và gắn kết giống như bất kỳ thiết bị lưu trữ khối nào khác.
 
 **Persistence and Durability:**
-+ EBS volumes are designed for durability and reliability. Data stored on EBS volumes is replicated within the same Availability Zone to ensure data durability.
-+ EBS volumes are persistent, meaning that data persists even after the associated EC2 instance is terminated. Users can detach EBS volumes from one EC2 instance and attach them to another without losing data.
++ EBS volumes được thiết kế cho độ bền và độ tin cậy. Dữ liệu được lưu trữ trên các ổ đĩa EBS được sao chép trong cùng Vùng sẵn sàng để đảm bảo độ bền của dữ liệu.
++ EBS volumes được giữ lâu dài, nghĩa là dữ liệu vẫn tồn tại ngay cả sau khi phiên bản EC2 liên kết bị chấm dứt. Người dùng có thể tách các ổ đĩa EBS khỏi một phiên bản EC2 và gắn chúng vào một phiên bản EC2 khác mà không làm mất dữ liệu.
 
 **High Performance:**
-+ EBS volumes offer high-performance storage options, including SSD-backed volumes (EBS-SSD) and magnetic volumes (EBS-HDD), to meet the performance requirements of different workloads.
-+ SSD-backed volumes provide low-latency and high IOPS (Input/Output Operations Per Second) for performance-sensitive applications, while magnetic volumes offer cost-effective storage for less demanding workloads.
++ EBS volumes cung cấp các tùy chọn lưu trữ hiệu suất cao, bao gồm ổ đĩa hỗ trợ SSD (EBS-SSD) và ổ đĩa từ tính (EBS-HDD), để đáp ứng yêu cầu hiệu suất của các khối lượng công việc khác nhau.
++ SSD-backed volumes cung cấp độ trễ thấp và IOPS (Hoạt động đầu vào/đầu ra mỗi giây) cao cho các ứng dụng đòi hỏi hiệu suất cao, trong khi ổ đĩa từ tính cung cấp khả năng lưu trữ tiết kiệm chi phí cho khối lượng công việc ít đòi hỏi hơn.
 
 **Snapshot and Backup:**
-+ EBS volumes support snapshots, which are point-in-time backups of the volume data stored in Amazon S3. Users can create snapshots of EBS volumes manually or automatically using scheduled snapshots.
-+ Snapshots are incremental, meaning that only the changed blocks since the last snapshot are stored, which helps reduce storage costs and backup times.
++ EBS volumes hỗ trợ Snapshot, là bản sao lưu tại thời điểm của dữ liệu ổ đĩa được lưu trữ trong Amazon S3. Người dùng có thể tạo ảnh chụp nhanh của khối EBS theo cách thủ công hoặc tự động bằng cách sử dụng ảnh chụp nhanh theo lịch trình.
++ Snapshot tăng dần, nghĩa là chỉ các khối đã thay đổi kể từ ảnh chụp nhanh cuối cùng mới được lưu trữ, giúp giảm chi phí lưu trữ và thời gian sao lưu.
 
 **Encryption and Security:**
-+ EBS volumes support encryption using AWS Key Management Service (KMS), allowing users to encrypt data at rest to meet compliance and security requirements.
-+ Users can also specify encryption settings when creating new EBS volumes or encrypt existing volumes using snapshots.
++ EBS volumes hỗ trợ mã hóa bằng AWS Key Management Service (KMS), cho phép người dùng mã hóa dữ liệu ở trạng thái lưu trữ để đáp ứng các yêu cầu về tuân thủ và bảo mật.
++ Người dùng cũng có thể chỉ định cài đặt mã hóa khi tạo khối EBS mới hoặc mã hóa các khối hiện có bằng ảnh chụp nhanh.
 
 **Scalability and Flexibility:**
-+ EBS volumes can be resized dynamically without any downtime, allowing users to scale storage capacity based on changing workload requirements.
-+ Users can choose from a range of volume types and sizes to meet the performance and capacity needs of their applications.
++ EBS volumes có thể được thay đổi kích thước một cách linh hoạt mà không có bất kỳ thời gian ngừng hoạt động nào, cho phép người dùng mở rộng quy mô dung lượng lưu trữ dựa trên việc thay đổi yêu cầu khối lượng công việc.
++ Người dùng có thể chọn từ nhiều loại và kích thước ổ đĩa khác nhau để đáp ứng nhu cầu về hiệu suất và dung lượng cho ứng dụng của mình.
 
 **Integration with AWS Services**
-+ EBS volumes can be integrated with other AWS services such as Amazon EC2, Amazon RDS (Relational Database Service), and AWS Lambda to provide storage for various types of applications and workloads.
-#### Use EBS in which situation?
-+ Amazon Elastic Block Store (EBS) is used in various situations where persistent and scalable block storage is required for applications running on single Amazon EC2 instance
++ EBS volumes có thể được tích hợp với các dịch vụ AWS khác như Amazon EC2, Amazon RDS (Dịch vụ cơ sở dữ liệu quan hệ) và AWS Lambda để cung cấp dung lượng lưu trữ cho nhiều loại ứng dụng và khối lượng công việc khác nhau.
+#### Sử dụng EBS trong trường hợp nào?
++ Amazon Elastic Block Store (EBS) được sử dụng trong nhiều trường hợp cần lưu trữ bền vững và có thể mở rộng cho các ứng dụng chạy trên một phiên bản Amazon EC2 duy nhất
 ### 3. Amazon EFS (Elastic File System)
 
-Amazon EFS is a scalable and fully managed file storage service designed to provide scalable and shared access to files from multiple EC2 instances.
-It supports NFS (Network File System) protocol and can be seamlessly integrated with existing applications and workflows.
+Amazon EFS là dịch vụ lưu trữ tệp được quản lý hoàn toàn và có thể mở rộng, được thiết kế để cung cấp quyền truy cập chia sẻ và có thể mở rộng vào các tệp từ nhiều phiên bản EC2.
+Nó hỗ trợ giao thức NFS (Hệ thống tệp mạng) và có thể được tích hợp liền mạch với các ứng dụng và quy trình công việc hiện có.
 
-EFS is suitable for use cases such as content management, media processing, software development, and data analytics that require shared file storage.
-#### Use EFS in which situation?
+EFS phù hợp với các trường hợp sử dụng như quản lý nội dung, xử lý phương tiện, phát triển phần mềm và phân tích dữ liệu yêu cầu lưu trữ tệp dùng chung.
+#### Sử dụng EFS trong trường hợp nào?
 
-Amazon EFS is commonly used in situations where multiple EC2 instances need shared access to a common file system. It provides a centralized and scalable storage solution for applications that require shared file storage
+Amazon EFS thường được sử dụng trong các trường hợp nhiều phiên bản EC2 cần quyền truy cập chung vào một hệ thống tệp chung. Nó cung cấp giải pháp lưu trữ tập trung và có thể mở rộng cho các ứng dụng yêu cầu lưu trữ tệp chia sẻ
 
-### 4. Amazon FSx (File Storage)
+### 4. Amazon FSx (Lưu trữ tệp)
 
-Amazon FSx offers fully managed file storage services optimized for specific use cases, including Amazon FSx for Windows File Server and Amazon FSx for Lustre.
-FSx for Windows File Server provides fully managed, highly available Windows file shares, while FSx for Lustre delivers high-performance file systems for compute-intensive workloads.
+Amazon FSx cung cấp các dịch vụ lưu trữ tệp được quản lý toàn phần, được tối ưu hóa cho các trường hợp sử dụng cụ thể, bao gồm Amazon FSx dành cho Windows File Server và Amazon FSx dành cho Lustre.
+FSx dành cho Máy chủ tệp Windows cung cấp tính năng chia sẻ tệp Windows có tính sẵn sàng cao, được quản lý đầy đủ, trong khi FSx dành cho Lustre cung cấp hệ thống tệp hiệu suất cao cho khối lượng công việc tính toán chuyên sâu.
 
-FSx is suitable for applications that require Windows-compatible file storage or high-performance file systems for compute-intensive workloads such as machine learning and simulation.
-#### Use FSx in which situation?
-+ Amazon FSx for Windows File Server is used in situations where users need a fully managed Windows-compatible file system with support for SMB (Server Message Block) protocol.
-+ It provides a scalable and fully managed Windows file system that is accessible from Windows, Linux, and macOS clients, making it suitable for file sharing and collaboration across different platforms.
+FSx phù hợp với các ứng dụng yêu cầu hệ thống tệp hiệu suất cao hoặc lưu trữ tệp tương thích với Windows cho các khối lượng công việc tính toán chuyên sâu như học máy và mô phỏng.
+#### Sử dụng FSx trong trường hợp nào?
++ Amazon FSx for Windows File Server được sử dụng trong các trường hợp người dùng cần một hệ thống tệp tương thích với Windows được quản lý hoàn toàn có hỗ trợ giao thức SMB (Server Message Block).
++ Nó cung cấp một hệ thống tệp Windows được quản lý đầy đủ và có thể mở rộng, có thể truy cập được từ các máy khách Windows, Linux và macOS, giúp nó phù hợp để chia sẻ và cộng tác tệp trên các nền tảng khác nhau.

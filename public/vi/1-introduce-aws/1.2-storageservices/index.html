@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Dịch vụ điện toán :: Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
+    <title>Dịch vụ lưu trữ :: Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
 
     
-    <link href="/css/nucleus.css?1709804082" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1709804082" rel="stylesheet">
-    <link href="/css/hybrid.css?1709804082" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1709804082" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1709804082" rel="stylesheet">
-    <link href="/css/auto-complete.css?1709804082" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1709804082" rel="stylesheet">
-    <link href="/css/theme.css?1709804082" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1709804082" rel="stylesheet">
+    <link href="/css/nucleus.css?1709867092" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1709867092" rel="stylesheet">
+    <link href="/css/hybrid.css?1709867092" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1709867092" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1709867092" rel="stylesheet">
+    <link href="/css/auto-complete.css?1709867092" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1709867092" rel="stylesheet">
+    <link href="/css/theme.css?1709867092" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1709867092" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1709804082" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1709867092" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1709804082"></script>
+    <script src="/js/jquery-3.3.1.min.js?1709867092"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1709804082"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1709804082"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1709867092"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1709867092"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1709804082"></script>
+<script type="text/javascript" src="/js/search.js?1709867092"></script>
 
     
   </div>
@@ -113,13 +113,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce-aws/1.1-computeservices/" title="Dịch vụ điện toán" class="dd-item 
-        
-        
+    <li data-nav-id="/vi/1-introduce-aws/1.2-storageservices/" title="Dịch vụ lưu trữ" class="dd-item 
+        parent
+        active
         
         ">
-      <a href="/vi/1-introduce-aws/1.1-computeservices/">
-           <b> 1.1 </b> Dịch vụ điện toán
+      <a href="/vi/1-introduce-aws/1.2-storageservices/">
+           <b> 1.1 </b> Dịch vụ lưu trữ
           
             <i class="fas fa-check read-icon"></i>
           
@@ -141,12 +141,12 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce-aws/1.2-storageservices/" title="Dịch vụ điện toán" class="dd-item 
-        parent
-        active
+    <li data-nav-id="/vi/1-introduce-aws/1.1-computeservices/" title="Dịch vụ điện toán" class="dd-item 
+        
+        
         
         ">
-      <a href="/vi/1-introduce-aws/1.2-storageservices/">
+      <a href="/vi/1-introduce-aws/1.1-computeservices/">
            <b> 1.1 </b> Dịch vụ điện toán
           
             <i class="fas fa-check read-icon"></i>
@@ -309,7 +309,7 @@
             
           
           
-            <a href='/vi/'>Giới thiệu về Amazon Web Service</a> > <a href='/vi/1-introduce-aws/'>Giới thiệu</a> > Dịch vụ điện toán
+            <a href='/vi/'>Giới thiệu về Amazon Web Service</a> > <a href='/vi/1-introduce-aws/'>Giới thiệu</a> > Dịch vụ lưu trữ
           
         
           
@@ -324,13 +324,12 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#giới-thiệu-dịch-vụ-điện-toán-amazon-web-services">Giới thiệu Dịch vụ điện toán Amazon Web Services</a></li>
-    <li><a href="#nội-dung">Nội dung</a>
+    <li><a href="#giới-thiệu-dịch-vụ-lưu-trữ-aws">Giới thiệu dịch vụ lưu trữ AWS</a>
       <ul>
-        <li><a href="#1-amazon-ec2-elastic-compute-cloud">1. Amazon EC2 (Elastic Compute Cloud):</a></li>
-        <li><a href="#2-aws-lambda">2. AWS Lambda:</a></li>
-        <li><a href="#3-amazon-ecs-elastic-container-service">3. Amazon ECS (Elastic Container Service):</a></li>
-        <li><a href="#4-amazon-eks-elastic-kubernetes-service">4. Amazon EKS (Elastic Kubernetes Service):</a></li>
+        <li></li>
+        <li><a href="#2-amazon-ebs-elastic-block-store">2. Amazon EBS (Elastic Block Store):</a></li>
+        <li><a href="#3-amazon-efs-elastic-file-system">3. Amazon EFS (Elastic File System)</a></li>
+        <li><a href="#4-amazon-fsx-file-storage">4. Amazon FSx (File Storage)</a></li>
       </ul>
     </li>
   </ul>
@@ -350,7 +349,7 @@
           
             <h1>
               
-              Dịch vụ điện toán
+              Dịch vụ lưu trữ
             </h1>
           
 
@@ -358,68 +357,120 @@
 
 
 
-	<h2 id="giới-thiệu-dịch-vụ-điện-toán-amazon-web-services">Giới thiệu Dịch vụ điện toán Amazon Web Services</h2>
-<p>Các dịch vụ điện toán do AWS cung cấp cung cấp khả năng tính toán có thể mở rộng cho nhiều khối lượng công việc khác nhau, cho phép doanh nghiệp triển khai và quản lý ứng dụng một cách hiệu quả trên đám mây. Sau đây là phần giới thiệu về một số dịch vụ điện toán chính do AWS cung cấp.</p>
-<h2 id="nội-dung">Nội dung</h2>
-<h3 id="1-amazon-ec2-elastic-compute-cloud">1. Amazon EC2 (Elastic Compute Cloud):</h3>
-<p>Amazon EC2 là một dịch vụ web cung cấp khả năng tính toán có thể thay đổi kích thước trên đám mây. Nó cho phép người dùng nhanh chóng tăng hoặc giảm quy mô dựa trên nhu cầu, chỉ trả tiền cho những tài nguyên họ sử dụng.
-Người dùng có thể chọn từ nhiều loại phiên bản được tối ưu hóa cho các khối lượng công việc khác nhau, chẳng hạn như phiên bản có mục đích chung, tối ưu hóa điện toán, tối ưu hóa bộ nhớ và tối ưu hóa lưu trữ.
-Bạn có thể sử dụng phiên bản EC2 cho nhiều ứng dụng, bao gồm lưu trữ web, phát triển ứng dụng, xử lý dữ liệu và AI.</p>
-<p><img src="../../images/1.1-ComputeServices/ec2.png" alt="Ec2"></p>
-<p>**Các loại phiên bản EC2 ** <br>
-Dưới đây là một số ví dụ có mục đích chung mà từ đó chúng ta có thể chọn:</p>
-<pre><code>T2. micro: Phiên bản nổi tiếng nhất trong AWS là t2. micro, cung cấp 1 CPU và 1 GB bộ nhớ với hiệu suất mạng từ thấp đến trung bình. Nó cũng miễn phí và rất hữu ích cho những cá nhân mới bắt đầu sử dụng AWS.
-
-M6a Instance: Bộ xử lý AMD EPYC thế hệ thứ ba được sử dụng trong phiên bản M6 là hoàn hảo cho các tác vụ đa năng. Trong m6a có nhiều kích thước khác nhau như m6a.large, m6a.2xlarge, m6a.4xlarge, v.v. m6a lớn cung cấp 2 CPU, bộ nhớ 8GiB và hiệu suất mạng lên tới 12,5 Gigabit.
-
-M5 instance: Thế hệ phiên bản đa năng mới nhất, được gọi là M5, được trang bị bộ xử lý Xeon Platinum 8175 của Intel. Các phân khu M5 của nó bao gồm m5. lớn, m5.12xlarge và m5.24 lớn và loại dịch vụ M5 mà chúng tôi chọn sẽ phụ thuộc vào bộ nhớ, CPU, bộ lưu trữ và tốc độ mạng.
-</code></pre>
-<h4 id="dùng-trong-hoàn-cảnh-nào">Dùng trong hoàn cảnh nào?</h4>
-<p><strong>Ứng dụng Máy chủ Web</strong>: Máy chủ web có thể được lưu trữ trong các phiên bản đa dụng. Phiên bản EC2 cung cấp nền tảng linh hoạt và có thể mở rộng cho các ứng dụng web.
-Môi trường thử nghiệm và phát triển: Nhà phát triển có thể sử dụng các phiên bản đa năng này để xây dựng, thử nghiệm và triển khai ứng dụng. Đây là một giải pháp tiết kiệm chi phí để vận hành môi trường này.</p>
-<p><strong>Phân phối nội dung</strong>: Có thể lưu trữ các mạng phân phối nội dung (CDN) phân phối nội dung cho người dùng trên toàn thế giới bằng cách sử dụng các phiên bản có mục đích chung. Phiên bản EC2 có thể được thiết lập để cung cấp nội dung có độ trễ thấp và hiệu suất cao.
-Là một lựa chọn phổ biến cho nhiều doanh nghiệp, phiên bản đa năng AWS EC2 cung cấp nền tảng linh hoạt và có thể mở rộng cho nhiều ứng dụng.</p>
-<h3 id="2-aws-lambda">2. AWS Lambda:</h3>
-<p>AWS Lambda là dịch vụ điện toán không có máy chủ do Amazon Web Services (AWS) cung cấp, cho phép người dùng chạy mã mà không cần cung cấp hay quản lý máy chủ. Nó cho phép các nhà phát triển tập trung vào việc viết mã cho ứng dụng của họ mà không phải lo lắng về cơ sở hạ tầng cơ bản. Dưới đây là tổng quan chi tiết về AWS Lambda:</p>
-<p><img src="../../images/1.1-ComputeServices/lambda.png" alt="Lambda"></p>
-<h4 id="serverless-computing">Serverless Computing:</h4>
-<p>Với Lambda, người dùng có thể tải code của họ lên và AWS sẽ đảm nhiệm việc cung cấp, mở rộng quy mô và quản lý cơ sở hạ tầng cần thiết để chạy mã đó.
-Người dùng chỉ bị tính phí cho thời gian tính toán mà mã của họ sử dụng, tính bằng mili giây, khiến Lambda trở thành giải pháp tiết kiệm chi phí cho nhiều khối lượng công việc khác nhau.</p>
-<h4 id="kiến-trúc-hướng-sự-kiệnevent-driven-architecture">Kiến trúc hướng sự kiện(Event-Driven Architecture):</h4>
-<p>Hàm Lambda được gọi để phản hồi các sự kiện như yêu cầu HTTP, thay đổi dữ liệu trong bộ chứa Amazon S3, cập nhật lên bảng Amazon DynamoDB, tin nhắn từ Amazon SNS(Simple Notification Service), và nhiều dịch vụ khác.
-Kiến trúc hướng sự kiện này cho phép các nhà phát triển xây dựng các ứng dụng có khả năng phản hồi và có thể mở rộng nhằm đáp ứng các thay đổi hoặc trình kích hoạt trong thời gian thực.</p>
-<h4 id="thời-gian-chạy-và-ngôn-ngữ-được-hỗ-trợsupported-runtimes-and-languages">Thời gian chạy và ngôn ngữ được hỗ trợ(Supported Runtimes and Languages):</h4>
-<p>Lambda hỗ trợ nhiều ngôn ngữ lập trình bao gồm Node.js, Python, Java, Go, .NET Core và Ruby, cho phép các nhà phát triển sử dụng ngôn ngữ ưa thích của họ để viết các hàm Lambda.
-Mỗi hàm Lambda chạy trong một môi trường biệt lập gọi là &ldquo;thời gian chạy&rdquo;, cung cấp các phần phụ thuộc và thư viện cần thiết cho ngôn ngữ đã chọn.</p>
-<h4 id="tự-động-mở-rộng-automatic-scaling">Tự động mở rộng (Automatic Scaling):</h4>
-<p>Lambda tự động điều chỉnh quy mô môi trường thực thi để xử lý các yêu cầu hoặc sự kiện đến. Nó có thể xử lý một vài yêu cầu mỗi ngày đến hàng nghìn yêu cầu mỗi giây mà không cần bất kỳ sự can thiệp thủ công nào. Việc thay đổi quy mô được AWS xử lý dựa trên số lượng sự kiện đến và cài đặt đồng thời đã định cấu hình.</p>
-<h4 id="thực-thi-phi-trạng-tháistateless-execution">Thực thi phi trạng thái(Stateless Execution):</h4>
-<p>Hàm Lambda không có trạng thái, nghĩa là chúng không duy trì bất kỳ trạng thái liên tục nào giữa các lần gọi. Mỗi lệnh gọi hàm Lambda độc lập với các lệnh gọi trước đó. Nếu cần có sự duy trì trạng thái, nhà phát triển có thể sử dụng các dịch vụ lưu trữ bên ngoài như Amazon DynamoDB hoặc Amazon S3 để lưu trữ và truy xuất thông tin trạng thái.#### Integration with AWS Services:</p>
-<p>Lambda tích hợp liền mạch với các dịch vụ AWS khác, cho phép nhà phát triển xây dựng các ứng dụng và quy trình làm việc phức tạp. Ví dụ: hàm Lambda có thể được sử dụng để xử lý dữ liệu từ Amazon S3, kích hoạt thông báo qua Amazon SNS hoặc tương tác với cơ sở dữ liệu Amazon RDS.</p>
-<p>AWS cung cấp khả năng tích hợp tích hợp với nhiều dịch vụ khác nhau thông qua AWS SDK và các nguồn sự kiện, giúp dễ dàng kết nối các chức năng Lambda với các tài nguyên AWS khác.
-<strong>Kiểm soát bảo mật và truy cập(Security and Access Control)</strong>:</p>
-<p>Các hàm Lambda có thể được bảo mật bằng chính sách AWS IAM (Quản lý danh tính và quyền truy cập), chính sách này kiểm soát ai có thể gọi hàm và những tài nguyên nào hàm đó có thể truy cập.
-Nhà phát triển cũng có thể sử dụng AWS Key Management Service (KMS) để mã hóa dữ liệu nhạy cảm trong các hàm Lambda hoặc sử dụng các biến môi trường để lưu trữ cài đặt cấu hình một cách an toàn.</p>
-<h4 id="sử-dụng-lambda-trong-tình-huống-nào">Sử dụng lambda trong tình huống nào?</h4>
-<p>** Kiến trúc Microservices (Microservices Architecture):**</p>
-<p>Các hàm Lambda có thể được sử dụng để triển khai các vi dịch vụ trong kiến ​​trúc serverless, trong đó mỗi hàm đại diện cho một thành phần hoặc chức năng cụ thể của ứng dụng.
-Bằng cách chia nhỏ ứng dụng của bạn thành các chức năng nhỏ hơn, độc lập, bạn có thể đạt được khả năng mở rộng, tính linh hoạt và khả năng bảo trì tốt hơn, đồng thời giảm chi phí hoạt động của việc quản lý cơ sở hạ tầng.</p>
-<p><strong>Xử lý dữ liệu thời gian thực (Real-time Data Processing):</strong></p>
-<p>Lambda rất phù hợp cho các tác vụ xử lý dữ liệu theo thời gian thực như xử lý luồng, làm giàu dữ liệu và phân tích. Nó có thể được sử dụng để xử lý dữ liệu phát trực tuyến từ các dịch vụ như Amazon Kinesis và Amazon Managed Streaming cho Apache Kafka (Amazon MSK). Bằng cách xử lý dữ liệu trong thời gian thực với Lambda, bạn có thể rút ra thông tin chuyên sâu, kích hoạt hành động và đưa ra quyết định dựa trên thông tin cập nhật, hỗ trợ các ứng dụng phản ứng và dựa trên dữ liệu.</p>
-<p><strong>Nhiệm vụ theo lịch trình và công việc định kỳ(Scheduled Tasks and Cron Jobs):</strong></p>
-<p>Các hàm Lambda có thể được lên lịch để chạy theo các khoảng thời gian được chỉ định bằng cách sử dụng CloudWatch Events hoặc EventBridge (trước đây là CloudWatch Events). Điều này làm cho Lambda trở thành một giải pháp thuận tiện để chạy các tác vụ theo lịch trình, tác vụ định kỳ và tác vụ xử lý hàng loạt mà không cần đến máy chủ hoặc cơ sở hạ tầng chuyên dụng.
-Bạn có thể sử dụng Lambda để thực hiện sao lưu dữ liệu định kỳ, tạo báo cáo, dọn dẹp tài nguyên hoặc thực hiện bất kỳ tác vụ định kỳ nào khác.</p>
-<p><strong>Máy chủ Backend Web(Web Application Backends):</strong></p>
-<p>Lambda có thể đóng vai trò là phần phụ trợ cho các ứng dụng web, xử lý các yêu cầu HTTP và thực thi logic ứng dụng để phản hồi. Khi kết hợp với API Gateway, Lambda cho phép các nhà phát triển xây dựng API RESTful không máy chủ một cách nhanh chóng và dễ dàng.
-Các hàm Lambda có thể xử lý việc xác thực người dùng, xác thực dữ liệu, logic nghiệp vụ và tương tác cơ sở dữ liệu, cung cấp giải pháp có thể mở rộng và tiết kiệm chi phí để phát triển ứng dụng web.</p>
-<h3 id="3-amazon-ecs-elastic-container-service">3. Amazon ECS (Elastic Container Service):</h3>
-<p>Amazon ECS là dịch vụ điều phối bộ chứa được quản lý toàn phần, cho phép người dùng chạy, dừng và quản lý bộ chứa Docker trên một cụm phiên bản EC2.
-Người dùng có thể dễ dàng triển khai, quản lý và mở rộng quy mô các ứng dụng được đóng gói bằng ECS. Nó tích hợp với các dịch vụ AWS khác như Cân bằng tải đàn hồi, IAM và CloudWatch để nâng cao chức năng.
-ECS cho phép người dùng xây dựng kiến ​​trúc vi dịch vụ và hiện đại hóa ứng dụng của họ bằng cách tận dụng các vùng chứa.</p>
-<h3 id="4-amazon-eks-elastic-kubernetes-service">4. Amazon EKS (Elastic Kubernetes Service):</h3>
-<p>Amazon EKS là dịch vụ Kubernetes được quản lý toàn phần giúp dễ dàng triển khai, quản lý và mở rộng quy mô ứng dụng trong bộ chứa bằng Kubernetes trên AWS.
-Nó cung cấp một mặt phẳng điều khiển Kubernetes có tính sẵn sàng cao và an toàn mà không cần phải quản lý cơ sở hạ tầng.
-Với Amazon EKS, người dùng có thể chạy các ứng dụng Kubernetes bằng cùng công cụ và API mà họ sử dụng tại chỗ, đồng thời hưởng lợi từ khả năng mở rộng và độ tin cậy của AWS.Xử lý dữ liệu theo thời gian thực:.</p>
+	<h2 id="giới-thiệu-dịch-vụ-lưu-trữ-aws">Giới thiệu dịch vụ lưu trữ AWS</h2>
+<p>Amazon S3 là dịch vụ lưu trữ đối tượng có khả năng mở rộng được thiết kế để lưu trữ và truy xuất mọi lượng dữ liệu từ mọi nơi trên web. Nó có độ bền cao, an toàn và tiết kiệm chi phí.
+S3 cung cấp các tính năng như lập phiên bản, mã hóa, kiểm soát truy cập và quản lý vòng đời để quản lý dữ liệu một cách hiệu quả.</p>
+<p>Nó thường được sử dụng cho nhiều trường hợp sử dụng, bao gồm sao lưu và khôi phục, lưu trữ dữ liệu, phân phối nội dung và lưu trữ các trang web tĩnh.</p>
+<p><img src="../../images/1.2-StorageService/s3.png" alt="S3"></p>
+<h4 id="lớp-lưu-trữ-đối-tượngobject-storage-classes">Lớp lưu trữ đối tượng(Object Storage Classes):</h4>
+<p><strong>Amazon S3 Standard (S3 Standard):</strong> S3 Standard cung cấp khả năng lưu trữ đối tượng có độ bền cao, tính khả dụng và hiệu suất cao cho dữ liệu được truy cập thường xuyên. Vì mang lại độ trễ thấp và thông lượng cao nên S3 Standard phù hợp với nhiều trường hợp sử dụng khác nhau, bao gồm ứng dụng đám mây, trang web động, phân phối nội dung, ứng dụng di động và trò chơi cũng như phân tích dữ liệu lớn.</p>
+<p>Các tính năng chính:</p>
+<ul>
+<li>Lưu trữ mục đích chung cho dữ liệu được truy cập thường xuyên</li>
+<li>Độ trễ thấp và hiệu suất thông lượng cao</li>
+<li>Được thiết kế để cung cấp mức độ khả dụng 99,99% với SLA khả dụng là 99,9%</li>
+</ul>
+<p><strong>Amazon S3 Intelligent-Tiering (S3 Intelligent-Tiering):</strong> thường được viết tắt là S3 Intelligence-Tiering, là lớp lưu trữ được Amazon Web Services (AWS) giới thiệu cho Dịch vụ lưu trữ đơn giản (S3) của họ. Nó được thiết kế để tự động tối ưu hóa chi phí lưu trữ bằng cách di chuyển dữ liệu giữa hai tầng truy cập: truy cập thường xuyên và truy cập không thường xuyên, dựa trên mô hình sử dụng.</p>
+<p>Cách thức hoạt động của Phân bậc thông minh S3 (S3 Intelligent-Tiering):</p>
+<ul>
+<li>
+<p>Phân bậc tự động (Automatic Tiering): S3 Phân bậc thông minh tự động giám sát các kiểu truy cập dữ liệu của bạn và di chuyển các đối tượng giữa hai tầng truy cập: truy cập thường xuyên và truy cập không thường xuyên. Dữ liệu được truy cập thường xuyên vẫn ở cấp truy cập thường xuyên, trong khi dữ liệu không được truy cập trong một khoảng thời gian sẽ được chuyển sang cấp truy cập không thường xuyên.</p>
+</li>
+<li>
+<p>Tối ưu hóa chi phí(Cost Optimization): Bằng cách tự động di chuyển dữ liệu giữa các tầng truy cập, S3 Phân bậc thông minh giúp tối ưu hóa chi phí lưu trữ. Bạn không cần quản lý thủ công việc di chuyển dữ liệu giữa các tầng, giảm chi phí vận hành.</p>
+</li>
+<li>
+<p>No Retrieval Fees: Unlike some other storage classes in S3, S3 Intelligent-Tiering does not incur retrieval fees when accessing data from the infrequent access tier. This makes it particularly cost-effective for data with unpredictable access patterns.</p>
+</li>
+<li>
+<p>Durability and Availability: S3 Intelligent-Tiering provides the same high durability and availability as other S3 storage classes, ensuring that your data is protected against hardware failures and is accessible when needed.</p>
+</li>
+<li>
+<p>Monitoring and Analytics: AWS provides tools for monitoring and analyzing the access patterns of your data stored in S3 Intelligent-Tiering. This allows you to gain insights into your data usage and make informed decisions about storage optimization.</p>
+</li>
+</ul>
+<h4 id="use-s3-in-which-situation">Use S3 in which situation?</h4>
+<ul>
+<li>
+<p>Data Backup and Archiving: S3 provides a reliable and cost-effective solution for storing backups and archives of data. Its high durability ensures that data remains safe over extended periods, making it ideal for long-term storage requirements.</p>
+</li>
+<li>
+<p>Static Website Hosting: S3 can host static websites by storing HTML, CSS, JavaScript, and other web assets. It integrates seamlessly with other AWS services like Amazon Route 53 for DNS routing and Amazon CloudFront for content delivery, enabling fast and scalable website hosting.</p>
+</li>
+<li>
+<p>Content Distribution: S3 combined with Amazon CloudFront allows you to distribute content globally with low latency and high transfer speeds. This is useful for delivering large files, streaming media, or website assets to users worldwide.</p>
+</li>
+<li>
+<p>Application Data Storage: Many applications use S3 as a central storage repository for various types of data, such as user-generated content, media files, application logs, and configuration files. S3&rsquo;s scalability and reliability make it suitable for storing large volumes of diverse data types.</p>
+</li>
+<li>
+<p>Big Data Analytics: S3 serves as a data lake for storing vast amounts of structured and unstructured data that can be analyzed using AWS analytics services like Amazon Athena, Amazon Redshift Spectrum, or AWS Glue. Data stored in S3 can be queried directly without the need for data movement.</p>
+</li>
+<li>
+<p>Disaster Recovery: S3 can be part of a disaster recovery strategy, where critical data backups are stored in S3 buckets across different AWS regions. In the event of a disaster, data can be quickly restored from S3 to maintain business continuity.</p>
+</li>
+<li>
+<p>Data Warehousing: S3 can act as a staging area for data ingested into data warehouses like Amazon Redshift or Amazon Athena. Data is first loaded into S3 and then processed by the analytics services, allowing for scalable and cost-effective data storage.</p>
+</li>
+<li>
+<p>Mobile and IoT Applications: S3 is often used as a storage backend for mobile and IoT applications to store user-generated content, sensor data, and application logs. Its scalability and compatibility with AWS SDKs make it easy to integrate with various application platforms.</p>
+</li>
+</ul>
+<h3 id="2-amazon-ebs-elastic-block-store">2. Amazon EBS (Elastic Block Store):</h3>
+<p>Amazon Elastic Block Store (EBS) is a block-level storage service provided by Amazon Web Services (AWS) that is designed for use with Amazon EC2 (Elastic Compute Cloud) instances.</p>
+<p><strong>Block-Level Storage:</strong></p>
+<ul>
+<li>Amazon EBS provides block-level storage volumes that are similar to physical hard drives or SSDs, allowing users to create and attach storage volumes to EC2 instances.</li>
+<li>These volumes appear as raw block devices to the EC2 instances and can be formatted and mounted like any other block storage device.</li>
+</ul>
+<p><strong>Persistence and Durability:</strong></p>
+<ul>
+<li>EBS volumes are designed for durability and reliability. Data stored on EBS volumes is replicated within the same Availability Zone to ensure data durability.</li>
+<li>EBS volumes are persistent, meaning that data persists even after the associated EC2 instance is terminated. Users can detach EBS volumes from one EC2 instance and attach them to another without losing data.</li>
+</ul>
+<p><strong>High Performance:</strong></p>
+<ul>
+<li>EBS volumes offer high-performance storage options, including SSD-backed volumes (EBS-SSD) and magnetic volumes (EBS-HDD), to meet the performance requirements of different workloads.</li>
+<li>SSD-backed volumes provide low-latency and high IOPS (Input/Output Operations Per Second) for performance-sensitive applications, while magnetic volumes offer cost-effective storage for less demanding workloads.</li>
+</ul>
+<p><strong>Snapshot and Backup:</strong></p>
+<ul>
+<li>EBS volumes support snapshots, which are point-in-time backups of the volume data stored in Amazon S3. Users can create snapshots of EBS volumes manually or automatically using scheduled snapshots.</li>
+<li>Snapshots are incremental, meaning that only the changed blocks since the last snapshot are stored, which helps reduce storage costs and backup times.</li>
+</ul>
+<p><strong>Encryption and Security:</strong></p>
+<ul>
+<li>EBS volumes support encryption using AWS Key Management Service (KMS), allowing users to encrypt data at rest to meet compliance and security requirements.</li>
+<li>Users can also specify encryption settings when creating new EBS volumes or encrypt existing volumes using snapshots.</li>
+</ul>
+<p><strong>Scalability and Flexibility:</strong></p>
+<ul>
+<li>EBS volumes can be resized dynamically without any downtime, allowing users to scale storage capacity based on changing workload requirements.</li>
+<li>Users can choose from a range of volume types and sizes to meet the performance and capacity needs of their applications.</li>
+</ul>
+<p><strong>Integration with AWS Services</strong></p>
+<ul>
+<li>EBS volumes can be integrated with other AWS services such as Amazon EC2, Amazon RDS (Relational Database Service), and AWS Lambda to provide storage for various types of applications and workloads.</li>
+</ul>
+<h4 id="use-ebs-in-which-situation">Use EBS in which situation?</h4>
+<ul>
+<li>Amazon Elastic Block Store (EBS) is used in various situations where persistent and scalable block storage is required for applications running on single Amazon EC2 instance</li>
+</ul>
+<h3 id="3-amazon-efs-elastic-file-system">3. Amazon EFS (Elastic File System)</h3>
+<p>Amazon EFS is a scalable and fully managed file storage service designed to provide scalable and shared access to files from multiple EC2 instances.
+It supports NFS (Network File System) protocol and can be seamlessly integrated with existing applications and workflows.</p>
+<p>EFS is suitable for use cases such as content management, media processing, software development, and data analytics that require shared file storage.</p>
+<h4 id="use-efs-in-which-situation">Use EFS in which situation?</h4>
+<p>Amazon EFS is commonly used in situations where multiple EC2 instances need shared access to a common file system. It provides a centralized and scalable storage solution for applications that require shared file storage</p>
+<h3 id="4-amazon-fsx-file-storage">4. Amazon FSx (File Storage)</h3>
+<p>Amazon FSx offers fully managed file storage services optimized for specific use cases, including Amazon FSx for Windows File Server and Amazon FSx for Lustre.
+FSx for Windows File Server provides fully managed, highly available Windows file shares, while FSx for Lustre delivers high-performance file systems for compute-intensive workloads.</p>
+<p>FSx is suitable for applications that require Windows-compatible file storage or high-performance file systems for compute-intensive workloads such as machine learning and simulation.</p>
+<h4 id="use-fsx-in-which-situation">Use FSx in which situation?</h4>
+<ul>
+<li>Amazon FSx for Windows File Server is used in situations where users need a fully managed Windows-compatible file system with support for SMB (Server Message Block) protocol.</li>
+<li>It provides a scalable and fully managed Windows file system that is accessible from Windows, Linux, and macOS clients, making it suitable for file sharing and collaboration across different platforms.</li>
+</ul>
 
 
 
@@ -476,8 +527,6 @@ Với Amazon EKS, người dùng có thể chạy các ứng dụng Kubernetes b
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -495,6 +544,8 @@ Với Amazon EKS, người dùng có thể chạy các ứng dụng Kubernetes b
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -519,7 +570,7 @@ Với Amazon EKS, người dùng có thể chạy các ứng dụng Kubernetes b
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/1-introduce-aws/1.1-computeservices/" title="Dịch vụ điện toán"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/1-introduce-aws/" title="Giới thiệu"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/vi/1-introduce-aws/1.1-computeservices/" title="Dịch vụ điện toán" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -532,19 +583,19 @@ Với Amazon EKS, người dùng có thể chạy các ứng dụng Kubernetes b
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1709804082"></script>
-    <script src="/js/perfect-scrollbar.min.js?1709804082"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1709804082"></script>
-    <script src="/js/jquery.sticky.js?1709804082"></script>
-    <script src="/js/featherlight.min.js?1709804082"></script>
-    <script src="/js/highlight.pack.js?1709804082"></script>
+    <script src="/js/clipboard.min.js?1709867092"></script>
+    <script src="/js/perfect-scrollbar.min.js?1709867092"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1709867092"></script>
+    <script src="/js/jquery.sticky.js?1709867092"></script>
+    <script src="/js/featherlight.min.js?1709867092"></script>
+    <script src="/js/highlight.pack.js?1709867092"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1709804082"></script>
-    <script src="/js/learn.js?1709804082"></script>
-    <script src="/js/hugo-learn.js?1709804082"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1709867092"></script>
+    <script src="/js/learn.js?1709867092"></script>
+    <script src="/js/hugo-learn.js?1709867092"></script>
 
-    <link href="/mermaid/mermaid.css?1709804082" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1709804082"></script>
+    <link href="/mermaid/mermaid.css?1709867092" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1709867092"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

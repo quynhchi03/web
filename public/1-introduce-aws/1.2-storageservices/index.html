@@ -12,21 +12,21 @@
     <title>Storage Services :: Start with Amazon VPC and AWS VPN Site-to-Site.</title>
 
     
-    <link href="/css/nucleus.css?1709804082" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1709804082" rel="stylesheet">
-    <link href="/css/hybrid.css?1709804082" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1709804082" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1709804082" rel="stylesheet">
-    <link href="/css/auto-complete.css?1709804082" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1709804082" rel="stylesheet">
-    <link href="/css/theme.css?1709804082" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1709804082" rel="stylesheet">
+    <link href="/css/nucleus.css?1709867092" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1709867092" rel="stylesheet">
+    <link href="/css/hybrid.css?1709867092" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1709867092" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1709867092" rel="stylesheet">
+    <link href="/css/auto-complete.css?1709867092" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1709867092" rel="stylesheet">
+    <link href="/css/theme.css?1709867092" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1709867092" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1709804082" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1709867092" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1709804082"></script>
+    <script src="/js/jquery-3.3.1.min.js?1709867092"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1709804082"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1709804082"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1709867092"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1709867092"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1709804082"></script>
+<script type="text/javascript" src="/js/search.js?1709867092"></script>
 
     
   </div>
@@ -328,9 +328,9 @@
     <li><a href="#content">Content</a>
       <ul>
         <li><a href="#1-amazon-s3-simple-storage-service">1. Amazon S3 (Simple Storage Service):</a></li>
-        <li><a href="#2-aws-lambda">2. AWS Lambda:</a></li>
-        <li><a href="#3-amazon-ecs-elastic-container-service">3. Amazon ECS (Elastic Container Service):</a></li>
-        <li><a href="#4-amazon-eks-elastic-kubernetes-service">4. Amazon EKS (Elastic Kubernetes Service):</a></li>
+        <li><a href="#2-amazon-ebs-elastic-block-store">2. Amazon EBS (Elastic Block Store):</a></li>
+        <li><a href="#3-amazon-efs-elastic-file-system">3. Amazon EFS (Elastic File System)</a></li>
+        <li><a href="#4-amazon-fsx-file-storage">4. Amazon FSx (File Storage)</a></li>
       </ul>
     </li>
   </ul>
@@ -374,53 +374,107 @@ S3 provides features such as versioning, encryption, access control, and lifecyc
 <li>Low latency and high throughput performance</li>
 <li>Designed to deliver 99.99% availability with an availability SLA of 99.9%</li>
 </ul>
-<h4 id="use-in-which-situation">Use in which situation?</h4>
-<p><strong>Applications Web Servers</strong>: The web servers can be hosted in General-purpose instances.EC2 instances provide a flexible and scalable platform for web applications.
-Development and Test Environment: The developers can use these General-purpose instances to build, test and deploy the applications. It is a cost-effective solution for running this environment.</p>
-<p><strong>Content delivery</strong>: The hosting of content delivery networks (CDNs) that distribute content to users all over the world is possible using general-purpose instances. EC2 instances can be set up to provide content with low latency and great performance.
-A popular option for many businesses, AWS EC2 general-purpose instances offer a versatile and scalable platform for a variety ###of applications.</p>
-<h3 id="2-aws-lambda">2. AWS Lambda:</h3>
-<p>AWS Lambda is a serverless computing service provided by Amazon Web Services (AWS) that enables users to run code without provisioning or managing servers. It allows developers to focus on writing code for their applications without worrying about the underlying infrastructure. Here&rsquo;s a detailed overview of AWS Lambda:
-<img src="../../images/1.1-ComputeServices/lambda.png" alt="Lambda"></p>
-<h4 id="serverless-computing">Serverless Computing:</h4>
-<p>With Lambda, users can upload their code and AWS takes care of provisioning, scaling, and managing the infrastructure needed to run that code.
-Users are charged only for the compute time consumed by their code, measured in milliseconds, making Lambda a cost-effective solution for various workloads.</p>
-<h4 id="event-driven-architecture">Event-Driven Architecture:</h4>
-<p>Lambda functions are invoked in response to events such as HTTP requests, changes to data in Amazon S3 buckets, updates to Amazon DynamoDB tables, messages from Amazon SNS (Simple Notification Service), and many others.
-This event-driven architecture allows developers to build reactive and scalable applications that respond to changes or triggers in real-time.</p>
-<h4 id="supported-runtimes-and-languages">Supported Runtimes and Languages:</h4>
-<p>Lambda supports multiple programming languages including Node.js, Python, Java, Go, .NET Core, and Ruby, allowing developers to use their preferred language for writing Lambda functions.
-Each Lambda function runs in an isolated environment called a &ldquo;runtime&rdquo;, which provides the necessary dependencies and libraries for the chosen language.</p>
-<h4 id="automatic-scaling">Automatic Scaling:</h4>
-<p>Lambda automatically scales the execution environment to handle incoming requests or events. It can handle a few requests per day to thousands of requests per second without any manual intervention. Scaling is handled by AWS based on the number of incoming events and the configured concurrency settings.</p>
-<h4 id="stateless-execution">Stateless Execution:</h4>
-<p>Lambda functions are stateless, meaning they do not maintain any persistent state between invocations. Each invocation of a Lambda function is independent of previous invocations.If state persistence is required, developers can use external storage services like Amazon DynamoDB or Amazon S3 to store and retrieve state information.</p>
-<h4 id="integration-with-aws-services">Integration with AWS Services:</h4>
-<p>Lambda integrates seamlessly with other AWS services, allowing developers to build complex workflows and applications. For example, Lambda functions can be used to process data from Amazon S3, trigger notifications via Amazon SNS, or interact with Amazon RDS databases.</p>
-<p>AWS provides built-in integration with various services through AWS SDKs and event sources, making it easy to connect Lambda functions with other AWS resources.
-<strong>Security and Access Control:</strong></p>
-<p>Lambda functions can be secured using AWS IAM (Identity and Access Management) policies, which control who can invoke the function and what resources it can access.
-Developers can also use AWS Key Management Service (KMS) to encrypt sensitive data within Lambda functions or use environment variables to store configuration settings securely.</p>
-<h4 id="use-lamdba-in-which-situation">Use lamdba in which situation?</h4>
-<p><strong>Microservices Architecture:</strong></p>
-<p>Lambda functions can be used to implement microservices in a serverless architecture, where each function represents a specific component or functionality of the application.
-By breaking down your application into smaller, independent functions, you can achieve better scalability, flexibility, and maintainability, while reducing the operational overhead of managing infrastructure.</p>
-<p><strong>Real-time Data Processing:</strong></p>
-<p>Lambda is well-suited for real-time data processing tasks such as stream processing, data enrichment, and analytics. It can be used to process streaming data from services like Amazon Kinesis and Amazon Managed Streaming for Apache Kafka (Amazon MSK). By processing data in real-time with Lambda, you can derive insights, trigger actions, and make decisions based on up-to-date information, enabling reactive and data-driven applications.</p>
-<p><strong>Scheduled Tasks and Cron Jobs:</strong></p>
-<p>Lambda functions can be scheduled to run at specified intervals using CloudWatch Events or EventBridge (formerly CloudWatch Events). This makes Lambda a convenient solution for running scheduled tasks, cron jobs, and batch processing jobs without the need for dedicated servers or infrastructure.
-You can use Lambda to perform periodic data backups, generate reports, clean up resources, or execute any other recurring tasks.</p>
-<p><strong>Web Application Backends:</strong></p>
-<p>Lambda can serve as the backend for web applications, handling HTTP requests and executing application logic in response. When combined with API Gateway, Lambda enables developers to build serverless RESTful APIs quickly and easily.
-Lambda functions can handle user authentication, data validation, business logic, and database interactions, providing a scalable and cost-effective solution for web application development.</p>
-<h3 id="3-amazon-ecs-elastic-container-service">3. Amazon ECS (Elastic Container Service):</h3>
-<p>Amazon ECS is a fully managed container orchestration service that allows users to run, stop, and manage Docker containers on a cluster of EC2 instances.
-Users can easily deploy, manage, and scale containerized applications using ECS. It integrates with other AWS services like Elastic Load Balancing, IAM, and CloudWatch for enhanced functionality.
-ECS enables users to build microservices architectures and modernize their applications by leveraging containers.</p>
-<h3 id="4-amazon-eks-elastic-kubernetes-service">4. Amazon EKS (Elastic Kubernetes Service):</h3>
-<p>Amazon EKS is a fully managed Kubernetes service that makes it easy to deploy, manage, and scale containerized applications using Kubernetes on AWS.
-It provides a highly available and secure Kubernetes control plane without the overhead of managing the infrastructure.
-With Amazon EKS, users can run Kubernetes applications with the same tools and APIs they use on-premises, while benefiting from the scalability and reliability of AWS.Real-time Data Processing:.</p>
+<p><strong>Amazon S3 Intelligent-Tiering (S3 Intelligent-Tiering):</strong> often abbreviated as S3 Intelligent-Tiering, is a storage class introduced by Amazon Web Services (AWS) for their Simple Storage Service (S3). It is designed to automatically optimize storage costs by moving data between two access tiers: frequent access and infrequent access, based on usage patterns.</p>
+<p>How S3 Intelligent-Tiering works:</p>
+<ul>
+<li>
+<p>Automatic Tiering: S3 Intelligent-Tiering automatically monitors the access patterns of your data and moves objects between two access tiers: frequent access and infrequent access. Data that is frequently accessed remains in the frequent access tier, while data that hasn&rsquo;t been accessed for a period of time is moved to the infrequent access tier.</p>
+</li>
+<li>
+<p>Cost Optimization: By automatically moving data between access tiers, S3 Intelligent-Tiering helps optimize storage costs. You don&rsquo;t need to manually manage the movement of data between tiers, reducing operational overhead.</p>
+</li>
+<li>
+<p>No Retrieval Fees: Unlike some other storage classes in S3, S3 Intelligent-Tiering does not incur retrieval fees when accessing data from the infrequent access tier. This makes it particularly cost-effective for data with unpredictable access patterns.</p>
+</li>
+<li>
+<p>Durability and Availability: S3 Intelligent-Tiering provides the same high durability and availability as other S3 storage classes, ensuring that your data is protected against hardware failures and is accessible when needed.</p>
+</li>
+<li>
+<p>Monitoring and Analytics: AWS provides tools for monitoring and analyzing the access patterns of your data stored in S3 Intelligent-Tiering. This allows you to gain insights into your data usage and make informed decisions about storage optimization.</p>
+</li>
+</ul>
+<h4 id="use-s3-in-which-situation">Use S3 in which situation?</h4>
+<ul>
+<li>
+<p>Data Backup and Archiving: S3 provides a reliable and cost-effective solution for storing backups and archives of data. Its high durability ensures that data remains safe over extended periods, making it ideal for long-term storage requirements.</p>
+</li>
+<li>
+<p>Static Website Hosting: S3 can host static websites by storing HTML, CSS, JavaScript, and other web assets. It integrates seamlessly with other AWS services like Amazon Route 53 for DNS routing and Amazon CloudFront for content delivery, enabling fast and scalable website hosting.</p>
+</li>
+<li>
+<p>Content Distribution: S3 combined with Amazon CloudFront allows you to distribute content globally with low latency and high transfer speeds. This is useful for delivering large files, streaming media, or website assets to users worldwide.</p>
+</li>
+<li>
+<p>Application Data Storage: Many applications use S3 as a central storage repository for various types of data, such as user-generated content, media files, application logs, and configuration files. S3&rsquo;s scalability and reliability make it suitable for storing large volumes of diverse data types.</p>
+</li>
+<li>
+<p>Big Data Analytics: S3 serves as a data lake for storing vast amounts of structured and unstructured data that can be analyzed using AWS analytics services like Amazon Athena, Amazon Redshift Spectrum, or AWS Glue. Data stored in S3 can be queried directly without the need for data movement.</p>
+</li>
+<li>
+<p>Disaster Recovery: S3 can be part of a disaster recovery strategy, where critical data backups are stored in S3 buckets across different AWS regions. In the event of a disaster, data can be quickly restored from S3 to maintain business continuity.</p>
+</li>
+<li>
+<p>Data Warehousing: S3 can act as a staging area for data ingested into data warehouses like Amazon Redshift or Amazon Athena. Data is first loaded into S3 and then processed by the analytics services, allowing for scalable and cost-effective data storage.</p>
+</li>
+<li>
+<p>Mobile and IoT Applications: S3 is often used as a storage backend for mobile and IoT applications to store user-generated content, sensor data, and application logs. Its scalability and compatibility with AWS SDKs make it easy to integrate with various application platforms.</p>
+</li>
+</ul>
+<h3 id="2-amazon-ebs-elastic-block-store">2. Amazon EBS (Elastic Block Store):</h3>
+<p>Amazon Elastic Block Store (EBS) is a block-level storage service provided by Amazon Web Services (AWS) that is designed for use with Amazon EC2 (Elastic Compute Cloud) instances.</p>
+<p><strong>Block-Level Storage:</strong></p>
+<ul>
+<li>Amazon EBS provides block-level storage volumes that are similar to physical hard drives or SSDs, allowing users to create and attach storage volumes to EC2 instances.</li>
+<li>These volumes appear as raw block devices to the EC2 instances and can be formatted and mounted like any other block storage device.</li>
+</ul>
+<p><strong>Persistence and Durability:</strong></p>
+<ul>
+<li>EBS volumes are designed for durability and reliability. Data stored on EBS volumes is replicated within the same Availability Zone to ensure data durability.</li>
+<li>EBS volumes are persistent, meaning that data persists even after the associated EC2 instance is terminated. Users can detach EBS volumes from one EC2 instance and attach them to another without losing data.</li>
+</ul>
+<p><strong>High Performance:</strong></p>
+<ul>
+<li>EBS volumes offer high-performance storage options, including SSD-backed volumes (EBS-SSD) and magnetic volumes (EBS-HDD), to meet the performance requirements of different workloads.</li>
+<li>SSD-backed volumes provide low-latency and high IOPS (Input/Output Operations Per Second) for performance-sensitive applications, while magnetic volumes offer cost-effective storage for less demanding workloads.</li>
+</ul>
+<p><strong>Snapshot and Backup:</strong></p>
+<ul>
+<li>EBS volumes support snapshots, which are point-in-time backups of the volume data stored in Amazon S3. Users can create snapshots of EBS volumes manually or automatically using scheduled snapshots.</li>
+<li>Snapshots are incremental, meaning that only the changed blocks since the last snapshot are stored, which helps reduce storage costs and backup times.</li>
+</ul>
+<p><strong>Encryption and Security:</strong></p>
+<ul>
+<li>EBS volumes support encryption using AWS Key Management Service (KMS), allowing users to encrypt data at rest to meet compliance and security requirements.</li>
+<li>Users can also specify encryption settings when creating new EBS volumes or encrypt existing volumes using snapshots.</li>
+</ul>
+<p><strong>Scalability and Flexibility:</strong></p>
+<ul>
+<li>EBS volumes can be resized dynamically without any downtime, allowing users to scale storage capacity based on changing workload requirements.</li>
+<li>Users can choose from a range of volume types and sizes to meet the performance and capacity needs of their applications.</li>
+</ul>
+<p><strong>Integration with AWS Services</strong></p>
+<ul>
+<li>EBS volumes can be integrated with other AWS services such as Amazon EC2, Amazon RDS (Relational Database Service), and AWS Lambda to provide storage for various types of applications and workloads.</li>
+</ul>
+<h4 id="use-ebs-in-which-situation">Use EBS in which situation?</h4>
+<ul>
+<li>Amazon Elastic Block Store (EBS) is used in various situations where persistent and scalable block storage is required for applications running on single Amazon EC2 instance</li>
+</ul>
+<h3 id="3-amazon-efs-elastic-file-system">3. Amazon EFS (Elastic File System)</h3>
+<p>Amazon EFS is a scalable and fully managed file storage service designed to provide scalable and shared access to files from multiple EC2 instances.
+It supports NFS (Network File System) protocol and can be seamlessly integrated with existing applications and workflows.</p>
+<p>EFS is suitable for use cases such as content management, media processing, software development, and data analytics that require shared file storage.</p>
+<h4 id="use-efs-in-which-situation">Use EFS in which situation?</h4>
+<p>Amazon EFS is commonly used in situations where multiple EC2 instances need shared access to a common file system. It provides a centralized and scalable storage solution for applications that require shared file storage</p>
+<h3 id="4-amazon-fsx-file-storage">4. Amazon FSx (File Storage)</h3>
+<p>Amazon FSx offers fully managed file storage services optimized for specific use cases, including Amazon FSx for Windows File Server and Amazon FSx for Lustre.
+FSx for Windows File Server provides fully managed, highly available Windows file shares, while FSx for Lustre delivers high-performance file systems for compute-intensive workloads.</p>
+<p>FSx is suitable for applications that require Windows-compatible file storage or high-performance file systems for compute-intensive workloads such as machine learning and simulation.</p>
+<h4 id="use-fsx-in-which-situation">Use FSx in which situation?</h4>
+<ul>
+<li>Amazon FSx for Windows File Server is used in situations where users need a fully managed Windows-compatible file system with support for SMB (Server Message Block) protocol.</li>
+<li>It provides a scalable and fully managed Windows file system that is accessible from Windows, Linux, and macOS clients, making it suitable for file sharing and collaboration across different platforms.</li>
+</ul>
 
 
 
@@ -533,19 +587,19 @@ With Amazon EKS, users can run Kubernetes applications with the same tools and A
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1709804082"></script>
-    <script src="/js/perfect-scrollbar.min.js?1709804082"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1709804082"></script>
-    <script src="/js/jquery.sticky.js?1709804082"></script>
-    <script src="/js/featherlight.min.js?1709804082"></script>
-    <script src="/js/highlight.pack.js?1709804082"></script>
+    <script src="/js/clipboard.min.js?1709867092"></script>
+    <script src="/js/perfect-scrollbar.min.js?1709867092"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1709867092"></script>
+    <script src="/js/jquery.sticky.js?1709867092"></script>
+    <script src="/js/featherlight.min.js?1709867092"></script>
+    <script src="/js/highlight.pack.js?1709867092"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1709804082"></script>
-    <script src="/js/learn.js?1709804082"></script>
-    <script src="/js/hugo-learn.js?1709804082"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1709867092"></script>
+    <script src="/js/learn.js?1709867092"></script>
+    <script src="/js/hugo-learn.js?1709867092"></script>
 
-    <link href="/mermaid/mermaid.css?1709804082" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1709804082"></script>
+    <link href="/mermaid/mermaid.css?1709867092" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1709867092"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
