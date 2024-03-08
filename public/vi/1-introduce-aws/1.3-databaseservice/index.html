@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Giới thiệu :: Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
+    <title>Dịch Vụ Cơ Sở Dữ Liệu :: Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
 
     
-    <link href="/css/nucleus.css?1709873023" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1709873023" rel="stylesheet">
-    <link href="/css/hybrid.css?1709873023" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1709873023" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1709873023" rel="stylesheet">
-    <link href="/css/auto-complete.css?1709873023" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1709873023" rel="stylesheet">
-    <link href="/css/theme.css?1709873023" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1709873023" rel="stylesheet">
+    <link href="/css/nucleus.css?1709894198" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1709894198" rel="stylesheet">
+    <link href="/css/hybrid.css?1709894198" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1709894198" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1709894198" rel="stylesheet">
+    <link href="/css/auto-complete.css?1709894198" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1709894198" rel="stylesheet">
+    <link href="/css/theme.css?1709894198" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1709894198" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1709873023" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1709894198" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1709873023"></script>
+    <script src="/js/jquery-3.3.1.min.js?1709894198"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1709873023"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1709873023"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1709894198"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1709894198"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1709873023"></script>
+<script type="text/javascript" src="/js/search.js?1709894198"></script>
 
     
   </div>
@@ -141,13 +141,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce-aws/1.3-databaseservice/" title="Giới thiệu" class="dd-item 
-        parent
-        active
+    <li data-nav-id="/vi/1-introduce-aws/1.2-storageservices/" title="Dịch vụ lưu trữ" class="dd-item 
+        
+        
         
         ">
-      <a href="/vi/1-introduce-aws/1.3-databaseservice/">
-           <b> 1. </b> Giới thiệu
+      <a href="/vi/1-introduce-aws/1.2-storageservices/">
+           <b> 1.2 </b> Dịch vụ lưu trữ
           
             <i class="fas fa-check read-icon"></i>
           
@@ -169,13 +169,41 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce-aws/1.2-storageservices/" title="Dịch vụ lưu trữ" class="dd-item 
+    <li data-nav-id="/vi/1-introduce-aws/1.3-databaseservice/" title="Dịch Vụ Cơ Sở Dữ Liệu" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/vi/1-introduce-aws/1.3-databaseservice/">
+           <b> 1.3 </b> Dịch Vụ Cơ Sở Dữ Liệu
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-introduce-aws/1.4-networkingservices/" title="Giới thiệu" class="dd-item 
         
         
         
         ">
-      <a href="/vi/1-introduce-aws/1.2-storageservices/">
-           <b> 1.2 </b> Dịch vụ lưu trữ
+      <a href="/vi/1-introduce-aws/1.4-networkingservices/">
+           <b> 1.4 </b> Giới thiệu
           
             <i class="fas fa-check read-icon"></i>
           
@@ -337,7 +365,7 @@
             
           
           
-            <a href='/vi/'>Giới thiệu về Amazon Web Service</a> > <a href='/vi/1-introduce-aws/'>Giới thiệu</a> > Giới thiệu
+            <a href='/vi/'>Giới thiệu về Amazon Web Service</a> > <a href='/vi/1-introduce-aws/'>Giới thiệu</a> > Dịch Vụ Cơ Sở Dữ Liệu
           
         
           
@@ -352,9 +380,15 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#giới-thiệu-dịch-vụ-cơ-sở-dữ-liệu">Giới Thiệu Dịch Vụ Cơ Sở Dữ Liệu</a></li>
+    <li><a href="#contents">Contents</a>
       <ul>
-        <li></li>
+        <li><a href="#amazon-rds-relational-database-service">Amazon RDS (Relational Database Service):</a></li>
+        <li><a href="#amazon-aurora">Amazon Aurora:</a></li>
+        <li><a href="#amazon-dynamodb">Amazon DynamoDB:</a></li>
+        <li><a href="#amazon-redshift">Amazon Redshift:</a></li>
+        <li><a href="#amazon-documentdb-with-mongodb-compatibility">Amazon DocumentDB (with MongoDB compatibility):</a></li>
+        <li><a href="#amazon-neptune">Amazon Neptune:</a></li>
       </ul>
     </li>
   </ul>
@@ -374,7 +408,7 @@
           
             <h1>
               
-              Giới thiệu
+              Dịch Vụ Cơ Sở Dữ Liệu
             </h1>
           
 
@@ -382,8 +416,177 @@
 
 
 
-	<h4 id="giới-thiệu-amazon-vpc">Giới thiệu Amazon VPC</h4>
-<h4 id="nội-dung">Nội dung</h4>
+	<h2 id="giới-thiệu-dịch-vụ-cơ-sở-dữ-liệu">Giới Thiệu Dịch Vụ Cơ Sở Dữ Liệu</h2>
+<p>Amazon Web Services (AWS) cung cấp một bộ dịch vụ dựa trên đám mây toàn diện, bao gồm các dịch vụ Cơ sở dữ liệu dưới dạng dịch vụ (DBaaS) rất phổ biến. Dịch vụ cơ sở dữ liệu của AWS cung cấp cho người dùng các giải pháp có thể mở rộng, đáng tin cậy và tiết kiệm chi phí để quản lý nhiều loại dữ liệu khác nhau , từ các cặp khóa-giá trị đơn giản đến cơ sở dữ liệu quan hệ phức tạp. Các dịch vụ này được thiết kế để hợp lý hóa các tác vụ quản lý cơ sở dữ liệu, nâng cao hiệu suất và đảm bảo tính sẵn sàng và bảo mật cao.</p>
+<p>AWS cung cấp một số dịch vụ cơ sở dữ liệu, mỗi dịch vụ phục vụ cho các trường hợp sử dụng và yêu cầu khối lượng công việc khác nhau
+<img src="../../images/1.3-DatabaseService/db.png" alt="AWS Database"></p>
+<h2 id="contents">Contents</h2>
+<h3 id="amazon-rds-relational-database-service">Amazon RDS (Relational Database Service):</h3>
+<p>Amazon Relational Database Service (Amazon RDS) là dịch vụ cơ sở dữ liệu được quản lý do Amazon Web Services (AWS) cung cấp nhằm đơn giản hóa quá trình thiết lập, vận hành và mở rộng quy mô cơ sở dữ liệu quan hệ trên đám mây. Với Amazon RDS, người dùng có thể triển khai, quản lý và mở rộng quy mô các công cụ cơ sở dữ liệu quan hệ phổ biến như MySQL, PostgreSQL, MariaDB, Oracle và SQL Server mà không cần chi phí quản trị đáng kể.</p>
+<p><strong>Tính năng chính:</strong></p>
+<ul>
+<li>
+<p>Dịch vụ được quản lý: Amazon RDS là dịch vụ được quản lý toàn phần, nghĩa là AWS xử lý các tác vụ quản trị cơ sở dữ liệu thông thường như cung cấp phần cứng, thiết lập cơ sở dữ liệu, vá lỗi, sao lưu và giám sát. Điều này cho phép người dùng tập trung vào việc xây dựng ứng dụng hơn là quản lý cơ sở hạ tầng.</p>
+</li>
+<li>
+<p>Nhiều công cụ cơ sở dữ liệu: Amazon RDS hỗ trợ một số công cụ cơ sở dữ liệu quan hệ phổ biến, bao gồm MySQL, PostgreSQL, MariaDB, Oracle và SQL Server. Người dùng có thể chọn công cụ phù hợp nhất với yêu cầu ứng dụng của mình và tận dụng các công nghệ cơ sở dữ liệu quen thuộc.</p>
+</li>
+<li>
+<p>Khả năng mở rộng: Amazon RDS cho phép người dùng dễ dàng tăng hoặc giảm quy mô phiên bản cơ sở dữ liệu của mình dựa trên nhu cầu khối lượng công việc thay đổi. Người dùng có thể tăng hoặc giảm tài nguyên điện toán và lưu trữ mà không có thời gian ngừng hoạt động, cho phép khả năng mở rộng liền mạch khi mức sử dụng ứng dụng biến động.</p>
+</li>
+<li>
+<p>Tính sẵn sàng cao: Amazon RDS cung cấp các tính năng tích hợp sẵn có tính sẵn sàng cao như sao lưu tự động, chuyển đổi dự phòng tự động và triển khai Multi-AZ. Triển khai Multi-AZ sao chép dữ liệu trên nhiều vùng sẵn sàng để cung cấp khả năng chịu lỗi cũng như đảm bảo độ bền và tính khả dụng của dữ liệu trong trường hợp xảy ra lỗi hoặc ngừng hoạt động phần cứng.</p>
+</li>
+<li>
+<p>Bảo mật: Amazon RDS cung cấp các tính năng bảo mật mạnh mẽ để bảo vệ dữ liệu được lưu trữ trong cơ sở dữ liệu. Chúng bao gồm mã hóa khi lưu trữ và đang truyền, cách ly mạng bằng Amazon VPC, tích hợp xác thực IAM và kiểm soát truy cập phiên bản cơ sở dữ liệu.</p>
+</li>
+<li>
+<p>Giám sát và tối ưu hóa hiệu suất: Amazon RDS cung cấp các công cụ và số liệu giám sát hiệu suất thông qua Amazon CloudWatch, cho phép người dùng giám sát hiệu suất cơ sở dữ liệu, đặt cảnh báo và khắc phục sự cố về hiệu suất. Người dùng cũng có thể tận dụng các tính năng như Bản sao chỉ có quyền đọc và Amazon Aurora để cải thiện hiệu suất và khả năng mở rộng.</p>
+</li>
+<li>
+<p>Bảo trì tự động: Amazon RDS tự động hóa các tác vụ bảo trì cơ sở dữ liệu định kỳ như vá lỗi phần mềm, cung cấp phần cứng và sao lưu. Điều này đảm bảo rằng cơ sở dữ liệu luôn được cập nhật với các bản vá bảo mật và tối ưu hóa mới nhất mà không cần can thiệp thủ công.</p>
+</li>
+<li>
+<p>Hiệu quả về chi phí: Amazon RDS cung cấp mô hình định giá trả theo mức sử dụng, trong đó người dùng chỉ trả tiền cho những tài nguyên họ sử dụng hàng giờ. Điều này giúp giảm chi phí ban đầu và cho phép mở rộng quy mô một cách hiệu quả về mặt chi phí dựa trên mô hình sử dụng thực tế.</p>
+</li>
+</ul>
+<h3 id="amazon-aurora">Amazon Aurora:</h3>
+<p>Aurora là công cụ cơ sở dữ liệu quan hệ tương thích với MySQL và PostgreSQL được xây dựng cho đám mây. Nó cung cấp hiệu suất cao, khả năng mở rộng và tính khả dụng, với các tính năng như sao lưu tự động, giám sát liên tục và sao chép đa vùng.</p>
+<p><strong>Tính năng chính:</strong></p>
+<p><strong>- Hiệu suất</strong>: Theo trang web chính thức, Aurora cung cấp thông lượng lên tới <em>5x</em> của <em>MySQL</em> và <em>3x</em> thông lượng của <em>PostgreSQL</em>.</p>
+<ul>
+<li>
+<p>Điểm chuẩn này cho thấy Aurora có thể nhanh hơn RDS 60 lần.</p>
+</li>
+<li>
+<p>Aurora cung cấp hiệu suất ghi tốt hơn vì nó giảm thiểu khả năng khuếch đại ghi bằng cách chỉ gửi nhật ký làm lại đến dịch vụ lưu trữ từ xa, giúp loại bỏ các hoạt động ghi khác trong đường dẫn cam kết giao dịch, chẳng hạn như bộ đệm ghi kép khét tiếng.</p>
+</li>
+<li>
+<p>Aurora cung cấp khả năng mở rộng đọc tốt hơn nhờ kiến ​​trúc dựa trên nhật ký, nó có thể hỗ trợ tới 15 bản sao đọc. RDS chỉ có thể hỗ trợ 5, RDS không hỗ trợ nhiều hơn vì bản sao phát trực tuyến cổ điển chịu nhiều ảnh hưởng về hiệu suất hơn ở bản chính. Aurora cũng có độ trễ sao chép thấp hơn nhiều, đặc biệt là khi chịu tải nặng khi ghi.</p>
+</li>
+</ul>
+<p><strong>- Khả năng mở rộng:</strong> Aurora có khả năng mở rộng cao, cho phép bạn dễ dàng tăng hoặc giảm kích thước phiên bản cơ sở dữ liệu nếu cần. Nó có thể tự động thay đổi quy mô dung lượng lưu trữ lên tới 64 TB cho mỗi phiên bản cơ sở dữ liệu và hỗ trợ tới 15 bản sao chỉ có quyền đọc để có khả năng mở rộng quy mô đọc.</p>
+<p><strong>- Tính sẵn sàng cao:</strong> Aurora cung cấp tính sẵn sàng cao và khả năng chịu lỗi tích hợp. Nó sao chép dữ liệu trên nhiều Vùng sẵn sàng (AZ) trong một khu vực, đảm bảo rằng cơ sở dữ liệu của bạn vẫn khả dụng ngay cả trong trường hợp AZ bị lỗi.</p>
+<p><strong>- Độ bền:</strong> Aurora tự động sao lưu liên tục cơ sở dữ liệu của bạn vào Amazon S3, đảm bảo độ bền của dữ liệu và cho phép khôi phục tại một thời điểm bất kỳ trong quá khứ trong tối đa 35 ngày.</p>
+<p><strong>- Khả năng tương thích:</strong> Aurora tương thích với MySQL và PostgreSQL, cho phép bạn sử dụng các công cụ và công cụ cơ sở dữ liệu quen thuộc đồng thời tận dụng lợi ích về hiệu suất và khả năng mở rộng của Aurora.</p>
+<p><strong>- Bảo mật:</strong> Aurora cung cấp các tính năng bảo mật mạnh mẽ, bao gồm cách ly mạng bằng Amazon VPC, mã hóa khi lưu trữ và đang truyền bằng AWS Key Management Service (KMS) cũng như kiểm soát truy cập chi tiết bằng vai trò IAM và quyền cấp cơ sở dữ liệu.</p>
+<p><strong>- Hiệu quả về chi phí:</strong> Aurora được thiết kế để tiết kiệm chi phí, với mô hình định giá thanh toán theo mức sử dụng dựa trên mức sử dụng cơ sở dữ liệu thực tế của bạn. Nó giúp tiết kiệm chi phí đáng kể so với cơ sở dữ liệu tại chỗ truyền thống, đặc biệt đối với khối lượng công việc có nhu cầu luôn biến động.</p>
+<h3 id="amazon-dynamodb">Amazon DynamoDB:</h3>
+<p>Amazon DynamoDB là dịch vụ cơ sở dữ liệu NoSQL được quản lý hoàn toàn do Amazon Web Services (AWS) cung cấp. Nó được thiết kế để cung cấp khả năng mở rộng liền mạch, hiệu suất cao và truy cập dữ liệu có độ trễ thấp cho các ứng dụng yêu cầu thời gian phản hồi một phần nghìn giây. Một số tính năng chính của Amazon DynamoDB bao gồm:</p>
+<p><strong>Tính năng chính:</strong></p>
+<ul>
+<li>
+<p><strong>Được quản lý hoàn toàn:</strong> DynamoDB là dịch vụ được quản lý toàn phần, nghĩa là AWS xử lý các tác vụ như cung cấp phần cứng, thiết lập, cấu hình, sao chép, vá lỗi phần mềm và sao lưu. Điều này cho phép các nhà phát triển tập trung vào việc xây dựng ứng dụng mà không cần lo lắng về quản lý cơ sở hạ tầng.</p>
+</li>
+<li>
+<p><strong>Khả năng mở rộng:</strong> DynamoDB được thiết kế để dễ dàng mở rộng quy mô nhằm đáp ứng khối lượng công việc và khối lượng dữ liệu khác nhau. Nó tự động điều chỉnh quy mô cả khả năng đọc và ghi dựa trên mẫu lưu lượng truy cập của ứng dụng của bạn và có thể xử lý hàng nghìn tỷ yêu cầu mỗi ngày trên hàng nghìn phân vùng.</p>
+</li>
+<li>
+<p><strong>Hiệu suất:</strong> DynamoDB cung cấp thời gian phản hồi mili giây nhất quán, ở mức một chữ số cho các thao tác đọc và ghi, bất kể kích thước dữ liệu hay mức lưu lượng truy cập. Điều này làm cho nó phù hợp với các ứng dụng có độ trễ thấp yêu cầu truy cập dữ liệu nhanh.</p>
+</li>
+<li>
+<p><strong>Mô hình dữ liệu linh hoạt:</strong> DynamoDB hỗ trợ cả mô hình dữ liệu khóa-giá trị và dữ liệu tài liệu, cho phép bạn lưu trữ và truy vấn dữ liệu có cấu trúc, bán cấu trúc hoặc phi cấu trúc. Nó cũng cung cấp hỗ trợ cho các kiểu dữ liệu lồng nhau, cấu trúc dữ liệu phức tạp và truy vấn dựa trên tài liệu.</p>
+</li>
+<li>
+<p><strong>Bảo mật và tuân thủ:</strong> DynamoDB cung cấp các tính năng bảo mật mạnh mẽ, bao gồm mã hóa khi lưu trữ và đang truyền, kiểm soát truy cập chi tiết bằng chính sách AWS Identity and Access Management (IAM) cũng như tích hợp với AWS Key Management Service (KMS) cho quản lý các khóa mã hóa. Nó cũng tuân thủ các tiêu chuẩn và quy định khác nhau của ngành, chẳng hạn như HIPAA, GDPR và PCI DSS.</p>
+</li>
+<li>
+<p><strong>Sao lưu và khôi phục tự động:</strong> DynamoDB tự động sao lưu dữ liệu của bạn và duy trì các bản sao lưu gia tăng trong tối đa 35 ngày, cho phép bạn khôi phục cơ sở dữ liệu của mình vào bất kỳ thời điểm nào trong khoảng thời gian đó. Điều này giúp bảo vệ khỏi mất dữ liệu và cung cấp cơ chế khắc phục thảm họa.</p>
+</li>
+<li>
+<p><strong>Bảng toàn cầu:</strong> Bảng toàn cầu DynamoDB cho phép bạn sao chép dữ liệu của mình trên nhiều Khu vực AWS trên toàn thế giới, cho phép truy cập dữ liệu có độ trễ thấp cho các ứng dụng được phân phối trên toàn cầu. Nó tự động đồng bộ hóa dữ liệu giữa các khu vực, cung cấp khả năng sẵn sàng cao và khắc phục thảm họa.</p>
+</li>
+<li>
+<p><strong>Luồng:</strong> Luồng DynamoDB ghi lại các thay đổi đối với dữ liệu của bạn trong thời gian thực và cho phép bạn xử lý những thay đổi này bằng AWS Lambda hoặc các khung xử lý luồng khác. Tính năng này hữu ích để xây dựng kiến ​​trúc hướng sự kiện, triển khai đồng bộ hóa dữ liệu và kích hoạt quy trình làm việc dựa trên các bản cập nhật cơ sở dữ liệu.</p>
+</li>
+</ul>
+<h3 id="amazon-redshift">Amazon Redshift:</h3>
+<p>Amazon Redshift là dịch vụ kho dữ liệu quy mô petabyte được quản lý toàn phần do Amazon Web Services (AWS) cung cấp. Nó được thiết kế để phân tích hiệu suất cao các bộ dữ liệu lớn bằng cách sử dụng các truy vấn SQL. Một số tính năng chính của Amazon Redshift bao gồm:</p>
+<p><strong>Tính năng chính:</strong></p>
+<ul>
+<li>
+<p><strong>Lưu trữ cột</strong>: Redshift lưu trữ dữ liệu ở định dạng cột, được tối ưu hóa cao độ cho khối lượng công việc phân tích. Điều này cho phép nén dữ liệu hiệu quả, giảm I/O và hiệu suất truy vấn nhanh hơn so với các hệ thống lưu trữ theo hàng truyền thống.</p>
+</li>
+<li>
+<p><strong>Xử lý song song lớn (MPP):</strong> Redshift phân phối dữ liệu và xử lý truy vấn trên nhiều nút trong một cụm, cho phép thực hiện song song các truy vấn. Kiến trúc này cho phép Redshift mở rộng quy mô theo chiều ngang khi khối lượng dữ liệu và truy vấn của bạn tăng lên, mang lại hiệu suất ổn định bất kể kích thước tập dữ liệu.</p>
+</li>
+<li>
+<p><strong>Khả năng mở rộng:</strong> Redshift hỗ trợ các cụm có phạm vi từ vài trăm gigabyte đến nhiều petabyte dữ liệu, cho phép bạn mở rộng cơ sở hạ tầng kho dữ liệu dựa trên nhu cầu kinh doanh của mình. Bạn có thể dễ dàng thêm hoặc xóa các nút khỏi cụm Redshift mà không có thời gian ngừng hoạt động.</p>
+</li>
+<li>
+<p><strong>Hiệu suất cao:</strong> Redshift được tối ưu hóa để mang lại hiệu suất truy vấn nhanh, với khả năng thực hiện các truy vấn phân tích phức tạp đối với các tập dữ liệu lớn trong vài giây hoặc vài phút. Nó tận dụng các kỹ thuật tối ưu hóa truy vấn nâng cao, chẳng hạn như song song hóa truy vấn, chiến lược phân phối dữ liệu và thu thập thống kê bảng tự động, để mang lại hiệu suất tối ưu.</p>
+</li>
+<li>
+<p><strong>Tích hợp với Data Lake:</strong> Redshift Spectrum cho phép bạn truy vấn dữ liệu được lưu trữ trong Amazon S3 trực tiếp từ cụm Redshift mà không cần tải dữ liệu đó vào bảng Redshift. Điều này cho phép bạn phân tích dữ liệu trên kho dữ liệu và hồ dữ liệu một cách liền mạch, cung cấp chế độ xem thống nhất về dữ liệu của bạn.</p>
+</li>
+<li>
+<p><strong>Phân tích nâng cao:</strong> Redshift hỗ trợ các khả năng phân tích nâng cao, bao gồm chức năng cửa sổ, chức năng do người dùng xác định (UDF) và tích hợp máy học thông qua Amazon SageMaker. Điều này cho phép bạn thực hiện phân tích dữ liệu phức tạp và lập mô hình dự đoán trực tiếp trong môi trường Redshift của mình.</p>
+</li>
+<li>
+<p><strong>Bảo mật:</strong> Redshift cung cấp các tính năng bảo mật mạnh mẽ, bao gồm mã hóa khi lưu trữ và đang truyền, kiểm soát truy cập chi tiết bằng chính sách AWS Identity and Access Management (IAM) và tích hợp với AWS Key Management Service (KMS) để quản lý mã hóa phím. Nó cũng tuân thủ các tiêu chuẩn và quy định khác nhau của ngành, chẳng hạn như HIPAA, GDPR và PCI DSS.</p>
+</li>
+<li>
+<p><strong>Sao lưu và bảo trì tự động:</strong> Redshift tự động thực hiện các bản sao lưu gia tăng cho dữ liệu của bạn và thực hiện các tác vụ bảo trì như vá phần mềm và thay thế nút, đảm bảo tính khả dụng cao và độ bền dữ liệu mà không cần can thiệp thủ công.</p>
+</li>
+</ul>
+<h3 id="amazon-documentdb-with-mongodb-compatibility">Amazon DocumentDB (with MongoDB compatibility):</h3>
+<p>Amazon DocumentDB là dịch vụ cơ sở dữ liệu tài liệu tương thích với MongoDB được quản lý toàn phần do Amazon Web Services (AWS) cung cấp. Nó được thiết kế để cung cấp khả năng mở rộng, lưu trữ hiệu suất cao cho dữ liệu JSON, khiến nó rất phù hợp cho các ứng dụng yêu cầu cấu trúc dữ liệu linh hoạt và năng động. Một số tính năng chính của Amazon DocumentDB bao gồm:</p>
+<p><strong>Tính năng chính:</strong></p>
+<ul>
+<li>
+<p><strong>Khả năng tương thích với MongoDB:</strong> Amazon DocumentDB tương thích với MongoDB 3.6, nghĩa là bạn có thể sử dụng trình điều khiển, công cụ và ứng dụng MongoDB hiện có với DocumentDB mà không cần sửa đổi mã của mình. Khả năng tương thích này giúp dễ dàng di chuyển khối lượng công việc MongoDB hiện có sang DocumentDB mà không tốn nhiều công sức.</p>
+</li>
+<li>
+<p><strong>Dịch vụ được quản lý hoàn toàn:</strong> DocumentDB là dịch vụ được quản lý toàn phần, nghĩa là AWS xử lý các tác vụ như cung cấp phần cứng, thiết lập, cấu hình, giám sát và sao lưu. Điều này cho phép các nhà phát triển tập trung vào việc xây dựng ứng dụng mà không phải lo lắng về các nhiệm vụ quản lý cơ sở dữ liệu.</p>
+</li>
+<li>
+<p><strong>Khả năng mở rộng:</strong> DocumentDB được thiết kế để mở rộng quy mô một cách dễ dàng nhằm đáp ứng khối lượng công việc và khối lượng dữ liệu ngày càng tăng. Nó hỗ trợ mở rộng quy mô theo chiều ngang bằng cách tự động thêm các bản sao chỉ có quyền đọc để phân phối lưu lượng đọc và cải thiện hiệu suất. Ngoài ra, DocumentDB có thể tự động mở rộng dung lượng lưu trữ lên tới 64 TB mỗi cụm, loại bỏ nhu cầu quản lý dung lượng thủ công.</p>
+</li>
+<li>
+<p><strong>Tính sẵn sàng cao:</strong> DocumentDB cung cấp tính sẵn sàng cao tích hợp với khả năng sao chép đồng bộ trên nhiều Vùng sẵn sàng (AZ) trong một khu vực. Điều này đảm bảo rằng dữ liệu của bạn có khả năng phục hồi trước các lỗi AZ và vẫn khả dụng với thời gian ngừng hoạt động hoặc mất dữ liệu ở mức tối thiểu.</p>
+</li>
+<li>
+<p><strong>Hiệu suất:</strong> DocumentDB cung cấp hiệu suất nhanh và có thể dự đoán được cho khối lượng công việc đọc nhiều, với thời gian phản hồi có độ trễ thấp khi thực hiện truy vấn. Nó sử dụng bộ lưu trữ dựa trên SSD và xử lý phân tán để mang lại khả năng truy cập dữ liệu thông lượng cao và độ trễ thấp.</p>
+</li>
+<li>
+<p><strong>Mô hình tài liệu:</strong> DocumentDB hỗ trợ mô hình tài liệu linh hoạt dựa trên tài liệu JSON (BSON), cho phép bạn lưu trữ và truy vấn dữ liệu bán cấu trúc với các trường và mảng lồng nhau. Điều này làm cho nó rất phù hợp cho các ứng dụng có lược đồ đang phát triển hoặc cấu trúc dữ liệu động.</p>
+</li>
+<li>
+<p><strong>Bảo mật:</strong> DocumentDB cung cấp các tính năng bảo mật mạnh mẽ, bao gồm mã hóa khi lưu trữ và đang truyền, kiểm soát truy cập chi tiết bằng chính sách AWS Identity and Access Management (IAM) và tích hợp với AWS Key Management Service (KMS) để quản lý mã hóa phím. Nó cũng tuân thủ các tiêu chuẩn và quy định khác nhau của ngành, chẳng hạn như HIPAA, GDPR và PCI DSS.</p>
+</li>
+<li>
+<p><strong>Sao lưu được quản lý và khôi phục tại thời điểm:</strong> DocumentDB tự động sao lưu liên tục dữ liệu của bạn và cho phép bạn khôi phục cơ sở dữ liệu của mình về bất kỳ thời điểm nào trong khoảng thời gian lưu giữ sao lưu. Điều này giúp bảo vệ khỏi mất dữ liệu và cung cấp cơ chế khắc phục thảm họa.</p>
+</li>
+</ul>
+<h3 id="amazon-neptune">Amazon Neptune:</h3>
+<p>Amazon Neptune là dịch vụ cơ sở dữ liệu đồ thị được quản lý toàn phần do Amazon Web Services (AWS) cung cấp. Nó được tối ưu hóa để lưu trữ và truy vấn dữ liệu có tính kết nối cao, giúp nó phù hợp với các ứng dụng yêu cầu mô hình hóa và truyền tải mối quan hệ phức tạp, chẳng hạn như mạng xã hội, công cụ đề xuất, phát hiện gian lận và biểu đồ tri thức. Một số tính năng chính của Amazon Neptune bao gồm:</p>
+<p><strong>Tính năng chính:</strong></p>
+<ul>
+<li>
+<p><strong>Dịch vụ được quản lý hoàn toàn:</strong> Neptune là dịch vụ được quản lý toàn phần, nghĩa là AWS xử lý các nhiệm vụ cung cấp, thiết lập, cấu hình, giám sát, sao lưu và bảo trì cơ sở hạ tầng. Điều này cho phép các nhà phát triển tập trung vào việc xây dựng ứng dụng mà không cần lo lắng về việc quản lý cơ sở dữ liệu.</p>
+</li>
+<li>
+<p><strong>Công cụ cơ sở dữ liệu đồ thị:</strong> Neptune được xây dựng trên một công cụ cơ sở dữ liệu đồ thị chuyên dụng được tối ưu hóa để lưu trữ và truy vấn dữ liệu có cấu trúc đồ thị. Nó hỗ trợ các mô hình biểu đồ thuộc tính và RDF (Khung mô tả tài nguyên), cho phép bạn biểu diễn dữ liệu dưới dạng nút, cạnh và thuộc tính.</p>
+</li>
+<li>
+<p><strong>Khả năng mở rộng cao:</strong> Neptune được thiết kế để mở rộng quy mô một cách dễ dàng nhằm đáp ứng khối lượng công việc và khối lượng dữ liệu ngày càng tăng. Nó hỗ trợ mở rộng quy mô theo chiều ngang bằng cách tự động thêm bản sao đọc và dung lượng lưu trữ để xử lý thông lượng truy vấn và kích thước tập dữ liệu ngày càng tăng.</p>
+</li>
+<li>
+<p><strong>Tính sẵn sàng cao:</strong> Neptune cung cấp tính sẵn sàng cao tích hợp với khả năng sao chép đồng bộ trên nhiều Vùng sẵn sàng (AZ) trong một khu vực. Điều này đảm bảo rằng dữ liệu của bạn có khả năng phục hồi trước các lỗi AZ và vẫn khả dụng với thời gian ngừng hoạt động hoặc mất dữ liệu ở mức tối thiểu.</p>
+</li>
+<li>
+<p><strong>Hiệu suất:</strong> Neptune cung cấp hiệu suất nhanh và có thể dự đoán được cho các truy vấn biểu đồ, với thời gian phản hồi có độ trễ thấp để duyệt qua các mối quan hệ và phân tích dữ liệu biểu đồ. Nó tận dụng các kế hoạch thực hiện truy vấn được tối ưu hóa và xử lý phân tán để mang lại khả năng truy cập dữ liệu có thông lượng cao và độ trễ thấp.</p>
+</li>
+<li>
+<p><strong>Mô hình dữ liệu linh hoạt:</strong> Neptune hỗ trợ cả mô hình dữ liệu RDF và biểu đồ thuộc tính, mang lại sự linh hoạt trong việc biểu diễn và truy vấn dữ liệu có cấu trúc biểu đồ. Nó cho phép bạn xác định các loại nút và cạnh tùy chỉnh, thuộc tính và chỉ mục để tối ưu hóa hiệu suất truy vấn.</p>
+</li>
+<li>
+<p><strong>Tích hợp với Dịch vụ AWS:</strong> Neptune tích hợp liền mạch với các dịch vụ AWS khác, chẳng hạn như Amazon S3, AWS Lambda, Amazon CloudWatch và AWS Identity and Access Management (IAM). Điều này cho phép bạn xây dựng các ứng dụng dựa trên biểu đồ toàn diện bằng các công cụ và dịch vụ AWS quen thuộc.</p>
+</li>
+<li>
+<p><strong>Bảo mật:</strong> Neptune cung cấp các tính năng bảo mật mạnh mẽ, bao gồm mã hóa khi lưu trữ và đang truyền, kiểm soát truy cập chi tiết bằng chính sách AWS Identity and Access Management (IAM) và tích hợp với AWS Key Management Service (KMS) để quản lý mã hóa phím. Nó cũng tuân thủ các tiêu chuẩn và quy định khác nhau của ngành, chẳng hạn như HIPAA, GDPR và PCI DSS.</p>
+</li>
+</ul>
 
 
 
@@ -459,6 +662,22 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -502,10 +721,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/1-introduce-aws/1.1-computeservices/" title="Dịch vụ điện toán"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/1-introduce-aws/1.2-storageservices/" title="Dịch vụ lưu trữ"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/1-introduce-aws/1.2-storageservices/" title="Dịch vụ lưu trữ" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/1-introduce-aws/1.4-networkingservices/" title="Giới thiệu" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -515,19 +734,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1709873023"></script>
-    <script src="/js/perfect-scrollbar.min.js?1709873023"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1709873023"></script>
-    <script src="/js/jquery.sticky.js?1709873023"></script>
-    <script src="/js/featherlight.min.js?1709873023"></script>
-    <script src="/js/highlight.pack.js?1709873023"></script>
+    <script src="/js/clipboard.min.js?1709894198"></script>
+    <script src="/js/perfect-scrollbar.min.js?1709894198"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1709894198"></script>
+    <script src="/js/jquery.sticky.js?1709894198"></script>
+    <script src="/js/featherlight.min.js?1709894198"></script>
+    <script src="/js/highlight.pack.js?1709894198"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1709873023"></script>
-    <script src="/js/learn.js?1709873023"></script>
-    <script src="/js/hugo-learn.js?1709873023"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1709894198"></script>
+    <script src="/js/learn.js?1709894198"></script>
+    <script src="/js/hugo-learn.js?1709894198"></script>
 
-    <link href="/mermaid/mermaid.css?1709873023" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1709873023"></script>
+    <link href="/mermaid/mermaid.css?1709894198" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1709894198"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
