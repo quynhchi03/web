@@ -38,30 +38,6 @@
                 href="//localhost:1313/vi/1-introduce-aws/1.2-storageservices/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.8-cicd-auto-deploy-static-page-with-github/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/2-hands-on/2.1-build-serverless-application/2.1.8-cicd-auto-deploy-static-page-with-github/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.8-cicd-auto-deploy-static-page-with-github/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.9.-cicd-integration-with-codebuild-auto-deploy-lambda-function/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/2-hands-on/2.1-build-serverless-application/2.1.9.-cicd-integration-with-codebuild-auto-deploy-lambda-function/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.9.-cicd-integration-with-codebuild-auto-deploy-lambda-function/"
-                />
-  </url><url>
     <loc>//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.1.-create-vpc-subnet-route-table/</loc>
     <xhtml:link
                 rel="alternate"
@@ -170,6 +146,18 @@
                 href="//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.5.-create-dynamodb/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.6.-create-api-gateway/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/2-hands-on/2.1-build-serverless-application/2.1.6.-create-api-gateway/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.6.-create-api-gateway/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.7.-development-frontend/</loc>
     <xhtml:link
                 rel="alternate"
@@ -182,16 +170,28 @@
                 href="//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.7.-development-frontend/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.6.-create-api-gateway/</loc>
+    <loc>//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.8-cicd-auto-deploy-static-page-with-github/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-hands-on/2.1-build-serverless-application/2.1.6.-create-api-gateway/"
+                href="//localhost:1313/2-hands-on/2.1-build-serverless-application/2.1.8-cicd-auto-deploy-static-page-with-github/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.6.-create-api-gateway/"
+                href="//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.8-cicd-auto-deploy-static-page-with-github/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.9.-cicd-integration-with-codebuild-auto-deploy-lambda-function/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/2-hands-on/2.1-build-serverless-application/2.1.9.-cicd-integration-with-codebuild-auto-deploy-lambda-function/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.9.-cicd-integration-with-codebuild-auto-deploy-lambda-function/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/categories/</loc>
