@@ -13,5 +13,5 @@ AWS là viết tắt của **Dịch vụ web của Amazon**. Đây là một n�
 
 #### Nội dung
 
-1. [Giới thiệu về  dịch vụ chính của Amazon](1-Introduce-aws/)
-2. [Loạt bài thực hành](content/2-hands-on)
+1. [Giới thiệu về  dịch vụ chính của Amazon](1-introduce-aws/)
+2. [Loạt bài thực hành](2-hands-on/)

@@ -15,4 +15,4 @@ Tôi quyết định tạo một trang web để chia sẻ những gì tôi bi�
 #### Nội dung
 
 ##### Danh sách bài thực hành
-1. Days1 [Xây dựng ứng dụng Serverless](2.1-Build-Serverless-Application/)
+1. Days1 [Xây dựng ứng dụng Serverless](2.1-build-serverless-application/)

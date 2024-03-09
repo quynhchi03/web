@@ -24,7 +24,7 @@ Fill yours function infomation:
 + Runtime: Java11
 + Architecture: arm64
 + Advanced settings: Chọn Bật VPC
-+ VPC: [Chọn VPC chúng ta đã tạo ở bước 1](../2.1.1.%20Create%20VPC,%20Subnet,%20Route%20Table/)
++ VPC: [Chọn VPC chúng ta đã tạo ở bước 1](../2.1.1.-create-vpc-subnet-route-table/)
 + Subnets: Chọn private-subnet
 + Security groups: khuyến nghị mặc định
 

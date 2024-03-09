@@ -33,4 +33,4 @@ Hãy **Tạo VPC Endpoint** làm theo hướng dẫn bên dưới:
 + Name tag – optional: Điền tên endpoint VPC
 + Service category: Dịch vụ AWS
 + Services: com.amazonaws.us-east-1.dynamodb
-+ VPC: chọn vpc chúng ta đã tạo ở [Step 2.1.1](../2.1.1.%20Create%20VPC,%20Subnet,%20Route%20Table/)
++ VPC: chọn vpc chúng ta đã tạo ở [Step 2.1.1](../2.1.1.-create-vpc-subnet-route-table/)

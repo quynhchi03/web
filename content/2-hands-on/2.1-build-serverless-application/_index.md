@@ -26,20 +26,20 @@ User Authentication and Authorization: The application can incorporate user auth
 
 #### Content
 
-[2.1.1 Create VPC, Subnet, Route Table](2.1.1.%20Create%20VPC,%20Subnet,%20Route%20Table/)
+[2.1.1 Create VPC, Subnet, Route Table](2.1.1.-create-vpc-subnet-route-table/)
 
-[2.1.2. Create VPC endpoint](2.1.2.%20Create%20VPC%20endpoint/)
+[2.1.2. Create VPC endpoint](2.1.2.-create-vpc-endpoint/)
 
-[2.1.3. Develop Lambda Function with Java Language](2.1.3.%20Develop%20Lambda%20Function%20with%20Java%20Language/)
+[2.1.3. Develop Lambda Function with Java Language](2.1.3.-develop-lambda-function-with-java-language/)
 
-[2.1.4. Create Lambda function and deploy](2.1.4.%20Create%20Lambda%20function%20and%20deploy/)
+[2.1.4. Create Lambda function and deploy](2.1.4.-create-lambda-function-and-deploy/)
 
-[2.1.5. Create DynamoDB](2.1.5.%20Create%20DynamoDB/)
+[2.1.5. Create DynamoDB](2.1.5.-create-dynamodb/)
 
-[2.1.6. Create API Gateway](2.1.6.%20Create%20API%20Gateway/)
+[2.1.6. Create API Gateway](2.1.6.-create-api-gateway/)
 
-[2.1.7. Development Frontend](2.1.7.%20Development%20Frontend/)
+[2.1.7. Development Frontend](2.1.7.-development-frontend/)
 
-[2.1.8 CICD Auto Deploy Static Page With GitHub](2.1.8%20CICD%20Auto%20Deploy%20Static%20Page%20With%20GitHub/)
+[2.1.8 CICD Auto Deploy Static Page With GitHub](2.1.8-cicd-auto-deploy-static-page-with-github/)
 
-[2.1.9. CICD Integration with CodeBuild Auto Deploy Lambda Function](2.1.9.%20CICD%20Integration%20with%20CodeBuild%20Auto%20Deploy%20Lambda%20Function/)
+[2.1.9. CICD Integration with CodeBuild Auto Deploy Lambda Function](2.1.9.-cicd-integration-with-codebuild-auto-deploy-lambda-function/)

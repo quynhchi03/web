@@ -33,4 +33,4 @@ Let’s **Create VPC Endpoint** follow instructions below:
 + Name tag – optional: Fill name of VPC endpoint
 + Service category: AWS services
 + Services: com.amazonaws.us-east-1.dynamodb
-+ VPC: select vpc we created at [Step 2.1.1](../2.1.1.%20Create%20VPC,%20Subnet,%20Route%20Table/)
++ VPC: select vpc we created at [Step 2.1.1](../2.1.1.-create-vpc-subnet-route-table/)

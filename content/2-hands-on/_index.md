@@ -15,5 +15,5 @@ I decided to create a website to share what I know about the process of learning
 #### Content
 
 ##### List labs hands-on
-1. Days1 [Build Serverless Application](2.1-Build-Serverless-Application/)
+1. Days1 [Build Serverless Application](2.1-build-serverless-application/)
 
