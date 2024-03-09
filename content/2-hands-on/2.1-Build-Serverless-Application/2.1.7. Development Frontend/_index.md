@@ -1,9 +1,9 @@
 ---
 title : "Development Frontend"
 date : "`r Sys.Date()`"
-weight : 7
+weight : 8
 chapter : false
-pre : " <b> 2.1.2 </b> "
+pre : " <b> 2.1.7 </b> "
 ---
 
 
