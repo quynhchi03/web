@@ -224,7 +224,7 @@ Path: note-app-serverless/aws-serverless-note-app/src/main/java/org/example/awss
         return "Delete successfully";
     }
     }
-##### Second, let create Function **LambdaFetchDataFunction** on file **LambdaFetchDataFunction.java** 
+##### Third, let create Function **LambdaFetchDataFunction** on file **LambdaFetchDataFunction.java** 
 
 Path: note-app-serverless/aws-serverless-note-app/src/main/java/org/example/awsserverlessnoteapp/LambdaFetchDataFunction.java
 

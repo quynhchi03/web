@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38235&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.123.8">
@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Hands-on Lab :: Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
+    <title>Tạo VPC, Subnet, Route Table :: Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
 
     
-    <link href="/css/nucleus.css?1709924572" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1709924572" rel="stylesheet">
-    <link href="/css/hybrid.css?1709924572" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1709924572" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1709924572" rel="stylesheet">
-    <link href="/css/auto-complete.css?1709924572" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1709924572" rel="stylesheet">
-    <link href="/css/theme.css?1709924572" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1709924572" rel="stylesheet">
+    <link href="/css/nucleus.css?1709964491" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1709964491" rel="stylesheet">
+    <link href="/css/hybrid.css?1709964491" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1709964491" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1709964491" rel="stylesheet">
+    <link href="/css/auto-complete.css?1709964491" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1709964491" rel="stylesheet">
+    <link href="/css/theme.css?1709964491" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1709964491" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1709924572" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1709964491" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1709924572"></script>
+    <script src="/js/jquery-3.3.1.min.js?1709964491"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1709924572"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1709924572"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1709964491"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1709964491"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/localhost:38235\/\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1709924572"></script>
+<script type="text/javascript" src="/js/search.js?1709964491"></script>
 
     
   </div>
@@ -232,13 +232,13 @@
  
   
     
-    <li data-nav-id="/vi/2-hands-on/" title="Hands-on Lab" class="dd-item 
+    <li data-nav-id="/vi/2-hands-on/" title="Thực Hành AWS" class="dd-item 
         parent
         
         
         ">
       <a href="/vi/2-hands-on/">
-           <b> 2. </b> Hands-on Lab
+           <b> 2 </b> Thực Hành AWS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -263,13 +263,13 @@
  
   
     
-    <li data-nav-id="/vi/2-hands-on/2.1-build-serverless-application/" title="Hands-on Lab" class="dd-item 
+    <li data-nav-id="/vi/2-hands-on/2.1-build-serverless-application/" title="Xây dựng ứng dụng Serverless" class="dd-item 
         parent
         
         
         ">
       <a href="/vi/2-hands-on/2.1-build-serverless-application/">
-           <b> 2. </b> Hands-on Lab
+           <b> 2.1 </b> Xây dựng ứng dụng Serverless
           
             <i class="fas fa-check read-icon"></i>
           
@@ -284,90 +284,6 @@
           
           
         
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/2-hands-on/2.1-build-serverless-application/2.1.1.-create-vpc-subnet-route-table/" title="Hands-on Lab" class="dd-item 
-        
-        active
-        
-        ">
-      <a href="/vi/2-hands-on/2.1-build-serverless-application/2.1.1.-create-vpc-subnet-route-table/">
-           <b> 2. </b> Hands-on Lab
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/2-hands-on/2.1-build-serverless-application/2.1.2.-create-vpc-endpoint/" title="Hands-on Lab" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/2-hands-on/2.1-build-serverless-application/2.1.2.-create-vpc-endpoint/">
-           <b> 2. </b> Hands-on Lab
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/2-hands-on/2.1-build-serverless-application/2.1.3.-develop-lambda-function-with-java-language/" title="Hands-on Lab" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/2-hands-on/2.1-build-serverless-application/2.1.3.-develop-lambda-function-with-java-language/">
-           <b> 2. </b> Hands-on Lab
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
           
             
             
@@ -453,6 +369,174 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-hands-on/2.1-build-serverless-application/2.1.7.-development-frontend/" title="Hands-on Lab" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-hands-on/2.1-build-serverless-application/2.1.7.-development-frontend/">
+           <b> 2. </b> Hands-on Lab
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-hands-on/2.1-build-serverless-application/2.1.8-cicd-auto-deploy-static-page-with-github/" title="Hands-on Lab" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-hands-on/2.1-build-serverless-application/2.1.8-cicd-auto-deploy-static-page-with-github/">
+           <b> 2. </b> Hands-on Lab
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-hands-on/2.1-build-serverless-application/2.1.9.-cicd-integration-with-codebuild-auto-deploy-lambda-function/" title="Hands-on Lab" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-hands-on/2.1-build-serverless-application/2.1.9.-cicd-integration-with-codebuild-auto-deploy-lambda-function/">
+           <b> 2. </b> Hands-on Lab
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-hands-on/2.1-build-serverless-application/2.1.1.-create-vpc-subnet-route-table/" title="Tạo VPC, Subnet, Route Table" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/vi/2-hands-on/2.1-build-serverless-application/2.1.1.-create-vpc-subnet-route-table/">
+           <b> 2.1.1 </b> Tạo VPC, Subnet, Route Table
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-hands-on/2.1-build-serverless-application/2.1.2.-create-vpc-endpoint/" title="Tạo VPC endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-hands-on/2.1-build-serverless-application/2.1.2.-create-vpc-endpoint/">
+           <b> 2.1.2 </b> Tạo VPC endpoint
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-hands-on/2.1-build-serverless-application/2.1.3.-develop-lambda-function-with-java-language/" title="Phát triển hàm Lambda bằng ngôn ngữ Java" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-hands-on/2.1-build-serverless-application/2.1.3.-develop-lambda-function-with-java-language/">
+           <b> 2.1.3 </b> Phát triển hàm Lambda bằng ngôn ngữ Java
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -509,7 +593,7 @@
                   
                     
                     
-                      <option id="en" value="//localhost:38235/2-hands-on/2.1-build-serverless-application/2.1.1.-create-vpc-subnet-route-table/">English</option>
+                      <option id="en" value="//localhost:1313/2-hands-on/2.1-build-serverless-application/2.1.1.-create-vpc-subnet-route-table/">English</option>
                     
                   
               
@@ -523,7 +607,7 @@
                   
                     
                     
-                      <option id="vi" value="//localhost:38235/vi/2-hands-on/2.1-build-serverless-application/2.1.1.-create-vpc-subnet-route-table/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.1.-create-vpc-subnet-route-table/" selected>Tiếng Việt</option>
                     
                   
               
@@ -615,7 +699,7 @@
             
           
           
-            <a href='/vi/'>Giới Thiệu</a> > <a href='/vi/2-hands-on/'>Hands-on Lab</a> > <a href='/vi/2-hands-on/2.1-build-serverless-application/'>Hands-on Lab</a> > Hands-on Lab
+            <a href='/vi/'>Giới thiệu Hành trình 100 Days Cloud</a> > <a href='/vi/2-hands-on/'>Thực Hành AWS</a> > <a href='/vi/2-hands-on/2.1-build-serverless-application/'>Xây dựng ứng dụng Serverless</a> > Tạo VPC, Subnet, Route Table
           
         
           
@@ -654,7 +738,7 @@
           
             <h1>
               
-              Hands-on Lab
+              Tạo VPC, Subnet, Route Table
             </h1>
           
 
@@ -662,8 +746,87 @@
 
 
 
-	<h1 id="giới-thiệu-về-amazon-web-service">Giới thiệu về Amazon Web Service</h1>
-<h4 id="nội-dung">Nội dung</h4>
+	<h4 id="tổng-quan">Tổng quan</h4>
+<p>Hãy cùng đi sâu vào các khái niệm về VPC, Subnet, Route Table và Security Group:</p>
+<p><strong>1.1 Đám mây riêng ảo (VPC):</strong></p>
+<ul>
+<li>
+<p>Virtual Private Cloud (VPC) là môi trường mạng ảo được cung cấp bởi Amazon Web Services (AWS).</p>
+</li>
+<li>
+<p>Nó cho phép bạn cung cấp một phần riêng biệt về mặt logic của đám mây AWS nơi bạn có thể khởi chạy các tài nguyên AWS như phiên bản EC2, cơ sở dữ liệu RDS và hàm Lambda.</p>
+</li>
+<li>
+<p>Với VPC, bạn có toàn quyền kiểm soát môi trường mạng của mình, bao gồm dải địa chỉ IP, mạng con, bảng định tuyến và cổng mạng.</p>
+</li>
+<li>
+<p>VPC cung cấp bảo mật bằng cách cho phép bạn xác định chính sách kiểm soát truy cập mạng, thiết lập kết nối VPN và sử dụng các nhóm bảo mật cũng như ACL mạng để hạn chế lưu lượng truy cập.</p>
+</li>
+</ul>
+<p><strong>Mạng con 1.2:</strong></p>
+<ul>
+<li>
+<p>Mạng con là một phần được phân đoạn trong dải địa chỉ IP của VPC mà bạn có thể đặt tài nguyên AWS trong đó.</p>
+</li>
+<li>
+<p>Mạng con cho phép bạn tổ chức các tài nguyên trong VPC và xác định các phân đoạn mạng riêng biệt với cấu hình định tuyến, chính sách kiểm soát truy cập và vùng khả dụng của riêng chúng.</p>
+</li>
+<li>
+<p>Mỗi mạng con được liên kết với một vùng sẵn sàng (AZ) cụ thể trong một khu vực và các tài nguyên được triển khai trong mạng con đó nằm trong AZ tương ứng.</p>
+</li>
+<li>
+<p>Mạng con có thể là công khai hoặc riêng tư, tùy thuộc vào việc chúng có đường dẫn đến cổng internet hay không.</p>
+</li>
+</ul>
+<p><strong>1.3 Bảng lộ trình:</strong></p>
+<ul>
+<li>
+<p>Bảng định tuyến là một bộ quy tắc (tuyến đường) xác định nơi lưu lượng mạng được hướng tới trong VPC.</p>
+</li>
+<li>
+<p>Mỗi mạng con trong VPC phải được liên kết với một bảng định tuyến, bảng này xác định cách thức lưu lượng truy cập vào và ra khỏi mạng con.</p>
+</li>
+<li>
+<p>Bảng lộ trình chứa các tuyến đến các đích cụ thể, chẳng hạn như cổng internet, cổng riêng ảo (dành cho kết nối VPN), kết nối ngang hàng VPC hoặc cổng NAT.</p>
+</li>
+<li>
+<p>Bằng cách định cấu hình các tuyến trong bảng tuyến, bạn có thể kiểm soát cách lưu lượng truy cập giữa các mạng con trong VPC và với các mạng bên ngoài.</p>
+</li>
+</ul>
+<p><strong>1.4 Nhóm bảo mật:</strong></p>
+<ul>
+<li>
+<p>Nhóm bảo mật hoạt động như một tường lửa ảo cho các phiên bản của bạn để kiểm soát lưu lượng vào và ra.</p>
+</li>
+<li>
+<p>Nó hoạt động ở cấp độ phiên bản và có thể được liên kết với nhiều phiên bản trong một VPC.</p>
+</li>
+<li>
+<p>Nhóm bảo mật cho phép bạn xác định các quy tắc cho phép hoặc từ chối lưu lượng truy cập dựa trên giao thức, cổng và địa chỉ IP.</p>
+</li>
+<li>
+<p>Theo mặc định, tất cả lưu lượng truy cập vào đều bị từ chối và tất cả lưu lượng truy cập ra đều được phép, nhưng bạn có thể tùy chỉnh các quy tắc này để đáp ứng các yêu cầu bảo mật cụ thể của mình.</p>
+</li>
+<li>
+<p>Nhóm bảo mật có trạng thái, nghĩa là nếu bạn cho phép lưu lượng truy cập cho một giao thức và cổng cụ thể thì lưu lượng quay lại sẽ tự động được phép bất kể quy tắc gửi đi.</p>
+</li>
+</ul>
+<p><strong>Tóm lại, VPC cung cấp môi trường mạng biệt lập trong AWS, mạng con cho phép bạn phân chia VPC thành các mạng nhỏ hơn, bảng định tuyến xác định cách định tuyến lưu lượng trong VPC và các nhóm bảo mật kiểm soát luồng lưu lượng đến và đi từ phiên bản của bạn. Các thành phần này phối hợp với nhau để cung cấp cơ sở hạ tầng mạng an toàn và có thể mở rộng trên đám mây AWS.</strong></p>
+<h4 id="thực-hành">Thực hành</h4>
+<p>Hãy <strong>Tạo VPC</strong> làm theo hướng dẫn bên dưới:
+<img alt="CreateVPC1" src="/images/2/CreateVPC1.jpeg?featherlight=false&width=100pc"></p>
+<ul>
+<li>Truy cập <a href="https://us-east-1.console.aws.amazon.com/vpcconsole/home?region=us-east-1#vpcs">https://us-east-1.console.aws.amazon.com/vpcconsole/home?region=us-east-1#vpcs</a> Chọn <strong>Create VPC</strong>
+<img alt="CreateVPC2" src="/images/2/CreateVPC2.jpeg?featherlight=false&width=100pc"></li>
+<li>Chọn VPC and More</li>
+<li>Chọn IPv4 CIDR: 10.0.0.0/16</li>
+<li>Chọn AZ: 1</li>
+<li>Chọn number public subnet 1</li>
+<li>Chọn private subnet 1</li>
+<li>Chọn NAT gateway: none, vì chúng tôi đang kết nối trong tài nguyên AWS nên không cần kết nối internet. Cổng NAT phù hợp với tài nguyên của bên thứ ba trên internet
+<img alt="CreateVPC3" src="/images/2/CreateVPC3.jpeg?featherlight=false&width=100pc">
+Sau khi hoàn thành các tùy chọn này, hãy nhấp vào <strong>Tạo VPC</strong>. Chờ một phút để cung cấp tài nguyên, Sau khi hoàn tất, chúng ta có một vpc như hình trên.</li>
+</ul>
 
 
 
@@ -821,23 +984,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -888,6 +1034,74 @@
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -931,10 +1145,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/2-hands-on/2.1-build-serverless-application/" title="Hands-on Lab"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/2-hands-on/2.1-build-serverless-application/2.1.9.-cicd-integration-with-codebuild-auto-deploy-lambda-function/" title="Hands-on Lab"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/2-hands-on/2.1-build-serverless-application/2.1.2.-create-vpc-endpoint/" title="Hands-on Lab" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/2-hands-on/2.1-build-serverless-application/2.1.2.-create-vpc-endpoint/" title="Tạo VPC endpoint" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -944,19 +1158,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1709924572"></script>
-    <script src="/js/perfect-scrollbar.min.js?1709924572"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1709924572"></script>
-    <script src="/js/jquery.sticky.js?1709924572"></script>
-    <script src="/js/featherlight.min.js?1709924572"></script>
-    <script src="/js/highlight.pack.js?1709924572"></script>
+    <script src="/js/clipboard.min.js?1709964491"></script>
+    <script src="/js/perfect-scrollbar.min.js?1709964491"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1709964491"></script>
+    <script src="/js/jquery.sticky.js?1709964491"></script>
+    <script src="/js/featherlight.min.js?1709964491"></script>
+    <script src="/js/highlight.pack.js?1709964491"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1709924572"></script>
-    <script src="/js/learn.js?1709924572"></script>
-    <script src="/js/hugo-learn.js?1709924572"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1709964491"></script>
+    <script src="/js/learn.js?1709964491"></script>
+    <script src="/js/hugo-learn.js?1709964491"></script>
 
-    <link href="/mermaid/mermaid.css?1709924572" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1709924572"></script>
+    <link href="/mermaid/mermaid.css?1709964491" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1709964491"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
