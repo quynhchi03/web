@@ -3,7 +3,7 @@ title : "CICD Auto Deploy Static Page With GitHub"
 date : "`r Sys.Date()`"
 weight : 9
 chapter : false
-pre : " <b> 2.1.9 </b> "
+pre : " <b> 2.1.8 </b> "
 ---
 
 

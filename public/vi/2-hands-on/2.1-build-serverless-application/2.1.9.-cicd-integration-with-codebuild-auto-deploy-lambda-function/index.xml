@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hands-on Lab on Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
+    <title>Tích hợp CICD với CodeBuild Tự động triển khai chức năng Lambda on Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
     <link>//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.9.-cicd-integration-with-codebuild-auto-deploy-lambda-function/</link>
-    <description>Recent content in Hands-on Lab on Bắt đầu với Amazon VPC và AWS VPN Site to Site</description>
+    <description>Recent content in Tích hợp CICD với CodeBuild Tự động triển khai chức năng Lambda on Bắt đầu với Amazon VPC và AWS VPN Site to Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi</language>
     <atom:link href="//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/2.1.9.-cicd-integration-with-codebuild-auto-deploy-lambda-function/index.xml" rel="self" type="application/rss+xml" />

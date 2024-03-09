@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Hands-on Lab :: Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
+    <title>Tích hợp CICD với CodeBuild Tự động triển khai chức năng Lambda :: Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
 
     
-    <link href="/css/nucleus.css?1709965921" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1709965921" rel="stylesheet">
-    <link href="/css/hybrid.css?1709965921" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1709965921" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1709965921" rel="stylesheet">
-    <link href="/css/auto-complete.css?1709965921" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1709965921" rel="stylesheet">
-    <link href="/css/theme.css?1709965921" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1709965921" rel="stylesheet">
+    <link href="/css/nucleus.css?1709966670" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1709966670" rel="stylesheet">
+    <link href="/css/hybrid.css?1709966670" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1709966670" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1709966670" rel="stylesheet">
+    <link href="/css/auto-complete.css?1709966670" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1709966670" rel="stylesheet">
+    <link href="/css/theme.css?1709966670" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1709966670" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1709965921" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1709966670" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1709965921"></script>
+    <script src="/js/jquery-3.3.1.min.js?1709966670"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1709965921"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1709965921"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1709966670"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1709966670"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1709965921"></script>
+<script type="text/javascript" src="/js/search.js?1709966670"></script>
 
     
   </div>
@@ -294,34 +294,6 @@
  
   
     
-    <li data-nav-id="/vi/2-hands-on/2.1-build-serverless-application/2.1.9.-cicd-integration-with-codebuild-auto-deploy-lambda-function/" title="Hands-on Lab" class="dd-item 
-        
-        active
-        
-        ">
-      <a href="/vi/2-hands-on/2.1-build-serverless-application/2.1.9.-cicd-integration-with-codebuild-auto-deploy-lambda-function/">
-           <b> 2. </b> Hands-on Lab
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
     <li data-nav-id="/vi/2-hands-on/2.1-build-serverless-application/2.1.1.-create-vpc-subnet-route-table/" title="Tạo VPC, Subnet, Route Table" class="dd-item 
         
         
@@ -524,7 +496,35 @@
         
         ">
       <a href="/vi/2-hands-on/2.1-build-serverless-application/2.1.8-cicd-auto-deploy-static-page-with-github/">
-           <b> 2.1.9 </b> CICD Tự động triển khai trang tĩnh với GitHub
+           <b> 2.1.8 </b> CICD Tự động triển khai trang tĩnh với GitHub
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-hands-on/2.1-build-serverless-application/2.1.9.-cicd-integration-with-codebuild-auto-deploy-lambda-function/" title="Tích hợp CICD với CodeBuild Tự động triển khai chức năng Lambda" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/vi/2-hands-on/2.1-build-serverless-application/2.1.9.-cicd-integration-with-codebuild-auto-deploy-lambda-function/">
+           <b> 2.1.9 </b> Tích hợp CICD với CodeBuild Tự động triển khai chức năng Lambda
           
             <i class="fas fa-check read-icon"></i>
           
@@ -699,7 +699,7 @@
             
           
           
-            <a href='/vi/'>Giới thiệu Hành trình 100 Days Cloud</a> > <a href='/vi/2-hands-on/'>Thực Hành AWS</a> > <a href='/vi/2-hands-on/2.1-build-serverless-application/'>Xây dựng ứng dụng Serverless</a> > Hands-on Lab
+            <a href='/vi/'>Giới thiệu Hành trình 100 Days Cloud</a> > <a href='/vi/2-hands-on/'>Thực Hành AWS</a> > <a href='/vi/2-hands-on/2.1-build-serverless-application/'>Xây dựng ứng dụng Serverless</a> > Tích hợp CICD với CodeBuild Tự động triển khai chức năng Lambda
           
         
           
@@ -718,7 +718,9 @@
   <ul>
     <li>
       <ul>
-        <li></li>
+        <li><a href="#create-codebuild-project">Create CodeBuild Project</a></li>
+        <li><a href="#tạo-pipeline">Tạo Pipeline</a></li>
+        <li><a href="#test">Test</a></li>
       </ul>
     </li>
   </ul>
@@ -738,7 +740,7 @@
           
             <h1>
               
-              Hands-on Lab
+              Tích hợp CICD với CodeBuild Tự động triển khai chức năng Lambda
             </h1>
           
 
@@ -746,8 +748,289 @@
 
 
 
-	<h1 id="giới-thiệu-về-amazon-web-service">Giới thiệu về Amazon Web Service</h1>
-<h4 id="nội-dung">Nội dung</h4>
+	<h3 id="create-codebuild-project">Create CodeBuild Project</h3>
+<p>Bước tiếp theo, chúng ta cần tạo Dự án CodeBuild để tích hợp với webhook github nhằm tự động triển khai các hàm lambda khi phát hiện thấy một commit mới.</p>
+<ol>
+<li>
+<p>Truy cập <a href="https://us-east-1.console.aws.amazon.com/codesuite/codebuild/start?khu">https://us-east-1.console.aws.amazon.com/codesuite/codebuild/start?khu</a> vực=us-east-1
+<img alt="Tích hợp CICD với CodeBuild Tự động triển khai hàm Lambda" src="/images/2/BE3.png?featherlight=false&width=80pc"></p>
+</li>
+<li>
+<p>Nhấp vào <strong>Tạo dự án</strong>
+<img alt="Tích hợp CICD với CodeBuild Tự động triển khai hàm Lambda" src="/images/2/BE1.png?featherlight=false&width=80pc"></p>
+</li>
+<li>
+<p>Điền  Project configuration, Source</p>
+</li>
+<li>
+<p>Chọn nguồn: S3/GitHub, ở đây chọn GitHub
+<img alt="Tích hợp CICD với CodeBuild Tự động triển khai hàm Lambda" src="/images/2/BE2.png?featherlight=false&width=80pc"></p>
+</li>
+<li>
+<p>At Environment, we select <strong>lambda</strong> để  build image</p>
+</li>
+<li>
+<p>Choose Operating system: <strong>Amazon Lunix</strong></p>
+</li>
+<li>
+<p>Choose Runtime(s): <strong>Java 11</strong></p>
+</li>
+<li>
+<p>Choose Image: <strong>aws/codebuild/amazonlinux-aarch64-lambda-standard:corretto11</strong>
+<img alt="Tích hợp CICD với CodeBuild Tự động triển khai hàm Lambda" src="/images/2/Build1.png?featherlight=false&width=50pc"></p>
+</li>
+<li>
+<p>Trên Buildspec,<strong>Insert build commands</strong> and choose <strong>Switch to editor</strong>
+<img alt="Tích hợp CICD với CodeBuild Tự động triển khai hàm Lambda" src="/images/2/Build3.png?featherlight=false&width=50pc"></p>
+</li>
+<li>
+<p>Bây giờ chúng ta cần cấu hình Build Command mã bên dưới để xây dựng dự án thành công</p>
+<pre><code>version: 0.2
+phases:
+install:
+    runtime-versions:
+    java: corretto11
+    maven: 3.9.6
+    # commands:
+    #   - export JAVA_HOME=$(readlink -f /usr/bin/java | sed &quot;s:bin/java::&quot;)
+    #   - export PATH=$JAVA_HOME/bin:$PATH
+build:
+    commands:
+    - ls
+    - cd note-app-serverless/aws-serverless-note-app
+    - ls -lrt
+    - mvn clean package -DskipTests=true
+    - ls
+    # Upload JAR file to S3
+    - aws s3 cp target/aws-serverless-note-app-0.0.1-SNAPSHOT.jar s3://cf-templates-1ohbdpx0bstp8-us-east-1/aws-serverless-note-app-0.0.1-SNAPSHOT.jar
+    - aws lambda update-function-code --function-name LambdaAddDataFunction --s3-bucket cf-templates-1ohbdpx0bstp8-us-east-1 --s3-key aws-serverless-note-app-0.0.1-SNAPSHOT.jar
+    - aws lambda update-function-code --function-name LambdaDeleteNote --s3-bucket cf-templates-1ohbdpx0bstp8-us-east-1 --s3-key aws-serverless-note-app-0.0.1-SNAPSHOT.jar
+    - aws lambda update-function-code --function-name LambdaFetchDataFunction --s3-bucket cf-templates-1ohbdpx0bstp8-us-east-1 --s3-key aws-serverless-note-app-0.0.1-SNAPSHOT.jar
+    - echo 'Successfully Build new version'
+</code></pre>
+</li>
+</ol>
+<p>aws s3 cp target/aws-serverless-note-app-0.0.1-SNAPSHOT.jar s3://cf-templates-1ohbdpx0bstp8-us-east-1/aws-serverless-note-app-0.0.1-SNAPSHOT.jar</p>
+<p><strong>Explain: This command have meaning is coppy .jar file to S3 bucket</strong></p>
+<ul>
+<li><strong>target/aws-serverless-note-app-0.0.1-SNAPSHOT.jar</strong> is output file, after run <strong>mvn clean package -DskipTests=true</strong></li>
+<li><strong>s3://cf-templates-1ohbdpx0bstp8-us-east-1/aws-serverless-note-app-0.0.1-SNAPSHOT.jar</strong> is s3 bucket url, you save file on s3</li>
+</ul>
+<p>aws lambda update-function-code &ndash;function-name LambdaDeleteNote &ndash;s3-bucket cf-templates-1ohbdpx0bstp8-us-east-1 &ndash;s3-key aws-serverless-note-app-0.0.1-SNAPSHOT.jar</p>
+<p><strong>Giải thích: Lệnh này có ý nghĩa là nguồn cập nhật cho hàm lambda LambdaDeleteNote từ file jar, bạn đã upload vào s3</strong></p>
+<h3 id="tạo-pipeline">Tạo Pipeline</h3>
+<p><img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Pipeline1.png?featherlight=false&width=50pc"></p>
+<ol>
+<li>Truy cập <a href="https://us-east-1.console.aws.amazon.com/codesuite/codepipeline/pipelines?region=us-east-1">https://us-east-1.console.aws.amazon.com/codesuite/codepipeline/pipelines?region=us-east-1</a></li>
+<li>Click Create pipeline</li>
+</ol>
+<p>Chúng ta đã hoàn thành 4 bước::</p>
+<ul>
+<li>Bước 1 :Choose pipeline settings
+<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Pipeline1.jpeg?featherlight=false&width=50pc"></li>
+<li>Bước 2: Add source
+<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Pipeline2.jpeg?featherlight=false&width=50pc"></li>
+<li>Bước 3: Add build
+<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Pipeline3.jpeg?featherlight=false&width=50pc"></li>
+<li>Bước 4:Add deploy
+<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Pipeline4.jpeg?featherlight=false&width=50pc"></li>
+<li>Bước 5: Review and Create</li>
+</ul>
+<p><strong>Bây giờ, gần như đã thiết lập xong, chúng tôi sẽ kiểm tra bằng cách xuất bản thay đổi cam kết mới và thực thi tự động quy trình</strong></p>
+<h3 id="test">Test</h3>
+<p>Bây giờ, hãy kiểm tra mã nguồn và thực hiện bất kỳ thay đổi nào để kiểm tra quy trình hoạt động chính xác.</p>
+<pre><code>    luongtx@daotq1:~/Workspace/GITHUB/aws-handson$ git status
+    On branch main
+    Your branch is up to date with 'origin/main'.
+
+    Changes not staged for commit:
+    (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+    (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
+            modified:   note-app-serverless/aws-resource/code-deploy/pipeline.yaml
+
+    no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+    luongtx@daotq1:~/Workspace/GITHUB/aws-handson$ git add .
+    luongtx@daotq1:~/Workspace/GITHUB/aws-handson$ git commit -m &quot;test: pipeline auto build&quot;
+    [main ac6d839] test: pipeline auto build
+    1 file changed, 1 insertion(+), 1 deletion(-)
+    luongtx@daotq1:~/Workspace/GITHUB/aws-handson$ git push 
+    Enumerating objects: 11, done.
+    Counting objects: 100% (11/11), done.
+    Delta compression using up to 12 threads
+    Compressing objects: 100% (5/5), done.
+    Writing objects: 100% (6/6), 553 bytes | 184.00 KiB/s, done.
+    Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+    remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+    To github.com:daotq2000/aws-handson.git
+    2bfe657..ac6d839  main -&gt; main
+</code></pre>
+<p><img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Pipeline5.jpeg?featherlight=false&width=100pc">
+<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Pipeline6.jpeg?featherlight=false&width=100pc">
+<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Pipeline7.jpeg?featherlight=false&width=100pc"></p>
+<p>Mở Dự án CodeBuild của bạn rồi nhấp vào chi tiết và xem bảng điều khiển.</p>
+<p>Nếu bạn nhận được phản hồi bên dưới thì quá trình xây dựng quy trình đã hoàn tất và hàm lambda đã được cập nhật.</p>
+<pre><code>[Container] 2024/03/05 04:33:08.400929 Running command aws lambda update-function-code --function-name LambdaAddDataFunction --s3-bucket cf-templates-1ohbdpx0bstp8-us-east-1 --s3-key aws-serverless-note-app-0.0.1-SNAPSHOT.jar
+{
+    &quot;FunctionName&quot;: &quot;LambdaAddDataFunction&quot;,
+    &quot;FunctionArn&quot;: &quot;arn:aws:lambda:us-east-1:846338211683:function:LambdaAddDataFunction&quot;,
+    &quot;Runtime&quot;: &quot;java11&quot;,
+    &quot;Role&quot;: &quot;arn:aws:iam::846338211683:role/LambdaFunctionRole&quot;,
+    &quot;Handler&quot;: &quot;org.example.awsserverlessnoteapp.LambdaAddDataFunction::handleRequest&quot;,
+    &quot;CodeSize&quot;: 18081570,
+    &quot;Description&quot;: &quot;&quot;,
+    &quot;Timeout&quot;: 15,
+    &quot;MemorySize&quot;: 512,
+    &quot;LastModified&quot;: &quot;2024-03-05T04:33:10.000+0000&quot;,
+    &quot;CodeSha256&quot;: &quot;54cOLGA6bBmBfrbZkb6trotsuPRfB1fAhwGikbmJyxs=&quot;,
+    &quot;Version&quot;: &quot;$LATEST&quot;,
+    &quot;VpcConfig&quot;: {
+        &quot;SubnetIds&quot;: [
+            &quot;subnet-0b31adde22bcc2d4e&quot;
+        ],
+        &quot;SecurityGroupIds&quot;: [
+            &quot;sg-069f0598b55c8a6b8&quot;
+        ],
+        &quot;VpcId&quot;: &quot;vpc-0bdac14c978619a96&quot;,
+        &quot;Ipv6AllowedForDualStack&quot;: false
+    },
+    &quot;Environment&quot;: {
+        &quot;Variables&quot;: {
+            &quot;AWS_REGION_VALUE&quot;: &quot;us-east-1&quot;,
+            &quot;AWS_DYNAMO_TABLE_NAME_VALUE&quot;: &quot;note_tbl&quot;
+        }
+    },
+    &quot;TracingConfig&quot;: {
+        &quot;Mode&quot;: &quot;PassThrough&quot;
+    },
+    &quot;RevisionId&quot;: &quot;2a239e66-937d-405e-974c-549767398c1f&quot;,
+    &quot;State&quot;: &quot;Active&quot;,
+    &quot;LastUpdateStatus&quot;: &quot;InProgress&quot;,
+    &quot;LastUpdateStatusReason&quot;: &quot;The function is being created.&quot;,
+    &quot;LastUpdateStatusReasonCode&quot;: &quot;Creating&quot;,
+    &quot;PackageType&quot;: &quot;Zip&quot;,
+    &quot;Architectures&quot;: [
+        &quot;x86_64&quot;
+    ],
+    &quot;EphemeralStorage&quot;: {
+        &quot;Size&quot;: 512
+    },
+    &quot;SnapStart&quot;: {
+        &quot;ApplyOn&quot;: &quot;None&quot;,
+        &quot;OptimizationStatus&quot;: &quot;Off&quot;
+    },
+    &quot;RuntimeVersionConfig&quot;: {
+        &quot;RuntimeVersionArn&quot;: &quot;arn:aws:lambda:us-east-1::runtime:5376f7691b03f8ade18032dc3906c8e0e7a4101c665b17c8766b6949687df24f&quot;
+    }
+}
+
+[Container] 2024/03/05 04:33:10.259486 Running command aws lambda update-function-code --function-name LambdaDeleteNote --s3-bucket cf-templates-1ohbdpx0bstp8-us-east-1 --s3-key aws-serverless-note-app-0.0.1-SNAPSHOT.jar
+{
+    &quot;FunctionName&quot;: &quot;LambdaDeleteNote&quot;,
+    &quot;FunctionArn&quot;: &quot;arn:aws:lambda:us-east-1:846338211683:function:LambdaDeleteNote&quot;,
+    &quot;Runtime&quot;: &quot;java11&quot;,
+    &quot;Role&quot;: &quot;arn:aws:iam::846338211683:role/service-role/LambdaDeleteNote-role-fa4amiiz&quot;,
+    &quot;Handler&quot;: &quot;org.example.awsserverlessnoteapp.LambdaDeleteDataFunction::handleRequest&quot;,
+    &quot;CodeSize&quot;: 18081570,
+    &quot;Description&quot;: &quot;&quot;,
+    &quot;Timeout&quot;: 15,
+    &quot;MemorySize&quot;: 512,
+    &quot;LastModified&quot;: &quot;2024-03-05T04:33:11.000+0000&quot;,
+    &quot;CodeSha256&quot;: &quot;54cOLGA6bBmBfrbZkb6trotsuPRfB1fAhwGikbmJyxs=&quot;,
+    &quot;Version&quot;: &quot;$LATEST&quot;,
+    &quot;VpcConfig&quot;: {
+        &quot;SubnetIds&quot;: [
+            &quot;subnet-0b31adde22bcc2d4e&quot;
+        ],
+        &quot;SecurityGroupIds&quot;: [
+            &quot;sg-069f0598b55c8a6b8&quot;
+        ],
+        &quot;VpcId&quot;: &quot;vpc-0bdac14c978619a96&quot;,
+        &quot;Ipv6AllowedForDualStack&quot;: false
+    },
+    &quot;Environment&quot;: {
+        &quot;Variables&quot;: {
+            &quot;AWS_REGION_VALUE&quot;: &quot;us-east-1&quot;,
+            &quot;AWS_DYNAMO_TABLE_NAME_VALUE&quot;: &quot;note_tbl&quot;
+        }
+    },
+    &quot;TracingConfig&quot;: {
+        &quot;Mode&quot;: &quot;PassThrough&quot;
+    },
+    &quot;RevisionId&quot;: &quot;d1559a95-7b4d-4c7c-a8d3-3b95ead46cae&quot;,
+    &quot;State&quot;: &quot;Active&quot;,
+    &quot;LastUpdateStatus&quot;: &quot;InProgress&quot;,
+    &quot;LastUpdateStatusReason&quot;: &quot;The function is being created.&quot;,
+    &quot;LastUpdateStatusReasonCode&quot;: &quot;Creating&quot;,
+    &quot;PackageType&quot;: &quot;Zip&quot;,
+    &quot;Architectures&quot;: [
+        &quot;arm64&quot;
+    ],
+    &quot;EphemeralStorage&quot;: {
+        &quot;Size&quot;: 512
+    },
+    &quot;SnapStart&quot;: {
+        &quot;ApplyOn&quot;: &quot;None&quot;,
+        &quot;OptimizationStatus&quot;: &quot;Off&quot;
+    },
+    &quot;RuntimeVersionConfig&quot;: {
+        &quot;RuntimeVersionArn&quot;: &quot;arn:aws:lambda:us-east-1::runtime:4953353514423cc08453f25c28e74edd762626ff6bf2abe0c78c5a0e5be8547a&quot;
+    }
+}
+
+[Container] 2024/03/05 04:33:11.791342 Running command aws lambda update-function-code --function-name LambdaFetchDataFunction --s3-bucket cf-templates-1ohbdpx0bstp8-us-east-1 --s3-key aws-serverless-note-app-0.0.1-SNAPSHOT.jar
+{
+    &quot;FunctionName&quot;: &quot;LambdaFetchDataFunction&quot;,
+    &quot;FunctionArn&quot;: &quot;arn:aws:lambda:us-east-1:846338211683:function:LambdaFetchDataFunction&quot;,
+    &quot;Runtime&quot;: &quot;java11&quot;,
+    &quot;Role&quot;: &quot;arn:aws:iam::846338211683:role/LambdaFunctionRole&quot;,
+    &quot;Handler&quot;: &quot;org.example.awsserverlessnoteapp.LambdaFetchDataFunction::handleRequest&quot;,
+    &quot;CodeSize&quot;: 18081570,
+    &quot;Description&quot;: &quot;&quot;,
+    &quot;Timeout&quot;: 15,
+    &quot;MemorySize&quot;: 512,
+    &quot;LastModified&quot;: &quot;2024-03-05T04:33:13.000+0000&quot;,
+    &quot;CodeSha256&quot;: &quot;54cOLGA6bBmBfrbZkb6trotsuPRfB1fAhwGikbmJyxs=&quot;,
+    &quot;Version&quot;: &quot;$LATEST&quot;,
+    &quot;VpcConfig&quot;: {
+        &quot;SubnetIds&quot;: [
+            &quot;subnet-0b31adde22bcc2d4e&quot;
+        ],
+        &quot;SecurityGroupIds&quot;: [
+            &quot;sg-069f0598b55c8a6b8&quot;
+        ],
+        &quot;VpcId&quot;: &quot;vpc-0bdac14c978619a96&quot;,
+        &quot;Ipv6AllowedForDualStack&quot;: false
+    },
+    &quot;Environment&quot;: {
+        &quot;Variables&quot;: {
+            &quot;AWS_REGION_VALUE&quot;: &quot;us-east-1&quot;,
+            &quot;AWS_DYNAMO_TABLE_NAME_VALUE&quot;: &quot;note_tbl&quot;
+        }
+    },
+    &quot;TracingConfig&quot;: {
+        &quot;Mode&quot;: &quot;PassThrough&quot;
+    },
+    &quot;RevisionId&quot;: &quot;9254245f-4d87-42ef-a500-751bee1325b0&quot;,
+    &quot;State&quot;: &quot;Active&quot;,
+    &quot;LastUpdateStatus&quot;: &quot;InProgress&quot;,
+    &quot;LastUpdateStatusReason&quot;: &quot;The function is being created.&quot;,
+    &quot;LastUpdateStatusReasonCode&quot;: &quot;Creating&quot;,
+    &quot;PackageType&quot;: &quot;Zip&quot;,
+    &quot;Architectures&quot;: [
+        &quot;arm64&quot;
+    ],
+    &quot;EphemeralStorage&quot;: {
+        &quot;Size&quot;: 512
+    },
+    &quot;SnapStart&quot;: {
+        &quot;ApplyOn&quot;: &quot;None&quot;,
+        &quot;OptimizationStatus&quot;: &quot;Off&quot;
+    },
+    &quot;RuntimeVersionConfig&quot;: {
+        &quot;RuntimeVersionArn&quot;: &quot;arn:aws:lambda:us-east-1::runtime:4953353514423cc08453f25c28e74edd762626ff6bf2abe0c78c5a0e5be8547a&quot;
+    }
+}
+</code></pre>
 
 
 
@@ -905,23 +1188,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -1036,6 +1302,23 @@
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -1063,7 +1346,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/2-hands-on/2.1-build-serverless-application/" title="Xây dựng ứng dụng Serverless"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/2-hands-on/2.1-build-serverless-application/2.1.8-cicd-auto-deploy-static-page-with-github/" title="CICD Tự động triển khai trang tĩnh với GitHub"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/vi/2-hands-on/2.1-build-serverless-application/2.1.1.-create-vpc-subnet-route-table/" title="Tạo VPC, Subnet, Route Table" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -1076,19 +1359,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1709965921"></script>
-    <script src="/js/perfect-scrollbar.min.js?1709965921"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1709965921"></script>
-    <script src="/js/jquery.sticky.js?1709965921"></script>
-    <script src="/js/featherlight.min.js?1709965921"></script>
-    <script src="/js/highlight.pack.js?1709965921"></script>
+    <script src="/js/clipboard.min.js?1709966670"></script>
+    <script src="/js/perfect-scrollbar.min.js?1709966670"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1709966670"></script>
+    <script src="/js/jquery.sticky.js?1709966670"></script>
+    <script src="/js/featherlight.min.js?1709966670"></script>
+    <script src="/js/highlight.pack.js?1709966670"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1709965921"></script>
-    <script src="/js/learn.js?1709965921"></script>
-    <script src="/js/hugo-learn.js?1709965921"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1709966670"></script>
+    <script src="/js/learn.js?1709966670"></script>
+    <script src="/js/hugo-learn.js?1709966670"></script>
 
-    <link href="/mermaid/mermaid.css?1709965921" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1709965921"></script>
+    <link href="/mermaid/mermaid.css?1709966670" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1709966670"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

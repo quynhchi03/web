@@ -14,5 +14,5 @@ Tôi quyết định tạo một trang web để chia sẻ những gì tôi bi�
 
 #### Nội dung
 
-##### Liệt kê các phòng thí nghiệm thực hành
-1. Days1 [Xây dựng ứng dụng không có máy chủ](2.1-Build-Serverless-Application/)
+##### Danh sách bài thực hành
+1. Days1 [Xây dựng ứng dụng Serverless](2.1-Build-Serverless-Application/)
