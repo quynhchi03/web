@@ -64,3 +64,17 @@ identifier = "Linkedin- Trần Quang Đạo"
 url = "https://www.linkedin.com/in/daotq1/"
 weight = 20
 
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fab fa-github'></i> GitHub - Trần Quang Đạo"
+identifier = "GitHub Repository- Trần Quang Đạo"
+url = "https://github.com/daotq2000/"
+weight = 20
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fab fa-linkedin'></i> Linkedin - Trần Quang Đạo"
+identifier = "Linkedin- Trần Quang Đạo"
+url = "https://www.linkedin.com/in/daotq1/"
+weight = 20
+
+canonifyURLs = true 
