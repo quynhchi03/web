@@ -37,7 +37,7 @@ Là một lựa chọn phổ biến cho nhiều doanh nghiệp, phiên bản đa
 ### 2. AWS Lambda:
 AWS Lambda là dịch vụ điện toán không có máy chủ do Amazon Web Services (AWS) cung cấp, cho phép người dùng chạy mã mà không cần cung cấp hay quản lý máy chủ. Nó cho phép các nhà phát triển tập trung vào việc viết mã cho ứng dụng của họ mà không phải lo lắng về cơ sở hạ tầng cơ bản. Dưới đây là tổng quan chi tiết về AWS Lambda:
 
-![Lambda](/images/1/lambda.png?featherlight=false&width=20pc)
+![Lambda](/images/1/lambda.png?featherlight=false&width=50pc)
 
 #### Serverless Computing:
 
