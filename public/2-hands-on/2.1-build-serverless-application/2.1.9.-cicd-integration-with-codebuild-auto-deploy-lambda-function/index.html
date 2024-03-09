@@ -7,7 +7,7 @@
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="/aws-stutdy-group-workshop/images/favicon.png" type="image/png">
 
     <title>CICD Integration with CodeBuild Auto Deploy Lambda Function :: Start with Amazon VPC and AWS VPN Site-to-Site.</title>
 
@@ -761,18 +761,18 @@
 <ol>
 <li>
 <p>Go to <a href="https://us-east-1.console.aws.amazon.com/codesuite/codebuild/start?region=us-east-1">https://us-east-1.console.aws.amazon.com/codesuite/codebuild/start?region=us-east-1</a>
-<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/BE3.png?featherlight=false&width=80pc"></p>
+<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/aws-stutdy-group-workshop/images/2/BE3.png?featherlight=false&width=80pc"></p>
 </li>
 <li>
 <p>Click <strong>Create project</strong>
-<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/BE1.png?featherlight=false&width=80pc"></p>
+<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/aws-stutdy-group-workshop/images/2/BE1.png?featherlight=false&width=80pc"></p>
 </li>
 <li>
 <p>Fill your Project configuration, Source</p>
 </li>
 <li>
 <p>Choose source: S3/GitHub, at here we choose GitHub
-<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/BE2.png?featherlight=false&width=80pc"></p>
+<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/aws-stutdy-group-workshop/images/2/BE2.png?featherlight=false&width=80pc"></p>
 </li>
 <li>
 <p>At Environment, we select <strong>lambda</strong> to build image</p>
@@ -785,11 +785,11 @@
 </li>
 <li>
 <p>Choose Image: <strong>aws/codebuild/amazonlinux-aarch64-lambda-standard:corretto11</strong>
-<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Build1.png?featherlight=false&width=50pc"></p>
+<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/aws-stutdy-group-workshop/images/2/Build1.png?featherlight=false&width=50pc"></p>
 </li>
 <li>
 <p>On Buildspec we select <strong>Insert build commands</strong> and choose <strong>Switch to editor</strong>
-<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Build3.png?featherlight=false&width=50pc"></p>
+<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/aws-stutdy-group-workshop/images/2/Build3.png?featherlight=false&width=50pc"></p>
 </li>
 <li>
 <p>It see like this, now we need config pipeline using code below to build successfully project</p>
@@ -827,7 +827,7 @@ build:
 <p>aws lambda update-function-code &ndash;function-name LambdaDeleteNote &ndash;s3-bucket cf-templates-1ohbdpx0bstp8-us-east-1 &ndash;s3-key aws-serverless-note-app-0.0.1-SNAPSHOT.jar</p>
 <p><strong>Explain: This command have meaning is update source for lambda funtion LambdaDeleteNote from jar file, you have puted in s3</strong></p>
 <h3 id="create-pipeline">Create Pipeline</h3>
-<p><img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Pipeline1.png?featherlight=false&width=50pc"></p>
+<p><img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/aws-stutdy-group-workshop/images/2/Pipeline1.png?featherlight=false&width=50pc"></p>
 <ol>
 <li>Go to <a href="https://us-east-1.console.aws.amazon.com/codesuite/codepipeline/pipelines?region=us-east-1">https://us-east-1.console.aws.amazon.com/codesuite/codepipeline/pipelines?region=us-east-1</a></li>
 <li>Click Create pipeline</li>
@@ -835,13 +835,13 @@ build:
 <p>We have complete 4 steps:</p>
 <ul>
 <li>Step 1 :Choose pipeline settings
-<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Pipeline1.jpeg?featherlight=false&width=50pc"></li>
+<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/aws-stutdy-group-workshop/images/2/Pipeline1.jpeg?featherlight=false&width=50pc"></li>
 <li>Step 2: Add source
-<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Pipeline2.jpeg?featherlight=false&width=50pc"></li>
+<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/aws-stutdy-group-workshop/images/2/Pipeline2.jpeg?featherlight=false&width=50pc"></li>
 <li>Step 3: Add build
-<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Pipeline3.jpeg?featherlight=false&width=50pc"></li>
+<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/aws-stutdy-group-workshop/images/2/Pipeline3.jpeg?featherlight=false&width=50pc"></li>
 <li>Step 4:Add deploy
-<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Pipeline4.jpeg?featherlight=false&width=50pc"></li>
+<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/aws-stutdy-group-workshop/images/2/Pipeline4.jpeg?featherlight=false&width=50pc"></li>
 <li>Step 5: Review and Create</li>
 </ul>
 <p><strong>Now, almost set up done, we will test by publish new commit change and pipeline auto execution</strong></p>
@@ -872,9 +872,9 @@ build:
     To github.com:daotq2000/aws-handson.git
     2bfe657..ac6d839  main -&gt; main
 </code></pre>
-<p><img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Pipeline5.jpeg?featherlight=false&width=100pc">
-<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Pipeline6.jpeg?featherlight=false&width=100pc">
-<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/images/2/Pipeline7.jpeg?featherlight=false&width=100pc"></p>
+<p><img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/aws-stutdy-group-workshop/images/2/Pipeline5.jpeg?featherlight=false&width=100pc">
+<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/aws-stutdy-group-workshop/images/2/Pipeline6.jpeg?featherlight=false&width=100pc">
+<img alt="CICD Integration with CodeBuild Auto Deploy Lambda Function" src="/aws-stutdy-group-workshop/images/2/Pipeline7.jpeg?featherlight=false&width=100pc"></p>
 <p>Open your CodeBuild Project and Click to detail and view the build console.</p>
 <p>If you received response below, pipeline already build completed and lambda function have been update.</p>
 <pre><code>[Container] 2024/03/05 04:33:08.400929 Running command aws lambda update-function-code --function-name LambdaAddDataFunction --s3-bucket cf-templates-1ohbdpx0bstp8-us-east-1 --s3-key aws-serverless-note-app-0.0.1-SNAPSHOT.jar

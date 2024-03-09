@@ -7,7 +7,7 @@
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="/aws-stutdy-group-workshop/images/favicon.png" type="image/png">
 
     <title>Tạo VPC endpoint :: Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
 
@@ -755,7 +755,7 @@
 
 
 	<h4 id="tổng-quan">Tổng quan</h4>
-<p><img alt="VPC Endpoint connect " src="/images/2/CreateVPCEndPoint1.jpeg?featherlight=false&width=100pc"></p>
+<p><img alt="VPC Endpoint connect " src="/aws-stutdy-group-workshop/images/2/CreateVPCEndPoint1.jpeg?featherlight=false&width=100pc"></p>
 <p>Chúng tôi thấy VPC Endpoint kết nối giữa hàm Lambda và DynamoDB.</p>
 <p><strong>Tại sao cần VPC Endpoint để kết nối?</strong></p>
 <ul>
@@ -767,10 +767,10 @@ Bằng cách tạo VPC Endpoint cho DynamoDB trong VPC của bạn, các hàm La
 <p><strong>Tóm lại, mặc dù các hàm Lambda và DynamoDB có thể cùng tồn tại trong cùng một mạng con riêng tư trong VPC, nhưng các hàm Lambda yêu cầu VPC Endpoint để thiết lập kết nối với DynamoDB khi hoạt động trong môi trường VPC. Điều này đảm bảo liên lạc an toàn và riêng tư giữa hai dịch vụ mà không cần truy cập Internet và không phải trả phí cho đường truyền Internet đi từ Mô hình định giá AWS.</strong></p>
 <h4 id="thực-hành">Thực hành</h4>
 <p>Hãy <strong>Tạo VPC Endpoint</strong> làm theo hướng dẫn bên dưới:
-<img alt="CreateVPCEndPoint2" src="/images/2/CreateVPCEndPoint2.jpeg?featherlight=false&width=100pc"></p>
+<img alt="CreateVPCEndPoint2" src="/aws-stutdy-group-workshop/images/2/CreateVPCEndPoint2.jpeg?featherlight=false&width=100pc"></p>
 <ul>
 <li>Truy cập <a href="https://us-east-1.console.aws.amazon.com/vpcconsole/home?region=us-east-1#Endpoints">https://us-east-1.console.aws.amazon.com/vpcconsole/home?region=us-east-1#Endpoints</a>: choose <strong>Create Endpoint</strong>
-<img alt="CreateVPCEndPoint3" src="/images/2/CreateVPCEndPoint3.jpeg?featherlight=false&width=100pc"></li>
+<img alt="CreateVPCEndPoint3" src="/aws-stutdy-group-workshop/images/2/CreateVPCEndPoint3.jpeg?featherlight=false&width=100pc"></li>
 </ul>
 <p><strong>Chọn Tùy chọn bên dưới như hình ảnh:</strong></p>
 <ul>

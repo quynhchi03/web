@@ -7,7 +7,7 @@
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="/aws-stutdy-group-workshop/images/favicon.png" type="image/png">
 
     <title>Tạo hàm Lambda và triển khai :: Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
 
@@ -755,12 +755,12 @@
 
 
 	<h4 id="tạo-hàm-lambda">Tạo hàm Lambda</h4>
-<p><img alt="Create Lambda function and deploy" src="/images/2/CreateLambda1.jpeg?featherlight=false&width=80pc"></p>
+<p><img alt="Create Lambda function and deploy" src="/aws-stutdy-group-workshop/images/2/CreateLambda1.jpeg?featherlight=false&width=80pc"></p>
 <p>Dưới đây là các bước để tạo hàm Lambda bằng Bảng điều khiển quản lý AWS:</p>
 <ul>
 <li>Truy cập <a href="https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions">https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions</a> and choose <strong>Create function</strong></li>
 </ul>
-<p><img alt="Create Lambda function and deploy 2" src="/images/2/CreateLambda2.jpeg?featherlight=false&width=80pc"></p>
+<p><img alt="Create Lambda function and deploy 2" src="/aws-stutdy-group-workshop/images/2/CreateLambda2.jpeg?featherlight=false&width=80pc"></p>
 <p>Fill yours function infomation:</p>
 <ul>
 <li>Chọn: Author from scratch</li>
@@ -773,25 +773,25 @@
 <li>Security groups: khuyến nghị mặc định</li>
 </ul>
 <p>Sau khi thực hiện xong chọn <strong>Tạo hàm</strong>, Tương tự, chúng ta tiếp tục tạo 3 hàm như hình bên dưới theo thứ tự: <strong>LambdaFetchDataFunction</strong>, <strong>LambdaDeleteDataFunction</strong>, <strong>LambdaFetchDataFunction</strong></p>
-<p><img alt="Create Lambda function and deploy 3" src="/images/2/CreateLambda3.jpeg?featherlight=false&width=80pc"></p>
+<p><img alt="Create Lambda function and deploy 3" src="/aws-stutdy-group-workshop/images/2/CreateLambda3.jpeg?featherlight=false&width=80pc"></p>
 <h4 id="chi-tiết-cấu-hình-cho-từng-function">Chi Tiết Cấu Hình Cho Từng Function</h4>
-<p><img alt="Create Lambda function and deploy 3" src="/images/2/LamDaDetail1.png?featherlight=false&width=80pc"></p>
+<p><img alt="Create Lambda function and deploy 3" src="/aws-stutdy-group-workshop/images/2/LamDaDetail1.png?featherlight=false&width=80pc"></p>
 <p>Sau khi làm xong, chúng ta có 3 hàm, bây giờ hãy nhấp vào LambdaFetchDataFunction
-<img alt="Create Lambda function and deploy 3" src="/images/2/LamDaDetail2.png?featherlight=false&width=80pc">
+<img alt="Create Lambda function and deploy 3" src="/aws-stutdy-group-workshop/images/2/LamDaDetail2.png?featherlight=false&width=80pc">
 Để chức năng hoạt động, chúng ta cần tải mã lên lambda, nhấp vào <strong>Upload</strong> từ tại tab <strong>Code</strong>..
-<img alt="Create Lambda function and deploy 3" src="/images/2/CreateLambda4.jpeg?featherlight=false&width=80pc"></p>
+<img alt="Create Lambda function and deploy 3" src="/aws-stutdy-group-workshop/images/2/CreateLambda4.jpeg?featherlight=false&width=80pc"></p>
 <p>Chúng ta có 2 lựa chọn:</p>
 <ul>
 <li>Upload trực tiếp file .jar, là chúng tôi đã build gói mvn clean ở bước 3</li>
 <li>Tải lên qua bảng điều khiển S3 và nhận URI công khai rồi điền vào đó</li>
 </ul>
-<p><img alt="Create Lambda function and deploy 3" src="/images/2/CreateLambda5.jpeg?featherlight=false&width=80pc"></p>
+<p><img alt="Create Lambda function and deploy 3" src="/aws-stutdy-group-workshop/images/2/CreateLambda5.jpeg?featherlight=false&width=80pc"></p>
 <p>Tiếp theo, chúng ta phải cấu hình môi trường thời gian chạy để lambda có thể thực thi đúng chức năng, Nhấp vào <strong>Edit</strong>
-<img alt="Create Lambda function and deploy 3" src="/images/2/CreateLambda6.jpeg?featherlight=false&width=80pc"></p>
+<img alt="Create Lambda function and deploy 3" src="/aws-stutdy-group-workshop/images/2/CreateLambda6.jpeg?featherlight=false&width=80pc"></p>
 <p>Dán : <strong>org.example.awsserverlessnoteapp.LambdaFetchDataFunction::handleRequest</strong></p>
-<p><img alt="Create Lambda function and deploy 3" src="/images/2/CreateLambda7.jpeg?featherlight=false&width=80pc">
+<p><img alt="Create Lambda function and deploy 3" src="/aws-stutdy-group-workshop/images/2/CreateLambda7.jpeg?featherlight=false&width=80pc">
 Bây giờ, hãy kiểm tra mã nguồn của chúng tôi. Chúng tôi có một Class tên LambdaFetchDataFunction, Lớp LambdaFetchDataFunction trong <strong>package: org.example.awsserverlessnoteapp</strong>. Lớp LambdaFetchDataFunction có hàm handRequest, thực thi tìm nạp dữ liệu từ DynamoDB
-<img alt="Create Lambda function and deploy 3" src="/images/2/CreateLambda8.jpeg?featherlight=false&width=80pc"></p>
+<img alt="Create Lambda function and deploy 3" src="/aws-stutdy-group-workshop/images/2/CreateLambda8.jpeg?featherlight=false&width=80pc"></p>
 <p>Tiếp theo chúng ta sẽ nhấp vào tab Cấu hình, nhấp vào Biến môi trường, chúng ta có thể định cấu hình nhiều giá trị tại đây.</p>
 <ul>
 <li>General configuration</li>

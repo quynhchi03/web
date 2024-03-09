@@ -7,7 +7,7 @@
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="/aws-stutdy-group-workshop/images/favicon.png" type="image/png">
 
     <title>Tạo API Gateway :: Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
 
@@ -772,28 +772,28 @@
 </li>
 </ul>
 <h5 id="4-tạo-tài-nguyên-để-tạo-đường-dẫn-chính-cho-api">4. Tạo tài nguyên để tạo Đường dẫn chính cho API.</h5>
-<p><img alt="Create resource to create main Path for APIs" src="/images/2/CreateAPIGW1.jpeg?featherlight=false&width=80pc">
+<p><img alt="Create resource to create main Path for APIs" src="/aws-stutdy-group-workshop/images/2/CreateAPIGW1.jpeg?featherlight=false&width=80pc">
 Tiếp theo, định cấu hình đường dẫn của bạn như bên dưới và ghi nhớ CORS (Chia sẻ tài nguyên nguồn gốc chéo)
 Chia sẻ tài nguyên giữa các nguồn gốc (CORS) là một tính năng bảo mật được trình duyệt web triển khai để ngăn các tập lệnh chạy trên một miền thực hiện yêu cầu sang một miền khác. Khi bạn đang sử dụng Amazon API Gateway để tạo API REST, bạn có thể cần định cấu hình CORS để cho phép các ứng dụng khách chạy trên trình duyệt web có nguồn gốc khác nhau truy cập API của bạn.
 Sau khi tạo tài nguyên, bây giờ chúng ta phải tạo một số ánh xạ phương thức với hàm lambda, nhấp vào Tạo phương thức</p>
 <h5 id="5-sau-khi-tạo-xong-tài-nguyên-bây-giờ-chúng-ta-tạo-một-số-phương-thức-ánh-xạ-với-hàm-lambda-nhấn-create-method">5. Sau khi tạo xong tài nguyên, bây giờ chúng ta tạo một số phương thức ánh xạ với hàm lambda, nhấn Create Method</h5>
-<p><img alt="Create Method for APIs" src="/images/2/CreateAPIGW2.jpeg?featherlight=false&width=80pc">
+<p><img alt="Create Method for APIs" src="/aws-stutdy-group-workshop/images/2/CreateAPIGW2.jpeg?featherlight=false&width=80pc">
 Tại đây, chúng tôi chọn
 Loại phương thức: GET/POST/DELETE
 Loại tích hợp: Hàm Lambda
 Hàm Lambda: chọn hàm lambda của bạn tạo ở bước trước
 Bấm vào Tạo phương thức, sau khi tạo xong chúng ta có phương thức như hình bên dưới.
-<img alt="Create Method for APIs" src="/images/2/CreateAPIGW3.jpeg?featherlight=false&width=80pc"></p>
+<img alt="Create Method for APIs" src="/aws-stutdy-group-workshop/images/2/CreateAPIGW3.jpeg?featherlight=false&width=80pc"></p>
 <h5 id="6-click-to-tab-test-to-test-api-click-test-to-test-apis">6. Click to tab Test to test API, click Test to test APIs</h5>
-<p><img alt="test APIs" src="/images/2/CreateAPIGW4.jpeg?featherlight=false&width=80pc">
-<img alt="test APIs" src="/images/2/CreateAPIGW5.jpeg?featherlight=false&width=80pc">
+<p><img alt="test APIs" src="/aws-stutdy-group-workshop/images/2/CreateAPIGW4.jpeg?featherlight=false&width=80pc">
+<img alt="test APIs" src="/aws-stutdy-group-workshop/images/2/CreateAPIGW5.jpeg?featherlight=false&width=80pc">
 Chúng tôi đã nhận được phản hồi như hình trên. Tiếp theo, tạo phương thức tương tự với phương thức <strong>POST, DELETE</strong> tích hợp với <strong>LambdaDeleteDataFunction, LambdaAddDataFunction</strong></p>
 <h5 id="7-after-done-we-have-to-click-deploy-api-to-expose-api-over-internet">7. After done, we have to click Deploy API to expose API over internet</h5>
-<p><img alt="test APIs" src="/images/2/Deploy5.jpeg?featherlight=false&width=50pc">
+<p><img alt="test APIs" src="/aws-stutdy-group-workshop/images/2/Deploy5.jpeg?featherlight=false&width=50pc">
 <strong>Click Deploy API</strong>
-<img alt="test APIs" src="/images/2/Deploy1.jpeg?featherlight=false&width=50pc">
+<img alt="test APIs" src="/aws-stutdy-group-workshop/images/2/Deploy1.jpeg?featherlight=false&width=50pc">
 <strong>Điền tên Stage và mô tả Triển khai của bạn, sau khi nhấp vào Triển khai, chúng tôi đã nhận được phản hồi bên dưới</strong>
-<img alt="test APIs" src="/images/2/Deploy3.jpeg?featherlight=false&width=50pc"></p>
+<img alt="test APIs" src="/aws-stutdy-group-workshop/images/2/Deploy3.jpeg?featherlight=false&width=50pc"></p>
 <ul>
 <li>Hãy kiểm tra URL gọi: <a href="https://q3q8l57ui9.execute-api.us-east-1.amazonaws.com/prod">https://q3q8l57ui9.execute-api.us-east-1.amazonaws.com/prod</a> đây là URL công khai mà chúng tôi có thể gọi trên internet công cộng.
 Sau khi nhận được API công khai URL, bạn có thể kiểm tra bằng công cụ POSTMAN, TERMINAL

@@ -7,7 +7,7 @@
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="/aws-stutdy-group-workshop/images/favicon.png" type="image/png">
 
     <title>Tạo VPC, Subnet, Route Table :: Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
 
@@ -822,17 +822,17 @@
 <p><strong>Tóm lại, VPC cung cấp môi trường mạng biệt lập trong AWS, mạng con cho phép bạn phân chia VPC thành các mạng nhỏ hơn, bảng định tuyến xác định cách định tuyến lưu lượng trong VPC và các nhóm bảo mật kiểm soát luồng lưu lượng đến và đi từ phiên bản của bạn. Các thành phần này phối hợp với nhau để cung cấp cơ sở hạ tầng mạng an toàn và có thể mở rộng trên đám mây AWS.</strong></p>
 <h4 id="thực-hành">Thực hành</h4>
 <p>Hãy <strong>Tạo VPC</strong> làm theo hướng dẫn bên dưới:
-<img alt="CreateVPC1" src="/images/2/CreateVPC1.jpeg?featherlight=false&width=100pc"></p>
+<img alt="CreateVPC1" src="/aws-stutdy-group-workshop/images/2/CreateVPC1.jpeg?featherlight=false&width=100pc"></p>
 <ul>
 <li>Truy cập <a href="https://us-east-1.console.aws.amazon.com/vpcconsole/home?region=us-east-1#vpcs">https://us-east-1.console.aws.amazon.com/vpcconsole/home?region=us-east-1#vpcs</a> Chọn <strong>Create VPC</strong>
-<img alt="CreateVPC2" src="/images/2/CreateVPC2.jpeg?featherlight=false&width=100pc"></li>
+<img alt="CreateVPC2" src="/aws-stutdy-group-workshop/images/2/CreateVPC2.jpeg?featherlight=false&width=100pc"></li>
 <li>Chọn VPC and More</li>
 <li>Chọn IPv4 CIDR: 10.0.0.0/16</li>
 <li>Chọn AZ: 1</li>
 <li>Chọn number public subnet 1</li>
 <li>Chọn private subnet 1</li>
 <li>Chọn NAT gateway: none, vì chúng tôi đang kết nối trong tài nguyên AWS nên không cần kết nối internet. Cổng NAT phù hợp với tài nguyên của bên thứ ba trên internet
-<img alt="CreateVPC3" src="/images/2/CreateVPC3.jpeg?featherlight=false&width=100pc">
+<img alt="CreateVPC3" src="/aws-stutdy-group-workshop/images/2/CreateVPC3.jpeg?featherlight=false&width=100pc">
 Sau khi hoàn thành các tùy chọn này, hãy nhấp vào <strong>Tạo VPC</strong>. Chờ một phút để cung cấp tài nguyên, Sau khi hoàn tất, chúng ta có một vpc như hình trên.</li>
 </ul>
 

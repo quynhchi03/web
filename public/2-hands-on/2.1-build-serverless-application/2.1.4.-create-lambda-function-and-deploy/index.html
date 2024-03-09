@@ -7,7 +7,7 @@
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="/aws-stutdy-group-workshop/images/favicon.png" type="image/png">
 
     <title>Create Lambda function and deploy :: Start with Amazon VPC and AWS VPN Site-to-Site.</title>
 
@@ -755,12 +755,12 @@
 
 
 	<h4 id="create-lambda-function">Create Lambda Function</h4>
-<p><img alt="Create Lambda function and deploy" src="/images/2/CreateLambda1.jpeg?featherlight=false&width=80pc"></p>
+<p><img alt="Create Lambda function and deploy" src="/aws-stutdy-group-workshop/images/2/CreateLambda1.jpeg?featherlight=false&width=80pc"></p>
 <p>Here are the steps to create a Lambda function using the AWS Management Console:</p>
 <ul>
 <li>Go to <a href="https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions">https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions</a> and choose <strong>Create function</strong></li>
 </ul>
-<p><img alt="Create Lambda function and deploy 2" src="/images/2/CreateLambda2.jpeg?featherlight=false&width=80pc"></p>
+<p><img alt="Create Lambda function and deploy 2" src="/aws-stutdy-group-workshop/images/2/CreateLambda2.jpeg?featherlight=false&width=80pc"></p>
 <p>Fill yours function infomation:</p>
 <ul>
 <li>Select: Author from scratch</li>
@@ -773,25 +773,25 @@
 <li>Security groups: recommend default</li>
 </ul>
 <p>After fulfill choose <strong>Create function</strong>, Similar let continue create 3 functions like image below order: <strong>LambdaFetchDataFunction</strong>, <strong>LambdaDeleteDataFunction</strong>, <strong>LambdaFetchDataFunction</strong></p>
-<p><img alt="Create Lambda function and deploy 3" src="/images/2/CreateLambda3.jpeg?featherlight=false&width=80pc"></p>
+<p><img alt="Create Lambda function and deploy 3" src="/aws-stutdy-group-workshop/images/2/CreateLambda3.jpeg?featherlight=false&width=80pc"></p>
 <h4 id="config-detail-for-each-function">Config Detail For Each Function</h4>
-<p><img alt="Create Lambda function and deploy 3" src="/images/2/LamDaDetail1.png?featherlight=false&width=80pc"></p>
+<p><img alt="Create Lambda function and deploy 3" src="/aws-stutdy-group-workshop/images/2/LamDaDetail1.png?featherlight=false&width=80pc"></p>
 <p>After do that, we have 3 function, now click to LambdaFetchDataFunction
-<img alt="Create Lambda function and deploy 3" src="/images/2/LamDaDetail2.png?featherlight=false&width=80pc">
+<img alt="Create Lambda function and deploy 3" src="/aws-stutdy-group-workshop/images/2/LamDaDetail2.png?featherlight=false&width=80pc">
 To function working, we need upload code to lambda, click Upload From at Code tab..
-<img alt="Create Lambda function and deploy 3" src="/images/2/CreateLambda4.jpeg?featherlight=false&width=80pc"></p>
+<img alt="Create Lambda function and deploy 3" src="/aws-stutdy-group-workshop/images/2/CreateLambda4.jpeg?featherlight=false&width=80pc"></p>
 <p>We have 2 choices:</p>
 <ul>
 <li>Upload the file directly .jar file, that we have built mvn clean package at step 3</li>
 <li>Upload via S3 console and get a public URI and fill that</li>
 </ul>
-<p><img alt="Create Lambda function and deploy 3" src="/images/2/CreateLambda5.jpeg?featherlight=false&width=80pc"></p>
+<p><img alt="Create Lambda function and deploy 3" src="/aws-stutdy-group-workshop/images/2/CreateLambda5.jpeg?featherlight=false&width=80pc"></p>
 <p>Next, we have to config runtime environment to lambda can execute correct function, Click <strong>Edit</strong>
-<img alt="Create Lambda function and deploy 3" src="/images/2/CreateLambda6.jpeg?featherlight=false&width=80pc"></p>
+<img alt="Create Lambda function and deploy 3" src="/aws-stutdy-group-workshop/images/2/CreateLambda6.jpeg?featherlight=false&width=80pc"></p>
 <p>Patse Handle is: <strong>org.example.awsserverlessnoteapp.LambdaFetchDataFunction::handleRequest</strong></p>
-<p><img alt="Create Lambda function and deploy 3" src="/images/2/CreateLambda7.jpeg?featherlight=false&width=80pc">
+<p><img alt="Create Lambda function and deploy 3" src="/aws-stutdy-group-workshop/images/2/CreateLambda7.jpeg?featherlight=false&width=80pc">
 Now, let’s inspect our source code. We have a class name LambdaFetchDataFunction, The class LambdaFetchDataFunction under <strong>package: org.example.awsserverlessnoteapp</strong>. The class LambdaFetchDataFunction has function handleRequest, that execute fetch data from DynamoDB
-<img alt="Create Lambda function and deploy 3" src="/images/2/CreateLambda8.jpeg?featherlight=false&width=80pc"></p>
+<img alt="Create Lambda function and deploy 3" src="/aws-stutdy-group-workshop/images/2/CreateLambda8.jpeg?featherlight=false&width=80pc"></p>
 <p>Next we will click on the Configuration tab, click to Environment variables, we can configure multiple values here.</p>
 <ul>
 <li>General configuration</li>

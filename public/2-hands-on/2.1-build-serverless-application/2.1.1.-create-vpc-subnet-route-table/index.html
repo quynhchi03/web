@@ -7,7 +7,7 @@
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="/aws-stutdy-group-workshop/images/favicon.png" type="image/png">
 
     <title>Create VPC, Subnet, Route Table :: Start with Amazon VPC and AWS VPN Site-to-Site.</title>
 
@@ -822,17 +822,17 @@
 <p><strong>In summary, VPCs provide isolated network environments within AWS, subnets allow you to segment your VPC into smaller networks, route tables determine how traffic is routed within the VPC, and security groups control the traffic flow to and from your instances. These components work together to provide a secure and scalable networking infrastructure in the AWS cloud.</strong></p>
 <h4 id="hands-on">Hands-on</h4>
 <p>Let’s <strong>Create VPC</strong> follow instructions below:
-<img alt="CreateVPC1" src="/images/2/CreateVPC1.jpeg?featherlight=false&width=100pc"></p>
+<img alt="CreateVPC1" src="/aws-stutdy-group-workshop/images/2/CreateVPC1.jpeg?featherlight=false&width=100pc"></p>
 <ul>
 <li>Go to <a href="https://us-east-1.console.aws.amazon.com/vpcconsole/home?region=us-east-1#vpcs">https://us-east-1.console.aws.amazon.com/vpcconsole/home?region=us-east-1#vpcs</a> choose <strong>Create VPC</strong>
-<img alt="CreateVPC2" src="/images/2/CreateVPC2.jpeg?featherlight=false&width=100pc"></li>
+<img alt="CreateVPC2" src="/aws-stutdy-group-workshop/images/2/CreateVPC2.jpeg?featherlight=false&width=100pc"></li>
 <li>Select VPC and More</li>
 <li>Select IPv4 CIDR: 10.0.0.0/16</li>
 <li>Choose AZ: 1</li>
 <li>Choose number public subnet 1</li>
 <li>Choose private subnet 1</li>
 <li>Choose NAT gateway: none, because we are connecting within AWS resources, so we don’t need any connection to the internet. NAT gateway suitable for third party resources on the internet
-<img alt="CreateVPC3" src="/images/2/CreateVPC3.jpeg?featherlight=false&width=100pc">
+<img alt="CreateVPC3" src="/aws-stutdy-group-workshop/images/2/CreateVPC3.jpeg?featherlight=false&width=100pc">
 After fulfilling these options click to <strong>Create VPC</strong>. Waiting a minute to resources provisioning, After done, we have a vpc like this picture above.</li>
 </ul>
 
