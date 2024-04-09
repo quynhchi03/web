@@ -86,6 +86,18 @@
                 href="//localhost:1313/1-introduce-aws/1.2-storageservices/"
                 />
   </url><url>
+    <loc>//localhost:1313/2-hands-on/2.2-build-realistic-aws-architechture/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/2-hands-on/2.2-build-realistic-aws-architechture/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/2-hands-on/2.2-build-realistic-aws-architechture/"
+                />
+  </url><url>
     <loc>//localhost:1313/2-hands-on/2.1-build-serverless-application/2.1.2.-create-vpc-endpoint/</loc>
     <xhtml:link
                 rel="alternate"

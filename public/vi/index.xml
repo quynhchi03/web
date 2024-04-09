@@ -7,5 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi</language>
     <atom:link href="//localhost:1313/vi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build Realistic AWS Architecture</title>
+      <link>//localhost:1313/vi/2-hands-on/2.2-build-realistic-aws-architechture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/vi/2-hands-on/2.2-build-realistic-aws-architechture/</guid>
+      <description>Challenge 2: Building AWS Resilient E-commerce Platform The exponential growth of online shopping necessitates robust and scalable e-commerce platforms. An increase in traffic during peak shopping periods like Black Friday or Cyber Monday requires the e-commerce platform to be highly resilient and responsive. Challenge Objective: Build a highly scalable, resilient, and cost-effective e-commerce platform on AWS that can handle varying loads, survive component failures without user-visible errors, and maintain data consistency.</description>
+    </item>
   </channel>
 </rss>

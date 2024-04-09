@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.8">
+    <meta name="generator" content="Hugo 0.124.1">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Create API Gateway :: Start with Amazon VPC and AWS VPN Site-to-Site.</title>
 
     
-    <link href="/css/nucleus.css?1709975456" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1709975456" rel="stylesheet">
-    <link href="/css/hybrid.css?1709975456" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1709975456" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1709975456" rel="stylesheet">
-    <link href="/css/auto-complete.css?1709975456" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1709975456" rel="stylesheet">
-    <link href="/css/theme.css?1709975456" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1709975456" rel="stylesheet">
+    <link href="/css/nucleus.css?1712680598" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1712680598" rel="stylesheet">
+    <link href="/css/hybrid.css?1712680598" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1712680598" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1712680598" rel="stylesheet">
+    <link href="/css/auto-complete.css?1712680598" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1712680598" rel="stylesheet">
+    <link href="/css/theme.css?1712680598" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1712680598" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1709975456" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1712680598" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1709975456"></script>
+    <script src="/js/jquery-3.3.1.min.js?1712680598"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1709975456"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1709975456"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1712680598"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1712680598"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1709975456"></script>
+<script type="text/javascript" src="/js/search.js?1712680598"></script>
 
     
   </div>
@@ -546,6 +546,27 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/2-hands-on/2.2-build-realistic-aws-architechture/" title="Build Realistic AWS Architecture" class="dd-item ">
+        <a href="/2-hands-on/2.2-build-realistic-aws-architechture/">
+         <b> 2.2 </b> Build Realistic AWS Architecture
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -772,28 +793,28 @@
 </li>
 </ul>
 <h5 id="4-create-resource-to-create-main-path-for-apis">4. Create resource to create main Path for APIs.</h5>
-<p><img alt="Create resource to create main Path for APIs" src="/aws-stutdy-group-workshop/images/2/CreateAPIGW1.jpeg?featherlight=false&width=80pc">
+<p><img alt="Create resource to create main Path for APIs" src="/images/2/CreateAPIGW1.jpeg?featherlight=false&width=80pc">
 Next, config yours path like below and remember CORS (Cross Origin Resource Sharing)
 Cross-Origin Resource Sharing (CORS) is a security feature implemented by web browsers to prevent scripts running on one domain from making requests to another domain. When you’re using Amazon API Gateway to create a REST API, you might need to configure CORS to allow your API to be accessed by client applications running in web browsers from different origins.
 After created resources, now we have to create some method mapping with lambda function, click Create Method</p>
 <h5 id="5-after-created-resources-now-we-have-to-create-some-method-mapping-with-lambda-function-click-create-method">5. After created resources, now we have to create some method mapping with lambda function, click Create Method</h5>
-<p><img alt="Create Method for APIs" src="/aws-stutdy-group-workshop/images/2/CreateAPIGW2.jpeg?featherlight=false&width=80pc">
+<p><img alt="Create Method for APIs" src="/images/2/CreateAPIGW2.jpeg?featherlight=false&width=80pc">
 At here, we choose
 Method type: GET/POST/DELETE
 Integration type: Lambda Function
 Lambda function: choose your lambda function create at step previous
 Click to Create method , after created we have method like image below.
-<img alt="Create Method for APIs" src="/aws-stutdy-group-workshop/images/2/CreateAPIGW3.jpeg?featherlight=false&width=80pc"></p>
+<img alt="Create Method for APIs" src="/images/2/CreateAPIGW3.jpeg?featherlight=false&width=80pc"></p>
 <h5 id="6-click-to-tab-test-to-test-api-click-test-to-test-apis">6. Click to tab Test to test API, click Test to test APIs</h5>
-<p><img alt="test APIs" src="/aws-stutdy-group-workshop/images/2/CreateAPIGW4.jpeg?featherlight=false&width=80pc">
-<img alt="test APIs" src="/aws-stutdy-group-workshop/images/2/CreateAPIGW5.jpeg?featherlight=false&width=80pc">
+<p><img alt="test APIs" src="/images/2/CreateAPIGW4.jpeg?featherlight=false&width=80pc">
+<img alt="test APIs" src="/images/2/CreateAPIGW5.jpeg?featherlight=false&width=80pc">
 We have received responses like the image above. Next create similar method with method <strong>POST, DELETE</strong> integration with <strong>LambdaDeleteDataFunction, LambdaAddDataFunction</strong></p>
 <h5 id="7-after-done-we-have-to-click-deploy-api-to-expose-api-over-internet">7. After done, we have to click Deploy API to expose API over internet</h5>
-<p><img alt="test APIs" src="/aws-stutdy-group-workshop/images/2/Deploy5.jpeg?featherlight=false&width=50pc">
+<p><img alt="test APIs" src="/images/2/Deploy5.jpeg?featherlight=false&width=50pc">
 <strong>Click Deploy API</strong>
-<img alt="test APIs" src="/aws-stutdy-group-workshop/images/2/Deploy1.jpeg?featherlight=false&width=50pc">
+<img alt="test APIs" src="/images/2/Deploy1.jpeg?featherlight=false&width=50pc">
 <strong>Fill your Stage name and Deployment description, after click Deploy we have received response below</strong>
-<img alt="test APIs" src="/aws-stutdy-group-workshop/images/2/Deploy3.jpeg?featherlight=false&width=50pc"></p>
+<img alt="test APIs" src="/images/2/Deploy3.jpeg?featherlight=false&width=50pc"></p>
 <ul>
 <li>Let’s inspect Invoke URL: <a href="https://q3q8l57ui9.execute-api.us-east-1.amazonaws.com/prod">https://q3q8l57ui9.execute-api.us-east-1.amazonaws.com/prod</a> this is public URL we can call on the public internet.
 After get URL public API, you can test with POSTMAN, TERMINAL tool
@@ -1109,6 +1130,22 @@ You can try with Curl Request with pattern: curl -X GET {{YourInvoke URL}}/{{Sta
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1134,19 +1171,19 @@ You can try with Curl Request with pattern: curl -X GET {{YourInvoke URL}}/{{Sta
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1709975456"></script>
-    <script src="/js/perfect-scrollbar.min.js?1709975456"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1709975456"></script>
-    <script src="/js/jquery.sticky.js?1709975456"></script>
-    <script src="/js/featherlight.min.js?1709975456"></script>
-    <script src="/js/highlight.pack.js?1709975456"></script>
+    <script src="/js/clipboard.min.js?1712680598"></script>
+    <script src="/js/perfect-scrollbar.min.js?1712680598"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1712680598"></script>
+    <script src="/js/jquery.sticky.js?1712680598"></script>
+    <script src="/js/featherlight.min.js?1712680598"></script>
+    <script src="/js/highlight.pack.js?1712680598"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1709975456"></script>
-    <script src="/js/learn.js?1709975456"></script>
-    <script src="/js/hugo-learn.js?1709975456"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1712680598"></script>
+    <script src="/js/learn.js?1712680598"></script>
+    <script src="/js/hugo-learn.js?1712680598"></script>
 
-    <link href="/mermaid/mermaid.css?1709975456" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1709975456"></script>
+    <link href="/mermaid/mermaid.css?1712680598" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1712680598"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

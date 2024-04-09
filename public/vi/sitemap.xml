@@ -74,6 +74,18 @@
                 href="//localhost:1313/vi/2-hands-on/2.1-build-serverless-application/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/2-hands-on/2.2-build-realistic-aws-architechture/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/2-hands-on/2.2-build-realistic-aws-architechture/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/2-hands-on/2.2-build-realistic-aws-architechture/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/1-introduce-aws/1.3-databaseservice/</loc>
     <xhtml:link
                 rel="alternate"

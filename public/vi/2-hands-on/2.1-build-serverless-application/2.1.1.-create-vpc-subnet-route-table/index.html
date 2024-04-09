@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.8">
+    <meta name="generator" content="Hugo 0.124.1">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Tạo VPC, Subnet, Route Table :: Bắt đầu với Amazon VPC và AWS VPN Site to Site</title>
 
     
-    <link href="/css/nucleus.css?1709975456" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1709975456" rel="stylesheet">
-    <link href="/css/hybrid.css?1709975456" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1709975456" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1709975456" rel="stylesheet">
-    <link href="/css/auto-complete.css?1709975456" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1709975456" rel="stylesheet">
-    <link href="/css/theme.css?1709975456" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1709975456" rel="stylesheet">
+    <link href="/css/nucleus.css?1712680598" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1712680598" rel="stylesheet">
+    <link href="/css/hybrid.css?1712680598" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1712680598" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1712680598" rel="stylesheet">
+    <link href="/css/auto-complete.css?1712680598" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1712680598" rel="stylesheet">
+    <link href="/css/theme.css?1712680598" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1712680598" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1709975456" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1712680598" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1709975456"></script>
+    <script src="/js/jquery-3.3.1.min.js?1712680598"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1709975456"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1709975456"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1712680598"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1712680598"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1709975456"></script>
+<script type="text/javascript" src="/js/search.js?1712680598"></script>
 
     
   </div>
@@ -546,6 +546,27 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/vi/2-hands-on/2.2-build-realistic-aws-architechture/" title="Build Realistic AWS Architecture" class="dd-item ">
+        <a href="/vi/2-hands-on/2.2-build-realistic-aws-architechture/">
+         <b> 2.2 </b> Build Realistic AWS Architecture
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -822,17 +843,17 @@
 <p><strong>Tóm lại, VPC cung cấp môi trường mạng biệt lập trong AWS, mạng con cho phép bạn phân chia VPC thành các mạng nhỏ hơn, bảng định tuyến xác định cách định tuyến lưu lượng trong VPC và các nhóm bảo mật kiểm soát luồng lưu lượng đến và đi từ phiên bản của bạn. Các thành phần này phối hợp với nhau để cung cấp cơ sở hạ tầng mạng an toàn và có thể mở rộng trên đám mây AWS.</strong></p>
 <h4 id="thực-hành">Thực hành</h4>
 <p>Hãy <strong>Tạo VPC</strong> làm theo hướng dẫn bên dưới:
-<img alt="CreateVPC1" src="/aws-stutdy-group-workshop/images/2/CreateVPC1.jpeg?featherlight=false&width=100pc"></p>
+<img alt="CreateVPC1" src="/images/2/CreateVPC1.jpeg?featherlight=false&width=100pc"></p>
 <ul>
 <li>Truy cập <a href="https://us-east-1.console.aws.amazon.com/vpcconsole/home?region=us-east-1#vpcs">https://us-east-1.console.aws.amazon.com/vpcconsole/home?region=us-east-1#vpcs</a> Chọn <strong>Create VPC</strong>
-<img alt="CreateVPC2" src="/aws-stutdy-group-workshop/images/2/CreateVPC2.jpeg?featherlight=false&width=100pc"></li>
+<img alt="CreateVPC2" src="/images/2/CreateVPC2.jpeg?featherlight=false&width=100pc"></li>
 <li>Chọn VPC and More</li>
 <li>Chọn IPv4 CIDR: 10.0.0.0/16</li>
 <li>Chọn AZ: 1</li>
 <li>Chọn number public subnet 1</li>
 <li>Chọn private subnet 1</li>
 <li>Chọn NAT gateway: none, vì chúng tôi đang kết nối trong tài nguyên AWS nên không cần kết nối internet. Cổng NAT phù hợp với tài nguyên của bên thứ ba trên internet
-<img alt="CreateVPC3" src="/aws-stutdy-group-workshop/images/2/CreateVPC3.jpeg?featherlight=false&width=100pc">
+<img alt="CreateVPC3" src="/images/2/CreateVPC3.jpeg?featherlight=false&width=100pc">
 Sau khi hoàn thành các tùy chọn này, hãy nhấp vào <strong>Tạo VPC</strong>. Chờ một phút để cung cấp tài nguyên, Sau khi hoàn tất, chúng ta có một vpc như hình trên.</li>
 </ul>
 
@@ -1138,6 +1159,22 @@ Sau khi hoàn thành các tùy chọn này, hãy nhấp vào <strong>Tạo VPC</
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1163,19 +1200,19 @@ Sau khi hoàn thành các tùy chọn này, hãy nhấp vào <strong>Tạo VPC</
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1709975456"></script>
-    <script src="/js/perfect-scrollbar.min.js?1709975456"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1709975456"></script>
-    <script src="/js/jquery.sticky.js?1709975456"></script>
-    <script src="/js/featherlight.min.js?1709975456"></script>
-    <script src="/js/highlight.pack.js?1709975456"></script>
+    <script src="/js/clipboard.min.js?1712680598"></script>
+    <script src="/js/perfect-scrollbar.min.js?1712680598"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1712680598"></script>
+    <script src="/js/jquery.sticky.js?1712680598"></script>
+    <script src="/js/featherlight.min.js?1712680598"></script>
+    <script src="/js/highlight.pack.js?1712680598"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1709975456"></script>
-    <script src="/js/learn.js?1709975456"></script>
-    <script src="/js/hugo-learn.js?1709975456"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1712680598"></script>
+    <script src="/js/learn.js?1712680598"></script>
+    <script src="/js/hugo-learn.js?1712680598"></script>
 
-    <link href="/mermaid/mermaid.css?1709975456" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1709975456"></script>
+    <link href="/mermaid/mermaid.css?1712680598" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1712680598"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

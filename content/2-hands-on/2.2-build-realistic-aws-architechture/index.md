@@ -1,7 +1,7 @@
 ---
 title : "Build Realistic AWS Architecture"
 date : "`r Sys.Date()`"
-weight : 2
+weight : 3
 chapter : false
 pre : " <b> 2.2 </b> "
 ---
@@ -10,6 +10,7 @@ pre : " <b> 2.2 </b> "
 ### Challenge 2: Building AWS Resilient E-commerce Platform
 
 The exponential growth of online shopping necessitates robust and scalable e-commerce platforms. An increase in traffic during peak shopping periods like Black Friday or Cyber Monday requires the e-commerce platform to be highly resilient and responsive. Challenge Objective: Build a highly scalable, resilient, and cost-effective e-commerce platform on AWS that can handle varying loads, survive component failures without user-visible errors, and maintain data consistency.
+![AWS DESIGN ARCHITECTURE](/images/2.2/HA_AWS_DESIGN.png?featherlight=false&width=100pc)
 
 ### Requirements:
 
@@ -35,8 +36,8 @@ Utilize AWS CloudWatch for monitoring the health and performance metrics of AWS 
 
 #### Deliverables:
 
-1. [A written architecture design document](2.2.1.architecture-design-document/)
+1. Document AWS architecture design 
 2. Terraform template files.
-3. CICD Pipeline
+3. CI/CD Pipeline
 4. Testing
 5. A cost analysis report.
