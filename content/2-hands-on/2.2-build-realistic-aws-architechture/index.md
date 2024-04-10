@@ -5,12 +5,12 @@ weight : 3
 chapter : false
 pre : " <b> 2.2 </b> "
 ---
+![AWS DESIGN ARCHITECTURE](/images/2.2/HA_AWS_DESIGN.png?featherlight=false&width=100pc)
 
 
 ### Challenge 2: Building AWS Resilient E-commerce Platform
 
 The exponential growth of online shopping necessitates robust and scalable e-commerce platforms. An increase in traffic during peak shopping periods like Black Friday or Cyber Monday requires the e-commerce platform to be highly resilient and responsive. Challenge Objective: Build a highly scalable, resilient, and cost-effective e-commerce platform on AWS that can handle varying loads, survive component failures without user-visible errors, and maintain data consistency.
-![AWS DESIGN ARCHITECTURE](/images/2.2/HA_AWS_DESIGN.png?featherlight=false&width=100pc)
 
 ### Requirements:
 
