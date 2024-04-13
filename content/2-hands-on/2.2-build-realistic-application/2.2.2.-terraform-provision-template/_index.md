@@ -9,8 +9,58 @@ pre : " <b> 2.2.2 </b> "
 
 ## What is Terraform?
 Terraform is an open-source infrastructure as code (IaC) software tool created by HashiCorp. It allows users to define and provision data center infrastructure using a declarative configuration language known as HashiCorp Configuration Language (HCL), or optionally JSON.
+## Why we need using Terraform?
+1. **Infrastructure as Code (IaC):** It allows you to define your infrastructure in code, which can be version controlled, reused, and shared with others. This approach facilitates consistency and accountability, helping to ensure that the deployment of infrastructure is repeatable and prevents drift between environments.
+
+2. **Declarative Syntax:** Terraform's HCL is declarative, meaning you describe the desired final state of your infrastructure, and Terraform figures out how to achieve that state. This abstracts away the procedural steps required for deployment, significantly simplifying infrastructure management.
+
+3. **Platform Agnostic:** Terraform can manage infrastructure on multiple cloud platforms as well as on-premises. This capability allows you to manage a hybrid or multi-cloud environment seamlessly with a single set of tooling.
+
+4. **Modularity:** Terraform configurations can be composed of modules, making it easy to package and encapsulate a set of resources and reuse them across different projects or parts of your infrastructure.
+
+5. **State Management:** Terraform maintains a state file, which holds the current state of the infrastructure Terraform is managing. This state allows Terraform to map real-world resources to your configuration, track metadata, and perform resource dependencies and change planning accurately.
+6. **Change Automation and Orchestration:** Terraform plans and applies changes in a consistent and predictable manner. It calculates the difference between the current state and the desired state and executes the necessary actions to make the real-world infrastructure match the desired state, handling resource dependency resolution.
+7. **Collaboration and Workflow:** By integrating easily with version control systems and supporting remote state backends, Terraform facilitates collaboration within and between teams. It supports a standard workflow to plan, review, and apply changes, which makes it compatible with Continuous Integration/Continuous Deployment (CI/CD) pipelines.
+8. **Scalability:** Terraform is designed to handle large-scale infrastructures, making it suitable for both small projects and massive enterprise environments.
+9. **Community and Ecosystem:** Terraform benefits from an active community that contributes to its large ecosystem of providers (plugins for different services and APIs) and modules (pre-packaged configurations for common setup patterns).
+10. **Safety and Predictability:** Terraform generates an execution plan before making any changes, which means you can review what Terraform will do before it does it, helping to avoid unexpected changes.
 ## Set up aws cil and configure credentials
-##3 Install aws-cli with WINDOW
+### 1.Install aws-cli with WINDOW Operator System
+1. Download and run the AWS CLI MSI installer for Windows (64-bit): https://awscli.amazonaws.com/AWSCLIV2.msi
+Alternatively, you can run the msiexec command to run the MSI installer.
+    
+    msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi
+
+For various parameters that can be used with msiexec, see msiexec on the Microsoft Docs website. For example, you can use the /qn flag for a silent installation.
+
+    msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi /qn
+
+2. To confirm the installation, open the Start menu, search for cmd to open a 
+command prompt window, and at the command prompt use the aws --version command.
+
+### 2.Install aws-cli with Linux Operator System
+**Linux x86 (64-bit)**
+
+Linux ARM
+Note
+(Optional) The following command block downloads and installs the AWS CLI without first verifying the integrity of your download. To verify the integrity of your download, use the below step by step instructions.
+
+To install the AWS CLI, run the following commands.
+
+   $ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+   unzip awscliv2.zip
+
+   sudo ./aws/install`
+
+
+To update your current installation of the AWS CLI, add your existing symlink and installer information to construct the install command using the --bin-dir, --install-dir, and --update parameters. The following command block uses an example symlink of /usr/local/bin and example installer location of /usr/local/aws-cli.
+
+   $ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   
+   unzip awscliv2.zip
+   
+   sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
 
 ## Project Structure
 There are source code architecture, we are separately component
@@ -62,74 +112,3 @@ There are source code architecture, we are separately component
 4. **terraform-apply.sh** we are using this file to run command terraform apply
 5. **terraform.tfstate** to store bindings between objects in a remote system and resource instances declared in your configuration.
 6. **provider.tf** providers allow Terraform to interact with cloud providers, SaaS providers, and other APIs
-## Hands-on 
-### 1. Create file provider.tf
-
-    terraform {
-    required_providers {
-    aws = {
-    source = "hashicorp/aws"
-    version = "5.44.0"
-    }
-    kubernetes = {
-    source = "hashicorp/kubernetes"
-    version = ">= 2.3.2"
-    }
-    kubectl = {
-    source  = "gavinbunney/kubectl"
-    version = ">= 1.11.2"
-    }
-    helm = {
-    source = "hashicorp/helm"
-    version = ">= 2.2.0"
-    }
-    }
-    }
-    provider "aws" {
-    region = "us-east-1"
-    }
-**terraform block:**
-This block defines the required providers for the Terraform configuration. Providers are responsible for understanding and interacting with APIs, such as AWS, Kubernetes, etc.
-
-**required_providers block:**
-Within the terraform block, there's another block called required_providers. This block specifies the providers required for this configuration along with their sources and versions.
-
-**aws provider:**
-It specifies that Terraform requires the AWS provider.
-source = "hashicorp/aws": Indicates the source of the AWS provider. In this case, it's from HashiCorp's repository.
-version = "5.44.0": Specifies the version of the AWS provider required. Here, version 5.44.0 is specified.
-
-**kubernetes provider:**
-It specifies that Terraform requires the Kubernetes provider.
-source = "hashicorp/kubernetes": Indicates the source of the Kubernetes provider, which is from HashiCorp's repository.
-version = ">= 2.3.2": Specifies that any version greater than or equal to 2.3.2 of the Kubernetes provider is acceptable.
-
-**kubectl provider:**
-It specifies that Terraform requires the kubectl provider.
-source = "gavinbunney/kubectl": Indicates the source of the kubectl provider, which is from Gavin Bunney's repository.
-version = ">= 1.11.2": Specifies that any version greater than or equal to 1.11.2 of the kubectl provider is acceptable.
-
-**helm provider:**
-It specifies that Terraform requires the Helm provider.
-source = "hashicorp/helm": Indicates the source of the Helm provider, which is from HashiCorp's repository.
-version = ">= 2.2.0": Specifies that any version greater than or equal to 2.2.0 of the Helm provider is acceptable.
-
-**provider "aws" block:**
-This block configures the AWS provider specifically.
-region = "us-east-1": Specifies the AWS region to use for this provider. In this case, it's set to "us-east-1".
-
-### 2. Create file main.tf
-
-    module "aws-resources" {
-    source = "./aws-resources"
-    }
-**module block:**
-This block is used to declare a module. Modules are reusable packages of Terraform configurations that are used to encapsulate and organize resources. They can be stored locally or remotely and are referenced within your main Terraform configuration.
-
-**"aws-resources":**
-This is the name assigned to the module instance. It's used as a reference to interact with this module in other parts of the Terraform configuration.
-
-**source = "./aws-resources":**
-This line specifies the location of the module. In this case, the module is located in a directory named "aws-resources" relative to the root of the current Terraform configuration. The source argument can also be a URL pointing to a remote module in a version control system like GitHub or a Terraform Module Registry.
-
-### 2. Create file main.tf
