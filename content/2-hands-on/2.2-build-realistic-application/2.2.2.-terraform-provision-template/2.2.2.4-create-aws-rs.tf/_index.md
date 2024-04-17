@@ -431,3 +431,149 @@ It allows outbound traffic on all ports to the CIDR blocks of the private and pu
       description = "managed by terraform provisioning"
       }
       }`
+
+**Resource Type and Name:** It defines an AWS instance resource named "bastion_host". This resource type represents a virtual server in the Amazon Web Services (AWS) cloud.
+
+**AMI and Instance Type:** The ami parameter specifies the Amazon Machine Image (AMI) ID to use for launching the instance. In this case, it's using a placeholder value (ami-0c101f26f147fa7fd). The instance_type parameter specifies the type of instance to launch, which in this case is a "t2.micro" instance.
+
+**Subnet and Security:** The subnet_id parameter specifies the subnet in which the instance will be launched. It's using a variable (aws_subnet.public-subnet-1a.id), which should contain the actual subnet ID. The security_groups parameter defines the security group(s) associated with the instance, ensuring network security.
+
+**Key Pair:** The key_name parameter specifies the name of the SSH key pair that will be used to connect to the instance. It's using a variable (var.ssh_access_key), which should contain the actual key pair name.
+
+**User Data:** The user_data parameter contains the script that will be executed when the instance is launched. This script updates the system packages, installs Jenkins (a popular automation server), and starts the Jenkins service. It also installs Java 17 using the Amazon Corretto distribution.
+
+**Tags:** Tags are key-value pairs used for organizing and managing AWS resources. In this block, tags are applied to the instance for identification and management purposes.
+
+Overall, this block of code sets up an AWS EC2 instance (bastion host) with necessary configurations and software installations using Terraform. It's a part of an infrastructure provisioning process managed by Terraform.
+
+### Create 07_nat.tf
+Next, we need create NAT Gateway to ec2 instance can connect over internet.
+
+      resource "aws_eip" "nat-eip" {
+      vpc = true
+      tags = {
+      name="terraform project"
+      description = "managed by terraform provisioning"
+      }
+      }
+      resource "aws_nat_gateway" "nat-gw" {
+      allocation_id = aws_eip.nat-eip.id
+      subnet_id     = aws_subnet.public-subnet-1a.id
+      depends_on = [aws_internet_gateway.gw]
+      tags = {
+      name="terraform project"
+      description = "managed by terraform provisioning"
+      }
+      }
+
+Elastic IP Resource:
+
+      resource "aws_eip" "nat-eip" {
+      vpc = true
+      tags = {
+      name        = "terraform project"
+      description = "managed by terraform provisioning"
+      }
+      }
+
+This block defines an AWS Elastic IP (EIP) resource named "nat-eip". The vpc = true line specifies that this EIP is to be associated with a VPC (Virtual Private Cloud). Tags are also assigned to the EIP for identification and management purposes.
+
+NAT Gateway Resource:
+      
+      resource "aws_nat_gateway" "nat-gw" {
+      allocation_id = aws_eip.nat-eip.id
+      subnet_id     = aws_subnet.public-subnet-1a.id
+      depends_on    = [aws_internet_gateway.gw]
+      tags = {
+      name        = "terraform project"
+      description = "managed by terraform provisioning"
+      }
+      }
+
+This block defines an AWS NAT Gateway resource named "nat-gw". The allocation_id parameter specifies the Elastic IP allocation ID associated with the NAT Gateway, which is obtained from the previously defined Elastic IP resource (aws_eip.nat-eip.id). The subnet_id parameter specifies the subnet in which the NAT Gateway will be deployed. The depends_on parameter ensures that the NAT Gateway is created only after the associated internet gateway (aws_internet_gateway.gw) is created. Tags are also applied to the NAT Gateway for identification and management purposes.
+
+Overall, this block of code provisions an Elastic IP and a NAT Gateway in an AWS environment using Terraform. The NAT Gateway facilitates outbound internet access for resources in private subnets within the VPC.
+
+## Create 08_iam-role.tf
+      
+      ### Create Role for EKS Cluster
+      resource "aws_iam_role" "role-eks" {
+      name = "eks_role"
+      
+      assume_role_policy = jsonencode({
+      "Version": "2012-10-17",
+      "Statement": [
+      {
+      "Effect": "Allow",
+      "Principal": {
+      "Service": [
+      "eks.amazonaws.com"
+      ]
+      },
+      "Action": "sts:AssumeRole"
+      }
+      ]
+      })
+      }
+      #Attach Policies to the Role for EKS Cluster
+      resource "aws_iam_role_policy_attachment" "eks_attach" {
+      role       = aws_iam_role.role-eks.name
+      policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+      
+      }
+      # Create Role for EKS Node
+      resource "aws_iam_role" "nodes" {
+      name = "eks-node-group-nodes"
+      
+      assume_role_policy = jsonencode({
+      Statement = [{
+      Action = "sts:AssumeRole"
+      Effect = "Allow"
+      Principal = {
+      Service = "ec2.amazonaws.com"
+      }
+      }]
+      Version = "2012-10-17"
+      })
+      
+      }
+      
+      #Attach Policies to the Role for EKS Node
+      resource "aws_iam_role_policy_attachment" "nodes-AmazonEKSWorkerNodePolicy" {
+      policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+      role       = aws_iam_role.nodes.name
+      }
+      
+      resource "aws_iam_role_policy_attachment" "nodes-AmazonEKS_CNI_Policy" {
+      policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      role       = aws_iam_role.nodes.name
+      
+      }
+      
+      resource "aws_iam_role_policy_attachment" "nodes-AmazonEC2ContainerRegistryReadOnly" {
+      policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+      role       = aws_iam_role.nodes.name
+      }
+
+This block of Terraform code is used to define and configure IAM roles and policies for an Amazon Elastic Kubernetes Service (EKS) cluster and its associated nodes. Let's break down the main purposes of each block:
+
+      resource "aws_iam_role" "role-eks" {
+      name = "eks_role"
+      
+      assume_role_policy = jsonencode({
+      "Version": "2012-10-17",
+      "Statement": [
+      {
+      "Effect": "Allow",
+      "Principal": {
+      "Service": [
+      "eks.amazonaws.com"
+      ]
+      },
+      "Action": "sts:AssumeRole"
+      }
+      ]
+      })
+      }
+
+2. 
