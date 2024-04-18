@@ -25,10 +25,9 @@ Using Elastic Kubernetes Service to scale resources ensure high availability and
 
 #### Database and Caching:
 
-Utilize Amazon RDS for relational databases with read replicas to handle peak read loads. Implement Amazon DynamoDB for NoSQL requirements to manage cart and session data. Implement caching using Amazon ElastiCache to reduce the load on databases during high traffic.
+Utilize Amazon RDS for relational databases with read replicas to handle peak read loads. Implement caching using Amazon ElastiCache to reduce the load on databases during high traffic.
 #### Message Queuing:
-Use Amazon SQS for decoupling application components. Utilize Amazon Kinesis for real-time data streaming and processing for activities like clickstream analysis.
-
+Use Amazon SQS for decoupling application components
 #### Storage and CDN:
 Use Amazon S3 for storing static content and product media. Integrate Amazon CloudFront as a CDN to deliver content globally with low latency. Security and Compliance: Implement AWS Identity and Access Management (IAM) to manage access. Apply AWS WAF on ELB and CloudFront to safeguard against web exploits. Ensure that the application complies with relevant standards and regulations such as GDPR and PCI DSS.
 

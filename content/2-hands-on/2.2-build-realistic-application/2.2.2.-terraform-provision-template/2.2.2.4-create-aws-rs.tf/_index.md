@@ -496,7 +496,7 @@ Overall, this block of code provisions an Elastic IP and a NAT Gateway in an AWS
 
 ## Create 08_iam-role.tf
       
-      ### Create Role for EKS Cluster
+      ### This block defines an IAM role named "eks_role" for the EKS cluster. It specifies a policy allowing the EKS service principal (eks.amazonaws.com) to assume this role.
       resource "aws_iam_role" "role-eks" {
       name = "eks_role"
       
@@ -515,13 +515,13 @@ Overall, this block of code provisions an Elastic IP and a NAT Gateway in an AWS
       ]
       })
       }
-      #Attach Policies to the Role for EKS Cluster
+      # This block attaches the "AmazonEKSClusterPolicy" IAM policy to the IAM role created for the EKS cluster. This policy grants permissions necessary for managing EKS cluster resources.
       resource "aws_iam_role_policy_attachment" "eks_attach" {
       role       = aws_iam_role.role-eks.name
       policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
       
       }
-      # Create Role for EKS Node
+      # This block defines an IAM role named "eks-node-group-nodes" for the EKS worker nodes. It specifies a policy allowing EC2 instances (ec2.amazonaws.com) to assume this role.
       resource "aws_iam_role" "nodes" {
       name = "eks-node-group-nodes"
       
@@ -538,7 +538,7 @@ Overall, this block of code provisions an Elastic IP and a NAT Gateway in an AWS
       
       }
       
-      #Attach Policies to the Role for EKS Node
+      #These blocks attach policies (AmazonEKSWorkerNodePolicy, AmazonEKS_CNI_Policy, AmazonEC2ContainerRegistryReadOnly) to the IAM role created for the EKS worker nodes. These policies grant permissions necessary for EKS node operation, networking, and accessing the Amazon ECR (Elastic Container Registry) for Docker image storage.
       resource "aws_iam_role_policy_attachment" "nodes-AmazonEKSWorkerNodePolicy" {
       policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
       role       = aws_iam_role.nodes.name
@@ -554,26 +554,431 @@ Overall, this block of code provisions an Elastic IP and a NAT Gateway in an AWS
       policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
       role       = aws_iam_role.nodes.name
       }
+## Create 09_eks-cluster.tf
+      #This block defines an AWS EKS cluster resource with the name "eks_cluster".
+      resource "aws_eks_cluster" "eks_cluster" {
+      #Specifies the name of the EKS cluster, which in this case is "Eks-cluster".
+      name     = "Eks-cluster"
+      #Specifies the ARN (Amazon Resource Name) of the IAM role used by the EKS cluster. It's referencing the IAM role defined earlier (aws_iam_role.role-eks) and accessing its ARN.
+      role_arn = aws_iam_role.role-eks.arn
+      #Specifies the VPC configuration for the EKS cluster. It defines the subnets in which the EKS cluster's resources will be launched. The subnet_ids parameter contains a list of private subnet IDs where the EKS cluster's worker nodes will reside.
+      vpc_config {
+      subnet_ids = [
+      aws_subnet.private-subnet-1a.id,
+      aws_subnet.private-subnet-1b.id,
+      aws_subnet.private-subnet-1c.id
+      ]
+      }
+      #Specifies that the creation of the EKS cluster resource depends on the successful attachment of the IAM policy defined earlier (aws_iam_role_policy_attachment.eks_attach). This ensures that the necessary permissions are in place before attempting to create the EKS cluster.
+      depends_on = [aws_iam_role_policy_attachment.eks_attach]
+      tags = {
+      name="terraform project"
+      description = "managed by terraform provisioning"
+      }
+      }
 
-This block of Terraform code is used to define and configure IAM roles and policies for an Amazon Elastic Kubernetes Service (EKS) cluster and its associated nodes. Let's break down the main purposes of each block:
-
-      resource "aws_iam_role" "role-eks" {
-      name = "eks_role"
+## Create 10_eks-nodes.tf
+      ## This block defines an AWS EKS node group resource with the name "private-nodes".
+      resource "aws_eks_node_group" "private-nodes" {
+      ## Specifies the name of the EKS cluster to which this node group belongs. It references the name of the EKS cluster created earlier (aws_eks_cluster.eks_cluster.name).
+      cluster_name    = aws_eks_cluster.eks_cluster.name
+      ## Specifies the name of the EKS node group.
+      node_group_name = "private-nodes"
+      ## Specifies the ARN (Amazon Resource Name) of the IAM role used by the EKS node group. It references the IAM role defined earlier (aws_iam_role.nodes.arn).
+      node_role_arn   = aws_iam_role.nodes.arn
+      ## Specifies the Amazon Machine Image (AMI) type for the nodes. In this case, it's set to "AL2_x86_64" which indicates Amazon Linux 2.
+      ami_type = "AL2_x86_64"
+      ## Specifies the IDs of the subnets in which the EC2 instances (nodes) of this node group will be 
+      subnet_ids = [
+      aws_subnet.private-subnet-1a.id,
+      aws_subnet.private-subnet-1b.id,
+      aws_subnet.private-subnet-1c.id,
+      ]
       
-      assume_role_policy = jsonencode({
-      "Version": "2012-10-17",
-      "Statement": [
-      {
-      "Effect": "Allow",
-      "Principal": {
-      "Service": [
-      "eks.amazonaws.com"
-      ]
-      },
-      "Action": "sts:AssumeRole"
+      capacity_type  = "SPOT"
+      ## Defines the capacity type for the instances (in this case, "SPOT" instances), as well as the instance types to be used (here, "t3.medium").
+      instance_types = ["t3.medium"]
+      ##Specifies the scaling configuration for the node group, including the desired, maximum, and minimum number of nodes.
+      scaling_config {
+      desired_size = 1
+      max_size     = 5
+      min_size     = 0
       }
+      ## Configures remote access to the nodes using SSH key (ec2_ssh_key) and specifies the security group to apply to the nodes.
+      remote_access {
+      ec2_ssh_key = var.ssh_access_key
+      source_security_group_ids = [aws_security_group.sg_private_eks_node.id]
+      }
+      update_config {
+      max_unavailable = 1
+      }
+      
+      labels = {
+      role = "Eks-cluster"
+      }
+      ## Specifies that the creation of the EKS node group resource depends on the successful attachment of the IAM policies defined earlier.
+      depends_on = [
+      aws_iam_role_policy_attachment.nodes-AmazonEKSWorkerNodePolicy,
+      aws_iam_role_policy_attachment.nodes-AmazonEKS_CNI_Policy,
+      aws_iam_role_policy_attachment.nodes-AmazonEC2ContainerRegistryReadOnly,
       ]
-      })
+      tags = {
+      name="terraform project"
+      description = "managed by terraform provisioning"
+      }
+      }
+## Create 11_registry.tf
+      ## this block of code provisions an Amazon ECR repository named "eks-project" with specified configurations such as name and tags using Terraform. This repository can be used to store Docker images and manage containerized applications within your AWS infrastructure.
+      resource "aws_ecr_repository" "ecr_repository" {
+      name = "eks-project"
+      tags = {
+      name="terraform project"
+      description = "managed by terraform provisioning"
+      }
+      }
+## Create 12_database.tf
+      resource "aws_rds_cluster" "aurora-postgresql-cluster" {
+      cluster_identifier = "aurora-postgresql-cluster"
+      engine             = "aurora-postgresql"
+      engine_mode        = "provisioned"
+      engine_version     = "13.7"
+      database_name      = "test"
+      master_username    = "test"
+      master_password    = "sadalkdakl232"
+      vpc_security_group_ids = [aws_security_group.rds_cluster_sg.id] # Replace with your security group IDs
+      db_subnet_group_name   = aws_db_subnet_group.subnet_group.name
+      storage_encrypted  = true
+      skip_final_snapshot = true
+      serverlessv2_scaling_configuration {
+      max_capacity = 1.0
+      min_capacity = 0.5
+      }
+      }
+      
+      resource "aws_rds_cluster_instance" "aurora-postgresql-cluster" {
+      for_each = var.az
+      identifier = "instance-${each.value}"
+      cluster_identifier = aws_rds_cluster.aurora-postgresql-cluster.id
+      instance_class     = "db.serverless"
+      engine             = aws_rds_cluster.aurora-postgresql-cluster.engine
+      engine_version     = aws_rds_cluster.aurora-postgresql-cluster.engine_version
+      availability_zone = each.value
       }
 
-2. 
+This block of code provisions an Amazon Aurora PostgreSQL database cluster with serverless v2 scaling configuration, including cluster configuration and instance configuration, using Terraform.
+## Create 13_caching.tf
+      resource "aws_elasticache_replication_group" "redis" {
+      replication_group_id          = "redis-cluster"
+      description = "redis replication"
+      node_type                     = "cache.t3.micro"
+      num_cache_clusters         = 1
+      engine                        = "redis"
+      engine_version                = "6.0"
+      automatic_failover_enabled = false
+      parameter_group_name          = "default.redis6.x"
+      subnet_group_name             = aws_elasticache_subnet_group.redis_subnet_group.name
+      security_group_ids            = [aws_security_group.redis_sg.id]
+      auto_minor_version_upgrade    = true
+      #   automatic_failover_enabled    = true
+      at_rest_encryption_enabled    = false
+      transit_encryption_enabled    = false
+      tags = {
+      name="terraform project"
+      description = "managed by terraform provisioning"
+      }
+      depends_on = [
+      aws_eks_cluster.eks_cluster,
+      aws_eks_node_group.private-nodes
+      ]
+      }
+This block of code provisions an Amazon ElastiCache Redis replication group with specified configurations using Terraform, ensuring dependencies are met with the EKS cluster and node group.
+## Create 14_sqs..tf
+      resource "aws_sqs_queue" "sqs_iaac" {
+      name = "sqs_queue"
+      delay_seconds = 9
+      max_message_size = 2048
+      message_retention_seconds = 86400
+      receive_wait_time_seconds = 10
+      tags = {
+      name="terraform project"
+      description = "managed by terraform provisioning"
+      }
+      }
+
+This block of code provisions an Amazon SQS queue with specified configurations such as name, delay seconds, max message size, message retention seconds, receive wait time seconds, and tags using Terraform. This queue can be used to decouple the components of a distributed application by enabling asynchronous communication between them.
+##  Create 15_s3.tf
+
+      resource "aws_s3_bucket" "eks-project-front-end-source" {
+      bucket = "eks-project-front-end-source"
+      }
+      resource "aws_s3_bucket" "eks-project-bucket-data" {
+      bucket = "eks-project-bucket-data"
+      }
+There blocks of code provision two separate Amazon S3 buckets with specific names using Terraform. S3 buckets are used for storing and managing objects (such as files and data) in the AWS cloud. Each bucket can be uniquely identified by its name and can be configured with various settings and permissions as needed for specific use cases.
+## Create 16_alb.tf
+      
+      resource "aws_lb" "alb" {
+      name               = "application-loadbalancer"
+      internal           = true
+      load_balancer_type = "application"
+      security_groups    = [aws_security_group.alb_sg.id]
+      subnets            = [aws_subnet.public-subnet-1a.id,aws_subnet.private-subnet-1b.id,aws_subnet.private-subnet-1c.id,]
+      enable_deletion_protection = false
+      tags = {
+      name="terraform project"
+      description = "managed by terraform provisioning"
+      }
+      }
+This block of code provisions an AWS Application Load Balancer with specified configurations such as name, internal setting, type, security groups, subnets, deletion protection, and tags using Terraform. The ALB distributes incoming application traffic across multiple targets, such as EC2 instances, in multiple availability zones to ensure high availability and fault tolerance for your applications.
+## Create 17_cloudfront.tf
+      resource "aws_cloudfront_origin_access_identity" "cloudfront_s3" {
+      comment = "Cloudfront distribution"
+      }
+      resource "aws_cloudfront_distribution" "cloudfront_s3_distribution" {
+      origin {
+      domain_name = aws_s3_bucket.eks-project-front-end-source.bucket_domain_name
+      origin_id   = aws_s3_bucket.eks-project-front-end-source.id
+      s3_origin_config {
+      origin_access_identity = aws_cloudfront_origin_access_identity.cloudfront_s3.cloudfront_access_identity_path
+      }
+      }
+      origin {
+      domain_name = aws_lb.alb.dns_name
+      origin_id   = aws_lb.alb.id
+      custom_origin_config {
+      http_port              = 80
+      https_port             = 443
+      origin_protocol_policy = "https-only"
+      origin_ssl_protocols   = ["TLSv1.2"]
+      }
+      }
+      enabled             = true
+      default_root_object = "index.html"
+      default_cache_behavior {
+      allowed_methods  = ["GET", "HEAD"]
+      cached_methods   = ["GET", "HEAD"]
+      target_origin_id = aws_s3_bucket.eks-project-front-end-source.id
+      forwarded_values {
+      query_string = true
+      cookies {
+      forward = "none"
+      }
+      }
+      viewer_protocol_policy = "https-only"
+      min_ttl                = 0
+      default_ttl            = 3600
+      max_ttl                = 86400
+      }
+      price_class = "PriceClass_100"
+      restrictions {
+      geo_restriction {
+      restriction_type = "none"
+      }
+      }
+      
+      viewer_certificate {
+      cloudfront_default_certificate = true
+      }
+      tags = {
+      name="terraform project"
+      description = "managed by terraform provisioning"
+      }
+      }
+
+This block of code provisions an AWS CloudFront distribution with specified configurations such as origins, cache behavior, price class, restrictions, and tags using Terraform. This distribution can be used to cache and distribute content globally to users, improving the performance and availability of web applications and content.
+## Create 18_waf.tf
+      resource "aws_wafv2_web_acl" "WafWebAcl" {
+      name  = "wafv2-web-acl"
+      scope = "REGIONAL"
+      
+      default_action {
+      allow {
+      }
+      }
+      
+      visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "WAF_Common_Protections"
+      sampled_requests_enabled   = true
+      }
+      
+      rule {
+      name     = "AWS-AWSManagedRulesCommonRuleSet"
+      priority = 0
+      override_action {
+      none {
+      }
+      }
+      statement {
+      managed_rule_group_statement {
+      name        = "AWSManagedRulesCommonRuleSet"
+      vendor_name = "AWS"
+      
+            }
+          }
+          visibility_config {
+            cloudwatch_metrics_enabled = true
+            metric_name                = "AWS-AWSManagedRulesCommonRuleSet"
+            sampled_requests_enabled   = true
+          }
+      }
+      
+      rule {
+      name     = "AWS-AWSManagedRulesLinuxRuleSet"
+      priority = 1
+      override_action {
+      none {
+      }
+      }
+      statement {
+      managed_rule_group_statement {
+      name        = "AWSManagedRulesLinuxRuleSet"
+      vendor_name = "AWS"
+      }
+      }
+      visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "AWS-AWSManagedRulesLinuxRuleSet"
+      sampled_requests_enabled   = true
+      }
+      }
+      
+      rule {
+      name     = "AWS-AWSManagedRulesAmazonIpReputationList"
+      priority = 2
+      override_action {
+      none {
+      }
+      }
+      statement {
+      managed_rule_group_statement {
+      name        = "AWSManagedRulesAmazonIpReputationList"
+      vendor_name = "AWS"
+      }
+      }
+      visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "AWS-AWSManagedRulesAmazonIpReputationList"
+      sampled_requests_enabled   = true
+      }
+      }
+      
+      rule {
+      name     = "AWS-AWSManagedRulesAnonymousIpList"
+      priority = 3
+      override_action {
+      none {
+      }
+      }
+      statement {
+      managed_rule_group_statement {
+      name        = "AWSManagedRulesAnonymousIpList"
+      vendor_name = "AWS"
+      
+            }
+          }
+          visibility_config {
+            cloudwatch_metrics_enabled = true
+            metric_name                = "AWS-AWSManagedRulesAnonymousIpList"
+            sampled_requests_enabled   = true
+          }
+      }
+      
+      rule {
+      name     = "AWS-AWSManagedRulesKnownBadInputsRuleSet"
+      priority = 4
+      override_action {
+      none {
+      }
+      }
+      statement {
+      managed_rule_group_statement {
+      name        = "AWSManagedRulesKnownBadInputsRuleSet"
+      vendor_name = "AWS"
+      }
+      }
+      visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "AWS-AWSManagedRulesKnownBadInputsRuleSet"
+      sampled_requests_enabled   = true
+      }
+      }
+      
+      rule {
+      name     = "AWS-AWSManagedRulesUnixRuleSet"
+      priority = 5
+      override_action {
+      none {
+      }
+      }
+      statement {
+      managed_rule_group_statement {
+      name        = "AWSManagedRulesUnixRuleSet"
+      vendor_name = "AWS"
+      }
+      }
+      visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "AWS-AWSManagedRulesUnixRuleSet"
+      sampled_requests_enabled   = true
+      }
+      }
+      
+      rule {
+      name     = "AWS-AWSManagedRulesWindowsRuleSet"
+      priority = 6
+      override_action {
+      none {
+      }
+      }
+      statement {
+      managed_rule_group_statement {
+      name        = "AWSManagedRulesWindowsRuleSet"
+      vendor_name = "AWS"
+      }
+      }
+      visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "AWS-AWSManagedRulesWindowsRuleSet"
+      sampled_requests_enabled   = true
+      }
+      }
+      tags = {
+      name="terraform project"
+      description = "managed by terraform provisioning"
+      }
+      }
+      
+      resource "aws_cloudwatch_log_group" "WafWebAclLoggroup" {
+      name              = "aws-waf-logs-wafv2-web-acl"
+      retention_in_days = 30
+      tags = {
+      name="terraform project"
+      description = "managed by terraform provisioning"
+      }
+      }
+      
+      resource "aws_wafv2_web_acl_logging_configuration" "WafWebAclLogging" {
+      log_destination_configs = [aws_cloudwatch_log_group.WafWebAclLoggroup.arn]
+      resource_arn            = aws_wafv2_web_acl.WafWebAcl.arn
+      depends_on = [
+      aws_wafv2_web_acl.WafWebAcl,
+      aws_cloudwatch_log_group.WafWebAclLoggroup
+      ]
+      
+      }
+      
+      resource "aws_wafv2_web_acl_association" "WafWebAclAssociation" {
+      resource_arn = aws_lb.alb.arn
+      web_acl_arn  = aws_wafv2_web_acl.WafWebAcl.arn
+      depends_on = [
+      aws_wafv2_web_acl.WafWebAcl,
+      aws_cloudwatch_log_group.WafWebAclLoggroup
+      ]
+      }
+This code block provisions AWS WAFv2 resources including web ACLs, logging configurations, and associations with associated CloudWatch logging for monitoring and logging web ACL activity, thereby enhancing the security posture of web applications deployed behind the Application Load Balancer.
+
+
+
+
+
