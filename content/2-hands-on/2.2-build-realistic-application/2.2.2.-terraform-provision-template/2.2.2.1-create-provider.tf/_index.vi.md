@@ -1,11 +1,11 @@
 ---
-title : "Create provider.tf"
+title : "Tạo tệp provider.tf"
 date : "`r Sys.Date()`"
-weight : 4
+weight : 3
 chapter : false
 pre : " <b> 2.2.2.1 </b> "
 ---
-## Create file provider.tf
+## Tạo tệp provider.tf
     terraform {
     required_providers {
     aws = {
@@ -29,5 +29,5 @@ pre : " <b> 2.2.2.1 </b> "
     provider "aws" {
     region = "us-east-1"
     }
-## Explain
-Block code above declare provider terraform will interactive of them such as GCP, AWS, Kubernetes
+## Giải thích
+Block code ở trên khai báo terraform của nhà cung cấp sẽ tương tác với chúng như GCP, AWS, Kubernetes

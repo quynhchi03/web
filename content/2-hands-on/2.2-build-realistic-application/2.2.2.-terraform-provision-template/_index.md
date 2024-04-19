@@ -61,6 +61,55 @@ To update your current installation of the AWS CLI, add your existing symlink an
    unzip awscliv2.zip
    
    sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
+### 3. Config aws credentials
+Use command below to config aws credentials
+
+      aws configure
+Enter your credentials, let's get it at AWS console
+1. Go to https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/users
+2. Create new user
+   ![Create new user](/images/2.2/aws.png?featherlight=false&width=100pc)
+3. View info and get credentials
+   ![Create new user](/images/2.2/aws2.png?featherlight=false&width=100pc)
+4. Configure your credentials like below (replace `XXX` with your info)
+
+            `@daotq1:~$ aws configure
+         
+            AWS Access Key ID [****************]: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+         
+            AWS Secret Access Key [****************]: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+         
+            Default region name [us-east-1]: us-east-1
+         
+            Default output format [None]:`
+
+
+5. Testing info is correct.
+Use command below for testing credentials that's work
+         aws iam list-roles
+If you received response like below, it's successfully connected.
+
+         luongtx@daotq1:~$ aws iam list-roles
+         {
+         "Roles": [
+         {
+         "Path": "/service-role/",
+         "RoleName": "aws-code-pipeline",
+         "RoleId": "AROA4KDNQH5RRHWH2N6E3",
+         "Arn": "arn:aws:iam::846338211683:role/service-role/aws-code-pipeline",
+         "CreateDate": "2024-03-04T07:08:45+00:00",
+         "AssumeRolePolicyDocument": {
+         "Version": "2012-10-17",
+         "Statement": [
+         {
+         "Effect": "Allow",
+         "Principal": {
+         "Service": "codebuild.amazonaws.com"
+         },
+         "Action": "sts:AssumeRole"
+         }
+         ]
+
 
 ## Project Structure
 There are source code architecture, we are separately component
