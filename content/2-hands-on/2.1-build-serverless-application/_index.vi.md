@@ -9,7 +9,7 @@ pre : " <b> 2.1 </b> "
 
 #### Tổng quan
 
-![Build-Serverless-Application](/images/2/FJCAws.png?featherlight=false&width=50pc)
+![Build-Serverless-Application](/aws-stutdy-group-workshop/images/2/FJCAws.png?featherlight=false&width=50pc)
 
 Dự án ứng dụng Take Note là một ứng dụng không có máy chủ được thiết kế để cung cấp cho người dùng một nền tảng thuận tiện để ghi và quản lý ghi chú. Được xây dựng bằng dịch vụ AWS, dự án tận dụng các hàm Lambda cho logic phụ trợ và DynamoDB để lưu trữ dữ liệu. Ngoài ra, nó còn tích hợp với GitHub để triển khai tự động bằng AWS CodeBuild.
 

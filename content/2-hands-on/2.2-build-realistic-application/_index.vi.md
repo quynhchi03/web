@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 2.2 </b> "
 ---
 
-![KIẾN TRÚC THIẾT KẾ AWS](/images/2.2/HA_AWS_DESIGN.png?featherlight=false&width=100pc)
+![KIẾN TRÚC THIẾT KẾ AWS](/aws-stutdy-group-workshop/images/2.2/HA_AWS_DESIGN.png?featherlight=false&width=100pc)
 
 
 ### Thử thách 2: Xây dựng Nền tảng thương mại điện tử có khả năng phục hồi AWS

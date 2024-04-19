@@ -7,7 +7,7 @@ pre : " <b> 2.2.1 </b> "
 ---
 
 
-![AWS DESIGN ARCHITECTURE](/images/2.2/HA_AWS_DESIGN.png?featherlight=false&width=100pc)
+![AWS DESIGN ARCHITECTURE](/aws-stutdy-group-workshop/images/2.2/HA_AWS_DESIGN.png?featherlight=false&width=100pc)
 
 ### Analytics Design AWS Architecture
 The architecture depicted in the image represents an AWS cloud computing solution with various components, each with a specific purpose.

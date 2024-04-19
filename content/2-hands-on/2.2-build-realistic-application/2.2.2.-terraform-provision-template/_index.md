@@ -68,9 +68,9 @@ Use command below to config aws credentials
 Enter your credentials, let's get it at AWS console
 1. Go to https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/users
 2. Create new user
-   ![Create new user](/images/2.2/aws.png?featherlight=false&width=100pc)
+   ![Create new user](/aws-stutdy-group-workshop/images/2.2/aws.png?featherlight=false&width=100pc)
 3. View info and get credentials
-   ![Create new user](/images/2.2/aws2.png?featherlight=false&width=100pc)
+   ![Create new user](/aws-stutdy-group-workshop/images/2.2/aws2.png?featherlight=false&width=100pc)
 4. Configure your credentials like below (replace `XXX` with your info)
 
             `@daotq1:~$ aws configure
