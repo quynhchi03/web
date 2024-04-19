@@ -158,3 +158,6 @@ Chúng ta sẽ có các thư mục và tệp theo cấu trúc sau:
 4. **terraform-apply.sh** chúng tôi đang sử dụng tệp này để chạy lệnh terraform apply
 5. **terraform.tfstate** để lưu trữ các liên kết giữa các đối tượng trong hệ thống từ xa và các phiên bản tài nguyên được khai báo trong cấu hình của bạn.
 6. **provider.tf** cho phép Terraform tương tác với nhà cung cấp đám mây, nhà cung cấp SaaS và các API khác
+
+## Tham khảo source code mà tôi đã viết
+**Github repository: ** https://github.com/daotq2000/aws-iaac-terraform 

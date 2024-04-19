@@ -161,3 +161,6 @@ There are source code architecture, we are separately component
 4. **terraform-apply.sh** we are using this file to run command terraform apply
 5. **terraform.tfstate** to store bindings between objects in a remote system and resource instances declared in your configuration.
 6. **provider.tf** providers allow Terraform to interact with cloud providers, SaaS providers, and other APIs
+
+## Refer to my source code
+**Github repository: ** https://github.com/daotq2000/aws-iaac-terraform 
