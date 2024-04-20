@@ -63,7 +63,10 @@ Tại file `variables.tf` chúng ta đã xác định cidr_block
     }
 Sau khi chạy terraform plan, apply , nó tạo ra vpc có tên là `vpc-main` và `vpc_cidr_block` là `10.0.0.0/16`
 
-[Description]
+Sau khi tài nguyên được tạo bởi terraform , chúng ta sẽ có kết quả như bên dưới:
+![VPC created from terraform](/aws-stutdy-group-workshop/images/2.2/vpc1.png?featherlight=false&width=100pc)
+![VPC detail created from terraform](/aws-stutdy-group-workshop/images/2.2/vpc2.png?featherlight=false&width=100pc)
+
 
 ### Tạo file 02_subnet.tf
 
@@ -439,6 +442,8 @@ Nó cho phép lưu lượng truy cập đi trên tất cả các cổng tới kh
 
 
 Nhìn chung, khối mã này thiết lập một phiên bản AWS EC2 (máy chủ pháo đài) với các cấu hình và cài đặt phần mềm cần thiết bằng Terraform. Đó là một phần của quy trình cung cấp cơ sở hạ tầng do Terraform quản lý.
+![Ec2 Bastion Host](/aws-stutdy-group-workshop/images/2.2/ec2_basion_host.png?featherlight=false&width=100pc)
+![Ec2 Bastion Host Details](/aws-stutdy-group-workshop/images/2.2/ec2_basion_host2.png?featherlight=false&width=100pc)
 
 ### Tạo file 07_nat.tf
 Tiếp theo, chúng ta cần tạo NAT Gateway để instance ec2 có thể kết nối qua internet.
