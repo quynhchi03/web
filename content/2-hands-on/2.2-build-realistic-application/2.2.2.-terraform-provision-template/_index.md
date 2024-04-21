@@ -6,6 +6,8 @@ chapter : false
 pre : " <b> 2.2.2 </b> "
 ---
 
+## Video
+[![How to build realistic application on AWS](/aws-stutdy-group-workshop/images/2.2/Test.png)](https://youtu.be/XNSiWFjPslg?list=PLk36mRYn9bOHtZsDG3iA-yGzktMiBojm9 "Everything Is AWESOME")
 
 ## What is Terraform?
 Terraform is an open-source infrastructure as code (IaC) software tool created by HashiCorp. It allows users to define and provision data center infrastructure using a declarative configuration language known as HashiCorp Configuration Language (HCL), or optionally JSON.

@@ -8,6 +8,9 @@ pre : " <b> 2.2 </b> "
 
 ![KIẾN TRÚC THIẾT KẾ AWS](/aws-stutdy-group-workshop/images/2.2/HA_AWS_DESIGN.png?featherlight=false&width=100pc)
 
+## Video
+[![How to build realistic application on AWS](/aws-stutdy-group-workshop/images/2.2/1.png)](https://youtu.be/xBy9F5qLOYA "Everything Is AWESOME")
+
 
 ### Thử thách 2: Xây dựng Nền tảng thương mại điện tử có khả năng phục hồi AWS
 

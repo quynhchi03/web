@@ -6,8 +6,6 @@
     {{ hugo.Generator }}
     {{ partial "meta.html" . }}
     {{ partial "favicon.html" . }}
-    {{ template "_internal/google_analytics.html" . }}
-    {{ template "_internal/google_analytics_async.html" . }}
     <title>{{ .Title }} :: {{ .Site.Title }}</title>
 
     {{ $assetBusting := not .Site.Params.disableAssetsBusting }}
