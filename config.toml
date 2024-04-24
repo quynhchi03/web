@@ -1,4 +1,4 @@
-#baseURL = "https://daotq2000.github.io/"
+#baseURL = "aws-stutdy-group-workshop"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 # Change the default theme to be use when building the site with Hugo
