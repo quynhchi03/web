@@ -1,5 +1,5 @@
 ---
-title : "Terraform Provision Resources"
+title : "Terraform Provision AWS Resources"
 date : "`r Sys.Date()`"
 weight : 3
 chapter : false

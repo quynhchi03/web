@@ -1,5 +1,5 @@
 ---
-title : "Quản lý tài nguyên với Terraform"
+title : "Quản lý tài nguyên Amazon với Terraform"
 date : "`r Sys.Date()`"
 weight : 4
 chapter : false

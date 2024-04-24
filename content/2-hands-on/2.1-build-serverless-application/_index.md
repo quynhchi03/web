@@ -1,5 +1,5 @@
 ---
-title : "Build Serverless Application"
+title : "Build Note Application AWS Serverless"
 date : "`r Sys.Date()`"
 weight : 2
 chapter : false

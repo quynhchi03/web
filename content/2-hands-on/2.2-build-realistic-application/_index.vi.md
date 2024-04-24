@@ -1,5 +1,5 @@
 ---
-title : "Xây dựng ứng dụng AWS Zero down time"
+title : "Xây dựng ứng dụng Amazon Zero down time"
 date : "`r Sys.Date()`"
 weight : 3
 chapter : false

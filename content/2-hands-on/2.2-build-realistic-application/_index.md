@@ -1,5 +1,5 @@
 ---
-title : "Create Realistic AWS Application"
+title : "Build Zero Downtime AWS Application"
 date : "`r Sys.Date()`"
 weight : 2
 chapter : false
@@ -10,7 +10,7 @@ pre : " <b> 2.2 </b> "
 
 ## Video
 
-[![How to build realistic application on AWS](/aws-stutdy-group-workshop/images/2.2/1.png)](https://youtu.be/xBy9F5qLOYA?list=PLk36mRYn9bOHtZsDG3iA-yGzktMiBojm9 "Everything Is AWESOME")
+[![Build Zero Downtime AWS Application](/aws-stutdy-group-workshop/images/2.2/1.png)](https://youtu.be/xBy9F5qLOYA?list=PLk36mRYn9bOHtZsDG3iA-yGzktMiBojm9 "Everything Is AWESOME")
 
 ### Challenge 2: Building AWS Resilient E-commerce Platform
 

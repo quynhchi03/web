@@ -1,5 +1,5 @@
 ---
-title : "Xây dựng ứng dụng Serverless"
+title : "Xây dựng ứng dụng ghi chú AWS Serverless "
 date : "`r Sys.Date()`"
 weight : 2
 chapter : false

@@ -419,6 +419,9 @@ It allows outbound traffic on all ports to the CIDR blocks of the private and pu
 
 ##### All security groups are tagged for identification and management purposes. They control traffic flow between different types of resources within the VPC, ensuring security and compliance with network policies.
 
+After terraform created successfully , we have achieve result below:
+![Security Group created from terraform](/aws-stutdy-group-workshop/images/2.2/sg.png?featherlight=false&width=100pc)
+![Security Group created from terraform](/aws-stutdy-group-workshop/images/2.2/sg-detail.png?featherlight=false&width=100pc)
 
 ### Create 06_bastionHost.tf
 
@@ -662,8 +665,11 @@ After terraform created successfully , we have achieve result below:
       description = "managed by terraform provisioning"
       }
       }
+
+After terraform created successfully , we have achieve result below:
+![EKS Private Node ](/aws-stutdy-group-workshop/images/2.2/eks-private-node.png?featherlight=false&width=100pc)
 ## Create 11_registry.tf
-      ## this block of code provisions an Amazon ECR repository named "eks-project" with specified configurations such as name and tags using Terraform. This repository can be used to store Docker images and manage containerized applications within your AWS infrastructure.
+      ## this block of code provisions an Amazon ECR repository named "eks-project" with specified configurations such as name and tags using Terraform. This repository can be used to store Docker /aws-stutdy-group-workshop/images and manage containerized applications within your AWS infrastructure.
       resource "aws_ecr_repository" "ecr_repository" {
       name = "eks-project"
       tags = {

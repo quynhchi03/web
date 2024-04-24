@@ -45,7 +45,7 @@ On the infrastructure management and operational side:
 
 **Grafana:** Analytics and interactive visualization web application that provides charts, graphs, and alerts.
 
-**Elastic Container Registry (ECR):** Docker container registry for storing, managing, and deploying container images.
+**Elastic Container Registry (ECR):** Docker container registry for storing, managing, and deploying container /aws-stutdy-group-workshop/images.
 
 **Amazon SQS queue:** Message queuing service to decouple and scale microservices, distributed systems, and serverless applications.
 And for storage and deployment:
