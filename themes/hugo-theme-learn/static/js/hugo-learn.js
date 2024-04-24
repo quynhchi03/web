@@ -1,25 +1,25 @@
 // Get Parameters from some url
 var getUrlParameter = function getUrlParameter(sPageURL) {
-    var url = sPageURL.split('?');
-    var obj = {};
-    if (url.length == 2) {
-      var sURLVariables = url[1].split('&'),
-          sParameterName,
-          i;
-      for (i = 0; i < sURLVariables.length; i++) {
-          sParameterName = sURLVariables[i].split('=');
-          obj[sParameterName[0]] = sParameterName[1];
-      }
-      return obj;
-    } else {
-      return undefined;
+  var url = sPageURL.split('?');
+  var obj = {};
+  if (url.length == 2) {
+    var sURLVariables = url[1].split('&'),
+      sParameterName,
+      i;
+    for (i = 0; i < sURLVariables.length; i++) {
+      sParameterName = sURLVariables[i].split('=');
+      obj[sParameterName[0]] = sParameterName[1];
     }
+    return obj;
+  } else {
+    return undefined;
+  }
 };
 
-// Execute actions on /aws-stutdy-group-workshop/images generated from Markdown pages
-var /aws-stutdy-group-workshop/images = $("div#body-inner img").not(".inline");
+// Execute actions on images generated from Markdown pages
+var images = $("div#body-inner img").not(".inline");
 // Wrap image inside a featherlight (to get a full size view in a popup)
-/aws-stutdy-group-workshop/images.wrap(function(){
+images.wrap(function(){
   var image =$(this);
   var o = getUrlParameter(image[0].src);
   var f = o['featherlight'];
@@ -32,7 +32,7 @@ var /aws-stutdy-group-workshop/images = $("div#body-inner img").not(".inline");
 });
 
 // Change styles, depending on parameters set to the image
-/aws-stutdy-group-workshop/images.each(function(index){
+images.each(function(index){
   var image = $(this)
   var o = getUrlParameter(image[0].src);
   if (typeof o !== "undefined") {
@@ -78,7 +78,7 @@ jQuery(document).ready(function() {
     return " <span class='anchor' data-clipboard-text='"+link+"'>" +
       "<i class='fas fa-link fa-lg'></i>" +
       "</span>"
-    ;
+      ;
   });
 
   $(".anchor").on('mouseleave', function(e) {
@@ -86,8 +86,8 @@ jQuery(document).ready(function() {
   });
 
   clip.on('success', function(e) {
-      e.clearSelection();
-      $(e.trigger).attr('aria-label', 'Link copied to clipboard!').addClass('tooltipped tooltipped-s');
+    e.clearSelection();
+    $(e.trigger).attr('aria-label', 'Link copied to clipboard!').addClass('tooltipped tooltipped-s');
   });
   $('code.language-mermaid').each(function(index, element) {
     var content = $(element).html().replace(/&amp;/g, '&');
