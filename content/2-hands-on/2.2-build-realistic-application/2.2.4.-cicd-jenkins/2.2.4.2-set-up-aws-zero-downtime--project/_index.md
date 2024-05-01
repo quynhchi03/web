@@ -98,3 +98,6 @@ Using pipeline below:
 ![zero-downtime-pipeline.png](/images/2.2-jenkins/zero-downtime-pipeline.png)
 
 ### Testing pipeline
+After done all, we have received result below:
+![zero-downtime-pipeline.png](/images/2.2-jenkins/build-success.png)
+
