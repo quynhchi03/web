@@ -86,11 +86,65 @@ Start Jenkins as a service:
 You can check the status of the Jenkins service using the command:
 
     [ec2-user ~]$ sudo systemctl status jenkins
+## 3. Install Docker on Bastion Host
+You can refer post install docker on Amazon Linux at [here](https://www.cyberciti.biz/faq/how-to-install-docker-on-amazon-linux-2/) or following constructions step below:
+1. Apply pending updates using the yum command
 
-#### Configuring Jenkins
+         sudo yum update
+2. Search for Docker package:
+
+         sudo yum search docker
+3. Get version information:
+   
+        sudo yum info docker
+4. Install docker, run:
+         
+        sudo yum install docker
+5. Add group membership for the default jenkins user so you can run all docker commands without using the sudo command:
+
+        sudo usermod -a -G docker jenkins
+6. Enable docker service at AMI boot time:
+
+        sudo systemctl enable docker.service
+7. Start the Docker service:
+        
+        sudo systemctl start docker.service
+8. Get the docker service status on your AMI instance, run:
+
+        sudo systemctl status docker.service
+9. Restart jenkins server to execute docker 
+
+        sudo systemctl restart jenkins
+Outputs:
+      
+      docker.service - Docker Application Container Engine
+      Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; vendor preset: disabled)
+      Active: active (running) since Wed 2021-09-08 05:03:52 EDT; 18s ago
+      Docs: https://docs.docker.com
+      Process: 3295 ExecStartPre=/usr/libexec/docker/docker-setup-runtimes.sh (code=exited, status=0/SUCCESS)
+      Process: 3289 ExecStartPre=/bin/mkdir -p /run/docker (code=exited, status=0/SUCCESS)
+      Main PID: 3312 (dockerd)
+      Tasks: 9
+      Memory: 39.9M
+      CGroup: /system.slice/docker.service
+      └─3312 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/c...
+      
+      Sep 08 05:03:51 amazon.example.local dockerd[3312]: time="2021-09-08T05:03...
+      Sep 08 05:03:51 amazon.example.local dockerd[3312]: time="2021-09-08T05:03...
+      Sep 08 05:03:51 amazon.example.local dockerd[3312]: time="2021-09-08T05:03...
+      Sep 08 05:03:51 amazon.example.local dockerd[3312]: time="2021-09-08T05:03...
+      Sep 08 05:03:52 amazon.example.local dockerd[3312]: time="2021-09-08T05:03...
+      Sep 08 05:03:52 amazon.example.local dockerd[3312]: time="2021-09-08T05:03...
+      Sep 08 05:03:52 amazon.example.local dockerd[3312]: time="2021-09-08T05:03...
+      Sep 08 05:03:52 amazon.example.local dockerd[3312]: time="2021-09-08T05:03...
+      Sep 08 05:03:52 amazon.example.local systemd[1]: Started Docker Applicatio...
+      Sep 08 05:03:52 amazon.example.local dockerd[3312]: time="2021-09-08T05:03...
+      Hint: Some lines were ellipsized, use -l to show in full.
+
+## 4. Configuring Jenkins
 Jenkins is now installed and running on your EC2 instance. To configure Jenkins:
 1. Connect to http://<your_server_public_DNS>:8080 from your browser. You will be able to access Jenkins through its management interface:
-[Jenkins Password](https://www.jenkins.io/doc/book/resources/tutorials/AWS/unlock_jenkins.png)
+![unlock_jenkins.png](/images/2.2/unlock_jenkins.png)[Jenkins Password](https://www.jenkins.io/doc/book/resources/tutorials/AWS/unlock_jenkins.png)
 2. As prompted, enter the password found in /var/lib/jenkins/secrets/initialAdminPassword.
 
 Use the following command to display this password:
@@ -99,13 +153,42 @@ Use the following command to display this password:
 3. The Jenkins installation script directs you to the Customize Jenkins page. Click Install suggested plugins.
 
 4. Once the installation is complete, the Create First Admin User will open. Enter your information, and then select Save and Continue.
-   [Jenkins Password](https://www.jenkins.io/doc/book/resources/tutorials/AWS/create_admin_user.png)
+   ![create_admin_user.png](/images/2.2/create_admin_user.png)
 5. On the left-hand side, select Manage Jenkins, and then select Manage Plugins.
-
 6. Select the Available tab, and then enter Amazon EC2 plugin at the top right.
 
 7. Select the checkbox next to Amazon EC2 plugin, and then select Install without restart.
-   [Jenkins Password](https://www.jenkins.io/doc/book/resources/tutorials/AWS/install_ec2_plugin.png)
+   ![unlock_jenkins.png](/images/2.2/unlock_jenkins.png)
 8. Once the installation is done, select Back to Dashboard.
+9. Select Configure a cloud if there are no existing nodes or clouds.
+![configure_cloud.png](/images/2.2/configure_cloud.png)
+We are almost done to configure Jenkins on Bastion Host
+## 3. Install require plugins for Jenkins
+Click to **install suggested plugins**
+![selected-plugsin.png](/images/2.2-jenkins/suggest-plugins.png)
+![selected-plugsin.png](/images/2.2-jenkins/require-plugins.png)
 
-Select Configure a cloud if there are no existing nodes or clouds.
+## 4. Configure aws credentials on Bastion Host
+1. Using this command to config credentials. By default, aws-cli always available on EC2, we don't need install aws-cli again.  
+
+         aws configure
+
+Output: 
+
+      aws configure
+      AWS Access Key ID [****************]: ****************
+      AWS Secret Access Key [****************r]: ****************
+      Default region name [us-east-1]: us-east-1
+      Default output format [None]: 
+## 5. Install helm on Bastion Host
+In this project, we will using Helm Chart to manage kubernetes object on EKS Cluster and Jenkins using helm command to apply this.
+
+1. install the binaries with the following commands.
+
+         curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh
+         chmod 700 get_helm.sh
+         ./get_helm.sh
+
+2. See the version of Helm that you installed.
+
+         helm version | cut -d + -f 1

@@ -158,3 +158,4 @@ Access to Cluster using command below:
 
     kubectl get cluster-info
 If your kubernetes right config in file  ${HOME_DIRECTORY/.kube/config}, you will receive result below
+ 
