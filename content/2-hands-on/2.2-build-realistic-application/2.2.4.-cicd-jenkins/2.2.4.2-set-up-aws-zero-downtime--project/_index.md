@@ -109,3 +109,12 @@ Using pipeline below:
 After done all, we have received result below:
 ![zero-downtime-pipeline.png](/images/2.2-jenkins/build-success.png)
 
+### Monitoring service on Kubernetes Cluster
+#### Install K9s monitoring client tools
+[What is K9s?](https://github.com/derailed/k9s)
+- K9s provides a terminal UI to interact with your Kubernetes clusters. The aim of this project is to make it easier to navigate, observe and manage your applications in the wild. K9s continually watches Kubernetes for changes and offers subsequent commands to interact with your observed resources.
+
+[Install K9s] (https://github.com/derailed/k9s)
+After done, we can monitoring kubernetes cluster any where.
+![k9s](/images/2.3_project/k9s.png)
+
