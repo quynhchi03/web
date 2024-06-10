@@ -41,6 +41,7 @@ We will install Jenkins on Bastion Host.
 #### 2.1 SSH to Bastion Host
     ssh -i public-bastion-host.pem ec2-user@YourEC2PublicIPV4
 ![SSH Successfully to Bastion Host](/images/2.2/ssh-bastion-host.png?featherlight=false&width=50pc)
+
 #### 2.2 Configure Security for Jenkins
 At [terraform source code](https://github.com/daotq2000/aws-iaac-terraform), we have configured inbound security group for Jenkins allow access from Internet to Jenkins server via port **8080**
 
@@ -86,6 +87,26 @@ Start Jenkins as a service:
 You can check the status of the Jenkins service using the command:
 
     [ec2-user ~]$ sudo systemctl status jenkins
+#### 2.4 Config Java execute build for Jenkins Server
+**Install Java on EC2**
+Amazon Corretto 11 has a 'headless' variant available. This variant omits runtime dependencies that are typically associated with GUI applications such as X11 and ALSA and is worth considering for server-oriented workloads. The 'headful' variant adds support for X11 and ALSA. There is also a 'devel' package which contains the JDK development tools, as well as a 'jmods' package that contains the Amazon Corretto 11 JMods used to create custom runtime images.
+
+Install the headless Amazon Corretto 11:
+
+      sudo yum install java-11-amazon-corretto-headless
+After installed we need find path of Java in directory
+
+      sudo update-alternatives --config java
+
+![issue-build1.png](/images/2.3_project/java-version.png)
+
+Go to **Manage Jenkins** => **Tools** => **JDK Installations**
+![issue-build1.png](/images/2.3_project/config-java.png)
+Find path Java installed
+![find-java-path.png](/images/2.3_project/find-java-path.png)
+Config Java directory for Java path
+![issue-build1.png](/images/2.3_project/config-java-tool.png)
+
 ## 3. Install Docker on Bastion Host
 You can refer post install docker on Amazon Linux at [here](https://www.cyberciti.biz/faq/how-to-install-docker-on-amazon-linux-2/) or following constructions step below:
 1. Apply pending updates using the yum command

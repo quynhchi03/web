@@ -5,45 +5,42 @@ weight : 6
 chapter : false
 pre : " <b> 2.2.2.5 </b> "
 ---
-## Verify Connection
-Next, we need verify connection to make sure if container(It's application develop by any programing language such as Java, Python, NodeJS...) running,
-it can connect to rds database and redis cache.
+## Xác minh kết nối
+Tiếp theo, chúng ta cần xác minh kết nối để đảm bảo rằng container (Ứng dụng này được phát triển bởi bất kỳ ngôn ngữ lập trình nào như Java, Python, NodeJS ...) đang chạy hay không,
+nó có thể kết nối với cơ sở dữ liệu rds và bộ đệm redis.
 
-There are categories we need verify to make sure connection always available:
+Có những danh mục chúng tôi cần xác minh để đảm bảo kết nối luôn khả dụng:
 
-1. Connection SSH from Internet to Bastion Host
-2. **Bastion Host** can connect to **RDS Database**, **Redis Cache**, **Elastic Kubernetes Cluster** from VPC
-3. **Bastion Host** can SSH to Worker Node from VPC
-4. Worker Node can connect to  **RDS Database**, **Redis Cache**, **Elastic Kubernetes Cluster**, **Elastic Container Registry** from VPC
-
+1. Kết nối SSH từ Internet tới máy chủ Bastion
+2. **Bastion Host** có thể kết nối với **Cơ sở dữ liệu RDS**, **Redis Cache**, **Cụm Kubernetes đàn hồi** từ VPC
+3. **Máy chủ pháo đài** có thể SSH tới Nút công nhân từ VPC
+4. Worker Node có thể kết nối với  **RDS Database**, **Redis Cache**, **Elastic Kubernetes Cluster**, **Elastic Container Registry** from VPC
 ## Hands-on
-### 1. SSH to Bastion Host from Internet
+### 1. SSH đến máy chủ Bastion từ Internet
 
-Step 1: Download keypair you have generated at `aws-resources/variables.tf`. this is [ssh_access_key](https://github.com/daotq2000/aws-iaac-terraform/blob/main/aws-resources/variables.tf) variable
+Bước 1: Download cặp key vừa tạo tại `aws-resources/variables.tf`. đây là [ssh_access_key](https://github.com/daotq2000/aws-iaac-terraform/blob/main/aws-resources/variables.tf) variable
 
-Step 2: Using command below to ssh server
+Bước 2: Sử dụng câu lệnh sau để ssh tới server
 
     $ chmod 400 public-bastion-host.pem
     $ ssh -i public-bastion-host.pem ec2-user@{Your Bastion Host IP}
-If you received result as image below , you are successfully ssh to server.
+Nếu bạn nhận được kết quả như ảnh bên dưới, bạn đã thành công SSH tới server.
 ![AWS SSH](/images/2.2/ssh-bastion-host.png?featherlight=false&width=100pc)
 
-### 2. Ping connection from Bastion Host to Rds Database, Redis Cache, EKS cluster
-After ssh successfully into bastion host, next we need instal [telnet](https://www.ionos.com/digitalguide/server/tools/telnet-commands/) tool to ping connection
-
-Install telnet tool at Bastion Host using command below
+### 2. Ping connection từ Bastion Host tới  Rds Database, Redis Cache, EKS cluster
+Sau khi ssh thành công SSH tới bastion host, chúng ta cần cài đặt tool [telnet](https://www.ionos.com/digitalguide/server/tools/telnet-commands/) để ping connect tới 3rd service. 
+Cài đặt telnet tool tại Bastion Host sử dụng lệnh bên dưới: 
 
     sudo yum install telnet
-If you received result below, you are successfully installed telnet tools
+Nếu bạn nhận được kết quả như ảnh bên dưới, bạn đã thành công cài đặt telnet tools
 ![AWS SSH](/images/2.2/installed_telnet.png?featherlight=false&width=100pc)
-
-If you haven't received result as image below, please check with your nat, internet gateway maybe connection to Internet has failed
-#### 2.1 Ping connection from Bastion Host to RDS Database
-Using command below to ping
+Nếu bạn không nhận được kết quả như ảnh trên, hãy kiểm tra NAT Gateway, Internet Gateway có thể cấu hình sai khiến EC2 không thể kết nối tới Internet để cài đặt tool.
+#### 2.1 Ping connection từ Bastion Host tới RDS Database
+Sử dụng lệnh bên dưới
 
     telnet {host-aurora-postgres} {port-running}
 
-- {host-aurora-postgres} and {port-running} you can get it at Amazon Console like below
+- {host-aurora-postgres} and {port-running} bạn có thể lấy được thông tin này từ Amazon Console giống ảnh bên dưới:
   ![AWS SSH](/images/2.2/auroraping.png?featherlight=false&width=100pc)
 
 If you received result below , you have connected to RDS Database from Bastion host

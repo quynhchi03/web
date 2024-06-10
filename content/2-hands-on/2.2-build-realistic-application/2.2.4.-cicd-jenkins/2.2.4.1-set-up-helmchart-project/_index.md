@@ -67,3 +67,11 @@ Solution: **Go to Jenkins -> DashBoard -> Manage Jenkins -> Security -> Git Hot 
 if you doesn't install, let install git
 
       sudo yum install git -y
+
+After we will pull repository by `git clone` command
+
+      git clone {your_git_repository}
+If you get result like image below, you are successfully pull repository to server.
+![issue-build1.png](/images/2.2-jenkins/VerifiedGit.png)
+
+

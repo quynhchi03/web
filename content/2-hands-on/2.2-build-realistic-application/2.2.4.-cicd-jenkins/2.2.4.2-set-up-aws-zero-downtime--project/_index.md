@@ -6,7 +6,15 @@ chapter : false
 pre : " <b> 2.2.4.2 </b> "
 ---
 
- 
+## Introduce 
+The e-commerce project is an integration with AWS Infrastructure and microservice  application written in Java, we are using Spring Boot
+Develop API to retrieve data from Client to save data into AWS Aurora database, retrieve data from database to return to customer
+and update existing data, delete data, and more.
+
+There is project structure:
+
+![project_stucture.png](/images/2.3_project/project_stucture.png)
+
 Refer my Github reposittory: https://github.com/daotq2000/aws-spring-sqs-queue.git
 
 In this pipeline project, we will complete these categories:
