@@ -5,7 +5,7 @@ weight : 4
 chapter : false
 pre : " <b> 2.2.4.1 </b> "
 ---
-## 4. Setup project helmvalue
+## 4. Setup project helmvalues
 On the project, we will setup helmchart value project, it contains values to create kubernetes object
 ### 4.1 Config credential for Git
 #### 4.1.1. Create ssh key for jenkins-git user to pull repository from github
