@@ -5,39 +5,62 @@ weight : 7
 chapter : false
 pre : " <b> 2.2.6 </b> "
 ---
-Although we have set up resources AWS by terraform, there are contains many component, with big complexity but 
-we even need to config some resource to application working without errors.
-## 1. Config security group to communicate between private resources
-The mean this step is enable communication between resource in private subnet, by default resources in private subnet will 
-refuse any connection if we don't have config security.
+Next, we need testing APIs have been deploy at previous step, before to testing we need follow these steps:
 
-Step config is go to **AWS console => EC2 => Security Group**
-![create_admin_user.png](/images/2.4-config/sg-eks-remote.png)
-###  Edit inbound rules
-Click to Edit inbound rules
-![create_admin_user.png](/images/2.4-config/inbound.png)
-![create_admin_user.png](/images/2.4-config/inbound1.png)
+## 1. Add Host to DNS Resolution
+The purpose this step for you haven't real domain, you can fake domain by add some config in Helm Values at step [Config project HelmValues](../2.2.5.-cicd-jenkins/2.2.4.1-set-up-helmchart-project/) like config below:
 
-Inbound configure successfully
-![create_admin_user.png](/images/2.4-config/config-inboumd-success.png)
+    ingress:
+    enabled: true
+    annotations:
+    kubernetes.io/ingress.class: public
+    hosts:
+    - host: eks.bootcamp.net
+    paths:
+      - path: /
+      pathType: Prefix
 
-###  Edit outbound rules
-![create_admin_user.png](/images/2.4-config/outbound.png)
-![create_admin_user.png](/images/2.4-config/outboundSuccessfully.png)
+Next, we need go to Application Load Balancer at Amazon Console => EC2 => Load balancers to get DNS of load balancer.
 
-## 2. Config Target Group For Application Load Balancer
-Config target for load balancer, load balancer will forward request from cloudfront to Nginx-Controller inside 
-EKS Cluster.
-Follow steps: 
-1. Click to `alb-target-group`
-![create_admin_user.png](/images/2.4-config/configALB.png)
-2. Register target group
-![create_admin_user.png](/images/2.4-config/config-targetGroup.png)
-- Port `30080` is NodePort of Nginx Controller.
-3. At tab Health checks, click to `Edit`
-![create_admin_user.png](/images/2.4-config/success-config-alb.png)
-![create_admin_user.png](/images/2.4-config/config-heathy.png)
-4. Config heath check successfully
-![create_admin_user.png](/images/2.4-config/success-config-alb.png)
+![SSH Successfully to Bastion Host](/images/testing/getLoadBalancer.png?featherlight=false&width=100pc)
 
-After successfully config health check, application load balancer will forward request to nginx-controller.
+Next, let's copy that and use command below to get IP Address of load balancer:
+
+    ping {your_loadBalancer_dns}
+
+![SSH Successfully to Bastion Host](/images/testing/ping.png?featherlight=false&width=100pc)
+
+Next, let's copy IP Address to add in file host to dns resolution
+
+![SSH Successfully to Bastion Host](/images/testing/addHost.png?featherlight=false&width=100pc)
+![SSH Successfully to Bastion Host](/images/testing/addHos2t.png?featherlight=false&width=100pc)
+
+After done, let using this domain to testing APIs.
+
+## 2. Testing
+
+### 2.1 Testing API Create Product
+![SSH Successfully to Bastion Host](/images/testing/create-prd.png?featherlight=false&width=100pc)
+After created, let's check log on service are running, we can see insert command have been executed.
+![SSH Successfully to Bastion Host](/images/testing/log-create-prd.png?featherlight=false&width=100pc)
+
+### 2.2 Testing API Upload Image
+The image will upload on s3 budget
+![SSH Successfully to Bastion Host](/images/testing/uploadImageAPI.png?featherlight=false&width=100pc)
+![SSH Successfully to Bastion Host](/images/testing/s3.png?featherlight=false&width=100pc)
+### 2.3 Testing API load all products
+![SSH Successfully to Bastion Host](/images/testing/listAllPrd.png?featherlight=false&width=100pc)
+### 2.4 Testing API Create Order
+1. To create order, we need create customer first
+   ![SSH Successfully to Bastion Host](/images/testing/customer.png?featherlight=false&width=100pc)
+2. Create order with request below
+   ![SSH Successfully to Bastion Host](/images/testing/create-orders.png?featherlight=false&width=100pc)
+ Order created will send to SQS queue
+   ![SSH Successfully to Bastion Host](/images/testing/send-to-sqs.png?featherlight=false&width=100pc)
+ Next, we need to run API to consume message from SQS, it will receive message from SQS queue and insert order to database
+   ![SSH Successfully to Bastion Host](/images/testing/send-to-sqs.png?featherlight=false&width=100pc)
+   ![SSH Successfully to Bastion Host](/images/testing/log-order.png?featherlight=false&width=100pc)
+### 2.5 Testing API fetch list order
+![SSH Successfully to Bastion Host](/images/testing/fetch-orders.png?featherlight=false&width=100pc)
+SQL generate by Hibernate to query order from database:
+![SSH Successfully to Bastion Host](/images/testing/log-fetch-orders.png?featherlight=false&width=100pc)

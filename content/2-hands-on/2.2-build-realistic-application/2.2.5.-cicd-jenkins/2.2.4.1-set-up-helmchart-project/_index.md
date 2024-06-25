@@ -12,7 +12,9 @@ Donwload my project helmvalues at https://github.com/daotq2000/aws-zero-downtime
 
 ### Explain for this project
 The purpose of project are packaging format called charts. A chart is a collection of files that describe a related set of Kubernetes resources
+Setup environment secret, scale config, network type and limit CPU used like image below: 
 ![copy-private-key.png](/images/2.5-helm-values/explain.png)
+Config Domain, Health check like image below:
 ![copy-private-key.png](/images/2.5-helm-values/Monitoring.png)
 
 ### 4.1 Config credential for Git
