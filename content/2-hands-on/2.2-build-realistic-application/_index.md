@@ -4,7 +4,7 @@ date : "`r Sys.Date()`"
 weight : 2
 chapter : false
 pre : " <b> 2.2 </b> "
-image: "/aws-stutdy-group-workshop/images/1/ArchitechtureDesign.svg" # The path to your image
+image: "/images/1/ArchitechtureDesign.svg" # The path to your image
 ---
 
 ![AWS DESIGN ARCHITECTURE](/aws-stutdy-group-workshop/images/1/ArchitechtureDesign.svg?featherlight=false&width=100pc)

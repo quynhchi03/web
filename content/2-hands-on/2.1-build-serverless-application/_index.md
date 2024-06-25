@@ -4,7 +4,7 @@ date : "`r Sys.Date()`"
 weight : 2
 chapter : false
 pre : " <b> 2.1 </b> "
-image: "/aws-stutdy-group-workshop/images/1/LambdaArchitechture.svg" # The path to your image
+image: "/images/1/LambdaArchitechture.svg" # The path to your image
 ---
 
 
