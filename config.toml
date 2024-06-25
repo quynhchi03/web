@@ -13,12 +13,12 @@ home = [ "HTML", "RSS", "JSON"]
   themeVariant = "workshop"
   # Git hub repo link
   editURL = ""
-  description = ""
-  author = "journeyoftheaverageguy@gmail.com"
+  description = "The cloud journey 100 Days"
+  author = "daotq2k@gmail.com"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
-  
+
 [Languages]
 [Languages.en]
 title = "Learn Amazon Web Service in 100Days With Me."

@@ -1,13 +1,13 @@
 ---
 title : "Config AWS Resource"
 date : "`r Sys.Date()`"
-weight : 3
+weight : 4
 chapter : false
 pre : " <b> 2.2.3 </b> "
 ---
 Although we have set up resources AWS by terraform, there are contains many component, with big complexity but 
 we even need to config some resource to application working without errors.
-## Config security group to communicate between private resources
+## 1. Config security group to communicate between private resources
 The mean this step is enable communication between resource in private subnet, by default resources in private subnet will 
 refuse any connection if we don't have config security.
 
@@ -25,7 +25,7 @@ Inbound configure successfully
 ![create_admin_user.png](/images/2.4-config/outbound.png)
 ![create_admin_user.png](/images/2.4-config/outboundSuccessfully.png)
 
-## Config Target Group For Application Load Balancer
+## 2. Config Target Group For Application Load Balancer
 Config target for load balancer, load balancer will forward request from cloudfront to Nginx-Controller inside 
 EKS Cluster.
 Follow steps: 

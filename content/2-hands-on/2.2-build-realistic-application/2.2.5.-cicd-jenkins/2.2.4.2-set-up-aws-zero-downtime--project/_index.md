@@ -3,7 +3,7 @@ title : "Set up AWS Zero Downtime Project Jenkins Pipeline"
 date : "`r Sys.Date()`"
 weight : 5
 chapter : false
-pre : " <b> 2.2.4.2 </b> "
+pre : " <b> 2.2.5.2 </b> "
 ---
 
 ## Introduce 

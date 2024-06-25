@@ -1,9 +1,9 @@
 ---
 title : "Integration CI/CD Automate Tools"
 date : "`r Sys.Date()`"
-weight : 4
+weight : 6
 chapter : false
-pre : " <b> 2.2.4 </b> "
+pre : " <b> 2.2.5 </b> "
 ---
 ## 1. CI/CD Tools
 
@@ -41,7 +41,6 @@ We will install Jenkins on Bastion Host.
 #### 2.1 SSH to Bastion Host
     ssh -i public-bastion-host.pem ec2-user@YourEC2PublicIPV4
 ![SSH Successfully to Bastion Host](/images/2.2/ssh-bastion-host.png?featherlight=false&width=50pc)
-
 #### 2.2 Configure Security for Jenkins
 At [terraform source code](https://github.com/daotq2000/aws-iaac-terraform), we have configured inbound security group for Jenkins allow access from Internet to Jenkins server via port **8080**
 
@@ -53,18 +52,6 @@ At [terraform source code](https://github.com/daotq2000/aws-iaac-terraform), we 
     }
 
 detail: https://github.com/daotq2000/aws-iaac-terraform/blob/main/aws-resources/05_sg.tf
-#### 2.3 Install Java on bastion host
-**Install Java on EC2**
-Amazon Corretto 11 has a 'headless' variant available. This variant omits runtime dependencies that are typically associated with GUI applications such as X11 and ALSA and is worth considering for server-oriented workloads. The 'headful' variant adds support for X11 and ALSA. There is also a 'devel' package which contains the JDK development tools, as well as a 'jmods' package that contains the Amazon Corretto 11 JMods used to create custom runtime images.
-
-Install the headless Amazon Corretto 11:
-
-      sudo yum install java-11-amazon-corretto-headless
-After installed we need find path of Java in directory
-
-      sudo update-alternatives --config java
-
-![issue-build1.png](/images/2.3_project/java-version.png)
 
 #### 2.3 Downloading and installing Jenkins
 
@@ -99,16 +86,6 @@ Start Jenkins as a service:
 You can check the status of the Jenkins service using the command:
 
     [ec2-user ~]$ sudo systemctl status jenkins
-
-#### 2.4 Configure Exec build Java on Jenkins Server
-
-Go to **Manage Jenkins** => **Tools** => **JDK Installations**
-![issue-build1.png](/images/2.3_project/config-java.png)
-Find path Java installed
-![find-java-path.png](/images/2.3_project/find-java-path.png)
-Config Java directory for Java path
-![issue-build1.png](/images/2.3_project/config-java-tool.png)
-
 ## 3. Install Docker on Bastion Host
 You can refer post install docker on Amazon Linux at [here](https://www.cyberciti.biz/faq/how-to-install-docker-on-amazon-linux-2/) or following constructions step below:
 1. Apply pending updates using the yum command
@@ -118,10 +95,10 @@ You can refer post install docker on Amazon Linux at [here](https://www.cybercit
 
          sudo yum search docker
 3. Get version information:
-   
+
         sudo yum info docker
 4. Install docker, run:
-         
+
         sudo yum install docker
 5. Add group membership for the default jenkins user so you can run all docker commands without using the sudo command:
 
@@ -130,16 +107,13 @@ You can refer post install docker on Amazon Linux at [here](https://www.cybercit
 
         sudo systemctl enable docker.service
 7. Start the Docker service:
-        
+
         sudo systemctl start docker.service
 8. Get the docker service status on your AMI instance, run:
 
         sudo systemctl status docker.service
-9. Restart jenkins server to execute docker 
-
-        sudo systemctl restart jenkins
 Outputs:
-      
+
       docker.service - Docker Application Container Engine
       Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; vendor preset: disabled)
       Active: active (running) since Wed 2021-09-08 05:03:52 EDT; 18s ago
@@ -167,41 +141,36 @@ Outputs:
 ## 4. Configuring Jenkins
 Jenkins is now installed and running on your EC2 instance. To configure Jenkins:
 1. Connect to http://<your_server_public_DNS>:8080 from your browser. You will be able to access Jenkins through its management interface:
-![unlock_jenkins.png](/images/2.2/unlock_jenkins.png)[Jenkins Password](https://www.jenkins.io/doc/book/resources/tutorials/AWS/unlock_jenkins.png)
+   ![unlock_jenkins.png](/images/2.2/unlock_jenkins.png)[Jenkins Password](https://www.jenkins.io/doc/book/resources/tutorials/AWS/unlock_jenkins.png)
 2. As prompted, enter the password found in /var/lib/jenkins/secrets/initialAdminPassword.
 
 Use the following command to display this password:
 
     [ec2-user ~]$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 3. The Jenkins installation script directs you to the Customize Jenkins page. Click Install suggested plugins.
-   ![create_admin_user.png](/images/2.2-jenkins/config-plugins.png)
-   ![create_admin_user.png](/images/2.2-jenkins/getting-started.png)
 
 4. Once the installation is complete, the Create First Admin User will open. Enter your information, and then select Save and Continue.
    ![create_admin_user.png](/images/2.2/create_admin_user.png)
-5. When you go to home page jenkins, if you see node offline like image below:
-   ![create_admin_user.png](/images/2.2-jenkins/bring-node-online.png)
-   
-Go to Dashboard => Node => Built-In Node => Configure => Node Properties => Disk space monitoring thresholds => Fill All field to 0MB => Save 
-![create_admin_user.png](/images/2.2-jenkins/cfmem.png)
-After config done, let click to `Bring this node back online`
-![create_admin_user.png](/images/2.2-jenkins/click-bring.png)
-After done, you can see node backed online.
-![create_admin_user.png](/images/2.2-jenkins/onlined.png)
+5. On the left-hand side, select Manage Jenkins, and then select Manage Plugins.
+6. Select the Available tab, and then enter Amazon EC2 plugin at the top right.
 
-## 4.1. Configure aws credentials on Bastion Host
+7. Select the checkbox next to Amazon EC2 plugin, and then select Install without restart.
+   ![unlock_jenkins.png](/images/2.2/unlock_jenkins.png)
+8. Once the installation is done, select Back to Dashboard.
+9. Select Configure a cloud if there are no existing nodes or clouds.
+   ![configure_cloud.png](/images/2.2/configure_cloud.png)
+   We are almost done to configure Jenkins on Bastion Host
+## 3. Install require plugins for Jenkins
+Click to **install suggested plugins**
+![selected-plugsin.png](/images/2.2-jenkins/suggest-plugins.png)
+![selected-plugsin.png](/images/2.2-jenkins/require-plugins.png)
 
-We are need config aws credencials to interactive with aws service when trigger ci/cd.
+## 4. Configure aws credentials on Bastion Host
+1. Using this command to config credentials. By default, aws-cli always available on EC2, we don't need install aws-cli again.
 
-Using command below to configure aws credentials with jenkins user.
+         aws configure
 
-      sudo -su jenkins
-
-Using this command to config credentials. By default, aws-cli always available on EC2, we don't need install aws-cli again.  
-
-      aws configure
-
-Output: 
+Output:
 
       aws configure
       AWS Access Key ID [****************]: ****************
@@ -220,7 +189,3 @@ In this project, we will using Helm Chart to manage kubernetes object on EKS Clu
 2. See the version of Helm that you installed.
 
          helm version | cut -d + -f 1
-## 6. Install git on Bastion host
-To integration CI/CD , we need to install Git for pull commit change from repository and execute build, run command below to install git.
-
-      sudo yum install git -y

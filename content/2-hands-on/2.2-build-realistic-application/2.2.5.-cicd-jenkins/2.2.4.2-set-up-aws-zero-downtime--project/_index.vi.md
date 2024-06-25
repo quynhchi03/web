@@ -1,9 +1,9 @@
 ---
 title : "Set up HelmValue Project"
 date : "`r Sys.Date()`"
-weight : 4
+weight : 5
 chapter : false
-pre : " <b> 2.2.4.1 </b> "
+pre : " <b> 2.2.5.2 </b> "
 ---
 ## 4. Setup project helmvalue
 On the project, we will setup helmchart value project, it contains values to create kubernetes object

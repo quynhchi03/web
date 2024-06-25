@@ -6,8 +6,7 @@ chapter : false
 pre : " <b> 2.2 </b> "
 ---
 
-![KIẾN TRÚC THIẾT KẾ AWS](/images/2.2/HA_AWS_DESIGN.png?featherlight=false&width=100pc)
-
+![AWS DESIGN ARCHITECTURE](/images/1/ArchitechtureDesign.svg?featherlight=false&width=100pc)
 ## Video
 [![How to build realistic application on AWS](/images/2.2/1.png)](https://youtu.be/xBy9F5qLOYA "Everything Is AWESOME")
 

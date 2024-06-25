@@ -1,9 +1,9 @@
 ---
 title : "Terraform Provision Kubernetes Resources"
 date : "`r Sys.Date()`"
-weight : 3
+weight : 5
 chapter : false
-pre : " <b> 2.2.3 </b> "
+pre : " <b> 2.2.4 </b> "
 ---
 
 ## Video

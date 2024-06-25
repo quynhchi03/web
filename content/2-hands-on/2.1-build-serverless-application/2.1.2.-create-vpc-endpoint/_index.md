@@ -9,7 +9,7 @@ pre : " <b> 2.1.2 </b> "
 
 #### Overview
 
-![VPC Endpoint connect ](/images/2/CreateVPCEndPoint1.jpeg?featherlight=false&width=100pc)
+![Build-Serverless-Application](/images/1/LambdaArchitechture.svg?featherlight=false&width=100pc)
 
 We see VPC Endpoint connect between Lambda function and DynamoDB.
 

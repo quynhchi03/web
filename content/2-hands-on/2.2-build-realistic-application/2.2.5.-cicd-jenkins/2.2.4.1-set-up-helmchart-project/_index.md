@@ -1,14 +1,26 @@
 ---
 title : "Set up HelmValue Project"
 date : "`r Sys.Date()`"
-weight : 5
+weight : 4
 chapter : false
-pre : " <b> 2.2.4.1 </b> "
+pre : " <b> 2.2.5.1 </b> "
 ---
-## 4. Setup project helmvalue
-On the project, we will setup helmchart value project, it contains values to create kubernetes object
+## 4. Setup project helmvalues
+On the project, we will setup helmchart value project, it contains deployment, service of kubernetes object.
+
+Donwload my project helmvalues at https://github.com/daotq2000/aws-zero-downtime-jenkins
+
+### Explain for this project
+The purpose of project are packaging format called charts. A chart is a collection of files that describe a related set of Kubernetes resources
+![copy-private-key.png](/images/2.5-helm-values/explain.png)
+![copy-private-key.png](/images/2.5-helm-values/Monitoring.png)
+
 ### 4.1 Config credential for Git
 #### 4.1.1. Create ssh key for jenkins-git user to pull repository from github
+Now, we need to ssh to Bastion host, where installed jenkins server and generate ssh key allow each time run build, jenkins server can pull latest change commit from github.
+
+Follow these steps to add ssh key to github: 
+
 ![gen-ssh-key.png](/images/2.2-jenkins/gen-ssh-key.png)
 Copy private key
 ![copy-private-key.png](/images/2.2-jenkins/copy-private-key.png)
@@ -67,3 +79,11 @@ Solution: **Go to Jenkins -> DashBoard -> Manage Jenkins -> Security -> Git Hot 
 if you doesn't install, let install git
 
       sudo yum install git -y
+
+After we will pull repository by `git clone` command
+
+      git clone {your_git_repository}
+If you get result like image below, you are successfully pull repository to server.
+![issue-build1.png](/images/2.2-jenkins/VerifiedGit.png)
+
+

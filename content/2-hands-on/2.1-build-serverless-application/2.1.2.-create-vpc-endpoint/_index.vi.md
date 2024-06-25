@@ -9,7 +9,7 @@ pre : " <b> 2.1.2 </b> "
 
 #### Tổng quan
 
-![VPC Endpoint connect ](/images/2/CreateVPCEndPoint1.jpeg?featherlight=false&width=100pc)
+![Build-Serverless-Application](/images/1/LambdaArchitechture.svg?featherlight=false&width=100pc)
 
 Chúng tôi thấy VPC Endpoint kết nối giữa hàm Lambda và DynamoDB.
 
