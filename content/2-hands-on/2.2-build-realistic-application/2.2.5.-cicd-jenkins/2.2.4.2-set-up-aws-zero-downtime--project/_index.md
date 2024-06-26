@@ -13,7 +13,7 @@ and update existing data, delete data, and more.
 
 There is project structure:
 
-![project_stucture.png](/aws-stutdy-group-workshop/images/2.3_project/project_stucture.png)
+![project_stucture.png](/images/2.3_project/project_stucture.png)
 
 Refer my Github reposittory: https://github.com/daotq2000/aws-spring-sqs-queue.git
 
@@ -22,20 +22,20 @@ In this pipeline project, we will complete these categories:
 1. Check out git repository and pull for jenkins server
 2. Using [maven](https://maven.apache.org/) command to build spring boot application 
 2. Docker command to compress application as container image and push it to Amazon Container Registry (ECR) 
-3. Leaverage project helm-chart configure at [previous step](../2.2.4.1-set-up-helmchart-project) to pull environment variable secret key and helm chart template.
-4. Using helm chart command to apply for create kubernetes object on Elastic Kubernetes Service(EKS) Cluster
-## Getting Amazon Container Registry Push Command
-To get ECR push command, we are follow these step:
-1. Login to Amazon Console
-2. Go to Amazon Container Registry
-3. Click to detail project
-   ![zero-downtime-pipeline.png](/aws-stutdy-group-workshop/images/2.2-jenkins/ecr.png)
-4. View push command
-   ![zero-downtime-pipeline.png](/aws-stutdy-group-workshop/images/2.2-jenkins/view-push-command.png)
-   ![zero-downtime-pipeline.png](/aws-stutdy-group-workshop/images/2.2-jenkins/push-command.png)
+3. Leverage project helm-chart configure at [previous step](../2.2.4.1-set-up-helmchart-project) to pull environment variable secret key and helm chart template.
+4. Sử dụng lệnh biểu đồ helm để áp dụng tạo đối tượng kubernetes trên Cụm dịch vụ Kubernetes đàn hồi (EKS)
+5. ## Getting Amazon Container Registry Push Command
+Để nhận lệnh đẩy ECR, chúng ta làm theo bước sau:
+1. Đăng nhập vào Bảng điều khiển Amazon
+2. Truy cập Cơ quan đăng ký vùng chứa Amazon
+3. Click để xem chi tiết dự án
+   ![zero-downtime-pipeline.png](/images/2.2-jenkins/ecr.png)
+4. Xem push command
+   ![zero-downtime-pipeline.png](/images/2.2-jenkins/view-push-command.png)
+   ![zero-downtime-pipeline.png](/images/2.2-jenkins/push-command.png)
    
-### Setup pipeline
-Using pipeline below:
+### Cấu hình pipeline
+Cấu hình pipeline bên dưới:
 
       def isJava = true;  
       // git repo
@@ -103,18 +103,17 @@ Using pipeline below:
       }
       }
       } 
-![zero-downtime-pipeline.png](/aws-stutdy-group-workshop/images/2.2-jenkins/zero-downtime-pipeline.png)
+![zero-downtime-pipeline.png](/images/2.2-jenkins/zero-downtime-pipeline.png)
 
 ### Testing pipeline
-After done all, we have received result below:
-![zero-downtime-pipeline.png](/aws-stutdy-group-workshop/images/2.2-jenkins/build-success.png)
+Sau khi thực hiện build xong chúng ta có kết quả như sau:
+![zero-downtime-pipeline.png](/images/2.2-jenkins/build-success.png)
 
-### Monitoring service on Kubernetes Cluster
-#### Install K9s monitoring client tools
+### Giám sát Dịch vụ trên Kubernetes Cluster
+#### Cài đặt công cụ client giám sát K9s
 [What is K9s?](https://github.com/derailed/k9s)
-- K9s provides a terminal UI to interact with your Kubernetes clusters. The aim of this project is to make it easier to navigate, observe and manage your applications in the wild. K9s continually watches Kubernetes for changes and offers subsequent commands to interact with your observed resources.
-
+- K9s cung cấp giao diện người dùng đầu cuối để tương tác với các cụm Kubernetes của bạn. Mục đích của dự án này là giúp việc điều hướng, quan sát và quản lý các ứng dụng của bạn trong thực tế trở nên dễ dàng hơn. K9 liên tục theo dõi Kubernetes để phát hiện những thay đổi và đưa ra các lệnh tiếp theo để tương tác với các tài nguyên được quan sát của bạn.
 [Install K9s] (https://github.com/derailed/k9s)
-After done, we can monitoring kubernetes cluster any where.
-![k9s](/aws-stutdy-group-workshop/images/2.3_project/k9s.png)
+  Sau khi hoàn tất, chúng ta có thể theo dõi cụm kubernetes ở bất kỳ đâu.
+![k9s](/images/2.3_project/k9s.png)
 
