@@ -13,7 +13,7 @@ and update existing data, delete data, and more.
 
 There is project structure:
 
-![project_stucture.png](/images/2.3_project/project_stucture.png)
+![project_stucture.png](/aws-stutdy-group-workshop/images/2.3_project/project_stucture.png)
 
 Refer my Github reposittory: https://github.com/daotq2000/aws-spring-sqs-queue.git
 
@@ -29,10 +29,10 @@ In this pipeline project, we will complete these categories:
 1. Đăng nhập vào Bảng điều khiển Amazon
 2. Truy cập Cơ quan đăng ký vùng chứa Amazon
 3. Click để xem chi tiết dự án
-   ![zero-downtime-pipeline.png](/images/2.2-jenkins/ecr.png)
+   ![zero-downtime-pipeline.png](/aws-stutdy-group-workshop/images/2.2-jenkins/ecr.png)
 4. Xem push command
-   ![zero-downtime-pipeline.png](/images/2.2-jenkins/view-push-command.png)
-   ![zero-downtime-pipeline.png](/images/2.2-jenkins/push-command.png)
+   ![zero-downtime-pipeline.png](/aws-stutdy-group-workshop/images/2.2-jenkins/view-push-command.png)
+   ![zero-downtime-pipeline.png](/aws-stutdy-group-workshop/images/2.2-jenkins/push-command.png)
    
 ### Cấu hình pipeline
 Cấu hình pipeline bên dưới:
@@ -103,11 +103,11 @@ Cấu hình pipeline bên dưới:
       }
       }
       } 
-![zero-downtime-pipeline.png](/images/2.2-jenkins/zero-downtime-pipeline.png)
+![zero-downtime-pipeline.png](/aws-stutdy-group-workshop/images/2.2-jenkins/zero-downtime-pipeline.png)
 
 ### Testing pipeline
 Sau khi thực hiện build xong chúng ta có kết quả như sau:
-![zero-downtime-pipeline.png](/images/2.2-jenkins/build-success.png)
+![zero-downtime-pipeline.png](/aws-stutdy-group-workshop/images/2.2-jenkins/build-success.png)
 
 ### Giám sát Dịch vụ trên Kubernetes Cluster
 #### Cài đặt công cụ client giám sát K9s
@@ -115,5 +115,5 @@ Sau khi thực hiện build xong chúng ta có kết quả như sau:
 - K9s cung cấp giao diện người dùng đầu cuối để tương tác với các cụm Kubernetes của bạn. Mục đích của dự án này là giúp việc điều hướng, quan sát và quản lý các ứng dụng của bạn trong thực tế trở nên dễ dàng hơn. K9 liên tục theo dõi Kubernetes để phát hiện những thay đổi và đưa ra các lệnh tiếp theo để tương tác với các tài nguyên được quan sát của bạn.
 [Install K9s] (https://github.com/derailed/k9s)
   Sau khi hoàn tất, chúng ta có thể theo dõi cụm kubernetes ở bất kỳ đâu.
-![k9s](/images/2.3_project/k9s.png)
+![k9s](/aws-stutdy-group-workshop/images/2.3_project/k9s.png)
 

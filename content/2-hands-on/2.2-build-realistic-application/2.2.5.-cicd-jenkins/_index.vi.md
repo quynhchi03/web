@@ -23,7 +23,7 @@ Theo CI, Phân phối liên tục tự động hóa việc phân phối ứng d�
 Một bước xa hơn Phân phối liên tục, Triển khai liên tục còn tiến xa hơn bằng cách phát hành mọi thay đổi đi qua quy trình sản xuất tới khách hàng mà không có sự can thiệp của con người. Nó đòi hỏi một nền văn hóa giám sát, kiểm tra tự động và đảm bảo chất lượng phát triển cao để hoạt động hiệu quả.
 
 #### Công cụ CI/CD phổ biến nhất
-![Công cụ CICD](/images/2.2/cicd_tools.png?featherlight=false&width=50pc)
+![Công cụ CICD](/aws-stutdy-group-workshop/images/2.2/cicd_tools.png?featherlight=false&width=50pc)
 Như hình trên, có những công cụ CI/CD phổ biến nhất, giá cả và độ phức tạp, bạn có thể tham khảo:
 
 - **Jenkins:** Một máy chủ tự động hóa nguồn mở cung cấp hệ sinh thái plugin ấn tượng để hỗ trợ xây dựng, triển khai và tự động hóa bất kỳ dự án nào.
@@ -40,7 +40,7 @@ Chúng tôi sẽ cài đặt Jenkins trên Bastion Host.
 
 #### 2.1 SSH tới máy chủ Bastion
 ssh -i public-bastion-host.pem ec2-user@YourEC2PublicIPV4
-![SSH vào máy chủ Bastion thành công](/images/2.2/ssh-bastion-host.png?featherlight=false&width=50pc)
+![SSH vào máy chủ Bastion thành công](/aws-stutdy-group-workshop/images/2.2/ssh-bastion-host.png?featherlight=false&width=50pc)
 
 #### 2.2 Cấu hình bảo mật cho Jenkins
 Tại [mã nguồn terraform](https://github.com/daotq2000/aws-iaac-terraform), chúng tôi đã định cấu hình nhóm bảo mật gửi đến cho Jenkins cho phép truy cập từ Internet đến máy chủ Jenkins qua cổng **8080**
@@ -143,7 +143,7 @@ Outputs:
 ## 4. Configuring Jenkins
 Jenkins hiện đã được cài đặt và chạy trên phiên bản EC2 của bạn. Để định cấu hình Jenkins:
 1. Kết nối với http://<your_server_public_DNS>:8080 từ trình duyệt của bạn. Bạn sẽ có thể truy cập Jenkins thông qua giao diện quản lý của nó:
-   ![unlock_jenkins.png](/images/2.2/unlock_jenkins.png)[Mật khẩu Jenkins](https://www.jenkins.io/doc/book/resources/tutorials/AWS/unlock_jenkins.png)
+   ![unlock_jenkins.png](/aws-stutdy-group-workshop/images/2.2/unlock_jenkins.png)[Mật khẩu Jenkins](https://www.jenkins.io/doc/book/resources/tutorials/AWS/unlock_jenkins.png)
 2. Mở file password default của Jenkins tại  /var/lib/jenkins/secrets/initialAdminPassword.
 
 Sử dụng lệnh sau để hiển thị mật khẩu này:
@@ -151,20 +151,20 @@ Sử dụng lệnh sau để hiển thị mật khẩu này:
     [ec2-user ~]$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 3. Tập lệnh cài đặt Jenkins hướng bạn đến trang Tùy chỉnh Jenkins. Nhấp vào Cài đặt các plugin được đề xuất.
 4. Sau khi quá trình cài đặt hoàn tất, Tạo người dùng quản trị viên đầu tiên sẽ mở ra. Nhập thông tin của bạn rồi chọn Lưu và tiếp tục.
-![create_admin_user.png](/images/2.2/create_admin_user.png)
+![create_admin_user.png](/aws-stutdy-group-workshop/images/2.2/create_admin_user.png)
 5. Ở phía bên trái, chọn Quản lý Jenkins rồi chọn Quản lý plugin.
 6. Chọn tab Có sẵn, sau đó nhập plugin Amazon EC2 ở trên cùng bên phải.
 
 7. Chọn hộp kiểm bên cạnh plugin Amazon EC2, sau đó chọn Cài đặt mà không cần khởi động lại.
-   ![unlock_jenkins.png](/images/2.2/unlock_jenkins.png)
+   ![unlock_jenkins.png](/aws-stutdy-group-workshop/images/2.2/unlock_jenkins.png)
 8. Sau khi cài đặt xong, hãy chọn Quay lại Bảng điều khiển.
 9. Chọn Định cấu hình đám mây nếu không có nút hoặc đám mây nào hiện có.
-   ![configure_cloud.png](/images/2.2/configure_cloud.png)
+   ![configure_cloud.png](/aws-stutdy-group-workshop/images/2.2/configure_cloud.png)
    Chúng ta gần như đã hoàn tất việc định cấu hình Jenkins trên Bastion Host
 ## 3. Install require plugins for Jenkins
 Nhấp để **cài đặt các plugin được đề xuất**
-![selected-plugsin.png](/images/2.2-jenkins/suggest-plugins.png)
-![selected-plugsin.png](/images/2.2-jenkins/require-plugins.png)
+![selected-plugsin.png](/aws-stutdy-group-workshop/images/2.2-jenkins/suggest-plugins.png)
+![selected-plugsin.png](/aws-stutdy-group-workshop/images/2.2-jenkins/require-plugins.png)
 
 ## 4. Cấu hình thông tin xác thực aws trên Máy chủ Bastion
 1. Sử dụng lệnh này để định cấu hình thông tin xác thực. Theo mặc định, aws-cli luôn có sẵn trên EC2, chúng ta không cần cài đặt lại aws-cli.
