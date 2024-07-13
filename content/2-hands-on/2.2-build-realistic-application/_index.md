@@ -7,10 +7,10 @@ pre : " <b> 2.2 </b> "
 image: "/images/1/ArchitechtureDesign.svg" # The path to your image
 ---
 
-![AWS DESIGN ARCHITECTURE](/images/1/ArchitechtureDesign.svg?featherlight=false&width=100pc)
+![AWS DESIGN ARCHITECTURE](/aws-stutdy-group-workshop/images/1/ArchitechtureDesign.svg?featherlight=false&width=100pc)
 ## Video
 
-[![Build Zero Downtime AWS Application](/images/2.2/1.png)](https://youtu.be/xBy9F5qLOYA?list=PLk36mRYn9bOHtZsDG3iA-yGzktMiBojm9 "Everything Is AWESOME")
+[![Build Zero Downtime AWS Application](/aws-stutdy-group-workshop/images/2.2/1.png)](https://youtu.be/xBy9F5qLOYA?list=PLk36mRYn9bOHtZsDG3iA-yGzktMiBojm9 "Everything Is AWESOME")
 
 ### Challenge 2: Building AWS Resilient E-commerce Platform
 

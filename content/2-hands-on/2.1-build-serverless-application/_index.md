@@ -9,7 +9,7 @@ image: "/images/1/LambdaArchitechture.svg" # The path to your image
 
 
 ### Challenge 1: Building Serverless Appication with AWS Lambda
-![Build-Serverless-Application](/images/1/LambdaArchitechture.svg?featherlight=false&width=100pc)
+![Build-Serverless-Application](/aws-stutdy-group-workshop/images/1/LambdaArchitechture.svg?featherlight=false&width=100pc)
 
 The Take Note App Project is a serverless application designed to provide users with a convenient platform for taking and managing notes. Built using AWS services, the project leverages Lambda functions for backend logic and DynamoDB for data storage. Additionally, it integrates with GitHub for automatic deployment using AWS CodeBuild.
 
