@@ -1,7 +1,7 @@
 ---
 title : "Infrastructure AWS as Terraform"
 date : "`r Sys.Date()`"
-weight : 3
+weight : 4
 chapter : false
 pre : " <b> 2.3.3 </b> "
 ---
