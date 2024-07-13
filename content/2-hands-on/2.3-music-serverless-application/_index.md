@@ -1,46 +1,78 @@
 ---
-title : "Build Zero Downtime AWS Application"
+title : "Build Music Severless Application"
 date : "`r Sys.Date()`"
-weight : 2
+weight : 3
 chapter : false
-pre : " <b> 2.2 </b> "
-image: "/images/1/ArchitechtureDesign.svg" # The path to your image
+pre : " <b> 2.3 </b> "
+image: "/images/3/3.0/architechture.svg" # The path to your image
 ---
+## 1.Overview Architechture
+![AWS DESIGN ARCHITECTURE](/images/3/3.0/architechture.svg?featherlight=false&width=100pc)
 
-![AWS DESIGN ARCHITECTURE](/images/1/ArchitechtureDesign.svg?featherlight=false&width=100pc)
-## Video
+### Challenge 3: Build a Music Serverless Application on Amazon Web Services (AWS)
+**Objective:**
 
-[![Build Zero Downtime AWS Application](/images/2.2/1.png)](https://youtu.be/xBy9F5qLOYA?list=PLk36mRYn9bOHtZsDG3iA-yGzktMiBojm9 "Everything Is AWESOME")
+Develop a full-stack serverless application for streaming and managing music. The application should leverage the power of AWS for deployment, scaling, and management, ensuring high availability and performance.
 
-### Challenge 2: Building AWS Resilient E-commerce Platform
+**- Backend:**
++ Technology: Java
++ Framework: Spring Boot
++ Description: Implement the backend using Spring Boot to handle music streaming, user management, and other core functionalities. The backend will expose RESTful APIs for the frontend to interact with.
 
-The exponential growth of online shopping necessitates robust and scalable e-commerce platforms. An increase in traffic during peak shopping periods like Black Friday or Cyber Monday requires the e-commerce platform to be highly resilient and responsive. Challenge Objective: Build a highly scalable, resilient, and cost-effective e-commerce platform on AWS that can handle varying loads, survive component failures without user-visible errors, and maintain data consistency.
+**-Frontend:**
++ Technology: ReactJS
++ Description: Develop the frontend using ReactJS to provide a dynamic and responsive user interface. The frontend will consume the RESTful APIs provided by the backend to display and manage music content.
+
+**-Database:**
++ Technology: MySQL
++ Service: Amazon Aurora MySQL
++ Description: Use Amazon Aurora MySQL as the database solution for storing user data, music metadata, playlists, and other relevant information. Aurora MySQL offers high performance and scalability for handling large amounts of data.
+
+**-Deployment:**
++ Platform: Amazon Web Services (AWS)
+
+**- Services:Amazon Fargate:**
+
++ Deploy backend services in a serverless container environment to simplify infrastructure management.
++ Amazon Aurora MySQL: Utilize this fully managed database service for scalable and secure data storage.
++ Amazon ElastiCache (Redis): Implement Redis for caching to improve the performance and speed of the application.
++ Application Load Balancer (ALB): Distribute incoming traffic across multiple targets, ensuring high availability and fault tolerance.
++ Internet Gateway: Enable internet access for the application.
++ Auto Scaling Group: Automatically scale the application in response to demand, ensuring consistent performance and cost-efficiency.
+
+**- Infrastructure as Code (IaC):**
++ Technology: Terraform
++ Description: Use Terraform to define and manage the infrastructure required for the application. Terraform scripts will automate the provisioning of AWS resources, ensuring consistent and reproducible environments.
 
 ### Requirements:
+Backend:
+Develop RESTful APIs using Spring Boot.
+Implement authentication and authorization mechanisms.
+Integrate with Amazon Aurora MySQL for data storage.
+Use Redis for caching frequently accessed data.
+Frontend:
 
-#### Infrastructure as Code (IaC):
-Use Terraform to define and provision the entire infrastructure needed for the e-commerce platform. The architecture must be declared through IaC practices for versioning and reusability.
-#### Microservices Architecture:
-Design the application using a microservices architecture, allowing the independent scaling and deployment of individual service components.
-Load Balancing and Auto-scaling: Implement Elastic Load Balancing (ELB) to distribute incoming application traffic across multiple targets. Configure Auto Scaling to automatically adjust the number of EC2 instances in response to the application's workload.
-#### Kubernetes
-Using Elastic Kubernetes Service to scale resources ensure high availability and realistic for application.
+Build a responsive user interface using ReactJS.
+Consume backend APIs for data retrieval and manipulation.
+Ensure seamless user experience with efficient state management.
+Deployment and Scaling:
 
-#### Database and Caching:
+Containerize the backend services and deploy them using Amazon Fargate.
+Set up Amazon Aurora MySQL for scalable and reliable database management.
+Configure Redis cache using Amazon ElastiCache.
+Implement an Application Load Balancer to manage traffic distribution.
+Set up an Internet Gateway for internet access.
+Create an Auto Scaling Group to handle varying loads automatically.
+Use Terraform for defining and provisioning the entire infrastructure.
+Documentation and Testing:
 
-Utilize Amazon RDS for relational databases with read replicas to handle peak read loads. Implement caching using Amazon ElastiCache to reduce the load on databases during high traffic.
-#### Message Queuing:
-Use Amazon SQS for decoupling application components
-#### Storage and CDN:
-Use Amazon S3 for storing static content and product media. Integrate Amazon CloudFront as a CDN to deliver content globally with low latency. Security and Compliance: Implement AWS Identity and Access Management (IAM) to manage access. Apply AWS WAF on ELB and CloudFront to safeguard against web exploits. Ensure that the application complies with relevant standards and regulations such as GDPR and PCI DSS.
+Document the architecture, setup, and deployment processes.
+Write unit tests and integration tests for the backend.
+Ensure thorough testing of the frontend to maintain a bug-free user experience.
+By the end of this challenge, you will have a fully functional, serverless music application running on AWS, with a robust backend, dynamic frontend, and scalable infrastructure.
 
-#### Monitoring, Logging, and Alerts:
-Utilize AWS CloudWatch for monitoring the health and performance metrics of AWS resources. Use AWS CloudTrail to monitor and log account activity. Set up alerts to notify administrators of any critical issues or irregular patterns. Disaster Recovery and Data Backup: Establish a multi-AZ deployment to ensure high availability. Implement replication across different geographical regions to protect against region-level failures. Create a backup strategy using Amazon S3 lifecycle policies and Amazon Glacier for long-term data archiving. Cost Optimization: Perform cost-benefit analysis for the use of various services. Use AWS Trusted Advisor for recommendations on how to save costs. Implement AWS Budgets to track and manage costs.
 
-#### Deliverables:
 
-1. Document AWS architecture design
-2. Terraform template files.
-3. CI/CD Pipeline
-4. Testing
-5. A cost analysis report.
+
+
+
