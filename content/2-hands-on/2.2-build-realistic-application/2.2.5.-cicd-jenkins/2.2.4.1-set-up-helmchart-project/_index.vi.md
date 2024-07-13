@@ -5,44 +5,33 @@ weight : 4
 chapter : false
 pre : " <b> 2.2.5.1 </b> "
 ---
-## 4. Setup project helmvalues
-Trong dự án, chúng ta sẽ thiết lập dự án giá trị helmchart, nó chứa hoạt động triển khai, dịch vụ của đối tượng kubernetes.
-
-Donwload repostiory  helmvalues tại github: https://github.com/daotq2000/aws-zero-downtime-jenkins
-
-### Giải thích cho dự án này
-Mục đích của dự án là định dạng đóng gói được gọi là biểu đồ. Biểu đồ là tập hợp các tệp mô tả một tập hợp tài nguyên Kubernetes có liên quan![copy-private-key.png](/aws-stutdy-group-workshop/images/2.5-helm-values/explain.png)
-![copy-private-key.png](/aws-stutdy-group-workshop/images/2.5-helm-values/Monitoring.png)
-
-### 4.1 Thông tin xác thực cấu hình cho Git
-#### 4.1.1. Tạo khóa ssh cho người dùng jenkins-git để lấy kho lưu trữ từ github
-Bây giờ, chúng ta cần ssh đến máy chủ Bastion, nơi máy chủ jenkins đã cài đặt và tạo khóa ssh cho phép mỗi lần chạy bản dựng, máy chủ jenkins có thể lấy cam kết thay đổi mới nhất từ  github.
-
-Thực hiện theo các bước sau để thêm khóa ssh vào github:
-
+## 4. Setup project helmvalue
+On the project, we will setup helmchart value project, it contains values to create kubernetes object
+### 4.1 Config credential for Git
+#### 4.1.1. Create ssh key for jenkins-git user to pull repository from github
 ![gen-ssh-key.png](/aws-stutdy-group-workshop/images/2.2-jenkins/gen-ssh-key.png)
 Copy private key
 ![copy-private-key.png](/aws-stutdy-group-workshop/images/2.2-jenkins/copy-private-key.png)
 #### 4.1.2. Go to Jenkins server, click to **Jenkins -> Management Jenkins -> Credentials -> System -> Global Credentials(unrestricted)**
-Fill ID với  **jenkins-git**
+Fill ID with **jenkins-git**
 ![selected-plugsin.png](/aws-stutdy-group-workshop/images/2.2-jenkins/create-ssh-key-jenkins.png)
-Next, dán  private key mà bạn đã copy vào đây 
+Next, paste your private have been copy to this
 ![patseToSSh.png](/aws-stutdy-group-workshop/images/2.2-jenkins/patseToSSh.png)
-#### 4.1.3. Copy public key and Tới **GitHub Preference** thêm  public key
-Đi tới github,nhấp vào thanh bên phải và nhấp vào **setting**
+#### 4.1.3. Copy public key and Go to **GitHub Preference** add public key
+Go to github, click to right side bar and click **setting**
 ![github-preferences.png](/aws-stutdy-group-workshop/images/2.2-jenkins/github-preferences.png)
 Get public key using command:
 
        $cat ~/.ssh/id_rsa.pub
 
-Đi tới `SSH and GPG keys`, and dán khóa chung của bạn vào đây.
+Go to SSH and GPG keys, and paste your public key to this.
 ![public-key.png](/aws-stutdy-group-workshop/images/2.2-jenkins/public-key.png)
-Sau khi thành công chúng ta nhận được kết quả như bên dưới
+After successfully, we receive result below
 ![create-public-key.png](/aws-stutdy-group-workshop/images/2.2-jenkins/create-public-key.png)
 #### 4.1.4. Config pipeline to fetch project
-Tạo project pipeline and cấu hình pipeline.
+Create new project pipeline and config the pipeline.
 ![config-pipeline.png](/aws-stutdy-group-workshop/images/2.2-jenkins/config-pipeline.png)
-Sử dụng pipeline bên dưới:
+Use pipeline below:
 
          def gitUrl = 'git@github.com:daotq2000/aws-spring-sqs-queue.git'
          def gitBranch = 'main'
@@ -59,30 +48,22 @@ Sử dụng pipeline bên dưới:
             }
          }
 #### 4.1.5. Execute build
-Nếu bạn nhận được kết quả dưới đây, bạn đã xây dựng thành công.
+If you got result below, you have built success.
 ![success-build-helm.png](/aws-stutdy-group-workshop/images/2.2-jenkins/success-build-helm.png)
 #### 4.1.6. Troubleshoot issue
-Quá trình xây dựng liên quan đến vấn đề không thành công, có thể có một số lý do bên dưới
-1. Thiếu variable trên pipeline
+Issue related build failed, may be have some reason below
+1. Missing variable on pipeline
    ![issue-build1.png](/aws-stutdy-group-workshop/images/2.2-jenkins/issue-build1.png)
-   Solution: kiểm tra log mesage 
+   Solution: check carefully pipeline and error message
 2. Verify host failed
-   Nếu bạn nhận được thông báo lỗi như `Verify host failed`, vui lòng làm theo giải pháp bên dưới:
+   If you get error message like `Verify host failed`, please following solution below:
 
 Solution: **Go to Jenkins -> DashBoard -> Manage Jenkins -> Security -> Git Hot Key Verification and Configuration**  and choose **No Verification**
 ![issue-build1.png](/aws-stutdy-group-workshop/images/2.2-jenkins/verify-host-solution..png)
-3. Git chưa cài đặt trên máy chủ.
-   Solution: Kiểm tra phiên bản git trên máy chủ bằng cách sử dụng
+3. Git doesn't install yet on bastion host.
+   Solution: Check git version on bastion host using
 
          git -v
-nếu bạn chưa cài đặt, hãy cài đặt git
+if you doesn't install, let install git
 
       sudo yum install git -y
-
-Sau đó chúng ta sẽ kéo kho lưu trữ bằng lệnh `git clone`
-
-      git clone {your_git_repository}
-Nếu bạn nhận được kết quả như hình ảnh bên dưới thì bạn đã kéo kho lưu trữ về máy chủ thành công.
-![issue-build1.png](/aws-stutdy-group-workshop/images/2.2-jenkins/VerifiedGit.png)
-
-

@@ -7,68 +7,66 @@ pre : " <b> 2.2.5 </b> "
 ---
 ## 1. CI/CD Tools
 
-#### Công cụ CI/CD là gì?
-CI/CD là viết tắt của Tích hợp liên tục và Phân phối/Triển khai liên tục, là các phương pháp cho phép các nhóm tích hợp mã mới một cách nhất quán và cung cấp các bản cập nhật phần mềm của họ một cách đáng tin cậy.
+#### What is CI/CD tools?
+CI/CD stands for Continuous Integration and Continuous Delivery/Deployment, which are methodologies that enable teams to consistently integrate new code and reliably deliver updates of their software.
 
-**Tích hợp liên tục (CI):**
+**Continuous Integration (CI):**
 
-Đây là một phương pháp phát triển trong đó các nhà phát triển thường xuyên tích hợp mã vào kho lưu trữ dùng chung, thường là nhiều lần trong ngày. Sau đó, mỗi tích hợp có thể được xác minh bằng quá trình xây dựng tự động và kiểm tra tự động. Mục tiêu chính của CI là tìm và giải quyết lỗi nhanh hơn, cải thiện chất lượng phần mềm và giảm thời gian xác thực và phát hành bản cập nhật phần mềm mới.
+This is a development practice where developers integrate code into a shared repository frequently, typically multiple times a day. Each integration can then be verified by an automatic build and automated tests. The key goals of CI are to find and address bugs quicker, improve software quality, and reduce the time it takes to validate and release new software updates.
 
-**Giao hàng liên tục (CD):**
+**Continuous Delivery (CD):**
 
-Theo CI, Phân phối liên tục tự động hóa việc phân phối ứng dụng đến các môi trường cơ sở hạ tầng đã chọn. Hầu hết các nhóm làm việc với nhiều môi trường khác ngoài môi trường sản xuất, chẳng hạn như môi trường phát triển và thử nghiệm, đồng thời CD đảm bảo có một cách tự động để đẩy các thay đổi mã tới chúng.
+Following CI, Continuous Delivery automates the delivery of applications to selected infrastructure environments. Most teams work with multiple environments other than the production, such as development and testing environments, and CD ensures there is an automated way to push code changes to them.
 
-**Triển khai liên tục (CD):**
+**Continuous Deployment (CD):**
 
-Một bước xa hơn Phân phối liên tục, Triển khai liên tục còn tiến xa hơn bằng cách phát hành mọi thay đổi đi qua quy trình sản xuất tới khách hàng mà không có sự can thiệp của con người. Nó đòi hỏi một nền văn hóa giám sát, kiểm tra tự động và đảm bảo chất lượng phát triển cao để hoạt động hiệu quả.
+A step beyond Continuous Delivery, Continuous Deployment goes further by releasing every change that passes through the production pipeline to customers with no human intervention. It requires a highly developed culture of monitoring, automated testing, and quality assurance to work effectively.
 
-#### Công cụ CI/CD phổ biến nhất
-![Công cụ CICD](/aws-stutdy-group-workshop/images/2.2/cicd_tools.png?featherlight=false&width=50pc)
-Như hình trên, có những công cụ CI/CD phổ biến nhất, giá cả và độ phức tạp, bạn có thể tham khảo:
+#### Most Popular CI/CD tools
+![CICD Tools](/aws-stutdy-group-workshop/images/2.2/cicd_tools.png?featherlight=false&width=50pc)
+As image above, there are most popular CI/CD tools, pricing and the complexity, you can refer:
 
-- **Jenkins:** Một máy chủ tự động hóa nguồn mở cung cấp hệ sinh thái plugin ấn tượng để hỗ trợ xây dựng, triển khai và tự động hóa bất kỳ dự án nào.
+- **Jenkins:** An open-source automation server providing an impressive plugin ecosystem to support building, deploying, and automating any project.
 
-- **GitLab CI/CD:** Được tích hợp vào nền tảng GitLab để quản lý mã nguồn, nó cung cấp một bộ tính năng phong phú để tự động hóa các giai đoạn khác nhau của vòng đời ứng dụng.
-- **CircleCI:** Dịch vụ CI/CD gốc trên nền tảng đám mây cung cấp cơ sở hạ tầng để tự động hóa quy trình phát triển phần mềm.
-- **Travis CI:** Dịch vụ tích hợp liên tục được phân phối, được lưu trữ để xây dựng và thử nghiệm các dự án phần mềm được lưu trữ tại GitHub và Bitbucket.
-- **Thao tác GitHub:** Kích hoạt quy trình công việc để tích hợp liên tục và triển khai liên tục trực tiếp trong nền tảng GitHub.
-- **Bamboo:** Máy chủ CI/CD của Atlassian, cung cấp khả năng xây dựng, thử nghiệm và triển khai ứng dụng tự động.
-- **Spinnaker:** Nền tảng phân phối liên tục trên nhiều đám mây, mã nguồn mở để phát hành các thay đổi phần mềm với tốc độ cao và độ tin cậy.
-- **Azure Pipelines:** Là một phần của Dịch vụ Azure DevOps của Microsoft, dịch vụ đám mây này được sử dụng để tự động xây dựng và kiểm tra các dự án mã cũng như cung cấp cho những người dùng khác.
-## 2. Cài đặt Jenkins trên Bastion Host
-Chúng tôi sẽ cài đặt Jenkins trên Bastion Host.
+- **GitLab CI/CD:** Integrated into the GitLab platform for source code management, it provides a rich set of features for automating different phases of the application lifecycle.
+- **CircleCI:** Cloud-native CI/CD service that provides infrastructure for automating the software development process.
+- **Travis CI:** A hosted, distributed continuous integration service to build and test software projects hosted at GitHub and Bitbucket.
+- **GitHub Actions:** Enables workflows for continuous integration and continuous deployment directly in the GitHub platform.
+- **Bamboo:** A CI/CD server from Atlassian, it offers automated building, testing, and deploying of applications.
+- **Spinnaker:** An open-source, multi-cloud continuous delivery platform for releasing software changes with high velocity and confidence.
+- **Azure Pipelines:** Part of Microsoft's Azure DevOps Services, this cloud service is used to automatically build and test code projects and make it available to other users.
+## 2. Install Jenkins on Bastion Host
+We will install Jenkins on Bastion Host.
 
-#### 2.1 SSH tới máy chủ Bastion
-ssh -i public-bastion-host.pem ec2-user@YourEC2PublicIPV4
-![SSH vào máy chủ Bastion thành công](/aws-stutdy-group-workshop/images/2.2/ssh-bastion-host.png?featherlight=false&width=50pc)
+#### 2.1 SSH to Bastion Host
+    ssh -i public-bastion-host.pem ec2-user@YourEC2PublicIPV4
+![SSH Successfully to Bastion Host](/aws-stutdy-group-workshop/images/2.2/ssh-bastion-host.png?featherlight=false&width=50pc)
+#### 2.2 Configure Security for Jenkins
+At [terraform source code](https://github.com/daotq2000/aws-iaac-terraform), we have configured inbound security group for Jenkins allow access from Internet to Jenkins server via port **8080**
 
-#### 2.2 Cấu hình bảo mật cho Jenkins
-Tại [mã nguồn terraform](https://github.com/daotq2000/aws-iaac-terraform), chúng tôi đã định cấu hình nhóm bảo mật gửi đến cho Jenkins cho phép truy cập từ Internet đến máy chủ Jenkins qua cổng **8080**
-    
+    ingress {
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"] # Warning: This allows traffic from any IP which might not be secure.
+    }
 
-      ingress {
-          from_port   = 8080
-          to_port     = 8080
-          protocol    = "tcp"
-          cidr_blocks = ["0.0.0.0/0"] # Warning: This allows traffic from any IP which might not be secure.
-          }
-
-chi tiết : https://github.com/daotq2000/aws-iaac-terraform/blob/main/aws-resources/05_sg.tf
+detail: https://github.com/daotq2000/aws-iaac-terraform/blob/main/aws-resources/05_sg.tf
 
 #### 2.3 Downloading and installing Jenkins
 
-Việc hoàn thành các bước trước đó sẽ cho phép bạn tải xuống và cài đặt Jenkins trên AWS. Để tải xuống và cài đặt Jenkins:
+Completing the previous steps enables you to download and install Jenkins on AWS. To download and install Jenkins:
 
-Đảm bảo rằng các gói phần mềm được cập nhật trên phiên bản của bạn bằng cách sử dụng lệnh sau để thực hiện cập nhật phần mềm nhanh:
+Ensure that your software packages are up to date on your instance by using the following command to perform a quick software update:
 
     [ec2-user ~]$ sudo yum update –y
 
-Thêm repo Jenkins bằng lệnh sau:
+Add the Jenkins repo using the following command:
 
     [ec2-user ~]$ sudo wget -O /etc/yum.repos.d/jenkins.repo \
     https://pkg.jenkins.io/redhat-stable/jenkins.repo
 
-Nhập tệp khóa từ Jenkins-CI để cho phép cài đặt từ gói:
+Import a key file from Jenkins-CI to enable installation from the package:
 
     [ec2-user ~]$ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
     [ec2-user ~]$ sudo yum upgrade
@@ -76,42 +74,42 @@ Nhập tệp khóa từ Jenkins-CI để cho phép cài đặt từ gói:
 
     [ec2-user ~]$ sudo dnf install java-17-amazon-corretto -y
 
-**Cài đặt Jenkins:**
+**Install Jenkins:**
 
     [ec2-user ~]$ sudo yum install jenkins -y
-Kích hoạt dịch vụ Jenkins để bắt đầu khi khởi động:
+Enable the Jenkins service to start at boot:
 
     [ec2-user ~]$ sudo systemctl enable jenkins
-Bắt đầu Jenkins như một dịch vụ:
+Start Jenkins as a service:
 
     [ec2-user ~]$ sudo systemctl start jenkins
-Bạn có thể kiểm tra trạng thái của dịch vụ Jenkins bằng lệnh:
+You can check the status of the Jenkins service using the command:
 
     [ec2-user ~]$ sudo systemctl status jenkins
-## 3. Cài đặt Docker trên Bastion Host
-Bạn có thể tham khảo bài đăng cài đặt docker trên Amazon Linux tại [tại đây](https://www.cyberciti.biz/faq/how-to-install-docker-on-amazon-linux-2/) hoặc các bước xây dựng sau đây:
-1. Áp dụng các bản cập nhật đang chờ xử lý bằng lệnh yum
+## 3. Install Docker on Bastion Host
+You can refer post install docker on Amazon Linux at [here](https://www.cyberciti.biz/faq/how-to-install-docker-on-amazon-linux-2/) or following constructions step below:
+1. Apply pending updates using the yum command
 
          sudo yum update
-2. Tìm kiếm gói Docker:
+2. Search for Docker package:
 
          sudo yum search docker
-3. Lấy thông tin phiên bản:
+3. Get version information:
 
         sudo yum info docker
-4. Cài đặt docker, chạy:
+4. Install docker, run:
 
         sudo yum install docker
-5. Thêm tư cách thành viên nhóm cho người dùng jenkins mặc định để bạn có thể chạy tất cả các lệnh docker mà không cần sử dụng lệnh sudo:
+5. Add group membership for the default jenkins user so you can run all docker commands without using the sudo command:
 
         sudo usermod -a -G docker jenkins
-6. Kích hoạt dịch vụ docker khi khởi động AMI:
+6. Enable docker service at AMI boot time:
 
         sudo systemctl enable docker.service
-7. Khởi động dịch vụ Docker:
+7. Start the Docker service:
 
         sudo systemctl start docker.service
-8. Nhận trạng thái dịch vụ docker trên phiên bản AMI của bạn, chạy:
+8. Get the docker service status on your AMI instance, run:
 
         sudo systemctl status docker.service
 Outputs:
@@ -141,33 +139,34 @@ Outputs:
       Hint: Some lines were ellipsized, use -l to show in full.
 
 ## 4. Configuring Jenkins
-Jenkins hiện đã được cài đặt và chạy trên phiên bản EC2 của bạn. Để định cấu hình Jenkins:
-1. Kết nối với http://<your_server_public_DNS>:8080 từ trình duyệt của bạn. Bạn sẽ có thể truy cập Jenkins thông qua giao diện quản lý của nó:
-   ![unlock_jenkins.png](/aws-stutdy-group-workshop/images/2.2/unlock_jenkins.png)[Mật khẩu Jenkins](https://www.jenkins.io/doc/book/resources/tutorials/AWS/unlock_jenkins.png)
-2. Mở file password default của Jenkins tại  /var/lib/jenkins/secrets/initialAdminPassword.
+Jenkins is now installed and running on your EC2 instance. To configure Jenkins:
+1. Connect to http://<your_server_public_DNS>:8080 from your browser. You will be able to access Jenkins through its management interface:
+   ![unlock_jenkins.png](/aws-stutdy-group-workshop/images/2.2/unlock_jenkins.png)[Jenkins Password](https://www.jenkins.io/doc/book/resources/tutorials/AWS/unlock_jenkins.png)
+2. As prompted, enter the password found in /var/lib/jenkins/secrets/initialAdminPassword.
 
-Sử dụng lệnh sau để hiển thị mật khẩu này:
+Use the following command to display this password:
 
     [ec2-user ~]$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
-3. Tập lệnh cài đặt Jenkins hướng bạn đến trang Tùy chỉnh Jenkins. Nhấp vào Cài đặt các plugin được đề xuất.
-4. Sau khi quá trình cài đặt hoàn tất, Tạo người dùng quản trị viên đầu tiên sẽ mở ra. Nhập thông tin của bạn rồi chọn Lưu và tiếp tục.
-![create_admin_user.png](/aws-stutdy-group-workshop/images/2.2/create_admin_user.png)
-5. Ở phía bên trái, chọn Quản lý Jenkins rồi chọn Quản lý plugin.
-6. Chọn tab Có sẵn, sau đó nhập plugin Amazon EC2 ở trên cùng bên phải.
+3. The Jenkins installation script directs you to the Customize Jenkins page. Click Install suggested plugins.
 
-7. Chọn hộp kiểm bên cạnh plugin Amazon EC2, sau đó chọn Cài đặt mà không cần khởi động lại.
+4. Once the installation is complete, the Create First Admin User will open. Enter your information, and then select Save and Continue.
+   ![create_admin_user.png](/aws-stutdy-group-workshop/images/2.2/create_admin_user.png)
+5. On the left-hand side, select Manage Jenkins, and then select Manage Plugins.
+6. Select the Available tab, and then enter Amazon EC2 plugin at the top right.
+
+7. Select the checkbox next to Amazon EC2 plugin, and then select Install without restart.
    ![unlock_jenkins.png](/aws-stutdy-group-workshop/images/2.2/unlock_jenkins.png)
-8. Sau khi cài đặt xong, hãy chọn Quay lại Bảng điều khiển.
-9. Chọn Định cấu hình đám mây nếu không có nút hoặc đám mây nào hiện có.
+8. Once the installation is done, select Back to Dashboard.
+9. Select Configure a cloud if there are no existing nodes or clouds.
    ![configure_cloud.png](/aws-stutdy-group-workshop/images/2.2/configure_cloud.png)
-   Chúng ta gần như đã hoàn tất việc định cấu hình Jenkins trên Bastion Host
+   We are almost done to configure Jenkins on Bastion Host
 ## 3. Install require plugins for Jenkins
-Nhấp để **cài đặt các plugin được đề xuất**
+Click to **install suggested plugins**
 ![selected-plugsin.png](/aws-stutdy-group-workshop/images/2.2-jenkins/suggest-plugins.png)
 ![selected-plugsin.png](/aws-stutdy-group-workshop/images/2.2-jenkins/require-plugins.png)
 
-## 4. Cấu hình thông tin xác thực aws trên Máy chủ Bastion
-1. Sử dụng lệnh này để định cấu hình thông tin xác thực. Theo mặc định, aws-cli luôn có sẵn trên EC2, chúng ta không cần cài đặt lại aws-cli.
+## 4. Configure aws credentials on Bastion Host
+1. Using this command to config credentials. By default, aws-cli always available on EC2, we don't need install aws-cli again.
 
          aws configure
 
@@ -181,12 +180,12 @@ Output:
 ## 5. Install helm on Bastion Host
 In this project, we will using Helm Chart to manage kubernetes object on EKS Cluster and Jenkins using helm command to apply this.
 
-1. cài đặt các tệp nhị phân bằng các lệnh sau.
+1. install the binaries with the following commands.
 
          curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh
          chmod 700 get_helm.sh
          ./get_helm.sh
 
-2. Xem phiên bản Helm mà bạn đã cài đặt.
+2. See the version of Helm that you installed.
 
          helm version | cut -d + -f 1
