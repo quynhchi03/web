@@ -1,5 +1,5 @@
 ---
-title : "Testing Application"
+title : "Báo cáo"
 date : "`r Sys.Date()`"
 weight : 7
 chapter : false

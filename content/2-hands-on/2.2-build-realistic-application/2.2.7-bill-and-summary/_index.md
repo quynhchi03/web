@@ -1,5 +1,5 @@
 ---
-title : "Report"
+title : "Bill and Summary"
 date : "`r Sys.Date()`"
 weight : 8
 chapter : false
