@@ -5,7 +5,7 @@ weight : 2
 chapter : false
 pre : " <b> 2.2.1 </b> "
 ---
-
+ 
 
 ![AWS DESIGN ARCHITECTURE](/aws-stutdy-group-workshop/images/1/ArchitechtureDesign.svg?featherlight=false&width=100pc)
 
