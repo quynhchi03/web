@@ -1,5 +1,5 @@
 ---
-title : "Introduce Series 100 Days Cloud"
+title : "Java"
 date : "`r Sys.Date()`"
 weight : 1
 chapter : false
