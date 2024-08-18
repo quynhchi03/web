@@ -151,7 +151,7 @@ public void setName(String name){
 -	Là quá trình lớp con thay đổi hành vi  cho một phương thức đã được định nghĩa trong lớp cha (phương thức có cùng tên, cùng tham số)
 -	Không ảnh hưởng tới phương thức lớp cha hay lớp con khác
 
-![alt text](/images/4.3/image-001.png)
+![alt text](/web/images/4.3/image-001.png)
 
 **2. Có thể ghi đè phương thức static không?**
 -	Không. Vì phương thức static thuộc về class
