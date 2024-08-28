@@ -1,9 +1,9 @@
 ---
-title : "Giới Thiệu về Lập Trình Hướng Đối Tượng"
+title : "Tổng Quan về Lập Trình Hướng Đối Tượng"
 date :  "`r Sys.Date()`"
 weight : 1 
 chapter : false
-pre : " <b> 4.1 </b> "
+pre : " <b> 1.1 </b> "
 ---
 
 ### OOP-Object-Oriented Programming (Lập trình Hướng Đối Tượng) : 

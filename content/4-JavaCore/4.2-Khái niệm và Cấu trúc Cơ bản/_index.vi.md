@@ -3,7 +3,7 @@ title : "Khái niệm và cấu trúc cơ bản"
 date :  "`r Sys.Date()`"
 weight : 2 
 chapter : false
-pre : " <b> 4.2 </b> "
+pre : " <b> 1.2 </b> "
 ---
 
 #### Nội Dung

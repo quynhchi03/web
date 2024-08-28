@@ -3,7 +3,7 @@ title : "Phương Thức(Methods)"
 date :  "`r Sys.Date()`"
 weight : 2 
 chapter : false
-pre : " <b> 4.2.2 </b> "
+pre : " <b> 1.2.2 </b> "
 ---
 
 #### Phương thức
