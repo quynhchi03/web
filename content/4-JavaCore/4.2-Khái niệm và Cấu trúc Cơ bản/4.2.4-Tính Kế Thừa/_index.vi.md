@@ -3,7 +3,7 @@ title : "Tính kế thừa (inheritance)"
 date :  "`r Sys.Date()`"
 weight : 4 
 chapter : false
-pre : " <b> 4.2.4 </b> "
+pre : " <b> 1.2.4 </b> "
 ---
 
 #### Tính Kế Thừa

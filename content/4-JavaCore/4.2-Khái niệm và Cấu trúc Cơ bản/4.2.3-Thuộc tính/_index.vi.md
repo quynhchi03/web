@@ -3,7 +3,7 @@ title : "Thuộc tính (Attributes/Fields)"
 date :  "`r Sys.Date()`"
 weight : 3 
 chapter : false
-pre : " <b> 4.2.3 </b> "
+pre : " <b> 1.2.3 </b> "
 ---
 
 #### Thuộc Tính

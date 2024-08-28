@@ -3,7 +3,7 @@ title : "Tính Trừu Tượng (Abstraction)"
 date :  "`r Sys.Date()`"
 weight : 7
 chapter : false
-pre : " <b> 4.2.7 </b> "
+pre : " <b> 1.2.7 </b> "
 ---
 
 #### Tính Trừu Tượng

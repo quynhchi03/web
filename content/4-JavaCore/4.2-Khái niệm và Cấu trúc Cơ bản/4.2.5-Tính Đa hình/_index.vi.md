@@ -3,7 +3,7 @@ title : "Tính đa hình (Polymorphism) "
 date :  "`r Sys.Date()`"
 weight : 5 
 chapter : false
-pre : " <b> 4.2.5 </b> "
+pre : " <b> 1.2.5 </b> "
 ---
 
 #### Tính Đa Hình

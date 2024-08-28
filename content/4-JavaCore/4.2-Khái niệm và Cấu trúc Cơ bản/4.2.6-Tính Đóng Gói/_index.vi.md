@@ -3,7 +3,7 @@ title : "Tính đóng gói (Encapsulation)"
 date :  "`r Sys.Date()`"
 weight : 6 
 chapter : false
-pre : " <b> 4.2.6 </b> "
+pre : " <b> 1.2.6 </b> "
 ---
 
 #### Tính Đóng gói
