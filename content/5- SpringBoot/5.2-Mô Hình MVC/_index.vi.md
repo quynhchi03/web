@@ -9,7 +9,7 @@ pre : " <b> 5.2 </b> "
 #### Nội Dung
 
 - **Mô hình MVC (Model-View-Controller)** là một mẫu thiết kế phần mềm được sử dụng phổ biến trong phát triển ứng dụng web và desktop để phân chia các thành phần của ứng dụng thành ba phần chính: Model, View và Controller. Mô hình này giúp tổ chức mã nguồn tốt hơn, dễ bảo trì và mở rộng.
-![alt text](/images/5.1.1/image-001.png)
+![alt text](/web/images/5.1.1/image-001.png)
 
 #### 1. Model
 - **Chức năng:** Model đại diện cho dữ liệu và logic nghiệp vụ của ứng dụng. Nó xử lý các thao tác liên quan đến dữ liệu và các quy tắc nghiệp vụ.

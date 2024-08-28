@@ -18,7 +18,7 @@ pre : " <b> 3.1 </b> "
 - **GitHub** là một dịch vụ cung cấp kho lưu trữ mã nguồn Git dựa trên nền web cho các dự án phát triển phần mềm.
 - **Git** đơn giản hơn đó là nó sẽ giúp bạn lưu lại các phiên bản của những lần thay đổi vào mã nguồn và có thể dễ dàng khôi phục lại dễ dàng mà không cần copy lại mã nguồn rồi cất vào đâu đó.
 <!-- 
-![alt text](/images/3.1/image-001.png) -->
+![alt text](/web/images/3.1/image-001.png) -->
 
 #### **2.Tại sao nên sử dụng Github**
 

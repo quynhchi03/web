@@ -20,7 +20,7 @@ pre : " <b> 4.1 </b> "
 - Docker là một nền tảng cho developers và system admin để develop, deploy và run application với container. Nó cho phép tạo các môi trường độc lập và tách biệt để khởi chạy và phát triển ứng dụng và môi trường này được gọi là container. Khi cần deploy lên bất kỳ server nào chỉ cần run container của Docker thì application của bạn sẽ được khởi chạy ngay lập tức.
 - Xây dựng một lần, chạy mọi nơi Hoặc nói một cách đơn giản: Khi chúng ta muốn chạy ứng dụng, chúng ta phải thiết lập một môi trường chạy cho nó. Thay vì cài đặt một môi trường chạy cho nó, chúng ta sẽ chạy docker.
 
-![alt text](/images/1.1/image-001.png)
+![alt text](/web/images/1.1/image-001.png)
 
 #### **2.Tại sao nên sử dụng Docker**
 
@@ -38,7 +38,7 @@ pre : " <b> 4.1 </b> "
  
 #### **4.Một số khái niệm**
 
-![alt text](/images/1.1/image-002.png)
+![alt text](/web/images/1.1/image-002.png)
 
 - **Docker Client**: là cách mà bạn tương tác với docker thông qua command trong terminal. Docker Client sẽ sử dụng API gửi lệnh tới Docker Daemon.
 
@@ -73,7 +73,7 @@ pre : " <b> 4.1 </b> "
 
 #### **6.So sánh image và container**
 
-![alt text](/images/1.1/image-004.png)
+![alt text](/web/images/1.1/image-004.png)
 
 
 

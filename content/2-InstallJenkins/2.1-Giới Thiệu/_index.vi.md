@@ -23,4 +23,4 @@ IntelliJ IDEA là một môi trường phát triển tích hợp (IDE) mạnh m�
 + **Hỗ trợ hệ thống điều khiển phiên bản và CI/CD**: IntelliJ IDEA tích hợp tốt với các hệ thống điều khiển phiên bản phổ biến và server tích hợp liên tục như TeamCity, giúp tạo ra một quy trình phát triển phần mềm mạnh mẽ và linh hoạt.
 
 
-![alt text](/images/1.1/001.png)
+![alt text](/web/images/1.1/001.png)
