@@ -17,28 +17,28 @@ pre : " <b> 2.2 </b> "
 
 + *Cách 1*: các bạn vào trang chủ của Intellij để download IntelliJ Ultimate 2021.1. Nếu không thấy version này thì chọn vào mục *Other versions*.
 
-![alt text](//images/2.1/image-001.png)
+![alt text](//web/images/2.1/image-001.png)
 - Kéo xuống Version 2021.1 => Click vào 2021.1.3 – Windows (exe) – đối với Windows để download (các OS khác thì làm tương tự)
 
-![alt text](/images/2.1/image-002.png)
+![alt text](/web/images/2.1/image-002.png)
 
 + *Cách 2*: Vào link *Googe Drive*.
 
 # 2. Hướng dẫn cài đặt
 
 - Chạy file cài đặt các bạn vừa download về.
-![alt text](/images/2.1/image-003.png)
+![alt text](/web/images/2.1/image-003.png)
 
 - Chọn Run để chạy
 
-![alt text](/images/2.1/image-004.png)
+![alt text](/web/images/2.1/image-004.png)
 - Chọn Next
 
-![alt text](/images/2.1/image-005.png)
+![alt text](/web/images/2.1/image-005.png)
 
 - Ở phần *Destination Folder* chọn đường dẫn để lưu các file cài đặt (nên để mặc định) ==> Chọn *Next*
 
-![alt text](/images/2.1/image-006.png)
+![alt text](/web/images/2.1/image-006.png)
 
 - Chọn các options khi cài đặt
 
@@ -47,16 +47,16 @@ pre : " <b> 2.2 </b> "
 + *Create Associations*: Mở các file có định dạng này bằng IntelliJ
 + *Download and install 32-bit JetBrains Runtime*: cài đặt máy ảo JVM cho 32-bit.
 
-![alt text](/images/2.1/image-007.png)
+![alt text](/web/images/2.1/image-007.png)
 
 - Chọn *Install* để cài đặt
 
-![alt text](/images/2.1/image-008.png)
+![alt text](/web/images/2.1/image-008.png)
 - Chờ đợi cho đến khi quá trình cài đặt hoàn tất.
 
-![alt text](/images/2.1/image-009.png)
+![alt text](/web/images/2.1/image-009.png)
 
 - Hệ thống sẽ yêu cần khởi động lại máy khi cài đặt xong. Ở đây, mình chọn khởi động lại luôn.
 
-![alt text](/images/2.1/image-010.png)
+![alt text](/web/images/2.1/image-010.png)
 - Vậy là quá trình cài đặt đã hoàn tất

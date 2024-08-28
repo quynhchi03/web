@@ -13,4 +13,4 @@ pre : " <b> 2. </b> "
 2. CÁCH CÀI ĐẶT INTELLIJ 
 3. TẠO PROJECT BẰNG INTELLIJ
 
-![alt text](/images/1.1/001.png)
+![alt text](/web/images/1.1/001.png)

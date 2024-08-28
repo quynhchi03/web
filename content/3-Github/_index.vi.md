@@ -11,4 +11,4 @@ pre : " <b> 3. </b> "
 1. Giới Thiệu về Github
 2. QUản lý dự án với Github
 
-![alt text](/images/3/image-001.png)
+![alt text](/web/images/3/image-001.png)

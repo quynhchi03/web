@@ -12,4 +12,4 @@ pre : " <b> 4. </b> "
 1. Lý Thuyết về Docker
 2. Docker compose
 
-![alt text](/images/1.1/image-001.png)
+![alt text](/web/images/1.1/image-001.png)
